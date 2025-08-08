@@ -1,18 +1,29 @@
+
 'use client';
 
-import { useState, useTransition } from 'react';
-import { CheckCircle, Loader2, XCircle } from 'lucide-react';
+import { useState, useTransition, useEffect } from 'react';
+import { CheckCircle, Loader2, XCircle, Camera, Pencil } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { validateRegistration } from '@/app/actions';
 import type { ValidationResult } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
+import { QrScanner } from './QrScanner';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
 
 export function QRValidator() {
   const [qrData, setQrData] = useState('');
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
   const [isPending, startTransition] = useTransition();
+  const [isScannerOpen, setScannerOpen] = useState(false);
   const { toast } = useToast();
 
   const handleValidate = () => {
@@ -32,13 +43,48 @@ export function QRValidator() {
     });
   };
 
+  const handleScanSuccess = (decodedQrData: string) => {
+    setQrData(decodedQrData);
+    setScannerOpen(false);
+    startTransition(async () => {
+      setValidationResult(null);
+      const result = await validateRegistration(decodedQrData);
+      setValidationResult(result);
+    });
+  };
+  
+  useEffect(() => {
+    if(qrData) {
+      handleValidate();
+    }
+  }, [qrData]);
+
   return (
     <Card>
       <CardHeader>
         <CardTitle>QR Code Validation</CardTitle>
-        <CardDescription>Paste the text from a scanned QR code below to validate a conference pass.</CardDescription>
+        <CardDescription>Scan a QR code or paste the text from a scanned QR code below to validate a conference pass.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex gap-2">
+            <Dialog open={isScannerOpen} onOpenChange={setScannerOpen}>
+              <DialogTrigger asChild>
+                <Button variant="outline"><Camera className="mr-2" /> Scan QR Code</Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Scan QR Code</DialogTitle>
+                </DialogHeader>
+                <QrScanner onScanSuccess={handleScanSuccess} />
+              </DialogContent>
+            </Dialog>
+        </div>
+
+        <div className="flex items-center gap-2">
+            <Pencil className="h-5 w-5 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground">Or paste data manually</span>
+        </div>
+
         <Textarea
           placeholder="Paste QR code data here..."
           value={qrData}
