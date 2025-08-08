@@ -3,7 +3,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 import { Loader2 } from 'lucide-react';
 
@@ -12,6 +11,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { registerUser } from '@/app/actions';
+import type { Registration } from '@/lib/types';
+import { QRCodeDisplay } from './QRCodeDisplay';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -23,9 +24,9 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export function RegistrationForm() {
-  const router = useRouter();
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
+  const [successfulRegistration, setSuccessfulRegistration] = useState<Registration | null>(null);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -38,6 +39,7 @@ export function RegistrationForm() {
   });
 
   function onSubmit(values: FormData) {
+    setSuccessfulRegistration(null);
     startTransition(async () => {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => {
@@ -51,7 +53,8 @@ export function RegistrationForm() {
           title: 'Registration Successful!',
           description: 'Your QR code has been generated.',
         });
-        router.push(`/registered/${result.registration.id}`);
+        setSuccessfulRegistration(result.registration);
+        form.reset();
       } else {
         toast({
           variant: 'destructive',
@@ -60,6 +63,15 @@ export function RegistrationForm() {
         });
       }
     });
+  }
+
+  if (successfulRegistration) {
+    return (
+      <div className="flex flex-col items-center gap-6">
+        <QRCodeDisplay registration={successfulRegistration} />
+        <Button onClick={() => setSuccessfulRegistration(null)}>Register Another Person</Button>
+      </div>
+    );
   }
 
   return (
