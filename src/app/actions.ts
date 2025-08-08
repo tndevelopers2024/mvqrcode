@@ -1,11 +1,11 @@
 'use server';
 
 import { z } from 'zod';
-import { generateQrCode } from '@/ai/flows/generate-qr-code';
 import { validateQrCode } from '@/ai/flows/validate-qr-code';
 import { registrations } from '@/lib/db';
 import type { Registration } from '@/lib/types';
 import { revalidatePath } from 'next/cache';
+import QRCode from 'qrcode';
 
 const registrationSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -13,6 +13,22 @@ const registrationSchema = z.object({
   designation: z.string().min(2, 'Designation is required.'),
   city: z.string().min(2, 'City is required.'),
 });
+
+async function generateQrCodeDataUri(text: string): Promise<string> {
+    try {
+        const qrCodeDataUri = await QRCode.toDataURL(text, {
+            errorCorrectionLevel: 'H',
+            type: 'image/png',
+            rendererOpts: {
+                quality: 0.9,
+            },
+        });
+        return qrCodeDataUri;
+    } catch (err) {
+        console.error('Failed to generate QR code', err);
+        throw new Error('Failed to generate QR code');
+    }
+}
 
 export async function registerUser(formData: FormData) {
   try {
@@ -22,13 +38,13 @@ export async function registerUser(formData: FormData) {
     const registrationDate = new Date().toISOString();
     const qrCodeContent = JSON.stringify({ ...validatedData, registrationDate });
     
-    const qrResult = await generateQrCode({ registrationDetails: qrCodeContent });
+    const qrCodeDataUri = await generateQrCodeDataUri(qrCodeContent);
     
     const newRegistration: Registration = {
       id: crypto.randomUUID(),
       ...validatedData,
       registrationDate,
-      qrCodeDataUri: qrResult.qrCodeDataUri,
+      qrCodeDataUri,
       qrCodeContent: qrCodeContent,
     };
 
