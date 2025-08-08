@@ -3,7 +3,7 @@
 import { z } from 'zod';
 import { validateQrCode } from '@/ai/flows/validate-qr-code';
 import { registrations } from '@/lib/db';
-import type { Registration } from '@/lib/types';
+import type { Registration, ValidationResult } from '@/lib/types';
 import { revalidatePath } from 'next/cache';
 import QRCode from 'qrcode';
 
@@ -61,10 +61,44 @@ export async function registerUser(formData: FormData) {
   }
 }
 
-export async function validateRegistration(qrData: string) {
+export async function validateRegistration(qrData: string): Promise<ValidationResult> {
   try {
-    const result = await validateQrCode({ qrCodeData: qrData });
-    return result;
+    // First, check if a registration with this exact QR content exists
+    const registeredUser = registrations.find(reg => reg.qrCodeContent === qrData);
+
+    if (!registeredUser) {
+      // If no exact match, ask the AI to parse it. 
+      // This handles cases where the QR might be slightly different but still valid JSON.
+      const aiResult = await validateQrCode({ qrCodeData: qrData });
+      
+      if (!aiResult.isValid || !aiResult.userDetails) {
+        return { isValid: false };
+      }
+
+      // Check if the parsed details loosely match any registration
+      const matchedUser = registrations.find(reg => 
+        reg.name === aiResult.userDetails?.name &&
+        reg.designation === aiResult.userDetails?.designation &&
+        reg.city === aiResult.userDetails?.city
+      );
+
+      if (matchedUser) {
+        return { isValid: true, userDetails: matchedUser };
+      }
+
+      return { isValid: false };
+    }
+
+    // Exact match found
+    return { 
+      isValid: true, 
+      userDetails: {
+        name: registeredUser.name,
+        designation: registeredUser.designation,
+        city: registeredUser.city,
+        registrationDate: registeredUser.registrationDate
+      } 
+    };
   } catch (error) {
     console.error('Validation failed:', error);
     return { isValid: false };
