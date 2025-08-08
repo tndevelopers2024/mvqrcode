@@ -1,3 +1,22 @@
+import { RegistrationForm } from "@/components/RegistrationForm";
+import { Header } from "@/components/Header";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
 export default function Home() {
-  return <></>;
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow container mx-auto px-4 py-8 sm:px-6 lg:px-8 flex items-center justify-center">
+        <Card className="w-full max-w-2xl shadow-2xl">
+          <CardHeader className="text-center">
+            <CardTitle className="text-3xl font-bold tracking-tight">Welcome to the MV International Conference</CardTitle>
+            <CardDescription className="text-lg pt-2">Register now to secure your spot!</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <RegistrationForm />
+          </CardContent>
+        </Card>
+      </main>
+    </div>
+  );
 }
