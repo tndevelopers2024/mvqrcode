@@ -1,5 +1,5 @@
-import type { Registration } from './types';
+// This file is no longer used for storing data in-memory.
+// Data persistence is now handled by Firebase Firestore.
+// See src/lib/firebase.ts and src/app/actions.ts.
 
-// This is a mock in-memory database.
-// In a production application, you would use a real database.
-export const registrations: Registration[] = [];
+export {};

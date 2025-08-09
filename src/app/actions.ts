@@ -2,7 +2,8 @@
 
 import { z } from 'zod';
 import { validateQrCode } from '@/ai/flows/validate-qr-code';
-import { registrations } from '@/lib/db';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import type { Registration, ValidationResult } from '@/lib/types';
 import { revalidatePath } from 'next/cache';
 import QRCode from 'qrcode';
@@ -40,18 +41,18 @@ export async function registerUser(formData: FormData) {
     
     const qrCodeDataUri = await generateQrCodeDataUri(qrCodeContent);
     
-    const newRegistration: Registration = {
-      id: crypto.randomUUID(),
+    const newRegistration: Omit<Registration, 'id'> = {
       ...validatedData,
       registrationDate,
       qrCodeDataUri,
       qrCodeContent: qrCodeContent,
     };
 
-    registrations.push(newRegistration);
+    const docRef = await addDoc(collection(db, "registrations"), newRegistration);
+
     revalidatePath('/admin');
     
-    return { success: true, registration: newRegistration };
+    return { success: true, registration: { ...newRegistration, id: docRef.id } };
   } catch (error) {
     console.error('Registration failed:', error);
     if (error instanceof z.ZodError) {
@@ -63,42 +64,45 @@ export async function registerUser(formData: FormData) {
 
 export async function validateRegistration(qrData: string): Promise<ValidationResult> {
   try {
-    // First, check if a registration with this exact QR content exists
-    const registeredUser = registrations.find(reg => reg.qrCodeContent === qrData);
+    const q = query(collection(db, "registrations"), where("qrCodeContent", "==", qrData));
+    const querySnapshot = await getDocs(q);
 
-    if (!registeredUser) {
-      // If no exact match, ask the AI to parse it. 
-      // This handles cases where the QR might be slightly different but still valid JSON.
-      const aiResult = await validateQrCode({ qrCodeData: qrData });
-      
-      if (!aiResult.isValid || !aiResult.userDetails) {
-        return { isValid: false };
-      }
+    if (!querySnapshot.empty) {
+        const doc = querySnapshot.docs[0];
+        const registeredUser = { id: doc.id, ...doc.data() } as Registration;
+        return { 
+          isValid: true, 
+          userDetails: {
+            name: registeredUser.name,
+            designation: registeredUser.designation,
+            city: registeredUser.city,
+            registrationDate: registeredUser.registrationDate
+          } 
+        };
+    }
 
-      // Check if the parsed details loosely match any registration
-      const matchedUser = registrations.find(reg => 
-        reg.name === aiResult.userDetails?.name &&
-        reg.designation === aiResult.userDetails?.designation &&
-        reg.city === aiResult.userDetails?.city
-      );
-
-      if (matchedUser) {
-        return { isValid: true, userDetails: matchedUser };
-      }
-
+    // If no exact match, ask the AI to parse it.
+    const aiResult = await validateQrCode({ qrCodeData: qrData });
+    
+    if (!aiResult.isValid || !aiResult.userDetails) {
       return { isValid: false };
     }
 
-    // Exact match found
-    return { 
-      isValid: true, 
-      userDetails: {
-        name: registeredUser.name,
-        designation: registeredUser.designation,
-        city: registeredUser.city,
-        registrationDate: registeredUser.registrationDate
-      } 
-    };
+    // Check if the parsed details loosely match any registration
+    const aiQ = query(collection(db, "registrations"), 
+      where("name", "==", aiResult.userDetails.name),
+      where("designation", "==", aiResult.userDetails.designation),
+      where("city", "==", aiResult.userDetails.city)
+    );
+    const aiQuerySnapshot = await getDocs(aiQ);
+
+    if (!aiQuerySnapshot.empty) {
+      const doc = aiQuerySnapshot.docs[0];
+      const matchedUser = { id: doc.id, ...doc.data() } as Registration;
+      return { isValid: true, userDetails: matchedUser };
+    }
+
+    return { isValid: false };
   } catch (error) {
     console.error('Validation failed:', error);
     return { isValid: false };
@@ -106,9 +110,17 @@ export async function validateRegistration(qrData: string): Promise<ValidationRe
 }
 
 export async function getRegistrationById(id: string) {
-  return registrations.find(reg => reg.id === id) || null;
+    // This function might need adjustment if you need to fetch a single document by ID from Firestore.
+    // For now, it's not used in a way that requires Firestore fetching.
+    // To implement, you would use getDoc(doc(db, "registrations", id)).
+    return null;
 }
 
-export async function getAllRegistrations() {
+export async function getAllRegistrations(): Promise<Registration[]> {
+  const querySnapshot = await getDocs(collection(db, "registrations"));
+  const registrations = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+  } as Registration));
   return registrations;
 }
