@@ -1,20 +1,11 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { MountainIcon } from 'lucide-react';
 
 const Logo = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 100 100"
-    className="h-8 w-8 text-primary"
-    fill="currentColor"
-  >
-    <path d="M20 20h60v60H20z" fillOpacity="0.1" />
-    <path d="M35 35h30v30H35z" />
-    <path d="M30 30h10v10H30z" fillOpacity="0.5" />
-    <path d="M60 30h10v10H60z" fillOpacity="0.5" />
-    <path d="M30 60h10v10H30z" fillOpacity="0.5" />
-    <path d="M60 60h10v10H60z" fillOpacity="0.5" />
-  </svg>
+    <div className="flex items-center justify-center">
+      <MountainIcon className="h-8 w-8 text-primary" />
+    </div>
 );
 
 
