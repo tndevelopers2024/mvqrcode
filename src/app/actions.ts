@@ -13,6 +13,7 @@ const registrationSchema = z.object({
   email: z.string().email('Invalid email address.'),
   designation: z.string().min(2, 'Designation is required.'),
   city: z.string().min(2, 'City is required.'),
+  photoDataUri: z.string().optional(),
 });
 
 async function generateQrCodeDataUri(text: string): Promise<string> {

@@ -5,7 +5,9 @@ import Image from 'next/image';
 import type { Registration } from '@/lib/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Download, MountainIcon, Printer } from 'lucide-react';
+import { Download, MountainIcon, Printer, User as UserIcon } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
 
 interface QRCodeDisplayProps {
   registration: Registration;
@@ -35,21 +37,30 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
                 </div>
               </div>
               <CardContent className="p-6 bg-card rounded-b-2xl">
-                <div className="flex flex-col sm:flex-row items-center gap-6">
-                    <div className="flex-1 text-center sm:text-left">
+                <div className="flex flex-col items-center gap-6">
+                    <div className="flex items-center gap-6">
+                        <Avatar className="w-24 h-24 border-4 border-white shadow-lg">
+                            <AvatarImage src={registration.photoDataUri} />
+                            <AvatarFallback>
+                                <UserIcon className="w-12 h-12 text-muted-foreground" />
+                            </AvatarFallback>
+                        </Avatar>
+                        <div className="p-2 bg-white rounded-lg shadow-inner">
+                          <Image
+                            src={registration.qrCodeDataUri}
+                            alt="Registration QR Code"
+                            width={100}
+                            height={100}
+                            className="rounded-md"
+                            data-ai-hint="qr code"
+                          />
+                        </div>
+                    </div>
+
+                    <div className="text-center">
                         <p className="font-bold text-3xl">{registration.name}</p>
                         <p className="text-muted-foreground text-lg">{registration.designation}</p>
                         <p className="text-muted-foreground">{registration.city}</p>
-                    </div>
-                    <div className="p-2 bg-white rounded-lg shadow-inner">
-                      <Image
-                        src={registration.qrCodeDataUri}
-                        alt="Registration QR Code"
-                        width={128}
-                        height={128}
-                        className="rounded-md"
-                        data-ai-hint="qr code"
-                      />
                     </div>
                 </div>
               </CardContent>

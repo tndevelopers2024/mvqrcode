@@ -11,7 +11,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
-import { Eye, Search } from 'lucide-react';
+import { Eye, Search, User as UserIcon } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/dialog';
 import { QRCodeDisplay } from '../QRCodeDisplay';
 import { Input } from '@/components/ui/input';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
 interface RegistrationsListProps {
   registrations: Registration[];
@@ -73,7 +74,15 @@ export function RegistrationsList({ registrations }: RegistrationsListProps) {
             {filteredRegistrations.length > 0 ? (
               filteredRegistrations.map((reg) => (
                 <TableRow key={reg.id}>
-                  <TableCell className="font-medium">{reg.name}</TableCell>
+                  <TableCell className="font-medium">
+                    <div className="flex items-center gap-3">
+                      <Avatar className="w-8 h-8">
+                        <AvatarImage src={reg.photoDataUri} />
+                        <AvatarFallback><UserIcon className="w-4 h-4" /></AvatarFallback>
+                      </Avatar>
+                      {reg.name}
+                    </div>
+                  </TableCell>
                   <TableCell>{reg.email}</TableCell>
                   <TableCell className="hidden md:table-cell">{reg.designation}</TableCell>
                   <TableCell className="hidden md:table-cell">{reg.city}</TableCell>

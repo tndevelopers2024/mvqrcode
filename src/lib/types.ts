@@ -7,6 +7,7 @@ export interface Registration {
   registrationDate: string;
   qrCodeDataUri: string;
   qrCodeContent: string;
+  photoDataUri?: string;
 }
 
 export interface UserDetails {

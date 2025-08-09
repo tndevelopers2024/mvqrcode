@@ -3,8 +3,9 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { useState, useTransition } from 'react';
-import { Loader2 } from 'lucide-react';
+import { useState, useTransition, useRef } from 'react';
+import { Loader2, User as UserIcon, Upload } from 'lucide-react';
+import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
@@ -13,12 +14,14 @@ import { useToast } from '@/hooks/use-toast';
 import { registerUser } from '@/app/actions';
 import type { Registration } from '@/lib/types';
 import { QRCodeDisplay } from './QRCodeDisplay';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
   designation: z.string().min(2, { message: 'Please enter your designation.' }),
   city: z.string().min(2, { message: 'Please enter your city.' }),
+  photoDataUri: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -27,6 +30,8 @@ export function RegistrationForm() {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
   const [successfulRegistration, setSuccessfulRegistration] = useState<Registration | null>(null);
+  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -35,15 +40,31 @@ export function RegistrationForm() {
       email: '',
       designation: '',
       city: '',
+      photoDataUri: '',
     },
   });
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const dataUri = reader.result as string;
+        setPhotoPreview(dataUri);
+        form.setValue('photoDataUri', dataUri);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   function onSubmit(values: FormData) {
     setSuccessfulRegistration(null);
     startTransition(async () => {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => {
-        formData.append(key, value);
+        if(value) {
+            formData.append(key, value);
+        }
       });
       
       const result = await registerUser(formData);
@@ -55,6 +76,7 @@ export function RegistrationForm() {
         });
         setSuccessfulRegistration(result.registration);
         form.reset();
+        setPhotoPreview(null);
       } else {
         toast({
           variant: 'destructive',
@@ -77,6 +99,25 @@ export function RegistrationForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <div className="flex flex-col items-center gap-4">
+            <Avatar className="w-24 h-24">
+                <AvatarImage src={photoPreview || undefined} alt="User photo" />
+                <AvatarFallback>
+                    <UserIcon className="w-12 h-12" />
+                </AvatarFallback>
+            </Avatar>
+            <Button type="button" variant="outline" onClick={() => fileInputRef.current?.click()}>
+                <Upload className="mr-2 h-4 w-4" />
+                Upload Photo (Optional)
+            </Button>
+            <Input 
+                type="file"
+                ref={fileInputRef}
+                className="hidden"
+                accept="image/*"
+                onChange={handleFileChange}
+            />
+        </div>
         <FormField
           control={form.control}
           name="name"
