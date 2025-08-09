@@ -36,6 +36,13 @@ export async function registerUser(formData: FormData) {
     const data = Object.fromEntries(formData.entries());
     const validatedData = registrationSchema.parse(data);
 
+    const emailQuery = query(collection(db, "registrations"), where("email", "==", validatedData.email));
+    const emailQuerySnapshot = await getDocs(emailQuery);
+
+    if (!emailQuerySnapshot.empty) {
+        return { success: false, error: 'A registration with this email already exists.' };
+    }
+
     const registrationDate = new Date().toISOString();
     const qrCodeContent = JSON.stringify({ ...validatedData, registrationDate });
     

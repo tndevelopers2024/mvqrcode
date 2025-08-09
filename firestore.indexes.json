@@ -5,15 +5,17 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "name",
+          "fieldPath": "email",
           "order": "ASCENDING"
-        },
+        }
+      ]
+    },
+    {
+      "collectionGroup": "registrations",
+      "queryScope": "COLLECTION",
+      "fields": [
         {
-          "fieldPath": "designation",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "city",
+          "fieldPath": "qrCodeContent",
           "order": "ASCENDING"
         }
       ]
