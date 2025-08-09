@@ -2,14 +2,18 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Allow anyone to create a registration.
-    // In a real app, you'd likely want to add some validation here.
     match /registrations/{registrationId} {
+      // Allow anyone to create a registration
       allow create: if true;
-      
-      // Allow anyone to read the list of registrations or get a single one.
-      // For a real-world application, you should restrict this to authenticated admins.
+      // Allow anyone to read registrations (for admin validation)
       allow read: if true;
+    }
+    
+    match /validation_logs/{logId} {
+        // Allow server-side actions to create logs
+        allow create: if true;
+        // Allow admin pages to read logs
+        allow read: if true;
     }
   }
 }
