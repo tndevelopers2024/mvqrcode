@@ -1,10 +1,15 @@
 rules_version = '2';
+
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /registrations/{docId} {
-      allow get, list: if true;
+    // Allow anyone to create a registration.
+    // In a real app, you'd likely want to add some validation here.
+    match /registrations/{registrationId} {
       allow create: if true;
-      allow update, delete: if false;
+      
+      // Allow anyone to read the list of registrations or get a single one.
+      // For a real-world application, you should restrict this to authenticated admins.
+      allow read: if true;
     }
   }
 }

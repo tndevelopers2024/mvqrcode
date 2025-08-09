@@ -64,6 +64,7 @@ export async function registerUser(formData: FormData) {
 
 export async function validateRegistration(qrData: string): Promise<ValidationResult> {
   try {
+    // First, check for an exact match in the database
     const q = query(collection(db, "registrations"), where("qrCodeContent", "==", qrData));
     const querySnapshot = await getDocs(q);
 
@@ -81,25 +82,16 @@ export async function validateRegistration(qrData: string): Promise<ValidationRe
         };
     }
 
-    // If no exact match, ask the AI to parse it.
+    // If no exact match, ask the AI to parse it as a fallback.
     const aiResult = await validateQrCode({ qrCodeData: qrData });
     
-    if (!aiResult.isValid || !aiResult.userDetails) {
-      return { isValid: false };
-    }
-
-    // Check if the parsed details loosely match any registration
-    const aiQ = query(collection(db, "registrations"), 
-      where("name", "==", aiResult.userDetails.name),
-      where("designation", "==", aiResult.userDetails.designation),
-      where("city", "==", aiResult.userDetails.city)
-    );
-    const aiQuerySnapshot = await getDocs(aiQ);
-
-    if (!aiQuerySnapshot.empty) {
-      const doc = aiQuerySnapshot.docs[0];
-      const matchedUser = { id: doc.id, ...doc.data() } as Registration;
-      return { isValid: true, userDetails: matchedUser };
+    // The AI will determine if the format is plausible, even if it's not in the DB.
+    // This handles cases where the QR might be valid in format but not registered.
+    if (aiResult.isValid && aiResult.userDetails) {
+      // We can trust the AI's validation if it extracts details.
+      // But we will still mark it as invalid if it's not in our DB.
+      // A more advanced implementation might check for "close" matches here.
+      return { isValid: false, userDetails: aiResult.userDetails };
     }
 
     return { isValid: false };
