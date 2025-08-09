@@ -1,12 +1,12 @@
 'use server';
 
 import { z } from 'zod';
-import { validateQrCode } from '@/ai/flows/validate-qr-code';
 import { db } from '@/lib/firebase';
 import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import type { Registration, ValidationResult } from '@/lib/types';
 import { revalidatePath } from 'next/cache';
 import QRCode from 'qrcode';
+import { randomUUID } from 'crypto';
 
 const registrationSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -44,15 +44,15 @@ export async function registerUser(formData: FormData) {
     }
 
     const registrationDate = new Date().toISOString();
-    const qrCodeContent = JSON.stringify({ ...validatedData, registrationDate });
+    const uniqueId = randomUUID();
     
-    const qrCodeDataUri = await generateQrCodeDataUri(qrCodeContent);
+    const qrCodeDataUri = await generateQrCodeDataUri(uniqueId);
     
     const newRegistration: Omit<Registration, 'id'> = {
       ...validatedData,
       registrationDate,
       qrCodeDataUri,
-      qrCodeContent: qrCodeContent,
+      qrCodeContent: uniqueId,
     };
 
     const docRef = await addDoc(collection(db, "registrations"), newRegistration);
@@ -71,7 +71,7 @@ export async function registerUser(formData: FormData) {
 
 export async function validateRegistration(qrData: string): Promise<ValidationResult> {
   try {
-    // First, check for an exact match in the database
+    // The qrData is the unique ID. Check for an exact match in the database.
     const q = query(collection(db, "registrations"), where("qrCodeContent", "==", qrData));
     const querySnapshot = await getDocs(q);
 
@@ -89,19 +89,9 @@ export async function validateRegistration(qrData: string): Promise<ValidationRe
         };
     }
 
-    // If no exact match, ask the AI to parse it as a fallback.
-    const aiResult = await validateQrCode({ qrCodeData: qrData });
-    
-    // The AI will determine if the format is plausible, even if it's not in the DB.
-    // This handles cases where the QR might be valid in format but not registered.
-    if (aiResult.isValid && aiResult.userDetails) {
-      // We can trust the AI's validation if it extracts details.
-      // But we will still mark it as invalid if it's not in our DB.
-      // A more advanced implementation might check for "close" matches here.
-      return { isValid: false, userDetails: aiResult.userDetails };
-    }
-
+    // If no document is found with the unique ID, the QR code is invalid.
     return { isValid: false };
+
   } catch (error) {
     console.error('Validation failed:', error);
     return { isValid: false };

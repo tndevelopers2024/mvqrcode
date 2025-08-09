@@ -2,6 +2,9 @@
 
 /**
  * @fileOverview A QR code validation AI agent.
+ * THIS FLOW IS NO LONGER USED FOR PRIMARY VALIDATION.
+ * Validation is now handled by checking a unique ID against the database.
+ * This file is kept for reference purposes.
  *
  * - validateQrCode - A function that handles the QR code validation process.
  * - ValidateQrCodeInput - The input type for the validateQrCode function.
@@ -40,7 +43,9 @@ const prompt = ai.definePrompt({
   output: {schema: ValidateQrCodeOutputSchema},
   prompt: `You are an expert system for validating conference registration QR codes.
 
-You will receive data extracted from a QR code.  Your job is to determine if it represents a valid registration.
+You will receive data extracted from a QR code. Your job is to determine if it represents a valid registration.
+
+A valid QR code will contain a unique identifier (UUID). If the data is not in a UUID format, it is invalid.
 
 If it is valid, extract the user details, including name, designation, city and registrationDate.
 
@@ -57,6 +62,8 @@ const validateQrCodeFlow = ai.defineFlow(
     outputSchema: ValidateQrCodeOutputSchema,
   },
   async input => {
+    // This is a fallback and should not be the primary validation method.
+    // Primary validation happens via direct database lookup in actions.ts.
     const {output} = await prompt(input);
     return output!;
   }
