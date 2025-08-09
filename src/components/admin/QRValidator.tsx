@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useTransition, useEffect } from 'react';
+import { useState, useTransition, useEffect, useRef } from 'react';
 import { CheckCircle, Loader2, XCircle, Camera, Pencil } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -25,6 +25,15 @@ export function QRValidator() {
   const [isPending, startTransition] = useTransition();
   const [isScannerOpen, setScannerOpen] = useState(false);
   const { toast } = useToast();
+  const resultTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const clearResult = () => {
+    setValidationResult(null);
+    if (resultTimeoutRef.current) {
+      clearTimeout(resultTimeoutRef.current);
+      resultTimeoutRef.current = null;
+    }
+  }
 
   const handleValidate = () => {
     if (!qrData.trim()) {
@@ -37,27 +46,35 @@ export function QRValidator() {
     }
     
     startTransition(async () => {
-      setValidationResult(null);
+      clearResult();
       const result = await validateRegistration(qrData);
       setValidationResult(result);
     });
   };
 
   const handleScanSuccess = (decodedQrData: string) => {
-    setQrData(decodedQrData);
     setScannerOpen(false);
     startTransition(async () => {
-      setValidationResult(null);
+      clearResult();
+      setQrData(decodedQrData);
       const result = await validateRegistration(decodedQrData);
       setValidationResult(result);
     });
   };
   
   useEffect(() => {
-    if(qrData) {
-      handleValidate();
+    if (validationResult) {
+      resultTimeoutRef.current = setTimeout(() => {
+        setValidationResult(null);
+        setQrData('');
+      }, 5000); // 5 seconds
     }
-  }, [qrData]);
+    return () => {
+      if (resultTimeoutRef.current) {
+        clearTimeout(resultTimeoutRef.current);
+      }
+    };
+  }, [validationResult]);
 
   return (
     <Card>
@@ -69,7 +86,7 @@ export function QRValidator() {
         <div className="flex gap-2">
             <Dialog open={isScannerOpen} onOpenChange={setScannerOpen}>
               <DialogTrigger asChild>
-                <Button variant="outline"><Camera className="mr-2" /> Scan QR Code</Button>
+                <Button variant="outline" onClick={clearResult}><Camera className="mr-2" /> Scan QR Code</Button>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
@@ -90,11 +107,19 @@ export function QRValidator() {
           value={qrData}
           onChange={(e) => setQrData(e.target.value)}
           rows={4}
+          onClick={clearResult}
         />
         <Button onClick={handleValidate} disabled={isPending || !qrData}>
           {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
           Validate
         </Button>
+
+        {isPending && !validationResult && (
+          <div className="flex items-center justify-center pt-4">
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            <p>Validating...</p>
+          </div>
+        )}
 
         {validationResult && (
           <Card className={validationResult.isValid ? 'border-green-500' : 'border-red-500'}>
