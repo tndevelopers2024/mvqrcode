@@ -15,6 +15,7 @@ export function QrScanner({ onScanSuccess }: QrScannerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [hasCameraPermission, setHasCameraPermission] = useState<boolean | null>(null);
+  const [isScanning, setIsScanning] = useState(true);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -51,6 +52,8 @@ export function QrScanner({ onScanSuccess }: QrScannerProps) {
     let animationFrameId: number;
 
     const scanQrCode = () => {
+      if (!isScanning) return;
+
       if (videoRef.current && videoRef.current.readyState === videoRef.current.HAVE_ENOUGH_DATA && canvasRef.current) {
         const video = videoRef.current;
         const canvas = canvasRef.current;
@@ -66,6 +69,7 @@ export function QrScanner({ onScanSuccess }: QrScannerProps) {
           });
 
           if (code) {
+            setIsScanning(false);
             onScanSuccess(code.data);
             return; 
           }
@@ -75,17 +79,13 @@ export function QrScanner({ onScanSuccess }: QrScannerProps) {
     };
 
     if (hasCameraPermission) {
-      scanQr_Code();
-    }
-
-    function scanQr_Code() {
-        animationFrameId = requestAnimationFrame(scanQrCode);
+      scanQrCode();
     }
 
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [hasCameraPermission, onScanSuccess]);
+  }, [hasCameraPermission, onScanSuccess, isScanning]);
 
   return (
     <div className="relative">
@@ -110,4 +110,3 @@ export function QrScanner({ onScanSuccess }: QrScannerProps) {
     </div>
   );
 }
-
