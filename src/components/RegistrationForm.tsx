@@ -99,25 +99,6 @@ export function RegistrationForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="flex flex-col items-center gap-4">
-            <Avatar className="w-24 h-24">
-                <AvatarImage src={photoPreview || undefined} alt="User photo" />
-                <AvatarFallback>
-                    <UserIcon className="w-12 h-12" />
-                </AvatarFallback>
-            </Avatar>
-            <Button type="button" variant="outline" onClick={() => fileInputRef.current?.click()}>
-                <Upload className="mr-2 h-4 w-4" />
-                Upload Photo (Optional)
-            </Button>
-            <Input 
-                type="file"
-                ref={fileInputRef}
-                className="hidden"
-                accept="image/*"
-                onChange={handleFileChange}
-            />
-        </div>
         <FormField
           control={form.control}
           name="name"
@@ -144,6 +125,27 @@ export function RegistrationForm() {
             </FormItem>
           )}
         />
+        
+        <div className="flex flex-col items-center gap-4 py-4">
+            <Avatar className="w-24 h-24">
+                <AvatarImage src={photoPreview || undefined} alt="User photo" />
+                <AvatarFallback>
+                    <UserIcon className="w-12 h-12" />
+                </AvatarFallback>
+            </Avatar>
+            <Button type="button" variant="outline" onClick={() => fileInputRef.current?.click()}>
+                <Upload className="mr-2 h-4 w-4" />
+                Upload Photo (Optional)
+            </Button>
+            <Input 
+                type="file"
+                ref={fileInputRef}
+                className="hidden"
+                accept="image/*"
+                onChange={handleFileChange}
+            />
+        </div>
+
         <FormField
           control={form.control}
           name="designation"
