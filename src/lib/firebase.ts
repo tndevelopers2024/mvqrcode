@@ -3,14 +3,14 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
-// IMPORTANT: Replace this with your actual Firebase config
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  "projectId": "mv-international-conference",
+  "appId": "1:964528641072:web:545fad74ea426fe181c9f5",
+  "storageBucket": "mv-international-conference.firebasestorage.app",
+  "apiKey": "AIzaSyBc0Wbc7Xmo1A9HN0POOEBpLM44gIt83Jw",
+  "authDomain": "mv-international-conference.firebaseapp.com",
+  "measurementId": "",
+  "messagingSenderId": "964528641072"
 };
 
 // Initialize Firebase
