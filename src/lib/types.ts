@@ -9,12 +9,22 @@ export interface Registration {
   qrCodeContent: string;
 }
 
+export interface UserDetails {
+  name?: string;
+  designation?: string;
+  city?: string;
+  registrationDate?: string;
+}
+
 export interface ValidationResult {
   isValid: boolean;
-  userDetails?: {
-    name?: string;
-    designation?: string;
-    city?: string;
-    registrationDate?: string;
-  };
+  userDetails?: UserDetails;
+}
+
+export interface ValidationLog {
+    id: string;
+    qrData: string;
+    isValid: boolean;
+    timestamp: string;
+    validatedUserDetails?: UserDetails;
 }

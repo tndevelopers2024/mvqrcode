@@ -1,29 +1,34 @@
 'use client';
 
-import type { Registration } from '@/lib/types';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { QRValidator } from './QRValidator';
-import { RegistrationsList } from './RegistrationsList';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CardContent } from '../ui/card';
+import { useRouter } from 'next/navigation';
 
 interface AdminDashboardProps {
-  initialRegistrations: Registration[];
+  children: React.ReactNode;
+  activeTab: 'validate' | 'registrations' | 'logs';
 }
 
-export function AdminDashboard({ initialRegistrations }: AdminDashboardProps) {
+export function AdminDashboard({ children, activeTab }: AdminDashboardProps) {
+  const router = useRouter();
+
+  const handleTabChange = (value: string) => {
+    if (value === 'validate') {
+      router.push(`/admin`);
+    } else {
+      router.push(`/admin/${value}`);
+    }
+  };
+
   return (
     <CardContent>
-        <Tabs defaultValue="validate">
-        <TabsList className="grid w-full grid-cols-2">
+        <Tabs defaultValue={activeTab} onValueChange={handleTabChange} className="w-full">
+        <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="validate">Validate QR</TabsTrigger>
             <TabsTrigger value="registrations">All Registrations</TabsTrigger>
+            <TabsTrigger value="logs">Logs</TabsTrigger>
         </TabsList>
-        <TabsContent value="validate" className="mt-6">
-            <QRValidator />
-        </TabsContent>
-        <TabsContent value="registrations" className="mt-6">
-            <RegistrationsList registrations={initialRegistrations} />
-        </TabsContent>
+        {children}
         </Tabs>
     </CardContent>
   );

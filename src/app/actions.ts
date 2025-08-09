@@ -3,7 +3,7 @@
 import { z } from 'zod';
 import { db } from '@/lib/firebase';
 import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
-import type { Registration, ValidationResult } from '@/lib/types';
+import type { Registration, ValidationResult, ValidationLog } from '@/lib/types';
 import { revalidatePath } from 'next/cache';
 import QRCode from 'qrcode';
 import { randomUUID } from 'crypto';
@@ -69,7 +69,23 @@ export async function registerUser(formData: FormData) {
   }
 }
 
+async function logValidationAttempt(qrData: string, result: ValidationResult) {
+  try {
+    const logEntry = {
+      qrData,
+      isValid: result.isValid,
+      timestamp: new Date().toISOString(),
+      ...(result.isValid && { validatedUserDetails: result.userDetails }),
+    };
+    await addDoc(collection(db, 'validation_logs'), logEntry);
+    revalidatePath('/admin/logs');
+  } catch (error) {
+    console.error('Failed to log validation attempt:', error);
+  }
+}
+
 export async function validateRegistration(qrData: string): Promise<ValidationResult> {
+  let result: ValidationResult;
   try {
     // The qrData is the unique ID. Check for an exact match in the database.
     const q = query(collection(db, "registrations"), where("qrCodeContent", "==", qrData));
@@ -78,7 +94,7 @@ export async function validateRegistration(qrData: string): Promise<ValidationRe
     if (!querySnapshot.empty) {
         const doc = querySnapshot.docs[0];
         const registeredUser = { id: doc.id, ...doc.data() } as Registration;
-        return { 
+        result = { 
           isValid: true, 
           userDetails: {
             name: registeredUser.name,
@@ -87,15 +103,18 @@ export async function validateRegistration(qrData: string): Promise<ValidationRe
             registrationDate: registeredUser.registrationDate
           } 
         };
+    } else {
+        // If no document is found with the unique ID, the QR code is invalid.
+        result = { isValid: false };
     }
-
-    // If no document is found with the unique ID, the QR code is invalid.
-    return { isValid: false };
 
   } catch (error) {
     console.error('Validation failed:', error);
-    return { isValid: false };
+    result = { isValid: false };
   }
+  
+  await logValidationAttempt(qrData, result);
+  return result;
 }
 
 export async function getRegistrationById(id: string) {
@@ -112,4 +131,13 @@ export async function getAllRegistrations(): Promise<Registration[]> {
       ...doc.data()
   } as Registration));
   return registrations;
+}
+
+export async function getValidationLogs(): Promise<ValidationLog[]> {
+    const querySnapshot = await getDocs(query(collection(db, "validation_logs")));
+    const logs = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+    } as ValidationLog));
+    return logs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
 }
