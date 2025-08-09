@@ -126,25 +126,37 @@ export function RegistrationForm() {
           )}
         />
         
-        <div className="flex flex-col items-center gap-4 py-4">
-            <Avatar className="w-24 h-24">
-                <AvatarImage src={photoPreview || undefined} alt="User photo" />
-                <AvatarFallback>
-                    <UserIcon className="w-12 h-12" />
-                </AvatarFallback>
-            </Avatar>
-            <Button type="button" variant="outline" onClick={() => fileInputRef.current?.click()}>
-                <Upload className="mr-2 h-4 w-4" />
-                Upload Photo (Optional)
-            </Button>
-            <Input 
-                type="file"
-                ref={fileInputRef}
-                className="hidden"
-                accept="image/*"
-                onChange={handleFileChange}
-            />
-        </div>
+        <FormField
+          control={form.control}
+          name="photoDataUri"
+          render={() => (
+            <FormItem>
+                <FormLabel>Profile Photo (Optional)</FormLabel>
+                <FormControl>
+                    <div className="flex items-center gap-4">
+                        <Avatar className="w-20 h-20">
+                            <AvatarImage src={photoPreview || undefined} alt="User photo" />
+                            <AvatarFallback>
+                                <UserIcon className="w-10 h-10 text-muted-foreground" />
+                            </AvatarFallback>
+                        </Avatar>
+                        <Button type="button" variant="outline" onClick={() => fileInputRef.current?.click()}>
+                            <Upload className="mr-2 h-4 w-4" />
+                            {photoPreview ? 'Change Photo' : 'Upload Photo'}
+                        </Button>
+                        <Input 
+                            type="file"
+                            ref={fileInputRef}
+                            className="hidden"
+                            accept="image/*"
+                            onChange={handleFileChange}
+                        />
+                    </div>
+                </FormControl>
+                <FormMessage />
+            </FormItem>
+          )}
+        />
 
         <FormField
           control={form.control}
