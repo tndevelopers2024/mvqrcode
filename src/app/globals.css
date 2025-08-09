@@ -8,19 +8,19 @@ body {
 
 @layer base {
   :root {
-    --background: 207 88% 94%;
+    --background: 207 88% 94%; /* Light Blue */
     --foreground: 222 47% 11%;
     --card: 207 88% 94%;
     --card-foreground: 222 47% 11%;
     --popover: 207 88% 94%;
     --popover-foreground: 222 47% 11%;
-    --primary: 231 48% 48%;
+    --primary: 231 48% 48%; /* Deep Blue */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222 47% 11%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 261 44% 55%;
+    --accent: 261 44% 55%; /* Violet */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
