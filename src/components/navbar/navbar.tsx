@@ -25,13 +25,13 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <Link href="/staticPages" className="text-gray-700 hover:text-blue-600">
+          <Link href="/home" className="text-gray-700 hover:text-blue-600">
             Home
           </Link>
-          <Link href="/staticPages/#about" className="text-gray-700 hover:text-blue-600">
+          <Link href="/home/#about" className="text-gray-700 hover:text-blue-600">
             About
           </Link>
-          <Link href="/staticPages/program" className="text-gray-700 hover:text-blue-600">
+          <Link href="/home/program" className="text-gray-700 hover:text-blue-600">
             Program Proposal
           </Link>
           <Link href="/" className="text-gray-700 hover:text-blue-600">
@@ -57,21 +57,21 @@ export default function Navbar() {
         <div className="md:hidden bg-white border-t shadow-md">
           <div className="flex flex-col space-y-4 p-4">
             <Link
-              href="/"
+              href="/home"
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
-              href="#about"
+              href="/home/#about"
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >
               About
             </Link>
             <Link
-              href="/program"
+              href="/home/program"
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >
