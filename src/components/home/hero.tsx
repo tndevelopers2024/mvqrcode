@@ -8,12 +8,12 @@ import Link from "next/link";
 
 const images = [
   {
-    src: "/images/image1.webp",
+    src: "/images/slide1.jpg",
     title: "MVCON 2025",
     subtitle: "Advancing excellence in diabetes and diabetic foot care",
   },
   {
-    src: "/images/image2.webp",
+    src: "/images/slide2.jpg",
     title: "Global Collaboration",
     subtitle: "250–300 healthcare professionals exchanging ideas & innovations",
   },
