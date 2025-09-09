@@ -1,6 +1,17 @@
+
+/* ------------------slick-carousel default styles--------------- */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+html{
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -86,3 +97,5 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
