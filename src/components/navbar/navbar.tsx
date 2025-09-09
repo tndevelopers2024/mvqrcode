@@ -20,7 +20,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary hover:text-primary/80 transition-colors">
           <Logo />
-          <span>MV International Conference</span>
+          <span>MVCon</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -33,6 +33,12 @@ export default function Navbar() {
           </Link>
           <Link href="/staticPages/program" className="text-gray-700 hover:text-blue-600">
             Program Proposal
+          </Link>
+          <Link href="/" className="text-gray-700 hover:text-blue-600">
+            Register
+          </Link>
+          <Link href="/admin" className="text-gray-700 hover:text-blue-600">
+            Admin
           </Link>
         </div>
 
@@ -70,6 +76,20 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               Program Proposal
+            </Link>
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-blue-600"
+              onClick={() => setIsOpen(false)}
+            >
+              Register
+            </Link>
+            <Link
+              href="/admin"
+              className="text-gray-700 hover:text-blue-600"
+              onClick={() => setIsOpen(false)}
+            >
+              Admin
             </Link>
           </div>
         </div>

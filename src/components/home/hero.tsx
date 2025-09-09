@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const images = [
   {
@@ -102,12 +103,14 @@ const itemVariants = {
             <motion.p variants={itemVariants} className="text-lg md:text-2xl mb-6">
               {images[index].subtitle}
             </motion.p>
-            <motion.button
-              variants={itemVariants}
-              className="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition"
-            >
-              Register Now
-            </motion.button>
+            <Link href="/">
+              <motion.a
+                variants={itemVariants}
+                className="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition inline-block"
+              >
+                Register Now
+              </motion.a>
+            </Link>
           </motion.div>
         </motion.div>
       </AnimatePresence>

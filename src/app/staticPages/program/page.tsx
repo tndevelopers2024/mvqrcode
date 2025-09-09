@@ -21,7 +21,7 @@ export default function HomePage() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2 font-medium text-sm md:text-base transition-all duration-300 ${
+              className={`px-6 py-2 font-medium text-sm md:text-2xl transition-all duration-300 ${
                 activeTab === tab
                   ? "text-blue-600 border-b-2 border-blue-600"
                   : "text-gray-500 hover:text-blue-600"
