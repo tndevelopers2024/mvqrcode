@@ -1,8 +1,7 @@
 "use client";
 
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
-
-
+import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-tr from-blue-950 to-blue-700 text-white pt-12 pb-6 px-4 tracking-wide">
@@ -10,28 +9,52 @@ export default function Footer() {
         {/* Links */}
         <ul className="flex gap-x-8 gap-y-3 justify-center flex-wrap">
           <li>
-            <a
-              href="javascript:void(0)"
+            <Link
+              href="/home"
               className="text-[15px] text-slate-300 hover:text-white"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="javascript:void(0)"
+            <Link
+              href="/home/#about"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/home/program"
               className="text-[15px] text-slate-300 hover:text-white"
             >
               Program Proposal
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="javascript:void(0)"
+            <Link
+              href="/home/sponsorship/"
               className="text-[15px] text-slate-300 hover:text-white"
             >
-              Contact
-            </a>
+              Sponsorship Opportunities
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Register
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/admin"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Admin
+            </Link>
           </li>
         </ul>
 

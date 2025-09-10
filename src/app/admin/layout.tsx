@@ -1,4 +1,5 @@
-import { Header } from '@/components/Header';
+// import { Header } from '@/components/Header';
+import Navbar from "@/components/navbar/navbar"
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function AdminLayout({
@@ -9,8 +10,8 @@ export default function AdminLayout({
 
   return (
     <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <Navbar />
+        <main className="flex-grow container mt-20 mx-auto px-4 py-8 sm:px-6 lg:px-8">
             <Card className="w-full shadow-2xl">
                 <CardHeader>
                     <CardTitle className="text-3xl font-bold">Admin Dashboard</CardTitle>

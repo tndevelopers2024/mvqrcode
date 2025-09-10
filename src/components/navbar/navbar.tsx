@@ -34,6 +34,9 @@ export default function Navbar() {
           <Link href="/home/program" className="text-gray-700 hover:text-blue-600">
             Program Proposal
           </Link>
+          <Link href="/home/sponsorship" className="text-gray-700 hover:text-blue-600">
+            Sponsorship Opportunities
+          </Link>
           <Link href="/" className="text-gray-700 hover:text-blue-600">
             Register
           </Link>
@@ -76,6 +79,13 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               Program Proposal
+            </Link>
+            <Link
+              href="/home/sponsorship"
+              className="text-gray-700 hover:text-blue-600"
+              onClick={() => setIsOpen(false)}
+            >
+              Sponsorship Opportunities
             </Link>
             <Link
               href="/"
