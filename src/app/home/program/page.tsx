@@ -5,9 +5,11 @@ import Dayone from "@/components/program/day1";
 import Daytwo from "@/components/program/day2";
 import Daythree from "@/components/program/day3";
 import ProgramHeader from "@/components/program/hero";
+import { Search, X } from "lucide-react";
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("day1");
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <main className="flex flex-col items-center justify-center w-full">
@@ -34,11 +36,40 @@ export default function HomePage() {
           ))}
         </div>
 
+        {/* Search Bar */}
+        <div className="mt-6 ml-auto w-11/12 md:w-5/12">
+          <div className="relative">
+            {/* Search Icon */}
+            <Search
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+              size={18}
+            />
+
+            <input
+              type="text"
+              placeholder="Search topics..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10 pr-10 py-2 border-2 ring-gray-400  rounded-xl shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+
+            {/* Cancel Icon (only shows if searchQuery has text) */}
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              >
+                <X size={18} />
+              </button>
+            )}
+          </div>
+        </div>
+
         {/* Tab Content */}
-        <div className="mt-8">
-          {activeTab === "day1" && <Dayone />}
-          {activeTab === "day2" && <Daytwo />}
-          {activeTab === "day3" && <Daythree />}
+        <div>
+          {activeTab === "day1" && <Dayone searchQuery={searchQuery} />}
+          {activeTab === "day2" && <Daytwo searchQuery={searchQuery} />}
+          {activeTab === "day3" && <Daythree searchQuery={searchQuery} />}
         </div>
       </div>
     </main>
