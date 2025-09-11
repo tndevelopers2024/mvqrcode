@@ -31,10 +31,10 @@ export default function Navbar() {
           <Link href="/home/#about" className="text-gray-700 hover:text-blue-600">
             About
           </Link>
-          <Link href="/home/program" className="text-gray-700 hover:text-blue-600">
+          <Link href="/program" className="text-gray-700 hover:text-blue-600">
             Program Proposal
           </Link>
-          <Link href="/home/sponsorship" className="text-gray-700 hover:text-blue-600">
+          <Link href="/sponsorship" className="text-gray-700 hover:text-blue-600">
             Sponsorship Opportunities
           </Link>
           <Link href="/" className="text-gray-700 hover:text-blue-600">
@@ -74,14 +74,14 @@ export default function Navbar() {
               About
             </Link>
             <Link
-              href="/home/program"
+              href="/program"
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >
               Program Proposal
             </Link>
             <Link
-              href="/home/sponsorship"
+              href="/sponsorship"
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >

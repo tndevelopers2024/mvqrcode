@@ -6,6 +6,8 @@ import Daytwo from "@/components/program/day2";
 import Daythree from "@/components/program/day3";
 import ProgramHeader from "@/components/program/hero";
 import { Search, X } from "lucide-react";
+import Navbar from "@/components/navbar/navbar";
+import Footer from "@/components/footer/footer";
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("day1");
@@ -13,6 +15,7 @@ export default function HomePage() {
 
   return (
     <main className="flex flex-col items-center justify-center w-full">
+      <Navbar/>
       {/* Header */}
       <ProgramHeader />
 
@@ -50,7 +53,7 @@ export default function HomePage() {
               placeholder="Search topics..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-10 py-2 border-2 ring-gray-400  rounded-xl shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full pl-10 pr-10 py-2 border-2 ring-gray-400 rounded-xl shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
 
             {/* Cancel Icon (only shows if searchQuery has text) */}
@@ -72,6 +75,7 @@ export default function HomePage() {
           {activeTab === "day3" && <Daythree searchQuery={searchQuery} />}
         </div>
       </div>
+      <Footer/>
     </main>
   );
 }

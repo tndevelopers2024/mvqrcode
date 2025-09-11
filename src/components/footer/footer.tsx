@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-tr from-blue-950 to-blue-700 text-white pt-12 pb-6 px-4 tracking-wide">
+    <footer className="w-full bg-gradient-to-tr from-blue-950 to-blue-700 text-white pt-12 pb-6 px-4 tracking-wide">
       <div className="text-center">
         {/* Links */}
         <ul className="flex gap-x-8 gap-y-3 justify-center flex-wrap">

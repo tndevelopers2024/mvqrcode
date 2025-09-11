@@ -5,7 +5,8 @@ import { MdOutlineWorkspacePremium, MdOutlinePushPin } from "react-icons/md";
 import { IoDiamondOutline } from "react-icons/io5";
 import { LuMedal } from "react-icons/lu";
 import { GiRibbonMedal } from "react-icons/gi";
-import { SlNote } from "react-icons/sl";
+import Navbar from "@/components/navbar/navbar";
+import Footer from "@/components/footer/footer";
 
 
 const sponsorships = [
@@ -74,6 +75,7 @@ const sponsorships = [
 export default function SponsorshipOpportunities() {
   return (
     <section className="bg-gradient-to-br from-gray-50 to-white">
+      <Navbar/>
       <header className="relative w-full mt-16 text-white bg-[url('/images/sponsor-bg.png')] bg-cover bg-top">
         <div className="absolute inset-0 bg-blue-700/70" />
         <div className="relative py-32 container mx-auto px-6 text-center">
@@ -162,6 +164,7 @@ export default function SponsorshipOpportunities() {
           </ul>
         </motion.div>
       </div>
+      <Footer/>
     </section>
   );
 }
