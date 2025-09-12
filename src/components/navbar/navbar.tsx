@@ -32,7 +32,7 @@ export default function Navbar() {
             About
           </Link>
           <Link href="/program" className="text-gray-700 hover:text-blue-600">
-            Program Proposal
+            Scientific program
           </Link>
           <Link href="/sponsorship" className="text-gray-700 hover:text-blue-600">
             Sponsorship Opportunities
@@ -78,7 +78,7 @@ export default function Navbar() {
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >
-              Program Proposal
+              Scientific program
             </Link>
             <Link
               href="/sponsorship"

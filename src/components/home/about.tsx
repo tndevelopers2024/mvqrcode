@@ -13,9 +13,12 @@ const textVariants = {
 
 export default function About() {
   return (
-    <section id="about" className="relative w-full py-20 bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-12">
-        {/* Left side illustration / shape */}
+    <section
+      id="about"
+      className="relative w-full py-20 bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-20 flex flex-col lg:flex-row-reverse items-center gap-12">
+        {/* Right side illustration (moved to right) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -23,26 +26,24 @@ export default function About() {
           viewport={{ once: true }}
           className="relative w-full lg:w-1/2"
         >
-          <div className="aspect-square rounded-2xl bg-gradient-to-tr from-blue-600 to-blue-400 shadow-2xl flex items-center justify-center text-white text-5xl font-bold">
+          <div
+            className="aspect-square rounded-2xl shadow-2xl flex items-center justify-center text-white text-5xl font-bold"
+            style={{
+              backgroundImage:
+                "linear-gradient(to top right, rgba(30,58,138,0.9), rgba(59,130,246,0.9)), url('/images/about-bg.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundBlendMode: "overlay",
+            }}
+          >
             MVCON 2025
           </div>
           <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-200 rounded-full blur-3xl opacity-40" />
           <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-300 rounded-full blur-3xl opacity-40" />
         </motion.div>
 
-        {/* Right side content */}
+        {/* Left side content (comes first now) */}
         <div className="w-full lg:w-1/2">
-          <motion.h2
-            custom={0}
-            variants={textVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-gray-800 mb-6"
-          >
-            About MVCON
-          </motion.h2>
-
           <motion.p
             custom={1}
             variants={textVariants}
@@ -53,8 +54,11 @@ export default function About() {
           >
             MVCON is MV Hospital’s annual international conference dedicated to
             advancing excellence in diabetes and diabetic foot care. The event
-            will bring together <span className="font-semibold">250–300 healthcare professionals</span>,
-            including diabetologists, surgeons, and paramedics, to exchange
+            will bring together{" "}
+            <span className="font-semibold">
+              250–300 healthcare professionals
+            </span>
+            , including diabetologists, surgeons, and paramedics, to exchange
             ideas, explore innovations, and foster collaborations.
           </motion.p>
 
@@ -66,9 +70,10 @@ export default function About() {
             viewport={{ once: true }}
             className="text-lg text-gray-700 leading-relaxed mb-6"
           >
-            This <span className="font-semibold">3-day scientific program</span> will feature talks,
-            workshops, symposiums, and paper presentations—making MVCON a
-            premier platform for knowledge-sharing and industry engagement.
+            This <span className="font-semibold">3-day scientific program</span>{" "}
+            will feature talks, workshops, symposiums, and paper
+            presentations—making MVCON a premier platform for knowledge-sharing
+            and industry engagement.
           </motion.p>
 
           <motion.button
