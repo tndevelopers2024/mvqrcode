@@ -51,7 +51,7 @@ export default function WelcomeSection() {
             className="relative bg-white shadow-xl rounded-3xl p-10 md:-ml-16 md:w-2/3 border border-gray-100"
           >
             <div className="text-gray-700 space-y-6 leading-relaxed">
-              <p className="text-lg">
+              <p className="text-md">
                 It gives me immense pleasure to welcome you to the inaugural
                 edition of <strong>MVCON</strong>, a new academic tradition from
                 MV Hospital for Diabetes. With over 75 years of legacy in
@@ -64,7 +64,7 @@ export default function WelcomeSection() {
                 international recognition we aim to advance skills, share
                 innovations, and improve outcomes for patients everywhere.
               </p>
-              <p className="text-lg">
+              <p className="text-md">
                 As President of RSSDI, India’s largest diabetes body, and
                 Honorary President of D Foot International, I have dedicated my
                 mission to reducing preventable amputations worldwide. MVCON
