@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster"
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
 
 export const metadata: Metadata = {
-  title: 'MV International Conference',
+  title: 'MVCon 2026',
   description: 'Register for the premier international conference.',
 };
 

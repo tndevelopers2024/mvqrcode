@@ -1,3 +1,6 @@
+"use client";
+
+import { motion,Variants } from "framer-motion";
 import Link from "next/link";
 
 export default function Section2() {
@@ -19,6 +22,27 @@ export default function Section2() {
       desc: "A dedicated Delegate Lounge for interaction with peers and faculty.",
     },
   ];
+
+  const listVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
   return (
     <section className="w-full bg-white py-16" id="about">
@@ -51,7 +75,6 @@ export default function Section2() {
               {/* Floating Button */}
               <div className="absolute bottom-32 left-1/2 -translate-x-1/2 text-center">
                 <div className="relative w-32 h-32 mx-auto">
-                  {/* Rotating SVG */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 200 200"
@@ -64,7 +87,6 @@ export default function Section2() {
                     />
                   </svg>
 
-                  {/* Center Icon */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -103,22 +125,32 @@ export default function Section2() {
               platform for knowledge-sharing and industry engagement.
             </p>
 
-            {/* Highlights */}
+            {/* Highlights with animation */}
             <div className="mt-8">
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                 Conference Highlights
               </h3>
-              <ul className="space-y-3">
+              <motion.ul
+                variants={listVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="space-y-3"
+              >
                 {highlights.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
+                  <motion.li
+                    key={idx}
+                    variants={itemVariants}
+                    className="flex items-start gap-3"
+                  >
                     <span className="mt-1 w-2.5 h-2.5 rounded-full bg-blue-600 flex-shrink-0"></span>
                     <div>
                       <p className="font-medium text-gray-800">{item.title}</p>
                       <p className="text-gray-600 text-sm">{item.desc}</p>
                     </div>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
 
             {/* CTA Button */}

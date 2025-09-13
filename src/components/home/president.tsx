@@ -112,7 +112,7 @@ export default function WelcomeSection() {
                 img: "/images/person4.jpg",
               },
               {
-                name: "Dr. Nagajothi",
+                name: "Ms. Nagajothi",
                 role: "Committee Members",
                 img: "/images/person5.jpg", // new image
               },
