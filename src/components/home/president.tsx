@@ -2,137 +2,152 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function WelcomeSection() {
   return (
     <section className="relative w-full bg-gradient-to-br from-sky-100 via-purple-50 to-pink-100 py-24 overflow-hidden">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-        Committee Organizers
-      </h2>
-      <div className="max-w-7xl mx-auto px-2 lg:px-20 relative">
-        <div className="relative flex flex-col md:flex-row items-center gap-10">
-          {/* Left Side - Gradient Card with Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="relative flex flex-col justify-center items-center md:items-start text-center md:text-left bg-gradient-to-tr from-blue-900 to-sky-400 text-white p-10 rounded-3xl shadow-2xl md:w-1/2"
-          >
-            {/* Decorative Shape */}
-            <div className="absolute -top-8 -right-8 w-28 h-28 bg-white/20 rounded-full blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-sky-300/40 rounded-full blur-2xl" />
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Message + Main Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Message */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+              Message From the President
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              It gives me immense pleasure to welcome you to the inaugural
+              edition of <strong>MVCON</strong>, a new academic tradition from
+              MV Hospital for Diabetes. With over 75 years of legacy in
+              pioneering diabetes care, MV has stood as a leader in both
+              holistic diabetes management and advanced diabetic foot care.
+              MVCON builds on this legacy, creating a platform where
+              diabetologists, surgeons, and paramedics can come together to
+              learn, exchange, and collaborate. With a special focus on diabetic
+              foot – an area where MV has earned national and international
+              recognition – we aim to advance skills, share innovations, and
+              improve outcomes for patients everywhere.
+            </p>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              As President of <strong>RSSDI</strong>, India’s largest diabetes
+              body, and Honorary President of{" "}
+              <strong>D Foot International</strong>, I have dedicated my mission
+              to reducing preventable amputations worldwide. MVCON reflects that
+              vision, and I look forward to welcoming you to Chennai, to an
+              event that promises learning, inspiration, and collaboration for
+              the diabetes community.
+            </p>
+          </div>
 
-            {/* Image */}
-            <div className="relative w-[20rem] h-[26rem] mb-6 rounded-2xl overflow-hidden shadow-xl transform rotate-[-3deg] hover:rotate-0 transition duration-300 ease-out ring-8 ring-white/30">
+          {/* Main Image + Caption */}
+          <div className="flex flex-col items-center">
+            <div className="relative w-full h-80 lg:h-96 rounded-2xl overflow-hidden shadow-md">
               <Image
                 src="/images/president.jpg"
-                alt="President"
+                alt="MVCON Main"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
+                priority
               />
             </div>
-
-            {/* Heading + Name */}
-            <h2 className="text-3xl md:text-4xl font-extrabold leading-snug drop-shadow-md">
-              From the President
-            </h2>
-            <p className="mt-2 text-lg font-medium opacity-90 drop-shadow-sm">
-              Dr. Vijay <br /> organization Chairman, President
-            </p>
-          </motion.div>
-
-          {/* Right Side - Overlapping White Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative bg-white shadow-xl rounded-3xl p-10 md:-ml-16 md:w-2/3 border border-gray-100"
-          >
-            <div className="text-gray-700 space-y-6 leading-relaxed">
-              <p className="text-md">
-                It gives me immense pleasure to welcome you to the inaugural
-                edition of <strong>MVCON</strong>, a new academic tradition from
-                MV Hospital for Diabetes. With over 75 years of legacy in
-                pioneering diabetes care, MV has stood as a leader in both
-                holistic diabetes management and advanced diabetic foot care.
-                MVCON builds on this legacy, creating a platform where
-                diabetologists, surgeons, and paramedics can come together to
-                learn, exchange, and collaborate. With a special focus on
-                diabetic foot an area where MV has earned national and
-                international recognition we aim to advance skills, share
-                innovations, and improve outcomes for patients everywhere.
-              </p>
-              <p className="text-md">
-                As President of RSSDI, India’s largest diabetes body, and
-                Honorary President of D Foot International, I have dedicated my
-                mission to reducing preventable amputations worldwide. MVCON
-                reflects that vision, and I look forward to welcoming you to
-                Chennai, to an event that promises learning, inspiration, and
-                collaboration for the diabetes community.
+            <div className="mt-4 text-center">
+              <h3 className="text-2xl font-semibold text-gray-800">
+                Dr. Vijay
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Organising Chairman, President
               </p>
             </div>
-
-            {/* 🔥 Circular Doctor Portraits */}
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-12 justify-items-center">
-          {/* Doctor 1 */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.1, rotate: 2 }}
-            className="flex flex-col items-center text-center"
-          >
-            <div className="relative w-48 h-48 rounded-full p-[4px] bg-gradient-to-tr from-sky-500 to-pink-500 shadow-xl">
-              <div className="relative w-full h-full rounded-full overflow-hidden">
-                <Image
-                  src="/images/person2.jpg"
-                  alt="Doctor 1"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <h3 className="mt-4 text-xl font-bold text-gray-800">
-              Arun Viswanathan
-            </h3>
-            <p className="text-sm text-gray-600">Organising Committee</p>
-          </motion.div>
-
-          {/* Doctor 2 */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.1, rotate: -2 }}
-            className="flex flex-col items-center text-center"
-          >
-            <div className="relative w-48 h-48 rounded-full p-[4px] bg-gradient-to-tr from-purple-500 to-indigo-500 shadow-xl">
-              <div className="relative w-full h-full rounded-full overflow-hidden">
-                <Image
-                  src="/images/person1.jpg"
-                  alt="Doctor 2"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <h3 className="mt-4 text-xl font-bold text-gray-800">
-              Dr. Prashanth Arun
-            </h3>
-            <p className="text-sm text-gray-600">Organising Committee</p>
-          </motion.div>
+          </div>
         </div>
-          </motion.div>
+
+        {/* Speaker Grid */}
+        <div className="space-y-12">
+          <div className="flex justify-center flex-wrap gap-8">
+            {[
+              {
+                name: "Dr. Vishnu",
+                role: "Committee Management",
+                img: "/images/person2.jpg",
+              },
+              {
+                name: "Dr. Prashanth Arun",
+                role: "Committee Management",
+                img: "/images/person1.jpg",
+              },
+            ].map((speaker, index) => (
+              <div
+                key={index}
+                className="w-80 relative group bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-4"
+                data-aos="zoom-in"
+                data-aos-duration={900 + index * 100}
+              >
+                <div className="relative overflow-hidden rounded-xl">
+                  <img
+                    src={speaker.img}
+                    alt={speaker.name}
+                    className="w-full h-72 object-cover object-top rounded-xl transform group-hover:scale-105 transition duration-300"
+                  />
+                </div>
+                <div className="mt-6 text-center">
+                  <Link
+                    href="/speakers"
+                    className="text-lg font-semibold text-gray-900 hover:text-blue-600 transition"
+                  >
+                    {speaker.name}
+                  </Link>
+                  <p className="text-gray-500 text-sm mt-2">{speaker.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2 – remaining 3 images */}
+          <div className="flex flex-wrap justify-center gap-8">
+            {[
+              {
+                name: "Dr.Sivasankari",
+                role: "Committee Members",
+                img: "/images/person3.jpg",
+              },
+              {
+                name: "Dr.Satyavani",
+                role: "Committee Members",
+                img: "/images/person4.jpg",
+              },
+              {
+                name: "Dr. Nagajothi",
+                role: "Committee Members",
+                img: "/images/person5.jpg", // new image
+              },
+            ].map((speaker, index) => (
+              <div
+                key={index}
+                className="w-80 relative group bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-4"
+                data-aos="zoom-in"
+                data-aos-duration={1100 + index * 100}
+              >
+                <div className="relative overflow-hidden rounded-xl">
+                  <img
+                    src={speaker.img}
+                    alt={speaker.name}
+                    className="w-full h-72 object-cover object-top rounded-xl transform group-hover:scale-105 transition duration-300"
+                  />
+                </div>
+                <div className="mt-6 text-center">
+                  <Link
+                    href="/speakers"
+                    className="text-lg font-semibold text-gray-900 hover:text-blue-600 transition"
+                  >
+                    {speaker.name}
+                  </Link>
+                  <p className="text-gray-500 text-sm mt-2">{speaker.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-
-      {/* Abstract Background Elements */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-sky-300/30 rounded-full blur-3xl -z-10 -translate-x-32 -translate-y-32" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-pink-300/20 rounded-full blur-3xl -z-10 translate-x-32 translate-y-32" />
     </section>
   );
 }

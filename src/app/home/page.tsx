@@ -3,8 +3,8 @@ import About from "@/components/home/about"
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 import WelcomeSection from "@/components/home/president";
-import CountdownBar from "@/components/home/coundown";
 import Gallery from "@/components/home/gallery";
+import ConferenceVenue from "@/components/home/venue"
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center">
@@ -12,8 +12,8 @@ export default function HomePage() {
       <HeroCarousel />
       <About/>
       <WelcomeSection/>
+      <ConferenceVenue/>
       <Gallery/>
-      <CountdownBar/>
       <Footer/>
     </main>
   );

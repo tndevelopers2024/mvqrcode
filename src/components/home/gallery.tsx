@@ -23,9 +23,9 @@ export default function CenterCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative w-full mx-auto py-32 h-full">
+    <div className="relative w-full mx-auto py-16 h-full">
       <h2 className="text-3xl md:text-4xl font-bold text-center">
-        Places of Attraction in Chennai 
+        Places of Attraction in Chennai
       </h2>
       <Swiper
         slidesPerView={4}
@@ -46,6 +46,12 @@ export default function CenterCarousel() {
         }}
         watchSlidesProgress={true}
         slideToClickedSlide={true}
+        breakpoints={{
+          0: { slidesPerView: 1.2, spaceBetween: 12 }, // phones
+          640: { slidesPerView: 2, spaceBetween: 16 }, // tablets
+          1024: { slidesPerView: 3, spaceBetween: 20 }, // small desktops
+          1280: { slidesPerView: 4, spaceBetween: 24 }, // large screens
+        }}
         className="mySwiper"
       >
         {slides.map((slide, idx) => {
@@ -67,7 +73,7 @@ export default function CenterCarousel() {
                   width={400}
                   height={400}
                   priority={idx === activeIndex}
-                  className="object-cover w-full h-[400px]"
+                  className="object-cover w-full h-[300px] sm:h-[350px] lg:h-[400px]"
                 />
                 <div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-black/60 text-white text-sm rounded whitespace-nowrap">
                   {slide.title}

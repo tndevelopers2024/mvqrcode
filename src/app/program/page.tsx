@@ -25,21 +25,72 @@ export default function HomePage() {
       <ProgramHeader />
 
       {/* Tabs */}
-      <div className="mt-10 mx-auto w-11/12 md:w-12/12">
-        <div className="flex justify-center border-b border-gray-300">
-          {["day1", "day2", "day3"].map((tab) => (
+      <div className="mt-10 mx-auto w-11/12 md:w-12/12 font-grotesk">
+        {/* Tabs */}
+        <div className="flex justify-center gap-4 flex-wrap my-10">
+          {[
+            {
+              id: "day1",
+              day: "Day 01",
+              date: "20",
+              month: "MAR",
+              year: "2025",
+            },
+            {
+              id: "day2",
+              day: "Day 02",
+              date: "21",
+              month: "MAR",
+              year: "2025",
+            },
+            {
+              id: "day3",
+              day: "Day 03",
+              date: "22",
+              month: "MAR",
+              year: "2025",
+            },
+          ].map((tab) => (
             <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2 font-medium text-sm md:text-2xl transition-all duration-300 ${
-                activeTab === tab
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-500 hover:text-blue-600"
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={` flex flex-col items-center justify-center rounded-lg shadow-md border transition-all duration-300 ${
+                activeTab === tab.id
+                  ? "bg-blue-600 text-black border-blue-950"
+                  : "bg-white text-gray-700 border-gray-200"
               }`}
             >
-              {tab === "day1" && "Day 1"}
-              {tab === "day2" && "Day 2"}
-              {tab === "day3" && "Day 3"}
+              {/* Top label (Day xx) */}
+              <span className="text-sm font-semibold mb-2 bg-black text-white w-full px-2 py-0.5 rounded">
+                {tab.day}
+              </span>
+
+              {/* Date */}
+              <div className="flex gap-6 px-6 py-4">
+                <span
+                  className={`text-3xl font-bold ${
+                    activeTab === tab.id ? "text-white" : "text-gray-800"
+                  }`}
+                >
+                  {tab.date}
+                </span>
+                <div className="flex flex-col">
+                  <span
+                    className={`text-sm font-semibold ${
+                      activeTab === tab.id ? "text-white" : "text-gray-800"
+                    }`}
+                  >
+                    {tab.month}
+                  </span>
+                  <span
+                    className={`text-sm ${
+                      activeTab === tab.id ? "text-white" : "text-gray-600"
+                    }`}
+                  >
+                    {tab.year}
+                  </span>
+                </div>
+              </div>
             </button>
           ))}
         </div>
@@ -105,7 +156,7 @@ export default function HomePage() {
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
-              Prof. M. Viswanathan Hall 
+              Prof. M. Viswanathan Hall
             </button>
             <button
               onClick={() => setDay3Hall("hallB")}
