@@ -5,11 +5,6 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { MountainIcon } from 'lucide-react';
 
-const Logo = () => (
-    <div className="flex items-center justify-center">
-      <MountainIcon className="h-8 w-8 text-primary" />
-    </div>
-);
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +14,8 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-20 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary hover:text-primary/80 transition-colors">
-          <Logo />
-          <span>MVCon</span>
+
+          <img src={"/images/mv-logo.png"} alt="" className="w-[180px]" />
         </Link>
 
         {/* Desktop Menu */}
