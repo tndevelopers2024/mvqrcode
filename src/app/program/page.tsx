@@ -19,74 +19,70 @@ export default function HomePage() {
   const [day3Hall, setDay3Hall] = useState<"hallA" | "hallB">("hallA");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const hallTabs = [
+    { id: "hallA", name: "Prof. M. Viswanathan Hall" },
+    { id: "hallB", name: "Dr. M. Madhavi Amma Hall" },
+  ];
+
+  const renderHallTabs = (dayHall: "hallA" | "hallB", setDayHall: any) => (
+    <div className="flex justify-center gap-4 flex-wrap my-10">
+      {hallTabs.map((hall) => (
+        <button
+          key={hall.id}
+          onClick={() => setDayHall(hall.id)}
+          className={`flex flex-col items-center justify-center rounded-lg shadow-md border transition-all duration-300
+            ${dayHall === hall.id
+              ? "bg-yellow-300 text-black border-blue-950" // Active tab
+              : "bg-white text-gray-700 border-gray-200 hover:bg-gray-100"} // Inactive tab
+          `}
+        >
+          <span className="text-sm font-semibold mb-2 bg-black text-white w-full px-2 py-0.5 rounded">
+            {hall.id.toUpperCase()}
+          </span>
+          <div className="px-6 py-4 text-center">
+            <span className="text-sm md:text-lg font-medium">{hall.name}</span>
+          </div>
+        </button>
+      ))}
+    </div>
+  );
+
   return (
     <main className="flex flex-col items-center justify-center w-full">
       <Navbar />
       <ProgramHeader />
 
-      {/* Tabs */}
+      {/* Day Tabs */}
       <div className="mt-10 mx-auto w-11/12 md:w-12/12 font-grotesk">
-        {/* Tabs */}
         <div className="flex justify-center gap-4 flex-wrap my-10">
           {[
-            {
-              id: "day1",
-              day: "Day 01",
-              date: "20",
-              month: "MAR",
-              year: "2025",
-            },
-            {
-              id: "day2",
-              day: "Day 02",
-              date: "21",
-              month: "MAR",
-              year: "2025",
-            },
-            {
-              id: "day3",
-              day: "Day 03",
-              date: "22",
-              month: "MAR",
-              year: "2025",
-            },
+            { id: "day1", day: "Day 01", date: "20", month: "MAR", year: "2025" },
+            { id: "day2", day: "Day 02", date: "21", month: "MAR", year: "2025" },
+            { id: "day3", day: "Day 03", date: "22", month: "MAR", year: "2025" },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={` flex flex-col items-center justify-center rounded-lg shadow-md border transition-all duration-300 ${
+              className={`flex flex-col items-center justify-center rounded-lg shadow-md border transition-all duration-300 ${
                 activeTab === tab.id
-                  ? "bg-blue-600 text-black border-blue-950"
+                  ? "bg-yellow-300 text-black border-blue-950"
                   : "bg-white text-gray-700 border-gray-200"
               }`}
             >
-              {/* Top label (Day xx) */}
               <span className="text-sm font-semibold mb-2 bg-black text-white w-full px-2 py-0.5 rounded">
                 {tab.day}
               </span>
-
-              {/* Date */}
               <div className="flex gap-6 px-6 py-4">
                 <span
-                  className={`text-3xl font-bold ${
-                    activeTab === tab.id ? "text-white" : "text-gray-800"
-                  }`}
+                  className={`text-3xl font-bold ${activeTab === tab.id ? "text-black" : "text-gray-800"}`}
                 >
                   {tab.date}
                 </span>
                 <div className="flex flex-col">
-                  <span
-                    className={`text-sm font-semibold ${
-                      activeTab === tab.id ? "text-white" : "text-gray-800"
-                    }`}
-                  >
+                  <span className={`text-sm font-semibold ${activeTab === tab.id ? "text-black" : "text-gray-800"}`}>
                     {tab.month}
                   </span>
-                  <span
-                    className={`text-sm ${
-                      activeTab === tab.id ? "text-white" : "text-gray-600"
-                    }`}
-                  >
+                  <span className={`text-sm ${activeTab === tab.id ? "text-black" : "text-gray-600"}`}>
                     {tab.year}
                   </span>
                 </div>
@@ -95,89 +91,15 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Hall toggles */}
-        {activeTab === "day1" && (
-          <div className="flex justify-center gap-6 mt-4">
-            <button
-              onClick={() => setDay1Hall("hallA")}
-              className={`px-4 py-2 rounded-lg font-medium text-sm md:text-lg transition-all ${
-                day1Hall === "hallA"
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              Prof. M. Viswanathan Hall
-            </button>
-            <button
-              onClick={() => setDay1Hall("hallB")}
-              className={`px-4 py-2 rounded-lg font-medium text-sm md:text-lg transition-all ${
-                day1Hall === "hallB"
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              Dr. M. Madhavi Amma Hall
-            </button>
-          </div>
-        )}
-
-        {activeTab === "day2" && (
-          <div className="flex justify-center gap-6 mt-4">
-            <button
-              onClick={() => setDay2Hall("hallA")}
-              className={`px-4 py-2 rounded-lg font-medium text-sm md:text-lg transition-all ${
-                day2Hall === "hallA"
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              Prof. M. Viswanathan Hall
-            </button>
-            <button
-              onClick={() => setDay2Hall("hallB")}
-              className={`px-4 py-2 rounded-lg font-medium text-sm md:text-lg transition-all ${
-                day2Hall === "hallB"
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              Dr. M. Madhavi Amma Hall
-            </button>
-          </div>
-        )}
-
-        {activeTab === "day3" && (
-          <div className="flex justify-center gap-6 mt-4">
-            <button
-              onClick={() => setDay3Hall("hallA")}
-              className={`px-4 py-2 rounded-lg font-medium text-sm md:text-lg transition-all ${
-                day3Hall === "hallA"
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              Prof. M. Viswanathan Hall
-            </button>
-            <button
-              onClick={() => setDay3Hall("hallB")}
-              className={`px-4 py-2 rounded-lg font-medium text-sm md:text-lg transition-all ${
-                day3Hall === "hallB"
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              Dr. M. Madhavi Amma Hall
-            </button>
-          </div>
-        )}
+        {/* Hall Tabs */}
+        {activeTab === "day1" && renderHallTabs(day1Hall, setDay1Hall)}
+        {activeTab === "day2" && renderHallTabs(day2Hall, setDay2Hall)}
+        {activeTab === "day3" && renderHallTabs(day3Hall, setDay3Hall)}
 
         {/* Search Bar */}
         <div className="mt-6 mx-auto w-11/12 md:w-5/12">
           <div className="relative">
-            <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-              size={18}
-            />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
             <input
               type="text"
               placeholder="Search topics..."
@@ -199,23 +121,11 @@ export default function HomePage() {
         {/* Tab Content */}
         <div>
           {activeTab === "day1" &&
-            (day1Hall === "hallA" ? (
-              <DayoneHallA searchQuery={searchQuery} />
-            ) : (
-              <DayoneHallB searchQuery={searchQuery} />
-            ))}
+            (day1Hall === "hallA" ? <DayoneHallA searchQuery={searchQuery} /> : <DayoneHallB searchQuery={searchQuery} />)}
           {activeTab === "day2" &&
-            (day2Hall === "hallA" ? (
-              <DaytwoHallA searchQuery={searchQuery} />
-            ) : (
-              <DaytwoHallB searchQuery={searchQuery} />
-            ))}
+            (day2Hall === "hallA" ? <DaytwoHallA searchQuery={searchQuery} /> : <DaytwoHallB searchQuery={searchQuery} />)}
           {activeTab === "day3" &&
-            (day3Hall === "hallA" ? (
-              <DaythreeHallA searchQuery={searchQuery} />
-            ) : (
-              <DaythreeHallB searchQuery={searchQuery} />
-            ))}
+            (day3Hall === "hallA" ? <DaythreeHallA searchQuery={searchQuery} /> : <DaythreeHallB searchQuery={searchQuery} />)}
         </div>
       </div>
       <Footer />

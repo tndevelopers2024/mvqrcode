@@ -196,11 +196,11 @@ export default function DayoneHallA({ searchQuery }: { searchQuery: string }) {
                 className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col md:flex-row"
               >
                 {/* Thumbnail */}
-                <div className="md:w-1/3 h-40 md:h-auto bg-gray-200 flex items-center justify-center">
+                <div className="w-[100%] max-md:h-64 md:w-[200px] md:h-auto bg-gray-200 flex items-center justify-center">
                   <img
                     src="/images/about-bg.jpg"
                     alt="Session"
-                    className="w-full h-full object-cover"
+                    className="w-[100%] h-full object-cover"
                   />
                 </div>
 
@@ -233,11 +233,6 @@ export default function DayoneHallA({ searchQuery }: { searchQuery: string }) {
                       </p>
                     )}
                   </div>
-
-                  {/* Action Button */}
-                  <Link href="/" className="mt-4 bg-blue-800 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg w-max transition">
-                    REGISTER / VIEW DETAILS
-                  </Link>
                 </div>
               </motion.div>
             ))

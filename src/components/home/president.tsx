@@ -39,9 +39,9 @@ export default function WelcomeSection() {
             </p>
           </div>
 
-          {/* Main Image + Caption */}
-          <div className="flex flex-col items-center">
-            <div className="relative w-full h-80 lg:h-96 rounded-2xl overflow-hidden shadow-md">
+
+          <div className="flex flex-col h-full">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-md">
               <Image
                 src="/images/president.jpg"
                 alt="MVCON Main"
@@ -49,14 +49,10 @@ export default function WelcomeSection() {
                 className="object-cover object-center"
                 priority
               />
-            </div>
-            <div className="mt-4 text-center">
-              <h3 className="text-2xl font-semibold text-gray-800">
-                Dr. Vijay
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Organising Chairman, President
-              </p>
+              <div className="absolute bottom-4 left-4 bg-gradient-to-r from-black/90 via-black/60 to-transparent px-4 py-2 rounded-lg text-white">
+                <h3 className="text-2xl font-semibold">Dr. Vijay</h3>
+                <p className="text-sm">Organising Chairman, President</p>
+              </div>
             </div>
           </div>
         </div>
@@ -67,12 +63,12 @@ export default function WelcomeSection() {
             {[
               {
                 name: "Dr. Vishnu",
-                role: "Committee Management",
+                role: "Organising Committee",
                 img: "/images/person2.jpg",
               },
               {
                 name: "Dr. Prashanth Arun",
-                role: "Committee Management",
+                role: "Organising Committee",
                 img: "/images/person1.jpg",
               },
             ].map((speaker, index) => (

@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Clock } from "lucide-react";
+import { CiLocationOn } from "react-icons/ci";
 
 const schedule = [
   { time: "09:30 – 10:00 AM", topic: "TBD (20 min talk + 10 min discussion)", faculty: "Dr. Muralidharan" },
@@ -13,21 +14,21 @@ const schedule = [
   { time: "01:15 PM onwards", topic: "Valedictory function followed by lunch", faculty: "" },
 ];
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i: number) => ({
+const letterVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (custom: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.05, duration: 0.4 },
+    transition: { delay: custom * 0.05, duration: 0.4, ease: "easeOut" },
   }),
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: (i: number) => ({
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (custom: number) => ({
     opacity: 1,
-    x: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
+    y: 0,
+    transition: { delay: custom * 0.05, duration: 0.3, ease: "easeOut" },
   }),
 };
 
@@ -36,9 +37,7 @@ function highlightText(text: string, query: string) {
   const regex = new RegExp(`(${query})`, "gi");
   return text.split(regex).map((part, i) =>
     regex.test(part) ? (
-      <span key={i} className="bg-yellow-200 text-black px-1 rounded">
-        {part}
-      </span>
+      <span key={i} className="bg-yellow-200 text-black px-1 rounded">{part}</span>
     ) : (
       part
     )
@@ -58,51 +57,38 @@ export default function DaythreeHallB({ searchQuery }: { searchQuery: string }) 
         );
 
   return (
-    <section className="bg-gray-50 py-10 w-full">
-      <div className="container mx-auto py-14 px-6 lg:px-20 bg-gradient-to-tr from-blue-900 to-blue-700 rounded-2xl">
+    <section className="py-10 bg-gray-50 w-full">
+      <div className="max-w-7xl mx-auto px-6 lg:px-20">
+        {/* Heading */}
         <div className="text-center mb-12">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-white mb-2 flex justify-center flex-wrap gap-x-2"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 flex justify-center flex-wrap gap-x-2 text-gray-800">
             {heading.split(" ").map((word, wi) => (
-  <span key={wi} className="inline-block whitespace-nowrap mr-2">
-    {word.split("").map((char, ci) => (
-      <motion.span
-        key={ci}
-        custom={wi * 5 + ci}
-        variants={letterVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="inline-block"
-      >
-        {char}
-      </motion.span>
-    ))}
-  </span>
-))}
-
-          </motion.h2>
-          <p className="text-gray-200">A multidisciplinary update on diabetes & diabetic foot care</p>
+              <span key={wi} className="inline-block whitespace-nowrap mr-2">
+                {word.split("").map((char, ci) => (
+                  <motion.span
+                    key={ci}
+                    custom={wi * 5 + ci}
+                    variants={letterVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="inline-block"
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </span>
+            ))}
+          </h2>
+          <p className="text-gray-600">A multidisciplinary update on diabetes & diabetic foot care</p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative pl-8">
-          <motion.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="absolute left-0 top-0 w-[1px] h-full origin-top border-l border-dotted border-white"
-          />
-
+        {/* Cards */}
+        <div className="flex flex-col gap-8">
           {filteredSchedule.length === 0 ? (
             <div className="text-center py-10">
-              <p className="text-white text-lg font-semibold">No sessions match your search.</p>
-              <p className="text-gray-300 text-sm mt-2">Try searching with a different keyword.</p>
+              <p className="text-gray-800 text-lg font-semibold">No sessions match your search.</p>
+              <p className="text-gray-500 text-sm mt-2">Try searching with a different keyword.</p>
             </div>
           ) : (
             filteredSchedule.map((item, i) => (
@@ -113,17 +99,32 @@ export default function DaythreeHallB({ searchQuery }: { searchQuery: string }) 
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="mb-10 relative"
+                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col md:flex-row"
               >
-                <span className="absolute -left-[43px] flex items-center justify-center w-6 h-6 rounded-full bg-white text-primary text-xs">
-                  <Clock size={14} />
-                </span>
+                {/* Thumbnail */}
+                <div className="w-[100%] max-md:h-64 md:w-[200px] md:h-auto bg-gray-200 flex items-center justify-center">
+                  <img src="/images/about-bg.jpg" alt="Session" className="w-[100%] h-full object-cover" />
+                </div>
 
-                <div className="text-sm font-semibold text-primary bg-white inline-block px-4 rounded-3xl mb-1">{item.time}</div>
-
-                <h3 className="text-lg font-semibold text-white">{highlightText(item.topic, searchQuery)}</h3>
-
-                {item.faculty && <p className="text-white text-sm mt-1">Faculty: {highlightText(item.faculty, searchQuery)}</p>}
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-6 text-gray-500 text-sm mb-2 flex-wrap">
+                      <span className="flex items-center gap-2">
+                        <Clock size={16} className="text-indigo-500" />
+                        {item.time}
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <CiLocationOn size={16} className="text-indigo-500" />
+                        Dr. M. Madhavi Amma Hall
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                      {highlightText(item.topic, searchQuery)}
+                    </h3>
+                    {item.faculty && <p className="text-gray-600 text-sm">{highlightText(item.faculty, searchQuery)}</p>}
+                  </div>
+                </div>
               </motion.div>
             ))
           )}

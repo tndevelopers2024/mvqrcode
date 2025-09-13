@@ -26,20 +26,29 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              href="/home/program"
+              href="/program"
               className="text-[15px] text-slate-300 hover:text-white"
             >
-              Program Proposal
+              Scientific Proposal
             </Link>
           </li>
           <li>
             <Link
-              href="/home/sponsorship/"
+              href="/program"
               className="text-[15px] text-slate-300 hover:text-white"
             >
-              Sponsorship Opportunities
+              Faculties
             </Link>
           </li>
+          <li>
+            <Link
+              href="/submit-abstract"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Abstract Submission
+            </Link>
+          </li>
+          
           <li>
             <Link
               href="/"

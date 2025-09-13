@@ -34,8 +34,11 @@ export default function Navbar() {
           <Link href="/program" className="text-gray-700 hover:text-blue-600">
             Scientific program
           </Link>
-          <Link href="/sponsorship" className="text-gray-700 hover:text-blue-600">
-            Sponsorship Opportunities
+          <Link href="/#" className="text-gray-700 hover:text-blue-600">
+            Faculties
+          </Link>
+          <Link href="/submit-abstract" className="text-gray-700 hover:text-blue-600">
+            Abstract Submission
           </Link>
           <Link href="/" className="text-gray-700 hover:text-blue-600">
             Register
@@ -81,11 +84,18 @@ export default function Navbar() {
               Scientific program
             </Link>
             <Link
-              href="/sponsorship"
+              href="/faculties"
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >
-              Sponsorship Opportunities
+              Faculties
+            </Link>
+            <Link
+              href="/submit-abstract"
+              className="text-gray-700 hover:text-blue-600"
+              onClick={() => setIsOpen(false)}
+            >
+              Abstract Submission
             </Link>
             <Link
               href="/"

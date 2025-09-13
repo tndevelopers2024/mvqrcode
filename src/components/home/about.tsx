@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Section2() {
   return (
-    <section className="w-full bg-white py-16">
+    <section className="w-full bg-white py-16" id="about">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Side - Images */}
@@ -65,9 +65,11 @@ export default function Section2() {
 
           {/* Right Side - Text Content (2/3 width) */}
           <div className="lg:basis-2/3 space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold leading-tight text-gray-900">
-              About Our MVCon
+            <h2 className="text-3xl lg:text-4xl font-bold leading-tight text-gray-900 relative inline-block">
+              About MVCon
+              <span className="absolute left-0 -bottom-2 w-36 h-1 bg-yellow-400"></span>
             </h2>
+
             <p className="text-gray-600 text-md">
               MVCON is MV Hospital’s annual international conference dedicated
               to advancing excellence in diabetes and diabetic foot care. The
