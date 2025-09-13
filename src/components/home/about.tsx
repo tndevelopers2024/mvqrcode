@@ -1,48 +1,57 @@
 "use client";
 
-import { motion,Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import { MdOutlineEventNote } from "react-icons/md";
+import { GiMicroscope } from "react-icons/gi";
+import { FaHandsHelping } from "react-icons/fa";
+import { HiUsers } from "react-icons/hi";
 
-export default function Section2() {
+export default function About() {
   const highlights = [
     {
       title: "Wide range of sessions",
       desc: "Talks on diabetes and management of its complications such as kidney, eye, heart and dedicated sessions on diabetic foot.",
+      icon: <MdOutlineEventNote className="text-blue-600 text-2xl flex-shrink-0" />,
     },
     {
       title: "Live workshops",
       desc: "Hands-on debridement practice and demonstrations of advanced techniques such as Negative Pressure Wound Therapy.",
+      icon: <FaHandsHelping className="text-blue-600 text-2xl flex-shrink-0" />,
     },
     {
       title: "Scientific exchanges",
       desc: "Symposiums, Panel discussions, Original research presentations (oral and poster), Quiz competition, and Debates.",
+      icon: <GiMicroscope className="text-blue-600 text-2xl flex-shrink-0" />,
     },
     {
       title: "Networking opportunity",
       desc: "A dedicated Delegate Lounge for interaction with peers and faculty.",
+      icon: <HiUsers className="text-blue-600 text-2xl flex-shrink-0" />,
     },
   ];
 
-  const listVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.25,
-    },
-  },
-};
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, x: 50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
+  const listVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.25,
+      },
     },
-  },
-};
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
     <section className="w-full bg-white py-16" id="about">
@@ -61,7 +70,7 @@ const itemVariants: Variants = {
 
               <div className="grid grid-cols-2 gap-6">
                 <img
-                  src="/images/about-bg2.jpg"
+                  src="/images/about-bg4.jpg"
                   alt="About Image 2"
                   className="rounded-2xl shadow-md animate-fadeIn"
                 />
@@ -112,17 +121,12 @@ const itemVariants: Variants = {
             </h2>
 
             <p className="text-gray-600 text-md">
-              MVCON is MV Hospital’s annual international conference dedicated
-              to advancing excellence in diabetes and diabetic foot care. The
-              event will bring together 250–300 healthcare professionals,
-              including diabetologists, surgeons, and paramedics, to exchange
-              ideas, explore innovations, and foster collaborations.
-            </p>
-
-            <p className="text-gray-600 text-md">
-              This 3-day scientific program will feature talks, workshops,
-              symposiums, and paper presentations—making MVCON a premier
-              platform for knowledge-sharing and industry engagement.
+              MVCON 2026 marks the first edition of MV's annual academic update
+              bringing together leading diabetologists, surgeons, and
+              paramedical experts. Hosted by India's pioneers in diabetes and
+              leaders in diabetic foot care, MVCON provides a comprehensive
+              platform to discuss, debate, and learn across the spectrum of
+              diabetes and its complications.
             </p>
 
             {/* Highlights with animation */}
@@ -140,10 +144,11 @@ const itemVariants: Variants = {
                 {highlights.map((item, idx) => (
                   <motion.li
                     key={idx}
+                    custom={idx}
                     variants={itemVariants}
-                    className="flex items-start gap-3"
+                    className="flex items-start gap-3 bg-yellow-50 min-h-20 rounded p-3"
                   >
-                    <span className="mt-1 w-2.5 h-2.5 rounded-full bg-blue-600 flex-shrink-0"></span>
+                    {item.icon}
                     <div>
                       <p className="font-medium text-gray-800">{item.title}</p>
                       <p className="text-gray-600 text-sm">{item.desc}</p>
@@ -152,6 +157,7 @@ const itemVariants: Variants = {
                 ))}
               </motion.ul>
             </div>
+
 
             {/* CTA Button */}
             <div className="pt-4">
