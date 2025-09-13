@@ -32,7 +32,7 @@ const sections = [
           clinical treatment outcomes, innovative techniques, and therapies.
           Case reports are also accepted.
         </li>
-        <b className="mt-3">The abstract must be structured:</b>
+        <p className="pt-4 font-bold">The abstract must be structured:</p>
         <ul className="list-disc ml-6 mt-2 space-y-1">
           <li>
             Maximum length: <strong>400 words</strong> (excluding title and

@@ -20,8 +20,8 @@ export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const hallTabs = [
-    { id: "hallA", name: "Prof. M. Viswanathan Hall" },
-    { id: "hallB", name: "Dr. M. Madhavi Amma Hall" },
+    { id: "hallA", name: "Prof. M. Viswanathan Hall", hall: "hall A" },
+    { id: "hallB", name: "Dr. M. Madhavi Amma Hall", hall: "hall B" },
   ];
 
   const renderHallTabs = (dayHall: "hallA" | "hallB", setDayHall: any) => (
@@ -37,7 +37,7 @@ export default function HomePage() {
           `}
         >
           <span className="text-sm font-semibold mb-2 bg-black text-white w-full px-2 py-0.5 rounded">
-            {hall.id.toUpperCase()}
+            {hall.hall.toUpperCase()}
           </span>
           <div className="px-6 py-4 text-center">
             <span className="text-sm md:text-lg font-medium">{hall.name}</span>
@@ -56,9 +56,9 @@ export default function HomePage() {
       <div className="mt-10 mx-auto w-11/12 md:w-12/12 font-grotesk">
         <div className="flex justify-center gap-4 flex-wrap my-10">
           {[
-            { id: "day1", day: "Day 01", date: "20", month: "MAR", year: "2025" },
-            { id: "day2", day: "Day 02", date: "21", month: "MAR", year: "2025" },
-            { id: "day3", day: "Day 03", date: "22", month: "MAR", year: "2025" },
+            { id: "day1", day: "Day 01", date: "20", month: "MAR", year: "2026" },
+            { id: "day2", day: "Day 02", date: "21", month: "MAR", year: "2026" },
+            { id: "day3", day: "Day 03", date: "22", month: "MAR", year: "2026" },
           ].map((tab) => (
             <button
               key={tab.id}
