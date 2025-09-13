@@ -32,12 +32,12 @@ function CountdownCircles() {
   ];
 
   return (
-    <div className="absolute bottom-20 mt-8 flex flex-wrap justify-center gap-5">
+    <div className="absolute bottom-16 mt-8 flex flex-wrap justify-center items-center gap-5">
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <svg
           viewBox="0 0 1200 200"
           preserveAspectRatio="none"
-          className="w-[120%] h-48 opacity-1"
+          className="w-[0%] h-48 opacity-1"
         >
           <path
             d="
@@ -104,6 +104,9 @@ function CountdownCircles() {
           <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-lime-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
         </div>
       ))}
+      <Link href="/" className="px-6 py-3 bg-gradient-to-b from-yellow-300 to-yellow-400 rounded text-black font-bold hover:bg-yellow-200 transition inline-block">
+          Register Now
+      </Link>
     </div>
   );
 }
@@ -119,19 +122,13 @@ import Link from "next/link";
 
 const images = [
   {
-    src: "/images/slider-img4.jpg",
-    title: "MVCON 2025",
-    subtitle: "Advancing excellence in diabetes and diabetic foot care",
+    src: "/images/MV-banner-1.jpg",
   },
   {
-    src: "/images/slider-img1.jpg",
-    title: "Global Collaboration",
-    subtitle: "250–300 healthcare professionals exchanging ideas & innovations",
+    src: "/images/MV-banner-3.jpg",
   },
   {
-    src: "/images/slider-img3.jpg",
-    title: "Scientific Program",
-    subtitle: "Talks, workshops, symposiums & paper presentations",
+    src: "/images/MV-banner-2.jpg",
   },
 ];
 
@@ -182,7 +179,7 @@ const itemVariants = {
 
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black/40">
+    <section className="relative w-full h-screen overflow-hidden ">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
@@ -194,7 +191,7 @@ const itemVariants = {
         >
           <Image
             src={images[index].src}
-            alt={images[index].title}
+            alt={images[index].src}
             fill
             priority
             className="object-cover"
@@ -202,28 +199,15 @@ const itemVariants = {
 
           {/* Overlay */}
           <motion.div
-            className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white px-4"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4"
             variants={overlayVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
-          >
-            <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl font-bold mb-4">
-              {images[index].title}
-            </motion.h1>
-            <motion.p variants={itemVariants} className="text-lg md:text-2xl mb-6">
-              {images[index].subtitle}
-            </motion.p>
+          >         
             
-            <Link href="/">
-              <motion.a
-                variants={itemVariants}
-                className="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition inline-block"
-              >
-                Register Now
-              </motion.a>
-            </Link>
             <CountdownCircles />
+            
           </motion.div>
            
         </motion.div>
