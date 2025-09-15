@@ -155,3 +155,28 @@ body {
 .space-grotesk {
   font-family: 'Space Grotesk', sans-serif !important;
 }
+
+.shine-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 0%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.shine-card:hover::after {
+  height: 250%;
+  background: transparent;
+  transition: all 600ms linear;
+}
+
