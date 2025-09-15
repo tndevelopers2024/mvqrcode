@@ -58,7 +58,7 @@ export async function registerUser(formData: FormData) {
 
     const docRef = await addDoc(collection(db, "registrations"), newRegistration);
 
-    revalidatePath('/admin');
+    revalidatePath('/mvcon-admin');
     
     return { success: true, registration: { ...newRegistration, id: docRef.id } };
   } catch (error) {
@@ -79,7 +79,7 @@ async function logValidationAttempt(qrData: string, result: ValidationResult) {
       ...(result.isValid && { validatedUserDetails: result.userDetails }),
     };
     await addDoc(collection(db, 'validation_logs'), logEntry);
-    revalidatePath('/admin/logs');
+    revalidatePath('/mvcon-admin/logs');
   } catch (error) {
     console.error('Failed to log validation attempt:', error);
   }

@@ -15,7 +15,7 @@ export function AdminDashboard({ children, activeTab }: AdminDashboardProps) {
   const router = useRouter();
 
   const handleTabChange = (value: string) => {
-    router.push(`/admin/${value}`);
+    router.push(`/mvcon-admin/${value}`);
   };
 
   return (
