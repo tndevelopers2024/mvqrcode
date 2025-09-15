@@ -5,37 +5,55 @@ import { Clock } from "lucide-react";
 
 const schedule = [
   {
-    time: "09:30 – 10:00 AM",
-    topic: "TBD (20 min talk + 10 min discussion)",
+    time: "09:30 – 09:45 AM",
+    topic: "TBD",
     faculty: "Dr. Muralidharan",
+    chair: "",
   },
-  { time: "10:00 – 11:00 AM", topic: "Quiz – Finals", faculty: "" },
+  {
+    time: "09:45 – 10:00 AM",
+    topic: "TBD",
+    faculty: "Dr. Shunmugavelu",
+    chair: "",
+  },
+  {
+    time: "10:00 – 11:00 AM",
+    topic: "Quiz – Finals",
+    faculty: "",
+    chair: "",
+  },
   {
     time: "11:00 – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
+    chair: "",
   },
   {
     time: "11:30 – 12:00 PM",
     topic: "Monogenic diabetes in Hall A",
     faculty: "Dr. V. Mohan",
+    chair: "Dr. Vijay Viswanathan",
   },
   {
     time: "12:00 – 12:30 PM",
     topic: "Prevention of Diabetes in India in Hall A",
     faculty: "Dr. A. Ramachandran",
+    chair: "Dr. Vijay Viswanathan",
   },
   {
     time: "12:30 – 01:15 PM",
     topic: "Prof. MV Gold Medal Oration 2026 & Launch (if any) in Hall A",
     faculty: "",
+    chair: "",
   },
   {
     time: "01:15 PM onwards",
     topic: "Valedictory function followed by lunch",
     faculty: "",
+    chair: "",
   },
 ];
+
 
 const letterVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -138,7 +156,7 @@ export default function DaythreeHallB({
               >
                 {/* Left column – TIME block */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
-                  <span className="text-xl md:text-xl font-bold text-indigo-600 text-center">
+                  <span className="text-lg md:text-lg font-bold text-indigo-600 text-center">
                     {item.time}
                   </span>
                 </div>

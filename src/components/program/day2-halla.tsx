@@ -4,27 +4,124 @@ import { motion, Variants } from "framer-motion";
 
 // -------- Schedule for Day 2 Hall A --------
 const schedule = [
-  { time: "09:30 – 10:00 AM", topic: "(Topic – TBD)", faculty: "Dr. Sunil Gupta", chairpersons: "Dr. A. Shanmugam" },
-  { time: "10:00 – 10:30 AM", topic: "(Topic – TBD)", faculty: "Dr. Chandrasekar (API)", chairpersons: "Dr. Priya" },
-  { time: "10:30 – 10:50 AM", topic: "(Topic – TBD)", faculty: "Dr. Rajendran (Apollo)", chairpersons: "Dr. Paneerselvam" },
-  { time: "10:50 – 11:10 AM", topic: "(Topic – TBD)", faculty: "Dr. G. Vijayakumar", chairpersons: "Dr. Shunmugavelu" },
-  { time: "11:10 – 11:30 AM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "11:30 – 12:00 PM", topic: "(Topic – TBD)", faculty: "Dr. Anuj Maheshwari", chairpersons: "Dr. Dharmarajan" },
-  { time: "12:00 – 12:30 PM", topic: "(Topic – TBD)", faculty: "Dr. Bhavatharani", chairpersons: "Dr. K. Shanmugam" },
-  { time: "12:30 – 01:00 PM", topic: "(Topic – TBD)", faculty: "Dr. Balaji K", chairpersons: "Dr. Bhavatharani" },
-  { time: "01:00 – 01:30 PM", topic: "(Topic – TBD)", faculty: "Dr. Paneer Selvam", chairpersons: "Dr. Shunmugavelu" },
-  { time: "01:30 – 02:30 PM", topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "02:30 – 02:50 PM", topic: "Managing Heart failure in People with Diabetes (with 5 min discussion)", faculty: "Dr. A. Shanmugam", chairpersons: "Dr. Prakash" },
-  { time: "02:50 – 03:00 PM", topic: "MOBILITY Break (to specify therapy)", faculty: "" },
-  { time: "03:00 – 04:00 PM", topic: "Surgical Demonstration (VIDEO) – Debridement, VAC & TCC Application", faculty: "Dr. Kumar / Dr. Senthil" },
-  { time: "04:00 – 04:30 PM", topic: "The Silent Struggle: Healing Beyond glycemic control", faculty: "Ms. Vaishnavi Vijay", chairpersons: "Dr. Bhavatharani" },
-  { time: "04:30 – 05:00 PM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "05:00 – 05:30 PM", topic: "PHARMA SLOT (Insulin symposium)", faculty: "" },
-  { time: "05:30 – 06:00 PM", topic: "How to evaluate kidney function in diabetes? / Symposium", faculty: "Dr. Edwin Fernando", chairpersons: "Dr. Janaka" },
-  { time: "06:00 – 06:30 PM", topic: "(Topic – TBD)", faculty: "Dr. Krishna Seshadri", chairpersons: "Dr. Balaji K" },
-  { time: "06:30 – 07:00 PM", topic: "How to prevent Medico legal problems", faculty: "Dr. Viswanathan Vishnu Vijay", chairpersons: "Dr. Muralidharan, Dr. Prashanth Arun" },
-  { time: "07:00 onwards", topic: "Networking Dinner", faculty: "" },
+  {
+    time: "09:30 – 09:50 AM",
+    topic: "TBD",
+    faculty: "Dr. Sunil Gupta",
+    chairpersons: "Dr. A. Shanmugam, Dr. Priya",
+  },
+  {
+    time: "09:50 – 10:10 AM",
+    topic: "TBD",
+    faculty: "Dr. Chandrasekar",
+    chairpersons: "Dr. A. Shanmugam, Dr. Priya",
+  },
+  {
+    time: "10:10 – 10:30 AM",
+    topic: "TBD",
+    faculty: "Dr. Janaka",
+    chairpersons: "Dr. Vijay Viswanathan",
+  },
+  {
+    time: "10:30 – 10:50 AM",
+    topic: "How to evaluate kidney function in diabetes?",
+    faculty: "Dr. Edwin Fernando",
+    chairpersons: "Dr. Vijay Viswanathan",
+  },
+  {
+    time: "10:50 – 11:10 AM",
+    topic: "TBD",
+    faculty: "Dr. G. Vijayakumar",
+    chairpersons: "Dr. Shunmugavelu",
+  },
+  {
+    time: "11:10 – 11:30 AM",
+    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+  },
+  {
+    time: "11:30 – 12:00 PM",
+    topic: "TBD",
+    faculty: "Dr. Anuj Maheshwari",
+    chairpersons: "Dr. Dharmarajan",
+  },
+  {
+    time: "12:00 – 12:30 PM",
+    topic: "TBD",
+    faculty: "Dr. Bhavatharani",
+    chairpersons: "Dr. K. Shanmugam",
+  },
+  {
+    time: "12:30 – 01:00 PM",
+    topic: "TBD",
+    faculty: "Dr. Usha Aiyyagari",
+    chairpersons: "Dr. Bhavatharani",
+  },
+  {
+    time: "01:00 – 01:30 PM",
+    topic: "TBD",
+    faculty: "Dr. Paneer Selvam",
+    chairpersons: "Dr. Shunmugavelu",
+  },
+  {
+    time: "01:30 – 02:30 PM",
+    topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+  },
+  {
+    time: "02:30 – 03:00 PM",
+    topic: "The Golden Hour in Diabetic Foot Ulcer",
+    faculty: "Dr. Sasi Kumar",
+    chairpersons: "Dr. Senthil",
+  },
+  {
+    time: "03:00 – 04:00 PM",
+    topic:
+      "Surgical Demonstration (VIDEO) – Debridement (sweet lime), VAC & TCC Application",
+    faculty: "Dr. Senthil / Dr. Milind Ruke",
+  },
+  {
+    time: "04:00 – 04:30 PM",
+    topic: "TBD",
+    faculty: "Dr. Nandita Arun",
+    chairpersons: "Dr. K. Shanmugam",
+  },
+  {
+    time: "04:30 – 05:00 PM",
+    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+  },
+  {
+    time: "05:00 – 05:30 PM",
+    topic: "Managing Heart failure in People with Diabetes",
+    faculty: "Dr. A. Shanmugam",
+    chairpersons: "Dr. Prakash, Dr. Shunmugavelu",
+  },
+  {
+    time: "05:30 – 06:00 PM",
+    topic: "TBD",
+    faculty: "Dr. Rajendran V",
+    chairpersons: "Dr. Prakash, Dr. Shunmugavelu",
+  },
+  {
+    time: "06:00 – 06:30 PM",
+    topic: "Sexual dysfunction in people with diabetes",
+    faculty: "Dr. Mithun Bhartia",
+    chairpersons: "Dr. Muralidharan, Dr. Prashanth Arun",
+  },
+  {
+    time: "06:30 – 07:00 PM",
+    topic: "How to prevent Medico legal problems",
+    faculty: "Dr. Viswanathan Vishnu Vijay",
+    chairpersons: "Dr. Muralidharan, Dr. Prashanth Arun",
+  },
+  {
+    time: "07:00 onwards",
+    topic: "Networking Dinner",
+    faculty: "",
+  },
 ];
+
 
 // -------- Variants --------
 const letterVariants: Variants = {
@@ -126,7 +223,7 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
               >
                 {/* Left column – TIME block */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
-                  <span className="text-xl md:text-xl font-bold text-indigo-600 text-center">
+                  <span className="text-lg md:text-lg font-bold text-indigo-600 text-center">
                     {item.time}
                   </span>
                 </div>

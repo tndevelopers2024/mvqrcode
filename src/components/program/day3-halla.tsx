@@ -8,43 +8,52 @@ const schedule = [
     time: "09:30 – 10:00 AM",
     topic: "GLP1 For Weight Loss (20 min talk + 10 min discussion)",
     faculty: "Dr. Jayasree Gopal",
+    chair: "",
   },
   {
     time: "10:00 – 10:30 AM",
     topic: "Ambulatory BP or Pharma Topic (20 min talk + 10 min discussion)",
     faculty: "Dr. S.S. Lakshmanan",
+    chair: "",
   },
   {
     time: "10:10 – 11:00 AM",
     topic: "Management of Hypertension in Newly diagnosed cases of diabetes",
     faculty: "Dr. Narasingan",
+    chair: "",
   },
   {
     time: "11:00 – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
+    chair: "",
   },
   {
     time: "11:30 – 12:00 PM",
     topic: "Monogenic diabetes",
     faculty: "Dr. V. Mohan",
+    chair: "Dr. Vijay Viswanathan",
   },
   {
     time: "12:00 – 12:30 PM",
     topic: "Prevention of Diabetes in India",
     faculty: "Dr. A. Ramachandran",
+    chair: "Dr. Vijay Viswanathan",
   },
   {
     time: "12:30 – 01:15 PM",
     topic: "Prof. MV Gold Medal Oration 2026 & Launch (if any)",
     faculty: "",
+    chair: "",
   },
   {
     time: "01:15 PM onwards",
     topic: "Valedictory function followed by lunch",
     faculty: "",
+    chair: "",
   },
 ];
+
 
 const letterVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -147,7 +156,7 @@ export default function DaythreeHallA({
               >
                 {/* Left column – TIME block */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
-                  <span className="text-xl md:text-xl font-bold text-indigo-600 text-center">
+                  <span className="text-lg md:text-lg font-bold text-indigo-600 text-center">
                     {item.time}
                   </span>
                 </div>

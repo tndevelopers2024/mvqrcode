@@ -14,7 +14,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary hover:text-primary/80 transition-colors">
 
-          <img src={"/images/final-logo.png"} alt="" className="w-[180px]" />
+          <img src={"/images/finalLogo.png"} alt="" className="w-[180px]" />
         </Link>
 
         {/* Desktop Menu */}

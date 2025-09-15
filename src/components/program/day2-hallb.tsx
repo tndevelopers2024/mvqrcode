@@ -15,13 +15,13 @@ const schedule = [
   },
   {
     time: "10:00 – 10:30 AM",
-    topic: "Mechanical offloading (Unburden the wound)",
-    faculty: "Dr. Viswanathan Vishnu Vijay",
+    topic: "Structural & Functional Triggers of DFU",
+    faculty: "Dr. Ashwanth",
     chair: "",
   },
   {
     time: "10:30 – 10:50 AM",
-    topic: "Surgical offloading (VIDEO)",
+    topic: "Smart Dressing Solutions - The T.I.M.E. concept",
     faculty: "Dr. Senthil",
     chair: "",
   },
@@ -39,21 +39,21 @@ const schedule = [
   },
   {
     time: "11:30 – 12:30 PM",
-    topic: "QUIZ – By QUIZ MASTER",
+    topic: "Quiz",
     faculty: "Dr. Abhijith",
     chair: "",
   },
   {
     time: "12:30 – 01:00 PM",
-    topic: "The Golden Hour in Diabetic Foot Ulcer (with 5 min discussion)",
-    faculty: "Dr. Sasi Kumar",
-    chair: "Dr. Senthil",
+    topic: "Future of diabetes care: CGMS into routine practice",
+    faculty: "Dr. Prashanth Arun",
+    chair: "Dr. Kannan Natrajan, Dr. C Balaji",
   },
   {
     time: "01:00 – 01:30 PM",
-    topic: "TBD",
-    faculty: "Dr. Milind Ruke",
-    chair: "",
+    topic: "Manual to Automated: Insulin Pump Technology",
+    faculty: "Dr. Leela Baid",
+    chair: "Dr. Kannan Natrajan, Dr. C Balaji",
   },
   {
     time: "01:30 – 02:15 PM",
@@ -64,7 +64,7 @@ const schedule = [
   {
     time: "02:30 – 03:00 PM",
     topic: "Muscle, metabolism & glucose: Exercise in Diabetes",
-    faculty: "Dr. Vishnu Priya (Bangalore)",
+    faculty: "Dr. Vishnu Priya Reddy",
     chair: "Dr. Sriram, Dr. K. Shanmugam",
   },
   {
@@ -75,14 +75,43 @@ const schedule = [
   },
   {
     time: "03:30 – 04:00 PM",
-    topic: "Debate / Pharma Symposium",
-    faculty: "",
-    chair: "",
+    topic: "THE GUT Wrenching Troubles: Managing Diabetic GastroParesis",
+    faculty: "Dr. Vishnu Priya Prashanth",
+    chair: "Dr. Bhavatharani, Dr. Uma Mahesh",
   },
-  { time: "04:00 – 04:30 PM", topic: "Pharma Symposium", faculty: "", chair: "" },
+  {
+    time: "04:00 – 04:30 PM",
+    topic: "The Silent Struggle: Healing Beyond glycemic control",
+    faculty: "Ms. Vaishnavi Vijay",
+    chair: "Dr. Bhavatharani, Dr. Uma Mahesh",
+  },
   {
     time: "04:30 – 05:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+    chair: "",
+  },
+  {
+    time: "05:00 – 05:30 PM",
+    topic: "TBD",
+    faculty: "",
+    chair: "",
+  },
+  {
+    time: "05:30 – 06:00 PM",
+    topic: "TBD",
+    faculty: "",
+    chair: "",
+  },
+  {
+    time: "06:00 – 06:30 PM",
+    topic: "TBD",
+    faculty: "",
+    chair: "",
+  },
+  {
+    time: "06:30 – 07:00 PM",
+    topic: "TBD",
     faculty: "",
     chair: "",
   },
@@ -197,7 +226,7 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
               >
                 {/* Left column – TIME block */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
-                  <span className="text-xl md:text-xl font-bold text-indigo-600 text-center">
+                  <span className="text-lg md:text-lg font-bold text-indigo-600 text-center">
                     {item.time}
                   </span>
                 </div>

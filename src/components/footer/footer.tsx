@@ -10,7 +10,7 @@ export default function Footer() {
       {/* Logo */}
       <div className="flex justify-center mb-8">
         <Image
-          src="/images/final-logo.png"
+          src="/images/finalLogo.png"
           alt="MV International Conference Logo"
           width={240}
           height={240}
@@ -23,7 +23,7 @@ export default function Footer() {
         <ul className="flex gap-x-8 gap-y-3 justify-center flex-wrap">
           <li>
             <Link
-              href="/home"
+              href="/"
               className="text-[15px] text-slate-300 hover:text-white"
             >
               Home
@@ -31,7 +31,7 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              href="/home/#about"
+              href="/#about"
               className="text-[15px] text-slate-300 hover:text-white"
             >
               About

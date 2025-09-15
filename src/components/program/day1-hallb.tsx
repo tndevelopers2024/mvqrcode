@@ -6,28 +6,28 @@ import { motion, Variants } from "framer-motion";
 const schedule = [
   {
     time: "09:30 – 10:00 AM",
-    topic: "(Topic – TBD)",
+    topic: "TBD",
     faculty: "Dr.Aarthy Kannan",
-    chairpersons:"Dr.Senthil",
+    chairpersons: "Dr.Kannan Natrajan, Dr.C Balaji",
   },
   {
     time: "10:00 – 10:30 AM",
     topic: "TBD",
     faculty: "Dr.Paranthaman",
-    chairpersons:"Dr.Anand Moses"
+    chairpersons: "Dr.Kannan Natrajan, Dr.C Balaji",
   },
   {
     time: "10:30 – 10:50 AM",
-    topic: "The GUT Wrenching Troubles: Managing Diabetic GastroParesis",
-    faculty: "Dr. Vishnu Priya Prashanth",
-    chairpersons:"Dr.Muralidharan"
+    topic: "Unmasking Anemia in Diabetes",
+    faculty: "Dr. V.P. Sriram",
+    chairpersons: "Dr.Kannan Natrajan, Dr.C Balaji",
   },
   {
     time: "10:50 – 11:10 AM",
     topic:
-      "International Vs National - ADA Vs RSSDI Guidelines (What's New / What Next / What's the Difference?)",
+      "International Vs National – ADA Vs RSSDI guidelines (What's New / What Next / What's the Difference?)",
     faculty: "Dr.Uma Mahesh",
-    chairpersons:"Dr.K.Shanmugam"
+    chairpersons: "Dr.Kannan Natrajan, Dr.C Balaji",
   },
   {
     time: "11:10 – 11:30 AM",
@@ -36,14 +36,12 @@ const schedule = [
   },
   {
     time: "11:30 – 12:30 PM",
-    topic:
-      "MV Life Time Achievement Award & Inauguration + Key Note lecture (Hall A)",
+    topic: "MV Life Time Achievement Award (Hall A) & Inauguration + Key Note lecture",
     faculty: "",
   },
   {
     time: "12:30 – 1:30 PM",
-    topic:
-      "Oral presentations (7 approx. – 5 mins presentation + 2 mins discussion)",
+    topic: "Oral presentations",
     faculty: "",
   },
   {
@@ -54,29 +52,51 @@ const schedule = [
   {
     time: "2:30 – 3:00 PM",
     topic: "Demonstration of High Risk Feet (Hall A)",
-    faculty: "",
+    faculty: "Dr. Vijay Viswanathan, Ms.Seena & Ms.Bamilla",
   },
   {
     time: "3:00 – 3:30 PM",
-    topic: "Smart Dressing Solutions - The T.I.M.E. concept (Video) (Hall A)",
-    faculty: "",
+    topic: "Mechanical offloading (Unburden the wound) (Hall A)",
+    faculty: "Dr. Viswanathan Vishnu Vijay",
   },
   {
     time: "3:30 – 4:00 PM",
-    topic: "Unmasking Anemia in Diabetes",
-    faculty: "Dr. V.P. Sriram",
+    topic: "Surgical offloading – (VIDEO) (Hall A)",
+    faculty: "Dr.Senthil",
+    chairpersons: "Dr.Shanthi",
   },
   {
     time: "4:00 – 4:30 PM",
-    topic: "PHARMA SLOT (Based on Sponsorship) – Obesity Workshop",
-    faculty: "",
+    topic: "How to use non-invasive methods in clinical practice",
+    faculty: "Dr.Satyavani K",
   },
   {
     time: "4:30 – 5:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
+  {
+    time: "5:00 – 5:30 PM",
+    topic: "Diabetic Retinopathy",
+    faculty: "Dr.Mohan Rajan / Dr.Manoj Khatri",
+  },
+  {
+    time: "5:30 – 6:00 PM",
+    topic: "TBD",
+    faculty: "",
+  },
+  {
+    time: "6:00 – 6:30 PM",
+    topic: "TBD",
+    faculty: "",
+  },
+  {
+    time: "6:30 – 7:00 PM",
+    topic: "TBD",
+    faculty: "",
+  },
 ];
+
 
 // -------- Variants --------
 const letterVariants: Variants = {
@@ -177,7 +197,7 @@ export default function DayoneHallB({ searchQuery }: { searchQuery: string }) {
               >
                 {/* Left column – TIME block */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
-                  <span className="text-xl md:text-xl font-bold text-indigo-600 text-center">
+                  <span className="text-xl md:text-lg font-bold text-indigo-600 text-center">
                     {item.time}
                   </span>
                 </div>
