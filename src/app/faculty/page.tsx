@@ -65,7 +65,7 @@ export default function FacultySection() {
 
         <div className="relative py-32 container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Meet Our Faculty
+            Meet Our Faculties
           </h1>
         </div>
       </header>
