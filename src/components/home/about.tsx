@@ -12,25 +12,24 @@ export default function About() {
     {
       title: "Wide range of sessions",
       desc: "Talks on diabetes and management of its complications such as kidney, eye, heart and dedicated sessions on diabetic foot.",
-      icon: <MdOutlineEventNote className="text-blue-600 text-2xl flex-shrink-0" />,
+      icon: <MdOutlineEventNote className="text-3xl flex-shrink-0" />,
     },
     {
       title: "Live workshops",
       desc: "Hands-on debridement practice and demonstrations of advanced techniques such as Negative Pressure Wound Therapy.",
-      icon: <FaHandsHelping className="text-blue-600 text-2xl flex-shrink-0" />,
+      icon: <FaHandsHelping className="text-3xl flex-shrink-0" />,
     },
     {
       title: "Scientific exchanges",
       desc: "Symposiums, Panel discussions, Original research presentations (oral and poster), Quiz competition, and Debates.",
-      icon: <GiMicroscope className="text-blue-600 text-2xl flex-shrink-0" />,
+      icon: <GiMicroscope className="text-3xl flex-shrink-0" />,
     },
     {
       title: "Networking opportunity",
       desc: "A dedicated Delegate Lounge for interaction with peers and faculty.",
-      icon: <HiUsers className="text-blue-600 text-2xl flex-shrink-0" />,
+      icon: <HiUsers className="text-3xl flex-shrink-0" />,
     },
   ];
-
 
   const listVariants: Variants = {
     hidden: {},
@@ -54,123 +53,128 @@ export default function About() {
   };
 
   return (
-    <section className="w-full bg-white py-16" id="about">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Left Side - Images */}
-          <div className="flex-1">
-            <div className="relative">
-              <div className="mb-6">
-                <img
-                  src="/images/about-bg.jpg"
-                  alt="About Image 1"
-                  className="rounded-2xl shadow-lg animate-fadeIn"
-                />
-              </div>
+    <main className="w-full bg-white py-16" id="about">
+      <section>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Left Side - Images */}
+            <div className="basis-1/3">
+              <div className="relative">
+                <div className="mb-4">
+                  <img
+                    src="/images/about-bg.jpg"
+                    alt="About Image 1"
+                    className="rounded-2xl shadow-lg animate-fadeIn"
+                  />
+                </div>
 
-              <div className="grid grid-cols-2 gap-6">
-                <img
-                  src="/images/about-img6.jpg"
-                  alt="About Image 2"
-                  className="rounded-2xl shadow-md animate-fadeIn"
-                />
-                <img
-                  src="/images/about-bg3.jpg"
-                  alt="About Image 3"
-                  className="rounded-2xl shadow-md animate-fadeIn"
-                />
-              </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <img
+                    src="/images/about-img6.jpg"
+                    alt="About Image 2"
+                    className="rounded-2xl shadow-md animate-fadeIn"
+                  />
+                  <img
+                    src="/images/about-bg3.jpg"
+                    alt="About Image 3"
+                    className="rounded-2xl shadow-md animate-fadeIn"
+                  />
+                </div>
 
-              {/* Floating Button */}
-              <div className="absolute bottom-32 left-1/2 -translate-x-1/2 text-center">
-                <div className="relative w-32 h-32 mx-auto">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 200 200"
-                    fill="none"
-                    className="animate-spin-slow w-full h-full"
-                  >
-                    <path
-                      d="M93.8771 2.53621C96.8982 1.28483 98.4087 0.659138 100 0.659138C101.591 0.659138 103.102 1.28483 106.123 2.5362L164.588 26.7531C167.609 28.0045 169.119 28.6302 170.245 29.7554C171.37 30.8806 171.995 32.3912 173.247 35.4123L197.464 93.8771C198.715 96.8982 199.341 98.4087 199.341 100C199.341 101.591 198.715 103.102 197.464 106.123L173.247 164.588C171.995 167.609 171.37 169.119 170.245 170.245C169.119 171.37 167.609 171.995 164.588 173.247L106.123 197.464C103.102 198.715 101.591 199.341 100 199.341C98.4087 199.341 96.8982 198.715 93.8771 197.464L35.4123 173.247C32.3912 171.995 30.8806 171.37 29.7554 170.245C28.6302 169.119 28.0045 167.609 26.7531 164.588L2.53621 106.123C1.28483 103.102 0.659138 101.591 0.659138 100C0.659138 98.4087 1.28483 96.8982 2.5362 93.8771L26.7531 35.4123C28.0045 32.3912 28.6302 30.8806 29.7554 29.7554C30.8806 28.6302 32.3912 28.0045 35.4123 26.7531L93.8771 2.53621Z"
-                      className="fill-blue-700"
-                    />
-                  </svg>
-
-                  <div className="absolute inset-0 flex items-center justify-center">
+                {/* Floating Button */}
+                <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-center">
+                  <div className="relative w-32 h-32 mx-auto">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-14 h-14"
-                      viewBox="0 0 512 512"
-                      fill="white"
+                      viewBox="0 0 200 200"
+                      fill="none"
+                      className="animate-spin-slow w-full h-full"
                     >
-                      <path d="M256.054 426.786c-14.139 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6 25.6-11.462 25.6-25.6c0-14.139-11.462-25.6-25.6-25.6zm0 34.133a8.533 8.533 0 1 1 0-17.066 8.533 8.533 0 0 1 0 17.066z" />
-                      <path d="M462.714 182.041c27.228-19.375 38.802-54.134 28.625-85.964-10.178-31.831-39.77-53.426-73.188-53.41s-62.99 21.64-73.137 53.48 1.46 66.588 28.707 85.937a68.75 68.75 0 0 0-24.585 13.073c-3.864-26.498-22.842-48.302-48.555-55.782 27.223-19.371 38.798-54.12 28.63-85.947S289.465 0 256.054 0s-62.989 21.601-73.157 53.428 1.408 66.576 28.63 85.947c-25.713 7.481-44.691 29.284-48.555 55.782a68.742 68.742 0 0 0-24.585-13.073c27.247-19.349 38.854-54.096 28.707-85.937-10.147-31.84-39.719-53.464-73.137-53.48s-63.011 21.58-73.188 53.41 1.396 66.589 28.625 85.964C20.208 190.496.106 217.2.054 247.586v72.533a29.869 29.869 0 0 0 17.655 27.196c2.889 21.043 20.838 36.742 42.078 36.804h52.292c8.611 72.99 70.478 127.988 143.974 127.988s135.364-54.998 143.974-127.988h52.292c21.219-.085 39.142-15.768 42.044-36.787a29.869 29.869 0 0 0 17.69-27.213v-72.533c-.051-30.386-20.153-57.09-49.339-65.545zm-104.26-62.455c0-32.99 26.744-59.733 59.733-59.733s59.733 26.744 59.733 59.733-26.744 59.733-59.733 59.733c-32.972-.042-59.691-26.761-59.733-59.733zM196.32 76.919c0-32.99 26.744-59.733 59.733-59.733s59.733 26.744 59.733 59.733-26.743 59.733-59.733 59.733c-32.972-.042-59.69-26.761-59.733-59.733zm34.134 76.8h51.2c28.265.028 51.172 22.935 51.2 51.2v39.253a145.175 145.175 0 0 0-25.6-12.715v-26.539c0-4.713-3.82-8.533-8.533-8.533s-8.533 3.82-8.533 8.533v21.333a140.026 140.026 0 0 0-68.267 0v-21.333a8.533 8.533 0 0 0-17.066 0v26.573a145.037 145.037 0 0 0-25.6 12.715v-39.287c.027-28.265 22.933-51.172 51.199-51.2zM34.187 119.586c0-32.99 26.744-59.733 59.733-59.733s59.733 26.744 59.733 59.733-26.744 59.733-59.733 59.733c-32.972-.042-59.691-26.761-59.733-59.733zm25.6 247.467a25.55 25.55 0 0 1-24.201-17.63c14.072-2.664 24.245-14.982 24.201-29.303v-72.533a8.533 8.533 0 0 0-17.066 0v72.533c0 7.069-5.731 12.8-12.8 12.8s-12.8-5.731-12.8-12.8v-72.533c.028-28.265 22.935-51.172 51.2-51.2h51.2a50.602 50.602 0 0 1 42.667 23.1v37.163a145.682 145.682 0 0 0-17.067 17.118v-26.18a8.533 8.533 0 0 0-17.066 0v51.345a144.095 144.095 0 0 0-17.067 68.122H59.787zm196.267 128c-70.692 0-128-57.308-128-128s57.308-128 128-128 128 57.308 128 128c-.08 70.659-57.341 127.92-128 128zm238.933-174.934c0 7.069-5.731 12.8-12.8 12.8s-12.8-5.731-12.8-12.8v-72.533a8.533 8.533 0 0 0-17.066 0v72.533c-.044 14.322 10.129 26.64 24.201 29.303a25.55 25.55 0 0 1-24.201 17.63h-51.2a144.1 144.1 0 0 0-17.067-68.122v-51.345a8.533 8.533 0 0 0-17.066 0v26.18a145.605 145.605 0 0 0-17.067-17.118v-37.163a50.602 50.602 0 0 1 42.667-23.1h51.2c28.265.028 51.172 22.935 51.2 51.2v72.535z" />
-                      <path d="M267.77 257.101a68.36 68.36 0 0 0-79.94 65.135c-.762 13.222 8.405 24.957 21.419 27.418a25.596 25.596 0 0 0 29.738-25.267c-.047-8.758 6.544-16.13 15.252-17.061 8.709-.931 16.708 4.881 18.514 13.451a17.068 17.068 0 0 1-14.029 20.48c-16.158 3.116-27.941 17.101-28.271 33.553v8.397c-.16 12.737 8.825 23.761 21.333 26.172 1.411.227 2.838.341 4.267.341 12.737.021 23.552-9.325 25.378-21.931 28.39-11.313 45.802-40.115 42.626-70.51-3.175-30.395-26.165-54.977-56.28-60.177h-.007zm2.91 116.36a8.533 8.533 0 0 0-6.093 8.175v2.483a8.533 8.533 0 0 1-10.026 8.405 9.241 9.241 0 0 1-7.04-9.318v-8.397a17.724 17.724 0 0 1 13.841-16.7c16.427-2.562 28.618-16.587 28.869-33.21s-11.511-31.009-27.853-34.066a34.727 34.727 0 0 0-6.272-.58 34.133 34.133 0 0 0-34.185 34.133 8.53 8.53 0 0 1-3.004 6.502 8.667 8.667 0 0 1-6.997 1.911 9.387 9.387 0 0 1-7.066-10.027c.827-26.146 21.231-47.464 47.316-49.435s49.461 16.038 54.208 41.763-10.662 50.892-35.732 58.36h.034z" />
+                      <path
+                        d="M93.8771 2.53621C96.8982 1.28483 98.4087 0.659138 100 0.659138C101.591 0.659138 103.102 1.28483 106.123 2.5362L164.588 26.7531C167.609 28.0045 169.119 28.6302 170.245 29.7554C171.37 30.8806 171.995 32.3912 173.247 35.4123L197.464 93.8771C198.715 96.8982 199.341 98.4087 199.341 100C199.341 101.591 198.715 103.102 197.464 106.123L173.247 164.588C171.995 167.609 171.37 169.119 170.245 170.245C169.119 171.37 167.609 171.995 164.588 173.247L106.123 197.464C103.102 198.715 101.591 199.341 100 199.341C98.4087 199.341 96.8982 198.715 93.8771 197.464L35.4123 173.247C32.3912 171.995 30.8806 171.37 29.7554 170.245C28.6302 169.119 28.0045 167.609 26.7531 164.588L2.53621 106.123C1.28483 103.102 0.659138 101.591 0.659138 100C0.659138 98.4087 1.28483 96.8982 2.5362 93.8771L26.7531 35.4123C28.0045 32.3912 28.6302 30.8806 29.7554 29.7554C30.8806 28.6302 32.3912 28.0045 35.4123 26.7531L93.8771 2.53621Z"
+                        className="fill-blue-700"
+                      />
                     </svg>
+
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-14 h-14"
+                        viewBox="0 0 512 512"
+                        fill="white"
+                      >
+                        <path d="M256.054 426.786c-14.139 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6 25.6-11.462 25.6-25.6c0-14.139-11.462-25.6-25.6-25.6zm0 34.133a8.533 8.533 0 1 1 0-17.066 8.533 8.533 0 0 1 0 17.066z" />
+                        <path d="M462.714 182.041c27.228-19.375 38.802-54.134 28.625-85.964-10.178-31.831-39.77-53.426-73.188-53.41s-62.99 21.64-73.137 53.48 1.46 66.588 28.707 85.937a68.75 68.75 0 0 0-24.585 13.073c-3.864-26.498-22.842-48.302-48.555-55.782 27.223-19.371 38.798-54.12 28.63-85.947S289.465 0 256.054 0s-62.989 21.601-73.157 53.428 1.408 66.576 28.63 85.947c-25.713 7.481-44.691 29.284-48.555 55.782a68.742 68.742 0 0 0-24.585-13.073c27.247-19.349 38.854-54.096 28.707-85.937-10.147-31.84-39.719-53.464-73.137-53.48s-63.011 21.58-73.188 53.41 1.396 66.589 28.625 85.964C20.208 190.496.106 217.2.054 247.586v72.533a29.869 29.869 0 0 0 17.655 27.196c2.889 21.043 20.838 36.742 42.078 36.804h52.292c8.611 72.99 70.478 127.988 143.974 127.988s135.364-54.998 143.974-127.988h52.292c21.219-.085 39.142-15.768 42.044-36.787a29.869 29.869 0 0 0 17.69-27.213v-72.533c-.051-30.386-20.153-57.09-49.339-65.545zm-104.26-62.455c0-32.99 26.744-59.733 59.733-59.733s59.733 26.744 59.733 59.733-26.744 59.733-59.733 59.733c-32.972-.042-59.691-26.761-59.733-59.733zM196.32 76.919c0-32.99 26.744-59.733 59.733-59.733s59.733 26.744 59.733 59.733-26.743 59.733-59.733 59.733c-32.972-.042-59.69-26.761-59.733-59.733zm34.134 76.8h51.2c28.265.028 51.172 22.935 51.2 51.2v39.253a145.175 145.175 0 0 0-25.6-12.715v-26.539c0-4.713-3.82-8.533-8.533-8.533s-8.533 3.82-8.533 8.533v21.333a140.026 140.026 0 0 0-68.267 0v-21.333a8.533 8.533 0 0 0-17.066 0v26.573a145.037 145.037 0 0 0-25.6 12.715v-39.287c.027-28.265 22.933-51.172 51.199-51.2zM34.187 119.586c0-32.99 26.744-59.733 59.733-59.733s59.733 26.744 59.733 59.733-26.744 59.733-59.733 59.733c-32.972-.042-59.691-26.761-59.733-59.733zm25.6 247.467a25.55 25.55 0 0 1-24.201-17.63c14.072-2.664 24.245-14.982 24.201-29.303v-72.533a8.533 8.533 0 0 0-17.066 0v72.533c0 7.069-5.731 12.8-12.8 12.8s-12.8-5.731-12.8-12.8v-72.533c.028-28.265 22.935-51.172 51.2-51.2h51.2a50.602 50.602 0 0 1 42.667 23.1v37.163a145.682 145.682 0 0 0-17.067 17.118v-26.18a8.533 8.533 0 0 0-17.066 0v51.345a144.095 144.095 0 0 0-17.067 68.122H59.787zm196.267 128c-70.692 0-128-57.308-128-128s57.308-128 128-128 128 57.308 128 128c-.08 70.659-57.341 127.92-128 128zm238.933-174.934c0 7.069-5.731 12.8-12.8 12.8s-12.8-5.731-12.8-12.8v-72.533a8.533 8.533 0 0 0-17.066 0v72.533c-.044 14.322 10.129 26.64 24.201 29.303a25.55 25.55 0 0 1-24.201 17.63h-51.2a144.1 144.1 0 0 0-17.067-68.122v-51.345a8.533 8.533 0 0 0-17.066 0v26.18a145.605 145.605 0 0 0-17.067-17.118v-37.163a50.602 50.602 0 0 1 42.667-23.1h51.2c28.265.028 51.172 22.935 51.2 51.2v72.535z" />
+                        <path d="M267.77 257.101a68.36 68.36 0 0 0-79.94 65.135c-.762 13.222 8.405 24.957 21.419 27.418a25.596 25.596 0 0 0 29.738-25.267c-.047-8.758 6.544-16.13 15.252-17.061 8.709-.931 16.708 4.881 18.514 13.451a17.068 17.068 0 0 1-14.029 20.48c-16.158 3.116-27.941 17.101-28.271 33.553v8.397c-.16 12.737 8.825 23.761 21.333 26.172 1.411.227 2.838.341 4.267.341 12.737.021 23.552-9.325 25.378-21.931 28.39-11.313 45.802-40.115 42.626-70.51-3.175-30.395-26.165-54.977-56.28-60.177h-.007zm2.91 116.36a8.533 8.533 0 0 0-6.093 8.175v2.483a8.533 8.533 0 0 1-10.026 8.405 9.241 9.241 0 0 1-7.04-9.318v-8.397a17.724 17.724 0 0 1 13.841-16.7c16.427-2.562 28.618-16.587 28.869-33.21s-11.511-31.009-27.853-34.066a34.727 34.727 0 0 0-6.272-.58 34.133 34.133 0 0 0-34.185 34.133 8.53 8.53 0 0 1-3.004 6.502 8.667 8.667 0 0 1-6.997 1.911 9.387 9.387 0 0 1-7.066-10.027c.827-26.146 21.231-47.464 47.316-49.435s49.461 16.038 54.208 41.763-10.662 50.892-35.732 58.36h.034z" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Side - Text Content */}
-          <div className="flex-1 space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold leading-tight text-gray-900 relative inline-block">
-              About MVCon
-              <span className="absolute left-0 -bottom-2 w-36 h-1 bg-yellow-400"></span>
-            </h2>
+            {/* Right Side - Text Content */}
+            <div className=" basis-2/3">
+              <h2 className="text-3xl lg:text-4xl font-bold leading-tight text-gray-900 relative inline-block">
+                About MVCON
+                <span className="absolute left-0 -bottom-1 w-36 h-1 bg-yellow-300"></span>
+              </h2>
 
-            <p className="text-gray-600 text-md">
-              MVCON 2026 marks the first edition of MV's annual academic update
-              bringing together leading diabetologists, surgeons, and
-              paramedical experts. Hosted by India's pioneers in diabetes and
-              leaders in diabetic foot care, MVCON provides a comprehensive
-              platform to discuss, debate, and learn across the spectrum of
-              diabetes and its complications.
-            </p>
+              <p className="text-gray-600 text-md mt-4 mb-4">
+                MVCON 2026 marks the first edition of MV's annual academic
+                update bringing together leading diabetologists, surgeons, and
+                paramedical experts. Hosted by India's pioneers in diabetes and
+                leaders in diabetic foot care, MVCON provides a comprehensive
+                platform to discuss, debate, and learn across the spectrum of
+                diabetes and its complications.
+              </p>
 
-            {/* Highlights with animation */}
-            <div className="mt-8">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                Conference Highlights
-              </h3>
-              <motion.ul
-                variants={listVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                className="space-y-3"
-              >
-                {highlights.map((item, idx) => (
-                  <motion.li
-                    key={idx}
-                    custom={idx}
-                    variants={itemVariants}
-                    className="flex items-start gap-3 bg-yellow-50 min-h-20 rounded p-3"
-                  >
-                    {item.icon}
-                    <div>
-                      <p className="font-medium text-gray-800">{item.title}</p>
-                      <p className="text-gray-600 text-sm">{item.desc}</p>
-                    </div>
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </div>
-
-
-            {/* CTA Button */}
-            <div className="pt-4">
-              <Link
-                href="/program"
-                className="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition inline-block text-white"
-              >
-                Know Program Details
-              </Link>
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  href="/program"
+                  className="px-6 py-3 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-lg text-white font-semibold  hover:from-yellow-500 hover:via-orange-600 hover:to-red-600  transition inline-block
+  "
+                >
+                  Know Program Details
+                </Link>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Highlights with animation */}
+      <div className="max-w-7xl mx-auto mt-12 px-6">
+        <h3 className="text-4xl text-center font-semibold text-gray-900 mb-4">
+          Conference Highlights
+        </h3>
+        <motion.ul
+          variants={listVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-4 gap-6"
+        >
+          {highlights.map((item, idx) => (
+            <motion.li
+              key={idx}
+              variants={itemVariants}
+              className="flex flex-col items-center  gap-4 bg-[#f8eccd] rounded-2xl p-4 shadow-sm about-list "
+            >
+              <div className="bg-gray-200 p-4 rounded-full about-icon">
+                {item.icon}
+              </div>
+              <div>
+                <p className="font-semibold text-xl text-gray-800 text-center">
+                  {item.title}
+                </p>
+                <p className="text-gray-600 text-center text-md">{item.desc}</p>
+              </div>
+            </motion.li>
+          ))}
+        </motion.ul>
       </div>
-    </section>
+    </main>
   );
 }

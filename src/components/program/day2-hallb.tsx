@@ -6,20 +6,86 @@ import { CiLocationOn } from "react-icons/ci";
 
 // -------- Schedule for Day 2 Hall B --------
 const schedule = [
-  { time: "09:30 – 10:00", topic: "Saving the limb, Saving the life → Non Amputation Strategies in osteomyelitis", faculty: "Dr. Suresh Anadhan", chair: "Dr. Milind Ruke" },
-  { time: "10:00 – 10:30", topic: "Mechanical offloading (Unburden the wound)", faculty: "Dr. Viswanathan Vishnu Vijay", chair: "" },
-  { time: "10:30 – 10:50", topic: "Surgical offloading (VIDEO)", faculty: "Dr. Senthil", chair: "" },
-  { time: "10:50 – 11:10", topic: "Digital subtraction Angiography – Revascularization in Lower Limb", faculty: "Dr. Vijay Viswanathan, Dr. Ravikumar", chair: "" },
-  { time: "11:10 – 11:30", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "", chair: "" },
-  { time: "11:30 – 12:30", topic: "QUIZ – By QUIZ MASTER", faculty: "Dr. Abhijith", chair: "" },
-  { time: "12:30 – 01:00", topic: "The Golden Hour in Diabetic Foot Ulcer (with 5 min discussion)", faculty: "Dr. Sasi Kumar", chair: "Dr. Senthil" },
-  { time: "01:00 – 01:30", topic: "TBD", faculty: "Dr. Milind Ruke", chair: "" },
-  { time: "01:30 – 02:15", topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA", faculty: "", chair: "" },
-  { time: "02:30 – 03:00", topic: "Muscle, metabolism & glucose: Exercise in Diabetes", faculty: "Dr. Vishnu Priya (Bangalore)", chair: "Dr. Sriram, Dr. K. Shanmugam" },
-  { time: "03:00 – 03:30", topic: "When diabetes reaches the lungs: Diabetic Pneumopathy", faculty: "Dr. Abhishek", chair: "Dr. Sriram, Dr. K. Shanmugam" },
-  { time: "03:30 – 04:00", topic: "Debate / Pharma Symposium", faculty: "", chair: "" },
-  { time: "04:00 – 04:30", topic: "Pharma Symposium", faculty: "", chair: "" },
-  { time: "04:30 – 05:00", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "", chair: "" },
+  {
+    time: "09:30 – 10:00 AM",
+    topic:
+      "Saving the limb, Saving the life → Non Amputation Strategies in osteomyelitis",
+    faculty: "Dr. Suresh Anadhan",
+    chair: "Dr. Milind Ruke",
+  },
+  {
+    time: "10:00 – 10:30 AM",
+    topic: "Mechanical offloading (Unburden the wound)",
+    faculty: "Dr. Viswanathan Vishnu Vijay",
+    chair: "",
+  },
+  {
+    time: "10:30 – 10:50 AM",
+    topic: "Surgical offloading (VIDEO)",
+    faculty: "Dr. Senthil",
+    chair: "",
+  },
+  {
+    time: "10:50 – 11:10 AM",
+    topic: "Digital subtraction Angiography – Revascularization in Lower Limb",
+    faculty: "Dr. Vijay Viswanathan, Dr. Ravikumar",
+    chair: "",
+  },
+  {
+    time: "11:10 – 11:30 AM",
+    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+    chair: "",
+  },
+  {
+    time: "11:30 – 12:30 PM",
+    topic: "QUIZ – By QUIZ MASTER",
+    faculty: "Dr. Abhijith",
+    chair: "",
+  },
+  {
+    time: "12:30 – 01:00 PM",
+    topic: "The Golden Hour in Diabetic Foot Ulcer (with 5 min discussion)",
+    faculty: "Dr. Sasi Kumar",
+    chair: "Dr. Senthil",
+  },
+  {
+    time: "01:00 – 01:30 PM",
+    topic: "TBD",
+    faculty: "Dr. Milind Ruke",
+    chair: "",
+  },
+  {
+    time: "01:30 – 02:15 PM",
+    topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+    chair: "",
+  },
+  {
+    time: "02:30 – 03:00 PM",
+    topic: "Muscle, metabolism & glucose: Exercise in Diabetes",
+    faculty: "Dr. Vishnu Priya (Bangalore)",
+    chair: "Dr. Sriram, Dr. K. Shanmugam",
+  },
+  {
+    time: "03:00 – 03:30 PM",
+    topic: "When diabetes reaches the lungs: Diabetic Pneumopathy",
+    faculty: "Dr. Abhishek",
+    chair: "Dr. Sriram, Dr. K. Shanmugam",
+  },
+  {
+    time: "03:30 – 04:00 PM",
+    topic: "Debate / Pharma Symposium",
+    faculty: "",
+    chair: "",
+  },
+  { time: "04:00 – 04:30 PM", topic: "Pharma Symposium", faculty: "", chair: "" },
+  {
+    time: "04:30 – 05:00 PM",
+    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+    chair: "",
+  },
 ];
 
 // -------- Variants --------
@@ -42,12 +108,21 @@ const itemVariants: Variants = {
 };
 
 // -------- Highlight function --------
-function highlightText(text: string, query: string) {
-  if (!query) return text;
+function highlightText(text: string, query: string, bold = false) {
+  if (!query) return bold ? <span className="font-bold">{text}</span> : text;
   const regex = new RegExp(`(${query})`, "gi");
   return text.split(regex).map((part, i) =>
     regex.test(part) ? (
-      <span key={i} className="bg-yellow-200 text-black px-1 rounded">
+      <span
+        key={i}
+        className={`bg-yellow-200 text-black px-1 rounded ${
+          bold ? "font-bold" : ""
+        }`}
+      >
+        {part}
+      </span>
+    ) : bold ? (
+      <span key={i} className="font-bold">
         {part}
       </span>
     ) : (
@@ -57,7 +132,7 @@ function highlightText(text: string, query: string) {
 }
 
 export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
-  const heading = "MVCON 2026 – Day 2 (Dr. M. Madhavi Amma Hall)";
+  const heading = "MVCON 2026 – Day 2 (Dr. M. Madhavi Amma Hall)";
 
   const filteredSchedule =
     searchQuery.trim() === ""
@@ -93,15 +168,21 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
               </span>
             ))}
           </h2>
-          <p className="text-gray-600">A multidisciplinary update on diabetic foot care</p>
+          <p className="text-gray-600">
+            A multidisciplinary update on diabetic foot care
+          </p>
         </div>
 
         {/* Cards */}
         <div className="flex flex-col gap-8">
           {filteredSchedule.length === 0 ? (
             <div className="text-center py-10">
-              <p className="text-gray-800 text-lg font-semibold">No sessions match your search.</p>
-              <p className="text-gray-500 text-sm mt-2">Try searching with a different keyword.</p>
+              <p className="text-gray-800 text-lg font-semibold">
+                No sessions match your search.
+              </p>
+              <p className="text-gray-500 text-sm mt-2">
+                Try searching with a different keyword.
+              </p>
             </div>
           ) : (
             filteredSchedule.map((item, i) => (
@@ -112,34 +193,36 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col md:flex-row"
+                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
-                {/* Thumbnail */}
-                <div className="w-[100%] max-md:h-64 md:w-[200px] md:h-auto bg-gray-200 flex items-center justify-center">
-                  <img src="/images/program-img.png" alt="Session" className="w-[100%] h-full object-cover" />
+                {/* Left column – TIME block */}
+                <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
+                  <span className="text-xl md:text-xl font-bold text-indigo-600 text-center">
+                    {item.time}
+                  </span>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="p-6 flex-1 flex flex-col justify-center">
                   <div>
-                    <div className="flex items-center gap-6 text-gray-500 text-sm mb-2 flex-wrap">
-                      <span className="flex items-center gap-2">
-                        <Clock size={16} className="text-indigo-500" />
-                        {item.time}
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <CiLocationOn size={16} className="text-indigo-500" />
-                        Dr. M. Madhavi Amma Hall
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
                     {item.faculty && (
-                      <p className="text-gray-600 text-sm">{highlightText(item.faculty, searchQuery)}</p>
+                      <p className="text-gray-600 text-md">
+                        Faculty:{" "}
+                        <span className="font-bold">
+                          {highlightText(item.faculty, searchQuery)}
+                        </span>
+                      </p>
                     )}
                     {item.chair && (
-                      <p className="text-gray-500 text-sm">Chairpersons: {highlightText(item.chair, searchQuery)}</p>
+                      <p className="text-gray-600 text-md">
+                        Chairpersons:{" "}
+                        <span className="font-bold">
+                          {highlightText(item.chair, searchQuery)}
+                        </span>
+                      </p>
                     )}
                   </div>
                 </div>

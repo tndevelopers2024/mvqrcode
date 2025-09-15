@@ -2,17 +2,48 @@
 
 import { motion, Variants } from "framer-motion";
 import { Clock } from "lucide-react";
-import { CiLocationOn } from "react-icons/ci";
 
 const schedule = [
-  { time: "09:30 – 10:00 AM", topic: "GLP1 For Weight Loss (20 min talk + 10 min discussion)", faculty: "Dr. Jayasree Gopal" },
-  { time: "10:00 – 10:30 AM", topic: "Ambulatory BP or Pharma Topic (20 min talk + 10 min discussion)", faculty: "Dr. S.S. Lakshmanan" },
-  { time: "10:10 – 11:00 AM", topic: "Management of Hypertension in Newly diagnosed cases of diabetes", faculty: "Dr. Narasingan" },
-  { time: "11:00 – 11:30 AM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "11:30 – 12:00 PM", topic: "Monogenic diabetes", faculty: "Dr. V. Mohan" },
-  { time: "12:00 – 12:30 PM", topic: "Prevention of Diabetes in India", faculty: "Dr. A. Ramachandran" },
-  { time: "12:30 – 01:15 PM", topic: "Prof. MV Gold Medal Oration 2026 & Launch (if any)", faculty: "" },
-  { time: "01:15 PM onwards", topic: "Valedictory function followed by lunch", faculty: "" },
+  {
+    time: "09:30 – 10:00 AM",
+    topic: "GLP1 For Weight Loss (20 min talk + 10 min discussion)",
+    faculty: "Dr. Jayasree Gopal",
+  },
+  {
+    time: "10:00 – 10:30 AM",
+    topic: "Ambulatory BP or Pharma Topic (20 min talk + 10 min discussion)",
+    faculty: "Dr. S.S. Lakshmanan",
+  },
+  {
+    time: "10:10 – 11:00 AM",
+    topic: "Management of Hypertension in Newly diagnosed cases of diabetes",
+    faculty: "Dr. Narasingan",
+  },
+  {
+    time: "11:00 – 11:30 AM",
+    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+  },
+  {
+    time: "11:30 – 12:00 PM",
+    topic: "Monogenic diabetes",
+    faculty: "Dr. V. Mohan",
+  },
+  {
+    time: "12:00 – 12:30 PM",
+    topic: "Prevention of Diabetes in India",
+    faculty: "Dr. A. Ramachandran",
+  },
+  {
+    time: "12:30 – 01:15 PM",
+    topic: "Prof. MV Gold Medal Oration 2026 & Launch (if any)",
+    faculty: "",
+  },
+  {
+    time: "01:15 PM onwards",
+    topic: "Valedictory function followed by lunch",
+    faculty: "",
+  },
 ];
 
 const letterVariants: Variants = {
@@ -38,14 +69,20 @@ function highlightText(text: string, query: string) {
   const regex = new RegExp(`(${query})`, "gi");
   return text.split(regex).map((part, i) =>
     regex.test(part) ? (
-      <span key={i} className="bg-yellow-200 text-black px-1 rounded">{part}</span>
+      <span key={i} className="bg-yellow-200 text-black px-1 rounded">
+        {part}
+      </span>
     ) : (
       part
     )
   );
 }
 
-export default function DaythreeHallA({ searchQuery }: { searchQuery: string }) {
+export default function DaythreeHallA({
+  searchQuery,
+}: {
+  searchQuery: string;
+}) {
   const heading = "MVCON – Day 3 (Prof. M. Viswanathan Hall)";
 
   const filteredSchedule =
@@ -81,15 +118,21 @@ export default function DaythreeHallA({ searchQuery }: { searchQuery: string }) 
               </span>
             ))}
           </h2>
-          <p className="text-gray-600">A multidisciplinary update on diabetes & diabetic foot care</p>
+          <p className="text-gray-600">
+            A multidisciplinary update on diabetes & diabetic foot care
+          </p>
         </div>
 
         {/* Cards */}
         <div className="flex flex-col gap-8">
           {filteredSchedule.length === 0 ? (
             <div className="text-center py-10">
-              <p className="text-gray-800 text-lg font-semibold">No sessions match your search.</p>
-              <p className="text-gray-500 text-sm mt-2">Try searching with a different keyword.</p>
+              <p className="text-gray-800 text-lg font-semibold">
+                No sessions match your search.
+              </p>
+              <p className="text-gray-500 text-sm mt-2">
+                Try searching with a different keyword.
+              </p>
             </div>
           ) : (
             filteredSchedule.map((item, i) => (
@@ -100,30 +143,29 @@ export default function DaythreeHallA({ searchQuery }: { searchQuery: string }) 
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col md:flex-row"
+                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
-                {/* Thumbnail */}
-                <div className="w-[100%] max-md:h-64 md:w-[200px] md:h-auto bg-gray-200 flex items-center justify-center">
-                  <img src="/images/program-img.png" alt="Session" className="w-[100%] h-full object-cover" />
+                {/* Left column – TIME block */}
+                <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
+                  <span className="text-xl md:text-xl font-bold text-indigo-600 text-center">
+                    {item.time}
+                  </span>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="p-6 flex-1 flex flex-col justify-center">
                   <div>
-                    <div className="flex items-center gap-6 text-gray-500 text-sm mb-2 flex-wrap">
-                      <span className="flex items-center gap-2">
-                        <Clock size={16} className="text-indigo-500" />
-                        {item.time}
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <CiLocationOn size={16} className="text-indigo-500" />
-                        Prof. M. Viswanathan Hall
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
-                    {item.faculty && <p className="text-gray-600 text-sm">{highlightText(item.faculty, searchQuery)}</p>}
+                    {item.faculty && (
+                      <p className="text-gray-600 text-md">
+                        Faculty:{" "}
+                        <span className="font-bold">
+                          {highlightText(item.faculty, searchQuery)}
+                        </span>
+                      </p>
+                    )}
                   </div>
                 </div>
               </motion.div>

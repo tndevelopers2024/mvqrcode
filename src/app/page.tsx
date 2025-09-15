@@ -1,23 +1,20 @@
-import { RegistrationForm } from "@/components/RegistrationForm";
-// import { Header } from "@/components/Header";
+import HeroCarousel from "@/components/home/hero";
+import About from "@/components/home/about"
 import Navbar from "@/components/navbar/navbar";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-
-export default function Home() {
+import Footer from "@/components/footer/footer";
+import WelcomeSection from "@/components/home/president";
+import Gallery from "@/components/home/gallery";
+import ConferenceVenue from "@/components/home/venue"
+export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow container mt-20 mx-auto px-4 py-8 sm:px-6 lg:px-8 flex items-center justify-center">
-        <Card className="w-full max-w-2xl shadow-2xl">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl font-bold tracking-tight">Welcome to the MV International Conference</CardTitle>
-            <CardDescription className="text-lg pt-2">Register now to secure your spot!</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <RegistrationForm />
-          </CardContent>
-        </Card>
-      </main>
-    </div>
+    <main className="flex flex-col items-center justify-center">
+      <Navbar/>
+      <HeroCarousel />
+      <About/>
+      <WelcomeSection/>
+      <ConferenceVenue/>
+      <Gallery/>
+      <Footer/>
+    </main>
   );
 }

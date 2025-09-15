@@ -11,9 +11,7 @@ export default function ProgramHeader() {
           Scientific program
         </h1>
         <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
-          Submit your innovative ideas and research for the upcoming MV
-          International Conference. We welcome proposals that inspire knowledge
-          sharing and collaboration.
+          TNMC credits available
         </p>
       </div>
     </header>

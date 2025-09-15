@@ -83,7 +83,7 @@ export default function FacultySection() {
                 className="flex flex-col items-center"
               >
                 {/* Arched Card */}
-                <div className="relative w-full max-w-xs bg-gradient-to-b from-blue-700 to-purple-900 rounded-t-[150px] rounded-b-2xl shadow-lg flex flex-col items-center">
+                <div className="relative w-full max-w-xs  bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-t-[150px] rounded-b-2xl shadow-lg flex flex-col items-center">
                   {/* Image container with shine */}
                   <div className="shine-card relative z-10 flex justify-center -translate-x-3 -translate-y-3 rounded-t-[150px] overflow-hidden">
                     <img

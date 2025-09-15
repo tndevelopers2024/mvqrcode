@@ -2,9 +2,22 @@
 
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="w-full bg-gradient-to-tr from-blue-950 to-blue-700 text-white pt-12 pb-6 px-4 tracking-wide">
+      {/* Logo */}
+      <div className="flex justify-center mb-8">
+        <Image
+          src="/images/MV-logo.png"
+          alt="MV International Conference Logo"
+          width={240}
+          height={240}
+          className="object-contain bg-white p-6 rounded-lg"
+        />
+      </div>
+
       <div className="text-center">
         {/* Links */}
         <ul className="flex gap-x-8 gap-y-3 justify-center flex-wrap">
@@ -34,7 +47,7 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              href="/program"
+              href="/faculty"
               className="text-[15px] text-slate-300 hover:text-white"
             >
               Faculties
@@ -58,12 +71,12 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link
+            {/* <Link
               href="/admin"
               className="text-[15px] text-slate-300 hover:text-white"
             >
               Admin
-            </Link>
+            </Link> */}
           </li>
         </ul>
 
@@ -75,7 +88,7 @@ export default function Footer() {
 
           <div className="flex justify-center items-center gap-6">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/MVHospitalForDiabetes/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-500 transition"
@@ -83,7 +96,7 @@ export default function Footer() {
               <FaFacebookF size={24} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/mvhospitaldiabetes/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-500 transition"
@@ -91,7 +104,7 @@ export default function Footer() {
               <FaInstagram size={24} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/mvdiabetes1972"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-sky-400 transition"

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { MountainIcon } from 'lucide-react';
 
 
 export default function Navbar() {
@@ -11,23 +10,23 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-      <div className="container mx-auto flex items-center justify-between px-20 py-4">
+      <div className="container mx-auto flex items-center justify-between px-6 md:px-20 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary hover:text-primary/80 transition-colors">
 
-          <img src={"/images/MV-logo.png"} alt="" className="w-[180px]" />
+          <img src={"/images/final-logo.png"} alt="" className="w-[180px]" />
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <Link href="/home" className="text-gray-700 hover:text-blue-600">
+          <Link href="/" className="text-gray-700 hover:text-blue-600">
             Home
           </Link>
-          <Link href="/home/#about" className="text-gray-700 hover:text-blue-600">
+          <Link href="/#about" className="text-gray-700 hover:text-blue-600">
             About
           </Link>
           <Link href="/program" className="text-gray-700 hover:text-blue-600">
-            Scientific program
+            Scientific Program
           </Link>
           <Link href="/faculty" className="text-gray-700 hover:text-blue-600">
             Faculties
@@ -35,7 +34,7 @@ export default function Navbar() {
           <Link href="/submit-abstract" className="text-gray-700 hover:text-blue-600">
             Abstract Submission
           </Link>
-          <Link href="/" className="text-gray-700 hover:text-blue-600">
+          <Link href="/registration" className="text-gray-700 hover:text-blue-600">
             Register
           </Link>
           {/* <Link href="/admin" className="text-gray-700 hover:text-blue-600">
@@ -76,7 +75,7 @@ export default function Navbar() {
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >
-              Scientific program
+              Scientific Program
             </Link>
             <Link
               href="/faculty"

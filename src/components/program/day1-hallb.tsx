@@ -1,77 +1,78 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Clock } from "lucide-react";
-import { CiLocationOn } from "react-icons/ci";
-import Link from "next/link";
 
 // -------- Schedule for Hall B --------
 const schedule = [
   {
-    time: "09:30 – 10:00",
+    time: "09:30 – 10:00 AM",
     topic: "(Topic – TBD)",
-    faculty: "Dr.Aarthy Kannan | Chairpersons: Dr.Senthil",
+    faculty: "Dr.Aarthy Kannan",
+    chairpersons:"Dr.Senthil",
   },
   {
-    time: "10:00 – 10:30",
+    time: "10:00 – 10:30 AM",
     topic: "TBD",
-    faculty: "Dr.Paranthaman | Chairpersons: Dr.Anand Moses",
+    faculty: "Dr.Paranthaman",
+    chairpersons:"Dr.Anand Moses"
   },
   {
-    time: "10:30 – 10:50",
+    time: "10:30 – 10:50 AM",
     topic: "The GUT Wrenching Troubles: Managing Diabetic GastroParesis",
-    faculty: "Dr. Vishnu Priya Prashanth | Chairpersons: Dr.Muralidharan",
+    faculty: "Dr. Vishnu Priya Prashanth",
+    chairpersons:"Dr.Muralidharan"
   },
   {
-    time: "10:50 – 11:10",
+    time: "10:50 – 11:10 AM",
     topic:
       "International Vs National - ADA Vs RSSDI Guidelines (What's New / What Next / What's the Difference?)",
-    faculty: "Dr.Uma Mahesh | Chairpersons: Dr.K.Shanmugam",
+    faculty: "Dr.Uma Mahesh",
+    chairpersons:"Dr.K.Shanmugam"
   },
   {
-    time: "11:10 – 11:30",
+    time: "11:10 – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
   {
-    time: "11:30 – 12:30",
+    time: "11:30 – 12:30 PM",
     topic:
       "MV Life Time Achievement Award & Inauguration + Key Note lecture (Hall A)",
     faculty: "",
   },
   {
-    time: "12:30 – 1:30",
+    time: "12:30 – 1:30 PM",
     topic:
       "Oral presentations (7 approx. – 5 mins presentation + 2 mins discussion)",
     faculty: "",
   },
   {
-    time: "1:30 – 2:30",
+    time: "1:30 – 2:30 PM",
     topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
   {
-    time: "2:30 – 3:00",
+    time: "2:30 – 3:00 PM",
     topic: "Demonstration of High Risk Feet (Hall A)",
     faculty: "",
   },
   {
-    time: "3:00 – 3:30",
+    time: "3:00 – 3:30 PM",
     topic: "Smart Dressing Solutions - The T.I.M.E. concept (Video) (Hall A)",
     faculty: "",
   },
   {
-    time: "3:30 – 4:00",
+    time: "3:30 – 4:00 PM",
     topic: "Unmasking Anemia in Diabetes",
     faculty: "Dr. V.P. Sriram",
   },
   {
-    time: "4:00 – 4:30",
+    time: "4:00 – 4:30 PM",
     topic: "PHARMA SLOT (Based on Sponsorship) – Obesity Workshop",
     faculty: "",
   },
   {
-    time: "4:30 – 5:00",
+    time: "4:30 – 5:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
@@ -172,36 +173,29 @@ export default function DayoneHallB({ searchQuery }: { searchQuery: string }) {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col md:flex-row"
+                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
-                {/* Thumbnail */}
-                <div className="w-[100%] max-md:h-64 md:w-[200px] h-40 md:h-auto bg-gray-200 flex items-center justify-center">
-                  <img
-                    src="/images/program-img.png"
-                    alt="Session"
-                    className="w-[100%] h-full object-cover rounded"
-                  />
+                {/* Left column – TIME block */}
+                <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
+                  <span className="text-xl md:text-xl font-bold text-indigo-600 text-center">
+                    {item.time}
+                  </span>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="p-6 flex-1 flex flex-col justify-center">
                   <div>
-                    <div className="flex items-center gap-4 text-gray-500 text-sm mb-2">
-                      <span className="flex items-center gap-2">
-                        <Clock size={16} className="text-indigo-500" />
-                        {item.time}
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <CiLocationOn size={16} className="text-indigo-500" />
-                        Dr. M. Madhavi Amma Hall
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
                     {item.faculty && (
-                      <p className="text-gray-600 text-sm">
-                        Faculty: {highlightText(item.faculty, searchQuery)}
+                      <p className="text-gray-600 text-md">
+                        Faculty: <span className="font-bold">{highlightText(item.faculty, searchQuery)}</span>
+                      </p>
+                    )}
+                    {item.faculty && (
+                      <p className="text-gray-600 text-md">
+                        Chairpersons: <span className="font-bold">{highlightText(item.chairpersons, searchQuery)}</span>
                       </p>
                     )}
                   </div>

@@ -104,7 +104,7 @@ function CountdownCircles() {
           <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-lime-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
         </div>
       ))}
-      <Link href="/" className="px-6 py-3 bg-gradient-to-b from-yellow-300 to-yellow-400 rounded text-black font-bold hover:bg-yellow-200 transition inline-block">
+      <Link href="/registration" className="px-6 py-3 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-lg text-white font-semibold  hover:from-yellow-500 hover:via-orange-600 hover:to-red-600  transition inline-block">
           Register Now
       </Link>
     </div>

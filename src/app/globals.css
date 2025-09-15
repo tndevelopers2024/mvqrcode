@@ -16,7 +16,7 @@ html{
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 @layer base {
@@ -178,5 +178,23 @@ body {
   height: 250%;
   background: transparent;
   transition: all 600ms linear;
+}
+
+.about-icon {
+  transition: transform 0.6s, background-color 0.6s;
+  backface-visibility: hidden;   /* optional, prevents flicker */
+}
+.about-list {
+  transition: transform 0.6s;         /* ensure transform applies */
+  will-change: transform;    /* optional hint for smoother animation */
+}
+
+.about-list:hover {
+  transform: translateY(20px);
+}
+
+.about-list:hover .about-icon {
+  background-color: #ffba00 !important;
+  transform: rotateY(360deg);   /* <-- no quotes */
 }
 

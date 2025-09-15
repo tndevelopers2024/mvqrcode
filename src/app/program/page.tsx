@@ -20,8 +20,8 @@ export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const hallTabs = [
-    { id: "hallA", name: "Prof. M. Viswanathan Hall", hall: "hall A" },
-    { id: "hallB", name: "Dr. M. Madhavi Amma Hall", hall: "hall B" },
+    { id: "hallA", name: "Prof. M. Viswanathan Hall", hall: "hall - A" },
+    { id: "hallB", name: "Dr. M. Madhavi Amma Hall", hall: "hall - B" },
   ];
 
   const renderHallTabs = (dayHall: "hallA" | "hallB", setDayHall: any) => (
@@ -32,7 +32,7 @@ export default function HomePage() {
           onClick={() => setDayHall(hall.id)}
           className={`flex flex-col items-center justify-center rounded-lg shadow-md border transition-all duration-300
             ${dayHall === hall.id
-              ? "bg-yellow-300 text-black border-blue-950" // Active tab
+              ? " bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black border-blue-950" // Active tab
               : "bg-white text-gray-700 border-gray-200 hover:bg-gray-100"} // Inactive tab
           `}
         >
@@ -47,6 +47,7 @@ export default function HomePage() {
     </div>
   );
 
+
   return (
     <main className="flex flex-col items-center justify-center w-full">
       <Navbar />
@@ -56,22 +57,23 @@ export default function HomePage() {
       <div className="mt-10 mx-auto w-11/12 md:w-12/12 font-grotesk">
         <div className="flex justify-center gap-4 flex-wrap my-10">
           {[
-            { id: "day1", day: "Day 01", date: "20", month: "MAR", year: "2026" },
-            { id: "day2", day: "Day 02", date: "21", month: "MAR", year: "2026" },
-            { id: "day3", day: "Day 03", date: "22", month: "MAR", year: "2026" },
+            { id: "day1", day: "Day 01", date: "20", month: "MAR", year: "2026", day2:"Friday" },
+            { id: "day2", day: "Day 02", date: "21", month: "MAR", year: "2026", day2:"Saturday" },
+            { id: "day3", day: "Day 03", date: "22", month: "MAR", year: "2026", day2:"Sunday" },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex flex-col items-center justify-center rounded-lg shadow-md border transition-all duration-300 ${
                 activeTab === tab.id
-                  ? "bg-yellow-300 text-black border-blue-950"
+                  ? " bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black border-blue-950"
                   : "bg-white text-gray-700 border-gray-200"
               }`}
             >
               <span className="text-sm font-semibold mb-2 bg-black text-white w-full px-2 py-0.5 rounded">
                 {tab.day}
               </span>
+              {tab.day2}
               <div className="flex gap-6 px-6 py-4">
                 <span
                   className={`text-3xl font-bold ${activeTab === tab.id ? "text-black" : "text-gray-800"}`}

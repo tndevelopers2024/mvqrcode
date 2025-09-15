@@ -144,7 +144,7 @@ export default function StylishCountdown() {
         >
           <Link
             href="/"
-            className="px-8 py-4 bg-white text-blue-900 font-semibold rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-transform"
+            className="px-6 py-3 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-lg text-white font-semibold  hover:from-yellow-500 hover:via-orange-600 hover:to-red-600  transition inline-block"
           >
             Register Now
           </Link>

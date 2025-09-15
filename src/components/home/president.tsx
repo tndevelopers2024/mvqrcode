@@ -13,29 +13,16 @@ export default function WelcomeSection() {
           {/* Message */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              Message From the Chairman
+              Message From the Organising Chairman
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              It gives me immense pleasure to welcome you to the inaugural
-              edition of <strong>MVCON</strong>, a new academic tradition from
-              MV Hospital for Diabetes. With over 75 years of legacy in
-              pioneering diabetes care, MV has stood as a leader in both
-              holistic diabetes management and advanced diabetic foot care.
-              MVCON builds on this legacy, creating a platform where
-              diabetologists, surgeons, and paramedics can come together to
-              learn, exchange, and collaborate. With a special focus on diabetic
-              foot – an area where MV has earned national and international
-              recognition – we aim to advance skills, share innovations, and
-              improve outcomes for patients everywhere.
+              It gives me immense pleasure to welcome you to the inaugural edition of MVCON, a new forum for a plethora of scientific sessions from MV Diabetes. With over 75 years of legacy in pioneering diabetes care, MV Diabetes has stood as a leader in both comprehensive diabetes management and advanced diabetic foot care. MVCON builds on this legacy, creating a scientific platform where diabetologists, surgeons, and paramedics can come together to learn, exchange, and collaborate. With a special expertise on diabetic foot—an area where MV Diabetes has earned both national and international recognition—we aim to advance skills, share innovations, and improve clinical outcomes for patients across the globe.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              As President of <strong>RSSDI</strong>, India’s largest diabetes
-              body, and Honorary President of{" "}
-              <strong>D Foot International</strong>, I have dedicated my mission
-              to reducing preventable amputations worldwide. MVCON reflects that
-              vision, and I look forward to welcoming you to Chennai, to an
-              event that promises learning, inspiration, and collaboration for
-              the diabetes community.
+              As the National President of RSSDI, India’s largest organization for healthcare professionals and researchers in diabetes, and the Honorary President of D-Foot International, I have dedicated my mission to developing a multidisciplinary approach to reduce preventable amputations worldwide. MVCON reflects this strategic vision, & I look forward to welcoming you to Chennai, to a prestigious event that promises learning, inspiration, and collaboration for the diabetes community.
+            </p>
+            <p className="text-right text-xl">
+              - Dr. Vijay Viswanathan
             </p>
           </div>
 
@@ -62,7 +49,7 @@ export default function WelcomeSection() {
           <div className="flex justify-center flex-wrap gap-8">
             {[
               {
-                name: "Dr. Vishnu",
+                name: "Dr. Viswanathan Vishnu Vijay",
                 role: "Organising Committee",
                 img: "/images/person2.jpg",
               },
@@ -102,18 +89,18 @@ export default function WelcomeSection() {
           <div className="flex flex-wrap justify-center gap-8">
             {[
               {
-                name: "Dr.Sivashankari",
-                role: "Committee Members",
+                name: "Dr.Sivashankari S",
+                role: "Organising Committee",
                 img: "/images/person3.jpg",
               },
               {
-                name: "Dr.Satyavani",
-                role: "Committee Members",
+                name: "Dr.Satyavani K",
+                role: "Organising Committee",
                 img: "/images/person4.jpg",
               },
               {
                 name: "Ms. Nagajothi",
-                role: "Committee Members",
+                role: "Organising Committee",
                 img: "/images/person5.jpg", // new image
               },
             ].map((speaker, index) => (

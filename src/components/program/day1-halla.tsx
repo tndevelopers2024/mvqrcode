@@ -1,97 +1,103 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Clock, } from "lucide-react";
-import { CiLocationOn } from "react-icons/ci";
-import Link from "next/link";
 
 // -------- Schedule for Hall A --------
 const schedule = [
   {
-    time: "09:30 – 10:00",
+    time: "09:30 – 10:00 AM",
     topic: "(Topic – TBD)",
-    faculty: "Dr.Rakesh Sahay | Chairpersons: Dr.K.Shanmugam, Dr.M S Ashraf",
+    faculty: "Dr.Rakesh Sahay",
+    chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf",
   },
   {
-    time: "10:00 – 10:30",
+    time: "10:00 – 10:30 AM",
     topic: "Type 1 (TBD)",
-    faculty: "Dr.Nihal Thomas | Chairpersons: Dr.K.Shanmugam, Dr.M S Ashraf",
+    faculty: "Dr.Nihal Thomas",
+    chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf",
   },
   {
-    time: "10:30 – 10:50",
+    time: "10:30 – 10:50 AM",
     topic: "TBD",
-    faculty: "Dr.Balamurugan | Chairpersons: Dr.Kannan Natrajan, Dr.C Balaji",
+    faculty: "Dr.Balamurugan",
+    chairpersons: "Dr.Kannan Natrajan, Dr.C Balaji",
   },
   {
-    time: "10:50 – 11:10",
+    time: "10:50 – 11:10 AM",
     topic: "TBD",
-    faculty: "Dr.Muruganathan | Chairpersons: Dr.Anand Moses, Dr.Dharmarajan",
+    faculty: "Dr.Muruganathan",
+    chairpersons: "Dr.Anand Moses, Dr.Dharmarajan",
   },
   {
-    time: "11:10 – 11:30",
+    time: "11:10 – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
   {
-    time: "11:30 – 12:30",
+    time: "11:30 – 12:30 PM",
     topic: "MV Life Time Achievement Award + Inauguration & Key Note lecture",
     faculty: "",
   },
   {
-    time: "12:30 – 1:00",
+    time: "12:30 – 1:00 PM",
     topic: "Recurrence of DFU - The Indian Strategy for prevention",
-    faculty: "Dr.Senthil | Chairpersons: Dr.Muralidharan, Dr.Aarthy Kannan",
+    faculty: "Dr.Senthil",
+    chairpersons: "Dr.Muralidharan, Dr.Aarthy Kannan",
   },
   {
-    time: "1:00 – 1:30",
+    time: "1:00 – 1:30 PM",
     topic: "Structural & Functional Triggers of DFU",
-    faculty: "Dr.Ashwanth (Ortho) | Chairpersons: Dr.Muralidharan, Dr.Aarthy Kannan",
+    faculty: "Dr.Ashwanth (Ortho)",
+    chairpersons: "Dr.Muralidharan, Dr.Aarthy Kannan",
   },
   {
-    time: "1:30 – 2:30",
+    time: "1:30 – 2:30 PM",
     topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
   {
-    time: "2:30 – 3:00",
+    time: "2:30 – 3:00 PM",
     topic: "Demonstration of High Risk Feet",
     faculty: "Dr. Vijay Viswanathan / Ms.Seena & Ms.Bamilla",
   },
   {
-    time: "3:00 – 3:30",
+    time: "3:00 – 3:30 PM",
     topic: "Smart Dressing Solutions - The T.I.M.E. concept (Video)",
     faculty: "Dr.Kumar / Dr. Senthil",
   },
   {
-    time: "3:30 – 4:00",
+    time: "3:30 – 4:00 PM",
     topic: "TBD",
-    faculty: "Dr.Janaka | Chairpersons: Dr.Vijay Viswanathan",
+    faculty: "Dr.Janaka",
+    chairpersons: "Dr.Vijay Viswanathan",
   },
   {
-    time: "4:00 – 4:30",
+    time: "4:00 – 4:30 PM",
     topic: "TBD",
-    faculty: "Dr.Usha Aiyyagari | Chairpersons: Dr.Anand Moses, Dr.Dharmarajan",
+    faculty: "Dr.Usha Aiyyagari",
+    chairpersons: "Dr.Anand Moses, Dr.Dharmarajan",
   },
   {
-    time: "4:30 – 5:00",
+    time: "4:30 – 5:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
   {
-    time: "5:00 – 5:30",
+    time: "5:00 – 5:30 PM",
     topic: "Nutrition panel discussion",
     faculty:
-      "Dr.Meenakshi Bajaj, Dr.V.Ravindranath, Dr.S.Chandrasekar | Moderator: Dr.Mohan Krishnamoorthy",
+      "Dr.Meenakshi Bajaj, Dr.V.Ravindranath, Dr.S.Chandrasekar",
+    chairpersons: "Moderator: Dr.Mohan Krishnamoorthy",
   },
   {
-    time: "5:30 – 6:00",
+    time: "5:30 – 6:00 PM",
     topic: "CGMS & WEARABLES, INSULIN PUMP",
-    faculty:
-      "Dr.Prashanth Arun, Dr.Leela Baid | Chairpersons: Dr.Kannan Natrajan, Dr.C Balaji",
+    faculty: "Dr.Prashanth Arun, Dr.Leela Baid",
+    chairpersons: "Dr.Kannan Natrajan, Dr.C Balaji",
   },
-  { time: "6:00 – 6:30", topic: "SLEEP & OSA", faculty: "Dr.Ramakrishnan" },
+  { time: "6:00 – 6:30 PM", topic: "SLEEP & OSA", faculty: "Dr.Ramakrishnan" },
   {
-    time: "6:30 – 7:00",
+    time: "6:30 – 7:00 PM",
     topic: "Sexual dysfunction in people with diabetes",
     faculty: "Dr.Mithun Bhatia",
   },
@@ -141,7 +147,10 @@ export default function DayoneHallA({ searchQuery }: { searchQuery: string }) {
       : schedule.filter(
           (item) =>
             item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.faculty.toLowerCase().includes(searchQuery.toLowerCase())
+            (item.faculty &&
+              item.faculty.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (item.chairpersons &&
+              item.chairpersons.toLowerCase().includes(searchQuery.toLowerCase()))
         );
 
   return (
@@ -193,43 +202,35 @@ export default function DayoneHallA({ searchQuery }: { searchQuery: string }) {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col md:flex-row"
+                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
-                {/* Thumbnail */}
-                <div className="w-[100%] max-md:h-64 md:w-[200px] md:h-auto bg-gray-200 flex items-center justify-center">
-                  <img
-                    src="/images/program-img.png"
-                    alt="Session"
-                    className="w-[100%] h-full object-cover"
-                  />
+                {/* Left column – TIME block */}
+                <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
+                  <span className="text-xl md:text-xl font-bold text-indigo-600 text-center">
+                    {item.time}
+                  </span>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="p-6 flex-1 flex flex-col justify-center">
                   <div>
-                    <div className="flex items-center gap-4 text-gray-500 text-sm mb-2">
-                      <div className="flex items-center gap-6 text-gray-500 text-sm mb-2 flex-wrap">
-                        {/* Time */}
-                        <span className="flex items-center gap-2">
-                          <Clock size={16} className="text-indigo-500" />
-                          {item.time}
-                        </span>
-
-                        {/* Venue */}
-                        <span className="flex items-center gap-2">
-                          <CiLocationOn size={16} className="text-indigo-500"/>
-                          Prof. M. Viswanathan Hall
-                        </span>
-                      </div>
-                      {/* Optional location if you want */}
-                      {/* <span> | 26/C Asana, New York</span> */}
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
                     {item.faculty && (
-                      <p className="text-gray-600 text-sm">
-                        Faculty: {highlightText(item.faculty, searchQuery)}
+                      <p className="text-gray-600 text-md">
+                        Faculty:{" "}
+                        <span className="font-bold">
+                          {highlightText(item.faculty, searchQuery)}
+                        </span>
+                      </p>
+                    )}
+                    {item.chairpersons && (
+                      <p className="text-gray-600 text-md">
+                        Chairpersons:{" "}
+                        <span className="font-bold">
+                          {highlightText(item.chairpersons, searchQuery)}
+                        </span>
                       </p>
                     )}
                   </div>

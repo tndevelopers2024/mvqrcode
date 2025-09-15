@@ -1,30 +1,28 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Clock } from "lucide-react";
-import { CiLocationOn } from "react-icons/ci";
 
 // -------- Schedule for Day 2 Hall A --------
 const schedule = [
-  { time: "09:30 – 10:00", topic: "(Topic – TBD)", faculty: "Dr. Sunil Gupta | Chairpersons: Dr. A. Shanmugam" },
-  { time: "10:00 – 10:30", topic: "(Topic – TBD)", faculty: "Dr. Chandrasekar (API) | Chairpersons: Dr. Priya" },
-  { time: "10:30 – 10:50", topic: "(Topic – TBD)", faculty: "Dr. Rajendran (Apollo) | Chairpersons: Dr. Paneerselvam" },
-  { time: "10:50 – 11:10", topic: "(Topic – TBD)", faculty: "Dr. G. Vijayakumar | Chairpersons: Dr. Shunmugavelu" },
-  { time: "11:10 – 11:30", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "11:30 – 12:00", topic: "(Topic – TBD)", faculty: "Dr. Anuj Maheshwari | Chairpersons: Dr. Dharmarajan" },
-  { time: "12:00 – 12:30", topic: "(Topic – TBD)", faculty: "Dr. Bhavatharani | Chairpersons: Dr. K. Shanmugam" },
-  { time: "12:30 – 01:00", topic: "(Topic – TBD)", faculty: "Dr. Balaji K | Chairpersons: Dr. Bhavatharani" },
-  { time: "01:00 – 01:30", topic: "(Topic – TBD)", faculty: "Dr. Paneer Selvam | Chairpersons: Dr. Shunmugavelu" },
-  { time: "01:30 – 02:30", topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "02:30 – 02:50", topic: "Managing Heart failure in People with Diabetes (with 5 min discussion)", faculty: "Dr. A. Shanmugam | Chairpersons: Dr. Prakash" },
-  { time: "02:50 – 03:00", topic: "MOBILITY Break (to specify therapy)", faculty: "" },
-  { time: "03:00 – 04:00", topic: "Surgical Demonstration (VIDEO) – Debridement, VAC & TCC Application", faculty: "Dr. Kumar / Dr. Senthil" },
-  { time: "04:00 – 04:30", topic: "The Silent Struggle: Healing Beyond glycemic control", faculty: "Ms. Vaishnavi Vijay | Chairpersons: Dr. Bhavatharani" },
-  { time: "04:30 – 05:00", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "05:00 – 05:30", topic: "PHARMA SLOT (Insulin symposium)", faculty: "" },
-  { time: "05:30 – 06:00", topic: "How to evaluate kidney function in diabetes? / Symposium", faculty: "Dr. Edwin Fernando | Chairpersons: Dr. Janaka" },
-  { time: "06:00 – 06:30", topic: "(Topic – TBD)", faculty: "Dr. Krishna Seshadri | Chairpersons: Dr. Balaji K" },
-  { time: "06:30 – 07:00", topic: "How to prevent Medico legal problems", faculty: "Dr. Viswanathan Vishnu Vijay | Chairpersons: Dr. Muralidharan, Dr. Prashanth Arun" },
+  { time: "09:30 – 10:00 AM", topic: "(Topic – TBD)", faculty: "Dr. Sunil Gupta", chairpersons: "Dr. A. Shanmugam" },
+  { time: "10:00 – 10:30 AM", topic: "(Topic – TBD)", faculty: "Dr. Chandrasekar (API)", chairpersons: "Dr. Priya" },
+  { time: "10:30 – 10:50 AM", topic: "(Topic – TBD)", faculty: "Dr. Rajendran (Apollo)", chairpersons: "Dr. Paneerselvam" },
+  { time: "10:50 – 11:10 AM", topic: "(Topic – TBD)", faculty: "Dr. G. Vijayakumar", chairpersons: "Dr. Shunmugavelu" },
+  { time: "11:10 – 11:30 AM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
+  { time: "11:30 – 12:00 PM", topic: "(Topic – TBD)", faculty: "Dr. Anuj Maheshwari", chairpersons: "Dr. Dharmarajan" },
+  { time: "12:00 – 12:30 PM", topic: "(Topic – TBD)", faculty: "Dr. Bhavatharani", chairpersons: "Dr. K. Shanmugam" },
+  { time: "12:30 – 01:00 PM", topic: "(Topic – TBD)", faculty: "Dr. Balaji K", chairpersons: "Dr. Bhavatharani" },
+  { time: "01:00 – 01:30 PM", topic: "(Topic – TBD)", faculty: "Dr. Paneer Selvam", chairpersons: "Dr. Shunmugavelu" },
+  { time: "01:30 – 02:30 PM", topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
+  { time: "02:30 – 02:50 PM", topic: "Managing Heart failure in People with Diabetes (with 5 min discussion)", faculty: "Dr. A. Shanmugam", chairpersons: "Dr. Prakash" },
+  { time: "02:50 – 03:00 PM", topic: "MOBILITY Break (to specify therapy)", faculty: "" },
+  { time: "03:00 – 04:00 PM", topic: "Surgical Demonstration (VIDEO) – Debridement, VAC & TCC Application", faculty: "Dr. Kumar / Dr. Senthil" },
+  { time: "04:00 – 04:30 PM", topic: "The Silent Struggle: Healing Beyond glycemic control", faculty: "Ms. Vaishnavi Vijay", chairpersons: "Dr. Bhavatharani" },
+  { time: "04:30 – 05:00 PM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
+  { time: "05:00 – 05:30 PM", topic: "PHARMA SLOT (Insulin symposium)", faculty: "" },
+  { time: "05:30 – 06:00 PM", topic: "How to evaluate kidney function in diabetes? / Symposium", faculty: "Dr. Edwin Fernando", chairpersons: "Dr. Janaka" },
+  { time: "06:00 – 06:30 PM", topic: "(Topic – TBD)", faculty: "Dr. Krishna Seshadri", chairpersons: "Dr. Balaji K" },
+  { time: "06:30 – 07:00 PM", topic: "How to prevent Medico legal problems", faculty: "Dr. Viswanathan Vishnu Vijay", chairpersons: "Dr. Muralidharan, Dr. Prashanth Arun" },
   { time: "07:00 onwards", topic: "Networking Dinner", faculty: "" },
 ];
 
@@ -71,7 +69,10 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
       : schedule.filter(
           (item) =>
             item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.faculty.toLowerCase().includes(searchQuery.toLowerCase())
+            (item.faculty &&
+              item.faculty.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (item.chairpersons &&
+              item.chairpersons.toLowerCase().includes(searchQuery.toLowerCase()))
         );
 
   return (
@@ -105,8 +106,12 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
         <div className="flex flex-col gap-8">
           {filteredSchedule.length === 0 ? (
             <div className="text-center py-10">
-              <p className="text-gray-800 text-lg font-semibold">No sessions match your search.</p>
-              <p className="text-gray-500 text-sm mt-2">Try searching with a different keyword.</p>
+              <p className="text-gray-800 text-lg font-semibold">
+                No sessions match your search.
+              </p>
+              <p className="text-gray-500 text-sm mt-2">
+                Try searching with a different keyword.
+              </p>
             </div>
           ) : (
             filteredSchedule.map((item, i) => (
@@ -117,31 +122,36 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col md:flex-row"
+                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
-                {/* Thumbnail */}
-                <div className="w-[100%] max-md:h-64 md:w-[200px] md:h-auto bg-gray-200 flex items-center justify-center">
-                  <img src="/images/program-img.png" alt="Session" className="w-[100%] h-full object-cover" />
+                {/* Left column – TIME block */}
+                <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
+                  <span className="text-xl md:text-xl font-bold text-indigo-600 text-center">
+                    {item.time}
+                  </span>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="p-6 flex-1 flex flex-col justify-center">
                   <div>
-                    <div className="flex items-center gap-6 text-gray-500 text-sm mb-2 flex-wrap">
-                      <span className="flex items-center gap-2">
-                        <Clock size={16} className="text-indigo-500" />
-                        {item.time}
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <CiLocationOn size={16} className="text-indigo-500" />
-                        Prof. M. Viswanathan Hall
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
                     {item.faculty && (
-                      <p className="text-gray-600 text-sm">{highlightText(item.faculty, searchQuery)}</p>
+                      <p className="text-gray-600 text-md">
+                        Faculty:{" "}
+                        <span className="font-bold">
+                          {highlightText(item.faculty, searchQuery)}
+                        </span>
+                      </p>
+                    )}
+                    {item.chairpersons && (
+                      <p className="text-gray-600 text-md">
+                        Chairpersons:{" "}
+                        <span className="font-bold">
+                          {highlightText(item.chairpersons, searchQuery)}
+                        </span>
+                      </p>
                     )}
                   </div>
                 </div>
