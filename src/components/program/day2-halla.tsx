@@ -6,25 +6,25 @@ import { CiLocationOn } from "react-icons/ci";
 
 // -------- Schedule for Day 2 Hall A --------
 const schedule = [
-  { time: "09:30 – 10:00", topic: "(Topic – TBD)", faculty: "Dr. Sunil Gupta | Chair: Dr. A. Shanmugam" },
-  { time: "10:00 – 10:30", topic: "(Topic – TBD)", faculty: "Dr. Chandrasekar (API) | Chair: Dr. Priya" },
-  { time: "10:30 – 10:50", topic: "(Topic – TBD)", faculty: "Dr. Rajendran (Apollo) | Chair: Dr. Paneerselvam" },
-  { time: "10:50 – 11:10", topic: "(Topic – TBD)", faculty: "Dr. G. Vijayakumar | Chair: Dr. Shunmugavelu" },
+  { time: "09:30 – 10:00", topic: "(Topic – TBD)", faculty: "Dr. Sunil Gupta | Chairpersons: Dr. A. Shanmugam" },
+  { time: "10:00 – 10:30", topic: "(Topic – TBD)", faculty: "Dr. Chandrasekar (API) | Chairpersons: Dr. Priya" },
+  { time: "10:30 – 10:50", topic: "(Topic – TBD)", faculty: "Dr. Rajendran (Apollo) | Chairpersons: Dr. Paneerselvam" },
+  { time: "10:50 – 11:10", topic: "(Topic – TBD)", faculty: "Dr. G. Vijayakumar | Chairpersons: Dr. Shunmugavelu" },
   { time: "11:10 – 11:30", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "11:30 – 12:00", topic: "(Topic – TBD)", faculty: "Dr. Anuj Maheshwari | Chair: Dr. Dharmarajan" },
-  { time: "12:00 – 12:30", topic: "(Topic – TBD)", faculty: "Dr. Bhavatharani | Chair: Dr. K. Shanmugam" },
-  { time: "12:30 – 01:00", topic: "(Topic – TBD)", faculty: "Dr. Balaji K | Chair: Dr. Bhavatharani" },
-  { time: "01:00 – 01:30", topic: "(Topic – TBD)", faculty: "Dr. Paneer Selvam | Chair: Dr. Shunmugavelu" },
+  { time: "11:30 – 12:00", topic: "(Topic – TBD)", faculty: "Dr. Anuj Maheshwari | Chairpersons: Dr. Dharmarajan" },
+  { time: "12:00 – 12:30", topic: "(Topic – TBD)", faculty: "Dr. Bhavatharani | Chairpersons: Dr. K. Shanmugam" },
+  { time: "12:30 – 01:00", topic: "(Topic – TBD)", faculty: "Dr. Balaji K | Chairpersons: Dr. Bhavatharani" },
+  { time: "01:00 – 01:30", topic: "(Topic – TBD)", faculty: "Dr. Paneer Selvam | Chairpersons: Dr. Shunmugavelu" },
   { time: "01:30 – 02:30", topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "02:30 – 02:50", topic: "Managing Heart failure in People with Diabetes (with 5 min discussion)", faculty: "Dr. A. Shanmugam | Chair: Dr. Prakash" },
+  { time: "02:30 – 02:50", topic: "Managing Heart failure in People with Diabetes (with 5 min discussion)", faculty: "Dr. A. Shanmugam | Chairpersons: Dr. Prakash" },
   { time: "02:50 – 03:00", topic: "MOBILITY Break (to specify therapy)", faculty: "" },
   { time: "03:00 – 04:00", topic: "Surgical Demonstration (VIDEO) – Debridement, VAC & TCC Application", faculty: "Dr. Kumar / Dr. Senthil" },
-  { time: "04:00 – 04:30", topic: "The Silent Struggle: Healing Beyond glycemic control", faculty: "Ms. Vaishnavi Vijay | Chair: Dr. Bhavatharani" },
+  { time: "04:00 – 04:30", topic: "The Silent Struggle: Healing Beyond glycemic control", faculty: "Ms. Vaishnavi Vijay | Chairpersons: Dr. Bhavatharani" },
   { time: "04:30 – 05:00", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
   { time: "05:00 – 05:30", topic: "PHARMA SLOT (Insulin symposium)", faculty: "" },
-  { time: "05:30 – 06:00", topic: "How to evaluate kidney function in diabetes? / Symposium", faculty: "Dr. Edwin Fernando | Chair: Dr. Janaka" },
-  { time: "06:00 – 06:30", topic: "(Topic – TBD)", faculty: "Dr. Krishna Seshadri | Chair: Dr. Balaji K" },
-  { time: "06:30 – 07:00", topic: "How to prevent Medico legal problems", faculty: "Dr. Viswanathan Vishnu Vijay | Chairs: Dr. Muralidharan, Dr. Prashanth Arun" },
+  { time: "05:30 – 06:00", topic: "How to evaluate kidney function in diabetes? / Symposium", faculty: "Dr. Edwin Fernando | Chairpersons: Dr. Janaka" },
+  { time: "06:00 – 06:30", topic: "(Topic – TBD)", faculty: "Dr. Krishna Seshadri | Chairpersons: Dr. Balaji K" },
+  { time: "06:30 – 07:00", topic: "How to prevent Medico legal problems", faculty: "Dr. Viswanathan Vishnu Vijay | Chairpersons: Dr. Muralidharan, Dr. Prashanth Arun" },
   { time: "07:00 onwards", topic: "Networking Dinner", faculty: "" },
 ];
 
@@ -121,7 +121,7 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
               >
                 {/* Thumbnail */}
                 <div className="w-[100%] max-md:h-64 md:w-[200px] md:h-auto bg-gray-200 flex items-center justify-center">
-                  <img src="/images/about-bg.jpg" alt="Session" className="w-[100%] h-full object-cover" />
+                  <img src="/images/program-img.png" alt="Session" className="w-[100%] h-full object-cover" />
                 </div>
 
                 {/* Content */}

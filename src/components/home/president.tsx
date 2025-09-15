@@ -49,10 +49,10 @@ export default function WelcomeSection() {
                 className="object-cover object-center"
                 priority
               />
-              <div className="absolute bottom-4 left-4 bg-gradient-to-r from-black/90 via-black/60 to-transparent px-4 py-2 rounded-lg text-white">
+              {/* <div className="absolute bottom-4 left-4 bg-gradient-to-r from-black/90 via-black/60 to-transparent px-4 py-2 rounded-lg text-white">
                 <h3 className="text-2xl font-semibold">Dr. Vijay</h3>
                 <p className="text-sm">Organising Chairman, President</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function WelcomeSection() {
           <div className="flex flex-wrap justify-center gap-8">
             {[
               {
-                name: "Dr.Sivasankari",
+                name: "Dr.Sivashankari",
                 role: "Committee Members",
                 img: "/images/person3.jpg",
               },

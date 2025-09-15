@@ -3,6 +3,13 @@
 import Image from "next/image";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
+import AbstractForm from "@/components/abstractForm/form";
+import { motion } from "framer-motion";
+
+const liVariants = (direction, delay) => ({
+  hidden: { opacity: 0, x: direction === "left" ? -40 : 40 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.5, delay } },
+});
 
 const sections = [
   {
@@ -25,34 +32,48 @@ const sections = [
   {
     title: "Guidelines for Abstract",
     text: (
-      <ul className="list-disc list-inside space-y-2">
-        <li>Abstracts must contain original scientific data.</li>
-        <li>
-          They should focus on diabetes and its complications: prevention,
-          clinical treatment outcomes, innovative techniques, and therapies.
-          Case reports are also accepted.
-        </li>
+      <motion.ul
+        className="list-disc list-inside space-y-2"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {[
+          "Abstracts must contain original scientific data.",
+          "They should focus on diabetes and its complications: prevention, clinical treatment outcomes, innovative techniques, and therapies. Case reports are also accepted.",
+        ].map((item, idx) => (
+          <motion.li
+            key={idx}
+            variants={liVariants(idx % 2 === 0 ? "left" : "right", idx * 0.15)}
+          >
+            {item}
+          </motion.li>
+        ))}
+
         <p className="pt-4 font-bold">The abstract must be structured:</p>
-        <ul className="list-disc ml-6 mt-2 space-y-1">
-          <li>
-            Maximum length: <strong>400 words</strong> (excluding title and
-            author affiliations).
-          </li>
-          <li>
-            Sub-headings in bold: Background and Aims, Materials and Methods,
-            Results, Conclusions.
-          </li>
-          <li>
-            Title should be short (10–15 words) with authors & affiliations.
-          </li>
-          <li>
-            One table or one figure (not exceeding 300 words) may be included.
-          </li>
-          <li>
-            Presentations must avoid branding and use generic product names.
-          </li>
-        </ul>
-      </ul>
+
+        <motion.ul
+          className="list-disc ml-6 mt-2 space-y-1"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {[
+            "Maximum length: 400 words (excluding title and author affiliations).",
+            "Sub-headings in bold: Background and Aims, Materials and Methods, Results, Conclusions.",
+            "Title should be short (10–15 words) with authors & affiliations.",
+            "One table or one figure (not exceeding 300 words) may be included.",
+            "Presentations must avoid branding and use generic product names.",
+          ].map((item, idx) => (
+            <motion.li
+              key={idx}
+              variants={liVariants(idx % 2 === 0 ? "left" : "right", idx * 0.15)}
+            >
+              {item}
+            </motion.li>
+          ))}
+        </motion.ul>
+      </motion.ul>
     ),
     img: "/images/submit-img3.jpg",
   },
@@ -89,27 +110,33 @@ export default function SubmitAbstract() {
   return (
     <main>
       <Navbar />
-      <section className="w-full bg-gradient-to-br from-sky-50 via-white to-purple-50 py-16">
-        <header className="relative w-full text-white bg-[url('/images/sponsor-bg.png')] bg-cover bg-top">
-        <div className="absolute inset-0 bg-blue-700/70" />
-        <div className="relative py-32 container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Submit Your Abstract
-          </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
-            
-          </p>
-        </div>
-      </header>
-        <div className="max-w-7xl mx-auto px-6 py-10 lg:px-12">
-          {/* Page Title */}
-          
+      <section className="w-full bg-gradient-to-br from-sky-50 via-white to-purple-50">
+        {/* Hero */}
+        <header className="relative w-full mt-16 text-white bg-[url('/images/submit-bg.jpg')] bg-cover bg-bottom">
+          <div className="absolute inset-0 bg-blue-700/70" />
+          <div className="relative py-32 container mx-auto px-6 text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold mb-4"
+            >
+              Submit Your Abstract
+            </motion.h1>
+          </div>
+        </header>
 
-          {/* Sections */}
+        {/* Sections */}
+        <div className="max-w-7xl mx-auto px-6 py-16 lg:px-12">
           <div className="space-y-24">
             {sections.map((sec, i) => (
-              <div
+              <motion.div
                 key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
                   i % 2 === 1 ? "lg:grid-flow-dense" : ""
                 }`}
@@ -125,20 +152,26 @@ export default function SubmitAbstract() {
                 </div>
 
                 {/* Image */}
-                <div className="relative w-full h-72 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-md">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                  className="relative w-full h-72 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-md"
+                >
                   <Image
                     src={sec.img}
                     alt={sec.title}
                     fill
-                    className="object-cover object-center hover:scale-105 transition duration-500"
+                    className="object-cover object-center"
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
-      <Footer/>
+
+      <AbstractForm />
+      <Footer />
     </main>
   );
 }

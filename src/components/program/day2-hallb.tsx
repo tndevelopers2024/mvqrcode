@@ -116,7 +116,7 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
               >
                 {/* Thumbnail */}
                 <div className="w-[100%] max-md:h-64 md:w-[200px] md:h-auto bg-gray-200 flex items-center justify-center">
-                  <img src="/images/about-bg.jpg" alt="Session" className="w-[100%] h-full object-cover" />
+                  <img src="/images/program-img.png" alt="Session" className="w-[100%] h-full object-cover" />
                 </div>
 
                 {/* Content */}
@@ -139,7 +139,7 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
                       <p className="text-gray-600 text-sm">{highlightText(item.faculty, searchQuery)}</p>
                     )}
                     {item.chair && (
-                      <p className="text-gray-500 text-sm">Chair: {highlightText(item.chair, searchQuery)}</p>
+                      <p className="text-gray-500 text-sm">Chairpersons: {highlightText(item.chair, searchQuery)}</p>
                     )}
                   </div>
                 </div>

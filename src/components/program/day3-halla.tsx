@@ -104,7 +104,7 @@ export default function DaythreeHallA({ searchQuery }: { searchQuery: string }) 
               >
                 {/* Thumbnail */}
                 <div className="w-[100%] max-md:h-64 md:w-[200px] md:h-auto bg-gray-200 flex items-center justify-center">
-                  <img src="/images/about-bg.jpg" alt="Session" className="w-[100%] h-full object-cover" />
+                  <img src="/images/program-img.png" alt="Session" className="w-[100%] h-full object-cover" />
                 </div>
 
                 {/* Content */}

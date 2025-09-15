@@ -10,23 +10,23 @@ const schedule = [
   {
     time: "09:30 – 10:00",
     topic: "(Topic – TBD)",
-    faculty: "Dr.Aarthy Kannan | Chair: Dr.Senthil",
+    faculty: "Dr.Aarthy Kannan | Chairpersons: Dr.Senthil",
   },
   {
     time: "10:00 – 10:30",
     topic: "TBD",
-    faculty: "Dr.Paranthaman | Chair: Dr.Anand Moses",
+    faculty: "Dr.Paranthaman | Chairpersons: Dr.Anand Moses",
   },
   {
     time: "10:30 – 10:50",
     topic: "The GUT Wrenching Troubles: Managing Diabetic GastroParesis",
-    faculty: "Dr. Vishnu Priya Prashanth | Chair: Dr.Muralidharan",
+    faculty: "Dr. Vishnu Priya Prashanth | Chairpersons: Dr.Muralidharan",
   },
   {
     time: "10:50 – 11:10",
     topic:
       "International Vs National - ADA Vs RSSDI Guidelines (What's New / What Next / What's the Difference?)",
-    faculty: "Dr.Uma Mahesh | Chair: Dr.K.Shanmugam",
+    faculty: "Dr.Uma Mahesh | Chairpersons: Dr.K.Shanmugam",
   },
   {
     time: "11:10 – 11:30",
@@ -177,7 +177,7 @@ export default function DayoneHallB({ searchQuery }: { searchQuery: string }) {
                 {/* Thumbnail */}
                 <div className="w-[100%] max-md:h-64 md:w-[200px] h-40 md:h-auto bg-gray-200 flex items-center justify-center">
                   <img
-                    src="/images/about-bg.jpg"
+                    src="/images/program-img.png"
                     alt="Session"
                     className="w-[100%] h-full object-cover rounded"
                   />

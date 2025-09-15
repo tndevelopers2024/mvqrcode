@@ -10,22 +10,22 @@ const schedule = [
   {
     time: "09:30 – 10:00",
     topic: "(Topic – TBD)",
-    faculty: "Dr.Rakesh Sahay | Chairs: Dr.K.Shanmugam, Dr.M S Ashraf",
+    faculty: "Dr.Rakesh Sahay | Chairpersons: Dr.K.Shanmugam, Dr.M S Ashraf",
   },
   {
     time: "10:00 – 10:30",
     topic: "Type 1 (TBD)",
-    faculty: "Dr.Nihal Thomas | Chairs: Dr.K.Shanmugam, Dr.M S Ashraf",
+    faculty: "Dr.Nihal Thomas | Chairpersons: Dr.K.Shanmugam, Dr.M S Ashraf",
   },
   {
     time: "10:30 – 10:50",
     topic: "TBD",
-    faculty: "Dr.Balamurugan | Chairs: Dr.Kannan Natrajan, Dr.C Balaji",
+    faculty: "Dr.Balamurugan | Chairpersons: Dr.Kannan Natrajan, Dr.C Balaji",
   },
   {
     time: "10:50 – 11:10",
     topic: "TBD",
-    faculty: "Dr.Muruganathan | Chairs: Dr.Anand Moses, Dr.Dharmarajan",
+    faculty: "Dr.Muruganathan | Chairpersons: Dr.Anand Moses, Dr.Dharmarajan",
   },
   {
     time: "11:10 – 11:30",
@@ -40,12 +40,12 @@ const schedule = [
   {
     time: "12:30 – 1:00",
     topic: "Recurrence of DFU - The Indian Strategy for prevention",
-    faculty: "Dr.Senthil | Chairs: Dr.Muralidharan, Dr.Aarthy Kannan",
+    faculty: "Dr.Senthil | Chairpersons: Dr.Muralidharan, Dr.Aarthy Kannan",
   },
   {
     time: "1:00 – 1:30",
     topic: "Structural & Functional Triggers of DFU",
-    faculty: "Dr.Ashwanth (Ortho) | Chairs: Dr.Muralidharan, Dr.Aarthy Kannan",
+    faculty: "Dr.Ashwanth (Ortho) | Chairpersons: Dr.Muralidharan, Dr.Aarthy Kannan",
   },
   {
     time: "1:30 – 2:30",
@@ -65,12 +65,12 @@ const schedule = [
   {
     time: "3:30 – 4:00",
     topic: "TBD",
-    faculty: "Dr.Janaka | Chair: Dr.Vijay Viswanathan",
+    faculty: "Dr.Janaka | Chairpersons: Dr.Vijay Viswanathan",
   },
   {
     time: "4:00 – 4:30",
     topic: "TBD",
-    faculty: "Dr.Usha Aiyyagari | Chairs: Dr.Anand Moses, Dr.Dharmarajan",
+    faculty: "Dr.Usha Aiyyagari | Chairpersons: Dr.Anand Moses, Dr.Dharmarajan",
   },
   {
     time: "4:30 – 5:00",
@@ -87,7 +87,7 @@ const schedule = [
     time: "5:30 – 6:00",
     topic: "CGMS & WEARABLES, INSULIN PUMP",
     faculty:
-      "Dr.Prashanth Arun, Dr.Leela Baid | Chairs: Dr.Kannan Natrajan, Dr.C Balaji",
+      "Dr.Prashanth Arun, Dr.Leela Baid | Chairpersons: Dr.Kannan Natrajan, Dr.C Balaji",
   },
   { time: "6:00 – 6:30", topic: "SLEEP & OSA", faculty: "Dr.Ramakrishnan" },
   {
@@ -198,7 +198,7 @@ export default function DayoneHallA({ searchQuery }: { searchQuery: string }) {
                 {/* Thumbnail */}
                 <div className="w-[100%] max-md:h-64 md:w-[200px] md:h-auto bg-gray-200 flex items-center justify-center">
                   <img
-                    src="/images/about-bg.jpg"
+                    src="/images/program-img.png"
                     alt="Session"
                     className="w-[100%] h-full object-cover"
                   />
