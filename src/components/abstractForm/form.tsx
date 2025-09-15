@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function AbstractForm() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ export default function AbstractForm() {
     email: "",
     file: null,
   });
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -17,9 +20,44 @@ export default function AbstractForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setLoading(true);
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("contact", formData.contact);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("file", formData.file);
+
+    try {
+      const res = await fetch("/api/sendMail", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      const data = await res.json();
+      console.log(data);
+
+      // show popup instead of alert
+      setShowPopup(true);
+
+      // reset form after success
+      setFormData({
+        name: "",
+        contact: "",
+        email: "",
+        file: null,
+      });
+
+      // auto close popup after 3s
+      setTimeout(() => setShowPopup(false), 3000);
+    } catch (err) {
+      console.error(err);
+      alert("Form submission failed!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -27,7 +65,7 @@ export default function AbstractForm() {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/coundown-bg.jpg')" }} // replace with your image
+        style={{ backgroundImage: "url('/images/coundown-bg.jpg')" }}
       ></div>
 
       {/* Gradient overlay */}
@@ -60,6 +98,7 @@ export default function AbstractForm() {
             </label>
           </div>
 
+          {/* Contact */}
           <div className="relative">
             <input
               type="text"
@@ -67,7 +106,6 @@ export default function AbstractForm() {
               name="contact"
               value={formData.contact}
               onChange={(e) => {
-                // keep only digits in state
                 const onlyNums = e.target.value.replace(/\D/g, "");
                 setFormData((prev) => ({ ...prev, contact: onlyNums }));
               }}
@@ -133,9 +171,41 @@ export default function AbstractForm() {
           <div className="pt-4">
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-white/20 text-white font-semibold shadow-lg hover:bg-white/30 hover:shadow-white/40 transition-all duration-300"
+              disabled={loading}
+              className={`w-full py-3 rounded-xl font-semibold shadow-lg transition-all duration-300 
+                ${
+                  loading
+                    ? "bg-white/30 text-gray-200 cursor-not-allowed"
+                    : "bg-white/20 text-white hover:bg-white/30 hover:shadow-white/40"
+                }`}
             >
-              Submit
+              {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <svg
+                    className="animate-spin h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    ></path>
+                  </svg>
+                  Loading...
+                </div>
+              ) : (
+                "Submit"
+              )}
             </button>
           </div>
         </form>
@@ -144,6 +214,24 @@ export default function AbstractForm() {
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-pink-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
         <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
       </div>
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+          <div className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col items-center">
+            <Image
+              src="/images/MV-logo.png"
+              alt="MV Logo"
+              width={120}
+              height={120}
+              className="mb-4"
+            />
+            <p className="text-lg font-semibold text-gray-700">
+              Submission Successful!
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

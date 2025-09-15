@@ -70,7 +70,7 @@ export default function About() {
 
               <div className="grid grid-cols-2 gap-6">
                 <img
-                  src="/images/about-bg4.jpg"
+                  src="/images/about-img6.jpg"
                   alt="About Image 2"
                   className="rounded-2xl shadow-md animate-fadeIn"
                 />
@@ -162,10 +162,10 @@ export default function About() {
             {/* CTA Button */}
             <div className="pt-4">
               <Link
-                href="/contact"
+                href="/program"
                 className="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition inline-block text-white"
               >
-                Learn More
+                Know Program Details
               </Link>
             </div>
           </div>

@@ -13,7 +13,7 @@ export default function WelcomeSection() {
           {/* Message */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              Message From the Organising Chairman
+              Message From the Chairman
             </h2>
             <p className="text-gray-700 leading-relaxed">
               It gives me immense pleasure to welcome you to the inaugural

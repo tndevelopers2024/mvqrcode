@@ -122,13 +122,13 @@ import Link from "next/link";
 
 const images = [
   {
-    src: "/images/MV-banner-1.jpg",
+    src: "/images/MVbanner-1.jpg",
   },
   {
-    src: "/images/MV-banner-3.jpg",
+    src: "/images/MVbanner-3.jpg",
   },
   {
-    src: "/images/MV-banner-2.jpg",
+    src: "/images/MVbanner-2.jpg",
   },
 ];
 

@@ -38,9 +38,9 @@ export default function Navbar() {
           <Link href="/" className="text-gray-700 hover:text-blue-600">
             Register
           </Link>
-          <Link href="/admin" className="text-gray-700 hover:text-blue-600">
+          {/* <Link href="/admin" className="text-gray-700 hover:text-blue-600">
             Admin
-          </Link>
+          </Link> */}
         </div>
 
         {/* Mobile Hamburger */}
@@ -99,13 +99,13 @@ export default function Navbar() {
             >
               Register
             </Link>
-            <Link
+            {/* <Link
               href="/admin"
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >
               Admin
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}
