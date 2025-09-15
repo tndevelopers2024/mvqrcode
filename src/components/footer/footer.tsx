@@ -10,7 +10,7 @@ export default function Footer() {
       {/* Logo */}
       <div className="flex justify-center mb-8">
         <Image
-          src="/images/MV-logo.png"
+          src="/images/final-logo.png"
           alt="MV International Conference Logo"
           width={240}
           height={240}
