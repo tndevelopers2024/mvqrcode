@@ -93,12 +93,12 @@ const sections = [
           You will be notified of receipt of your abstract by email. For
           queries, contact{" "}
           <a
-            href="mailto:info@mvcon2026.org"
+            href="mailto:mvcon@mvdiabetes.in"
             className="text-blue-600 underline"
           >
-            info@mvcon2026.org
+            mvcon@mvdiabetes.in
           </a>{" "}
-          or call <span className="font-medium">+91-9876543210</span>.
+          or call <a href="tel:+91 8925955818"className="text-blue-600 underline">+91-8925955818</a>.
         </p>
       </>
     ),

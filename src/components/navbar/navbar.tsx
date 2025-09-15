@@ -35,7 +35,10 @@ export default function Navbar() {
             Abstract Submission
           </Link>
           <Link href="/registration" className="text-gray-700 hover:text-blue-600">
-            Register
+            Registration
+          </Link>
+          <Link href="/contact" className="text-gray-700 hover:text-blue-600">
+            Contact Us
           </Link>
           {/* <Link href="/admin" className="text-gray-700 hover:text-blue-600">
             Admin
@@ -92,11 +95,18 @@ export default function Navbar() {
               Abstract Submission
             </Link>
             <Link
-              href="/"
+              href="/registration"
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >
-              Register
+              Registration
+            </Link>
+            <Link
+              href="/contact"
+              className="text-gray-700 hover:text-blue-600"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
             </Link>
             {/* <Link
               href="/admin"

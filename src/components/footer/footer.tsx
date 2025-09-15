@@ -64,10 +64,18 @@ export default function Footer() {
           
           <li>
             <Link
-              href="/"
+              href="/registration"
               className="text-[15px] text-slate-300 hover:text-white"
             >
-              Register
+              Registration
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contact"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Contact
             </Link>
           </li>
           <li>
