@@ -208,16 +208,18 @@ export default function DayoneHallB({ searchQuery }: { searchQuery: string }) {
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
-                    {item.faculty && (
+                    <div className="flex flex-col justify-between md:flex-row">
+                      {item.faculty && (
                       <p className="text-gray-600 text-md">
                         Faculty: <span className="font-bold">{highlightText(item.faculty, searchQuery)}</span>
                       </p>
-                    )}
-                    {item.faculty && (
-                      <p className="text-gray-600 text-md">
-                        Chairpersons: <span className="font-bold">{highlightText(item.chairpersons, searchQuery)}</span>
-                      </p>
-                    )}
+                      )}
+                      {item.chairpersons && (
+                        <p className="text-gray-600 text-md">
+                          Chairpersons: <span className="font-bold">{highlightText(item.chairpersons, searchQuery)}</span>
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </div>
               </motion.div>

@@ -7,7 +7,7 @@ const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat
 
 export const metadata: Metadata = {
   title: 'MVCon 2026',
-  description: 'Register for the premier international conference.',
+  description: 'Welcome to MVCON 2026! Join leading experts, professionals, and innovators for an inspiring conference experience.',
 };
 
 export default function RootLayout({

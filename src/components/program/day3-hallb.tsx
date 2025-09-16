@@ -54,7 +54,6 @@ const schedule = [
   },
 ];
 
-
 const letterVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (custom: number) => ({
@@ -167,14 +166,24 @@ export default function DaythreeHallB({
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
-                    {item.faculty && (
-                      <p className="text-gray-600 text-md">
-                        Faculty:{" "}
-                        <span className="font-bold">
-                          {highlightText(item.faculty, searchQuery)}
-                        </span>
-                      </p>
-                    )}
+                    <div className="flex flex-col justify-between md:flex-row">
+                      {item.faculty && (
+                        <p className="text-gray-600 text-md">
+                          Faculty:{" "}
+                          <span className="font-bold">
+                            {highlightText(item.faculty, searchQuery)}
+                          </span>
+                        </p>
+                      )}
+                      {item.chair && (
+                        <p className="text-gray-600 text-md">
+                          Faculty:{" "}
+                          <span className="font-bold">
+                            {highlightText(item.chair, searchQuery)}
+                          </span>
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </div>
               </motion.div>

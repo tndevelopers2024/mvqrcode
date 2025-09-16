@@ -145,7 +145,7 @@ export default function About() {
       </section>
 
       {/* Highlights with animation */}
-      <div className="max-w-7xl mx-auto mt-12 px-6">
+      <div className="max-w-7xl mx-auto mt-12 px-6 overflow-x-hidden">
         <h3 className="text-4xl text-center font-semibold text-gray-900 mb-4">
           Conference Highlights
         </h3>

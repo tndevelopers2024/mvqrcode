@@ -32,7 +32,7 @@ export default function HomePage() {
           onClick={() => setDayHall(hall.id)}
           className={`flex flex-col items-center justify-center rounded-lg shadow-md border transition-all duration-300
             ${dayHall === hall.id
-              ? " bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black border-blue-950" // Active tab
+              ? " bg-yellow-300 text-black border-blue-950" // Active tab
               : "bg-white text-gray-700 border-gray-200 hover:bg-gray-100"} // Inactive tab
           `}
         >
@@ -66,7 +66,7 @@ export default function HomePage() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex flex-col items-center justify-center rounded-lg shadow-md border transition-all duration-300 ${
                 activeTab === tab.id
-                  ? " bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black border-blue-950"
+                  ? " bg-yellow-300 text-black border-blue-950"
                   : "bg-white text-gray-700 border-gray-200"
               }`}
             >

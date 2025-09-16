@@ -237,7 +237,8 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
-                    {item.faculty && (
+                    <div className="flex flex-col justify-between md:flex-row">
+                      {item.faculty && (
                       <p className="text-gray-600 text-md">
                         Faculty:{" "}
                         <span className="font-bold">
@@ -253,6 +254,7 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
                         </span>
                       </p>
                     )}
+                    </div>
                   </div>
                 </div>
               </motion.div>
