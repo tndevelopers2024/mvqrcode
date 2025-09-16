@@ -42,7 +42,7 @@ export default function Footer() {
               href="/program"
               className="text-[15px] text-slate-300 hover:text-white"
             >
-              Scientific Proposal
+              Scientific Programs
             </Link>
           </li>
           <li>
@@ -125,7 +125,7 @@ export default function Footer() {
         {/* Bottom copyright */}
         <div className="border-t border-gray-600 pt-6 mt-12">
           <p className="text-[15px] text-slate-300">
-            © MV International Conference. All rights reserved.
+            © MVCON. All rights reserved.
           </p>
         </div>
       </div>

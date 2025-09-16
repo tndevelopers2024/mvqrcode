@@ -59,7 +59,7 @@ const sections = [
           viewport={{ once: true, amount: 0.2 }}
         >
           {[
-            "Maximum length: 400 words (excluding title and author affiliations).",
+            "Maximum length: 300 words (excluding title and author affiliations).",
             "Sub-headings in bold: Background and Aims, Materials and Methods, Results, Conclusions.",
             "Title should be short (10–15 words) with authors & affiliations.",
             "One table or one figure (not exceeding 300 words) may be included.",

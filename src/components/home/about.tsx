@@ -121,7 +121,7 @@ export default function About() {
               </h2>
 
               <p className="text-gray-600 text-md mt-4 mb-4">
-                MVCON 2026 marks the first edition of MV's annual academic
+                MVCON 2026 marks the first edition of MV's annual scientific
                 update bringing together leading diabetologists, surgeons, and
                 paramedical experts. Hosted by India's pioneers in diabetes and
                 leaders in diabetic foot care, MVCON provides a comprehensive
