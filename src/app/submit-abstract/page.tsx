@@ -27,7 +27,7 @@ const sections = [
         </p>
       </>
     ),
-    img: "/images/about-img5.jpg",
+    img: "/images/img3.jpg",
   },
   {
     title: "Guidelines for Abstract",
@@ -75,7 +75,7 @@ const sections = [
         </motion.ul>
       </motion.ul>
     ),
-    img: "/images/slide2.jpg",
+    img: "/images/img5.jpg",
   },
   {
     title: "Selection & Awards",
@@ -102,7 +102,7 @@ const sections = [
         </p>
       </>
     ),
-    img: "/images/program-bg1.jpg",
+    img: "/images/img15.jpg",
   },
 ];
 

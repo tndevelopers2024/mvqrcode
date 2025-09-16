@@ -101,7 +101,7 @@ export default function WelcomeSection() {
               {
                 name: "Ms. Nagajothi",
                 role: "Organising Committee",
-                img: "/images/person5.jpg", // new image
+                img: "/images/nagajothi.jpg", // new image
               },
             ].map((speaker, index) => (
               <div

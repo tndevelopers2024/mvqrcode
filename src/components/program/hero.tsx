@@ -2,7 +2,7 @@
 
 export default function ProgramHeader() {
   return (
-    <header className="relative w-full mt-16 text-white bg-[url('/images/program-bg1.jpg')] bg-cover bg-top">
+    <header className="relative w-full mt-16 text-white bg-[url('/images/img13.jpg')] bg-cover bg-center">
       {/* Overlay */}
       <div className="absolute inset-0 bg-blue-700/70"></div>
 
