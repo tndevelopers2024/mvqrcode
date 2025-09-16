@@ -106,15 +106,15 @@ function CountdownCircles() {
    ========================= */
 const images = [
   {
-    src: "/images/MVbanner-1.jpg",
+    src: "/images/new-banner1.jpg",
     mobile: "/images/mobile1.jpg",
   },
   {
-    src: "/images/MVbanner-3.jpg",
+    src: "/images/new-banner2.jpg",
     mobile: "/images/mobile2.jpg",
   },
   {
-    src: "/images/MVbanner-2.jpg",
+    src: "/images/new-banner3.jpg",
     mobile: "/images/mobile3.jpg",
   },
 ];
