@@ -116,7 +116,7 @@ export default function About() {
             {/* Right Side - Text Content */}
             <div className=" basis-2/3">
               <h2 className="text-3xl lg:text-4xl font-bold leading-tight text-gray-900 relative inline-block">
-                About MVCON
+                About Us MVCON
                 <span className="absolute left-0 -bottom-1 w-36 h-1 bg-yellow-300"></span>
               </h2>
 

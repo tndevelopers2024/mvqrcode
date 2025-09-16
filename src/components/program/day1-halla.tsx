@@ -19,7 +19,7 @@ const schedule = [
   { time: "4:00 – 4:30 PM", topic: "TBD", faculty: "Dr.Balaji K" },
   { time: "4:30 – 5:00 PM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
   { time: "5:00 – 5:30 PM", topic: "Nutrition panel discussion", faculty: "Dr.Meenakshi Bajaj, Dr.V.Ravindranath, Dr.S.Chandrasekar", chairpersons: "Moderator: Dr.Mohan Krishnamoorthy" },
-  { time: "5:30 – 6:00 PM", topic: "TBD", faculty: "Dr.Anjana", chairpersons: "Dr.Paneer Selvam, Dr.Vijay Viswanathan" },
+  { time: "5:30 – 6:00 PM", topic: "TBD", faculty: "Dr.Anjana", chairpersons: "Dr.Panneer Selvam, Dr.Vijay Viswanathan" },
   { time: "6:00 – 6:30 PM", topic: "SLEEP & OSA", faculty: "Dr.Ramakrishnan" },
   { time: "6:30 – 7:00 PM", topic: "TBD", faculty: "Dr.Krishna Seshadri" },
   { time: "7:00 onwards", topic: "Networking Dinner", faculty: "" },

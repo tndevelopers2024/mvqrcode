@@ -57,9 +57,9 @@ export default function HomePage() {
       <div className="mt-10 mx-auto w-11/12 md:w-12/12 font-grotesk">
         <div className="flex justify-center gap-4 flex-wrap my-10">
           {[
-            { id: "day1", day: "Day 01", date: "20", month: "MAR", year: "2026", day2:"Friday" },
-            { id: "day2", day: "Day 02", date: "21", month: "MAR", year: "2026", day2:"Saturday" },
-            { id: "day3", day: "Day 03", date: "22", month: "MAR", year: "2026", day2:"Sunday" },
+            { id: "day1", day: "Day 01", date: "20th", month: "MAR", year: "2026", day2:"Friday" },
+            { id: "day2", day: "Day 02", date: "21st", month: "MAR", year: "2026", day2:"Saturday" },
+            { id: "day3", day: "Day 03", date: "22nd", month: "MAR", year: "2026", day2:"Sunday" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -74,9 +74,9 @@ export default function HomePage() {
                 {tab.day}
               </span>
               {tab.day2}
-              <div className="flex gap-6 px-6 py-4">
+              <div className="flex gap-6 md:px-6 md:py-4 p-2">
                 <span
-                  className={`text-3xl font-bold ${activeTab === tab.id ? "text-black" : "text-gray-800"}`}
+                  className={`md:text-3xl text-xl font-bold ${activeTab === tab.id ? "text-black" : "text-gray-800"}`}
                 >
                   {tab.date}
                 </span>
