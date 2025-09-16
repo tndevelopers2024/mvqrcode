@@ -108,7 +108,7 @@ export default function WelcomeSection() {
           <div className="flex flex-wrap justify-center gap-8">
             {[
               {
-                name: "Dr.Sivashankari S",
+                name: "Dr.Siva shankari S",
                 role: "Organising Committee",
                 img: "/images/person3.jpg",
               },

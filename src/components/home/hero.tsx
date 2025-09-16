@@ -44,7 +44,7 @@ function CountdownCircles() {
   ];
 
   return (
-    <div className="absolute bottom-16 mt-8 flex flex-wrap justify-center items-center gap-5">
+    <div className="absolute bottom-8 mt-8 flex flex-wrap justify-center items-center gap-5">
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <svg
           viewBox="0 0 1200 200"
@@ -107,15 +107,15 @@ function CountdownCircles() {
 const images = [
   {
     src: "/images/new-banner1.jpg",
-    mobile: "/images/mobile1.jpg",
+    mobile: "/images/mob1.png",
   },
   {
     src: "/images/new-banner2.jpg",
-    mobile: "/images/mobile2.jpg",
+    mobile: "/images/mob2.png",
   },
   {
     src: "/images/new-banner3.jpg",
-    mobile: "/images/mobile3.jpg",
+    mobile: "/images/mob3.png",
   },
 ];
 
@@ -186,14 +186,14 @@ const itemVariants: Variants = {
 
           {/* Overlay */}
           <motion.div
-            className="absolute inset-0 flex flex-col max-md:bg-black/60 items-center justify-center text-center text-white px-4"
+            className="absolute inset-0 flex flex-co items-center justify-center text-center text-white px-4"
             variants={overlayVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
           >
             {/* Mobile-only heading/date/location */}
-            <div className="flex flex-col justify-center items-center md:hidden mb-6">
+            {/* <div className="flex flex-col justify-center items-center md:hidden mb-6">
               <motion.h1
                 className="text-6xl font-extrabold mb-3"
                 variants={itemVariants}
@@ -213,7 +213,7 @@ const itemVariants: Variants = {
                 <MapPin size={20} className="shrink-0 mt-2" />
                 <p>GReaT Ceremonies by GRT Hotels,<br></br> T.Nagar, Chennai</p>
               </motion.p>
-            </div>
+            </div> */}
 
             <CountdownCircles />
           </motion.div>
