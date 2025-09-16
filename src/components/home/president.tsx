@@ -58,7 +58,7 @@ export default function WelcomeSection() {
              <i className="text-right text-2xl max-md:hidden">
               – Dr. Vijay Viswanathan
             </i>
-            <small>Organising Chairman</small>
+            <small className="max-md:hidden">Organising Chairman</small>
            </div>
           </div>
         </div>
