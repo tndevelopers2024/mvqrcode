@@ -10,51 +10,58 @@ export default function WelcomeSection() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Message + Main Image */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-  {/* Image – first on mobile, second on desktop */}
-  <div className="order-1 lg:order-2 flex flex-col">
-    <div className="relative w-full h-64 sm:h-80 lg:h-[500px] rounded-2xl overflow-hidden shadow-md">
-      <Image
-        src="/images/president.jpg"
-        alt="MVCON Main"
-        fill
-        className="object-cover object-center"
-        priority
-      />
-    </div>
-  </div>
+          {/* Image – first on mobile, second on desktop */}
+          <div className="order-1 lg:order-2 flex flex-col">
+            <div className="relative w-full h-64 sm:h-80 lg:h-[500px] rounded-2xl overflow-hidden shadow-md">
+              <Image
+                src="/images/president.jpg"
+                alt="MVCON Main"
+                fill
+                className="object-cover object-center"
+                priority
+              />
+            </div>
+            <h3 className="text-center mt-4 text-3xl md:hidden">Dr. Vijay Viswanathan</h3>
+            <p className="text-center md:hidden">Organising Chairman</p>
+          </div>
 
-  {/* Message */}
-  <div className="order-2 lg:order-1">
-    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-      Message From the Organising Chairman
-    </h2>
-    <p className="text-gray-700 leading-relaxed">
-      It gives me immense pleasure to welcome you to the inaugural edition of
-      MVCON, a new forum for a plethora of scientific sessions from MV Diabetes.
-      With over 75 years of legacy in pioneering diabetes care, MV Diabetes has
-      stood as a leader in both comprehensive diabetes management and advanced
-      diabetic foot care. MVCON builds on this legacy, creating a scientific
-      platform where diabetologists, surgeons, and paramedics can come together
-      to learn, exchange, and collaborate. With a special expertise on diabetic
-      foot—an area where MV Diabetes has earned both national and international
-      recognition—we aim to advance skills, share innovations, and improve
-      clinical outcomes for patients across the globe.
-    </p>
-    <p className="text-gray-700 leading-relaxed mt-4">
-      As the National President of RSSDI, India’s largest organization for
-      healthcare professionals and researchers in diabetes, and the Honorary
-      President of D-Foot International, I have dedicated my mission to
-      developing a multidisciplinary approach to reduce preventable amputations
-      worldwide. MVCON reflects this strategic vision, & I look forward to
-      welcoming you to Chennai, to a prestigious event that promises learning,
-      inspiration, and collaboration for the diabetes community.
-    </p>
-    <p className="text-right text-xl max-md:hidden">
-      – Dr. Vijay Viswanathan
-    </p>
-  </div>
-</div>
-
+          {/* Message */}
+          <div className="order-2 lg:order-1">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+              Message From the Organising Chairman
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              It gives me immense pleasure to welcome you to the inaugural
+              edition of MVCON, a new forum for a plethora of scientific
+              sessions from MV Diabetes. With over 75 years of legacy in
+              pioneering diabetes care, MV Diabetes has stood as a leader in
+              both comprehensive diabetes management and advanced diabetic foot
+              care. MVCON builds on this legacy, creating a scientific platform
+              where diabetologists, surgeons, and paramedics can come together
+              to learn, exchange, and collaborate. With a special expertise on
+              diabetic foot—an area where MV Diabetes has earned both national
+              and international recognition—we aim to advance skills, share
+              innovations, and improve clinical outcomes for patients across the
+              globe.
+            </p>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              As the National President of RSSDI, India’s largest organization
+              for healthcare professionals and researchers in diabetes, and the
+              Honorary President of D-Foot International, I have dedicated my
+              mission to developing a multidisciplinary approach to reduce
+              preventable amputations worldwide. MVCON reflects this strategic
+              vision, & I look forward to welcoming you to Chennai, to a
+              prestigious event that promises learning, inspiration, and
+              collaboration for the diabetes community.
+            </p>
+           <div className="text-right flex flex-col mt-4">
+             <i className="text-right text-2xl max-md:hidden">
+              – Dr. Vijay Viswanathan
+            </i>
+            <small>Organising Chairman</small>
+           </div>
+          </div>
+        </div>
 
         {/* Speaker Grid */}
         <div className="space-y-12">

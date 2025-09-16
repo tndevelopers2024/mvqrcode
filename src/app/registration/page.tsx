@@ -14,7 +14,7 @@ export default function Home() {
             {/* <CardDescription className="text-lg pt-2">Register now to secure your spot!</CardDescription> */}
           </CardHeader>
           <CardContent>
-            <h2 className="text-center text-3xl font-bold">Registration opens on 25th September, 2026. Stay tuned for an exciting conference experience.</h2>
+            <h2 className="text-center text-3xl font-bold">Registration opens on 25th September, 2025. Stay tuned for an exciting conference experience.</h2>
             {/* <RegistrationForm /> */}
           </CardContent>
         </Card>
