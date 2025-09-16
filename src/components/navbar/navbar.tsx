@@ -23,7 +23,7 @@ export default function Navbar() {
             Home
           </Link>
           <Link href="/#about" className="text-gray-700 hover:text-blue-600">
-            About
+            About Us
           </Link>
           <Link href="/program" className="text-gray-700 hover:text-blue-600">
             Scientific Program
@@ -71,7 +71,7 @@ export default function Navbar() {
               className="text-gray-700 hover:text-blue-600"
               onClick={() => setIsOpen(false)}
             >
-              About
+              About Us
             </Link>
             <Link
               href="/program"
