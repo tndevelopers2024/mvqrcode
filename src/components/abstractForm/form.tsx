@@ -69,7 +69,7 @@ export default function AbstractForm() {
       {/* Background */}
       <div className="relative max-w-2xl w-full p-8 rounded-3xl backdrop-blur-xl bg-white/20 shadow-2xl z-10">
         <h2 className="text-center text-3xl font-extrabold text-white drop-shadow-md">
-          Abstract submission will start on September 25.
+          Abstract submission for MVCON 2026 will open on 25th September, 2025
         </h2>
         </div>
       <div
