@@ -8,7 +8,6 @@ import Link from "next/link";
 import { Variants } from "framer-motion";
 import { Clock, MapPin } from "lucide-react";
 
-
 /* =========================
    CountdownCircles Component
    ========================= */
@@ -18,8 +17,7 @@ function CountdownCircles() {
     const now = new Date();
     const diff = eventDate.getTime() - now.getTime();
 
-    if (diff <= 0)
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
     return {
       days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -112,6 +110,7 @@ const images = [
   {
     src: "/images/new-banner2.jpg",
     mobile: "/images/mob2.png",
+    left: "object-left",
   },
   {
     src: "/images/new-banner3.jpg",
@@ -134,27 +133,27 @@ export default function HeroCarousel() {
     setIndex((prev) => (prev - 1 + images.length) % images.length);
 
   // Animations
- const overlayVariants: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.2,
-      duration: 0.6,
-      ease: "easeOut" as any, // 👈 cast so TS accepts it
+  const overlayVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.2,
+        duration: 0.6,
+        ease: "easeOut" as any, // 👈 cast so TS accepts it
+      },
     },
-  },
-};
+  };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" as any },
-  },
-};
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" as any },
+    },
+  };
   return (
     <section className="relative w-full h-screen overflow-hidden">
       <AnimatePresence mode="wait">
@@ -172,7 +171,9 @@ const itemVariants: Variants = {
             alt=""
             fill
             priority
-            className="object-cover hidden md:block"
+            className={`object-cover hidden md:block ${
+              images[index].left ? images[index].left : ""
+            }`}
           />
 
           {/* Mobile image */}

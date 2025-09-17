@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const faculty = [
   { name: "DR.AARTHY KANNAN", img: "/images/faculty/Dr. Aarthi kannan.jpg" },
-  { name: "DR.ABIJITH", img: "/images/faculty/dummy.jpg" },
+  { name: "DR.ABIJITH", img: "/images/faculty/abijith.jpg" },
   { name: "DR.ANAND MOSES", img: "/images/faculty/Dr. Anand Moses.png" },
   { name: "DR.ANUJ MAHESWARI", img: "/images/faculty/Dr Anuj Maheshwari.png" },
   { name: "Dr.Anjana", img: "/images/faculty/Dr.R.M.Anjana.jpg" },
@@ -39,7 +39,7 @@ const faculty = [
   { name: "DR.NIHAL THOMAS", img: "/images//faculty/DR.NIHAL THOMAS.jpg" },
   { name: "DR.PANEER SELVAM", img: "/images/faculty/Dr.Paneer selvam.jpg" },
   { name: "DR.PARANTHAMAN", img: "/images/faculty/Dr.P.Paranthaman.png" },
-  { name: "DR.PRAKASH", img: "/images/faculty/dummy.jpg" },
+  { name: "DR.PRAKASH", img: "/images/faculty/DR.G.PRAKASH.jpg" },
   { name: "DR.PRIYA", img: "/images/faculty/dummy.jpg" },
   { name: "DR.Prashanth Arun", img: "/images/faculty/Dr. Prashanth Arun.jpg" },
   { name: "DR.RAKESH SAHAY", img: "/images/faculty/DR.RAKESH SAHAY.jpg" },

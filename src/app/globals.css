@@ -159,8 +159,11 @@ body {
 .shine-card {
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
-
+.shine-card img{
+  width: 100%;
+}
 .shine-card::after {
   content: "";
   position: absolute;
