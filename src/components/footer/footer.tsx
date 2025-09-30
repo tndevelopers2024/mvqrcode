@@ -1,0 +1,134 @@
+"use client";
+
+import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
+import Image from "next/image";
+
+export default function Footer() {
+  return (
+    <footer className="w-full bg-gradient-to-tr from-blue-950 to-blue-700 text-white pt-12 pb-6 px-4 tracking-wide">
+      {/* Logo */}
+      <div className="flex justify-center mb-8">
+        <Image
+          src="/images/finalLogo.png"
+          alt="MV International Conference Logo"
+          width={240}
+          height={240}
+          className="object-contain bg-white p-6 rounded-lg"
+        />
+      </div>
+
+      <div className="text-center">
+        {/* Links */}
+        <ul className="flex gap-x-8 gap-y-3 justify-center flex-wrap">
+          <li>
+            <Link
+              href="/"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/#about"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/program"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Scientific Program
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/faculty"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Faculties
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/submit-abstract"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Abstract Submission
+            </Link>
+          </li>
+          
+          <li>
+            <Link
+              href="/registration"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Registration
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contact"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Contact
+            </Link>
+          </li>
+          <li>
+            {/* <Link
+              href="/admin"
+              className="text-[15px] text-slate-300 hover:text-white"
+            >
+              Admin
+            </Link> */}
+          </li>
+        </ul>
+
+        {/* Social media */}
+        <div className="mt-12">
+          <h6 className="text-[15px] text-slate-300 mb-4">
+            Stay connected with us:
+          </h6>
+
+          <div className="flex justify-center items-center gap-6">
+            <a
+              href="https://www.facebook.com/MVHospitalForDiabetes/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-500 transition"
+            >
+              <FaFacebookF size={24} />
+            </a>
+            <a
+              href="https://www.instagram.com/mvhospitaldiabetes/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-500 transition"
+            >
+              <FaInstagram size={24} />
+            </a>
+            <a
+              href="https://x.com/mvdiabetes1972"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-sky-400 transition"
+            >
+              <FaXTwitter size={24} />
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom copyright */}
+        <div className="border-t border-gray-600 pt-6 mt-12">
+          <p className="text-[15px] text-slate-300">
+            © MVCON. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
