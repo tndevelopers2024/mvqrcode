@@ -1,5 +1,5 @@
 const API_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001/api/v1";
+  process.env.NEXT_PUBLIC_BACKEND_URL || "https://mvcon.space/api/v1";
 
 // ---------- Types ----------
 export interface User {

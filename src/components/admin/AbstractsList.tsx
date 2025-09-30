@@ -154,7 +154,7 @@ export function AbstractsList() {
               {new Date(selectedAbstract.createdAt).toLocaleString()}
             </p>
             <a
-              href={`http://localhost:5001${selectedAbstract.file}`}
+              href={`https://mvcon.space${selectedAbstract.file}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-blue-600 hover:underline mt-2"

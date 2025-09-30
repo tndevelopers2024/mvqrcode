@@ -13,15 +13,15 @@ interface QRPassCardProps {
 
 export function QRPassCard({ user, logs = [] }: QRPassCardProps) {
   const qrUrl = user.qrCodeImage
-    ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001'}${user.qrCodeImage}`
+    ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://mvcon.space'}${user.qrCodeImage}`
     : null;
 
   const pdfUrl = user.certificateFile
-    ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001'}${user.certificateFile}`
+    ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://mvcon.space'}${user.certificateFile}`
     : null;
 
   const imgUrl = user.certificateImage
-    ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001'}${user.certificateImage}`
+    ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://mvcon.space'}${user.certificateImage}`
     : null;
 
 

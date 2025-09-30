@@ -81,7 +81,7 @@ export function RegistrationsList() {
                     <div className="flex items-center gap-3">
               
                       <Avatar className="w-8 h-8">
-                        <AvatarImage src={`http://localhost:5001${u.profileImage ?? ''}`} />
+                        <AvatarImage src={`https://mvcon.space${u.profileImage ?? ''}`} />
                         <AvatarFallback>
                           <UserIcon className="w-4 h-4" />
                         </AvatarFallback>

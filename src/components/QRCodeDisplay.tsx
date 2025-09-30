@@ -26,7 +26,7 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
 
   const handleDownload = async () => {
   try {
-    const response = await fetch(`http://localhost:5001${registration.qrCodeImage}`);
+    const response = await fetch(`https://mvcon.space${registration.qrCodeImage}`);
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
 
@@ -61,14 +61,14 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
                     <div className="flex items-center gap-6">
                       
                         <Avatar className="w-24 h-24 border-4 border-white shadow-lg">
-                            <AvatarImage src={`http://localhost:5001${registration.profileImage}`} />
+                            <AvatarImage src={`https://mvcon.space${registration.profileImage}`} />
                             <AvatarFallback>
                                 <UserIcon className="w-12 h-12 text-muted-foreground" />
                             </AvatarFallback>
                         </Avatar>
                         <div className="p-2 bg-white rounded-lg shadow-inner">
                           <img
-                            src={`http://localhost:5001${registration.qrCodeImage}`}
+                            src={`https://mvcon.space${registration.qrCodeImage}`}
                             alt="Registration QR Code"
                             
                             className="rounded-md"
