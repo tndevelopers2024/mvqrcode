@@ -21,13 +21,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<<<<<<< HEAD
         <link rel="icon" type="image/png" href="/images/finalLogo.png" />
-=======
+
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
->>>>>>> b294b50 (payment push)
+
       </head>
       <body className={`${montserrat.variable} font-body antialiased h-full`}>
         {children}

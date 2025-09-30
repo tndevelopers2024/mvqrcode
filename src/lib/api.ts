@@ -80,16 +80,19 @@ export interface Abstract {
 }
 
 // ---------- Helper ----------
+// ---------- Helper ----------
 async function request<T>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<T> {
+  const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+
   const res = await fetch(`${API_URL}${endpoint}`, {
-    credentials: "include",
     headers: {
       ...(options.body instanceof FormData
         ? {}
         : { "Content-Type": "application/json" }),
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...options.headers,
     },
     ...options,
@@ -104,7 +107,6 @@ async function request<T>(
   return data as T;
 }
 
-// ---------- Auth APIs ----------
 
 // ---------- Payments APIs ----------
 

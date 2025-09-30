@@ -54,7 +54,7 @@ export default function AbstractForm() {
 
   return (
     <section className="relative w-full flex flex-col items-center justify-center py-16">
-<<<<<<< HEAD
+
       {/* Background */}
       {/* <div className="relative max-w-2xl w-full p-8 rounded-3xl backdrop-blur-xl bg-white/20 shadow-2xl z-10">
         <h2 className="text-center text-3xl font-extrabold text-white drop-shadow-md">
@@ -68,13 +68,7 @@ export default function AbstractForm() {
       
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-700/80 to-blue-600/70"></div>
 
-      {/* Glass Card */}
-      
-=======
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-700/80 to-blue-600/70"></div>
-
-      {/* Glass Card */}
->>>>>>> b294b50 (payment push)
+    
       <div className="relative max-w-2xl w-full p-8 rounded-3xl backdrop-blur-xl bg-white/20 shadow-2xl z-10">
         <h2 className="text-center text-3xl font-extrabold text-white drop-shadow-md mb-10">
           Submit Your Abstract
