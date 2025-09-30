@@ -5,9 +5,13 @@ export interface Registration {
   designation: string;
   city: string;
   registrationDate: string;
-  qrCodeDataUri: string;
-  qrCodeContent: string;
+  profileImage?: string;
+  qrCodeImage?: string;
+  qrCodeDataUri?: string;
+  qrCodeContent?: string;
   photoDataUri?: string;
+  certificateImage?: string;
+  certificateFile?: string;
 }
 
 export interface UserDetails {
@@ -23,9 +27,22 @@ export interface ValidationResult {
 }
 
 export interface ValidationLog {
+  id: string;
+  qrData: string;
+  isValid: boolean;
+  timestamp: string;
+  details?: string;
+  validatedUserDetails?: {
+    name?: string;
+    designation?: string;
+    city?: string;
+    registrationDate?: string;
+  };
+  scannedBy?: {
     id: string;
-    qrData: string;
-    isValid: boolean;
-    timestamp: string;
-    validatedUserDetails?: UserDetails;
+    name: string;
+    email: string;
+    role: string;
+  };
 }
+

@@ -1,12 +1,13 @@
 import { AdminDashboard } from '@/components/admin/AdminDashboard';
-import { RegistrationsList } from '@/components/admin/RegistrationsList';
+import { AbstractsList } from '@/components/admin/AbstractsList';
 
-export default async function RegistrationsPage() {
+export default function AdminAbstractsPage() {
     return (
         <AdminDashboard activeTab="registrations">
             <div className="mt-6">
-                <RegistrationsList />
+                <AbstractsList />
             </div>
         </AdminDashboard>
     );
 }
+

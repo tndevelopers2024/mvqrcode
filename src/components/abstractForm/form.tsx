@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { submitAbstractForm } from "@/lib/api";
 
 export default function AbstractForm() {
   const [formData, setFormData] = useState({
@@ -9,10 +10,11 @@ export default function AbstractForm() {
     institute: "",
     contact: "",
     email: "",
-    file: null,
+    file: null as File | null,
   });
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, files } = e.target as any;
@@ -25,27 +27,12 @@ export default function AbstractForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
-    const formDataToSend = new FormData();
-    formDataToSend.append("name", formData.name);
-    formDataToSend.append("registerNo", formData.registerNo);
-    formDataToSend.append("institute", formData.institute);
-    formDataToSend.append("contact", formData.contact);
-    formDataToSend.append("email", formData.email);
-    formDataToSend.append("file", formData.file as File);
+    setErrorMsg(null);
 
     try {
-      const res = await fetch("/api/sendMail", {
-        method: "POST",
-        body: formDataToSend,
-      });
-
-      const data = await res.json();
-      console.log(data);
+      await submitAbstractForm(formData as any);
 
       setShowPopup(true);
-
-      // reset form
       setFormData({
         name: "",
         registerNo: "",
@@ -56,9 +43,10 @@ export default function AbstractForm() {
       });
 
       setTimeout(() => setShowPopup(false), 3000);
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      alert("Form submission failed!");
+      // ✅ Show error message from backend instead of alert
+      setErrorMsg(err.message || "Form submission failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -66,6 +54,7 @@ export default function AbstractForm() {
 
   return (
     <section className="relative w-full flex flex-col items-center justify-center py-16">
+<<<<<<< HEAD
       {/* Background */}
       {/* <div className="relative max-w-2xl w-full p-8 rounded-3xl backdrop-blur-xl bg-white/20 shadow-2xl z-10">
         <h2 className="text-center text-3xl font-extrabold text-white drop-shadow-md">
@@ -81,12 +70,18 @@ export default function AbstractForm() {
 
       {/* Glass Card */}
       
+=======
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-700/80 to-blue-600/70"></div>
+
+      {/* Glass Card */}
+>>>>>>> b294b50 (payment push)
       <div className="relative max-w-2xl w-full p-8 rounded-3xl backdrop-blur-xl bg-white/20 shadow-2xl z-10">
         <h2 className="text-center text-3xl font-extrabold text-white drop-shadow-md mb-10">
           Submit Your Abstract
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-8">
+          {/* Name */}
           <div className="relative">
             <input
               type="text"
@@ -96,7 +91,9 @@ export default function AbstractForm() {
               onChange={handleChange}
               placeholder=" "
               required
-              className="peer w-full rounded-xl bg-white/10 px-4 pt-5 pb-2 text-white placeholder-transparent border border-white/40 focus:border-white focus:ring-2 focus:ring-white/50 outline-none"
+              className="peer w-full rounded-xl bg-white/10 px-4 pt-5 pb-2 text-white 
+                placeholder-transparent border border-white/40 focus:border-white 
+                focus:ring-2 focus:ring-white/50 outline-none"
             />
             <label
               htmlFor="name"
@@ -107,6 +104,7 @@ export default function AbstractForm() {
             </label>
           </div>
 
+          {/* Register Number */}
           <div className="relative">
             <input
               type="text"
@@ -116,7 +114,9 @@ export default function AbstractForm() {
               onChange={handleChange}
               placeholder=" "
               required
-              className="peer w-full rounded-xl bg-white/10 px-4 pt-5 pb-2 text-white placeholder-transparent border border-white/40 focus:border-white focus:ring-2 focus:ring-white/50 outline-none"
+              className="peer w-full rounded-xl bg-white/10 px-4 pt-5 pb-2 text-white 
+                placeholder-transparent border border-white/40 focus:border-white 
+                focus:ring-2 focus:ring-white/50 outline-none"
             />
             <label
               htmlFor="registerNo"
@@ -127,6 +127,7 @@ export default function AbstractForm() {
             </label>
           </div>
 
+          {/* Institute */}
           <div className="relative">
             <input
               type="text"
@@ -136,7 +137,9 @@ export default function AbstractForm() {
               onChange={handleChange}
               placeholder=" "
               required
-              className="peer w-full rounded-xl bg-white/10 px-4 pt-5 pb-2 text-white placeholder-transparent border border-white/40 focus:border-white focus:ring-2 focus:ring-white/50 outline-none"
+              className="peer w-full rounded-xl bg-white/10 px-4 pt-5 pb-2 text-white 
+                placeholder-transparent border border-white/40 focus:border-white 
+                focus:ring-2 focus:ring-white/50 outline-none"
             />
             <label
               htmlFor="institute"
@@ -147,6 +150,7 @@ export default function AbstractForm() {
             </label>
           </div>
 
+          {/* Contact */}
           <div className="relative">
             <input
               type="text"
@@ -163,7 +167,9 @@ export default function AbstractForm() {
               placeholder=" "
               required
               maxLength={10}
-              className="peer w-full rounded-xl bg-white/10 px-4 pt-5 pb-2 text-white placeholder-transparent border border-white/40 focus:border-white focus:ring-2 focus:ring-white/50 outline-none"
+              className="peer w-full rounded-xl bg-white/10 px-4 pt-5 pb-2 text-white 
+                placeholder-transparent border border-white/40 focus:border-white 
+                focus:ring-2 focus:ring-white/50 outline-none"
             />
             <label
               htmlFor="contact"
@@ -174,6 +180,7 @@ export default function AbstractForm() {
             </label>
           </div>
 
+          {/* Email */}
           <div className="relative">
             <input
               type="email"
@@ -183,7 +190,9 @@ export default function AbstractForm() {
               onChange={handleChange}
               placeholder=" "
               required
-              className="peer w-full rounded-xl bg-white/10 px-4 pt-5 pb-2 text-white placeholder-transparent border border-white/40 focus:border-white focus:ring-2 focus:ring-white/50 outline-none"
+              className="peer w-full rounded-xl bg-white/10 px-4 pt-5 pb-2 text-white 
+                placeholder-transparent border border-white/40 focus:border-white 
+                focus:ring-2 focus:ring-white/50 outline-none"
             />
             <label
               htmlFor="email"
@@ -194,13 +203,13 @@ export default function AbstractForm() {
             </label>
           </div>
 
+          {/* File Upload */}
           <div className="relative">
             <label
               htmlFor="file"
               className="block mb-2 text-white/80 font-medium"
             >
-              File Attachment{" "}
-              <span className="text-xs text-white/60">(PDF / DOCX)</span>
+              File Attachment <span className="text-xs text-white/60">(PDF / DOCX)</span>
             </label>
             <input
               type="file"
@@ -209,11 +218,19 @@ export default function AbstractForm() {
               accept=".pdf,.doc,.docx"
               onChange={handleChange}
               required
-              className="block w-full text-sm text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg 
-                file:border-0 file:bg-white/30 file:text-white hover:file:bg-white/40 transition"
+              className="block w-full text-sm text-white 
+                file:mr-4 file:py-2 file:px-4 file:rounded-lg 
+                file:border-0 file:bg-white/30 file:text-white 
+                hover:file:bg-white/40 transition"
             />
           </div>
 
+          {/* Error Message */}
+          {errorMsg && (
+            <p className="text-red-300 text-sm font-medium">{errorMsg}</p>
+          )}
+
+          {/* Submit Button */}
           <div className="pt-4">
             <button
               type="submit"
@@ -256,16 +273,17 @@ export default function AbstractForm() {
           </div>
         </form>
 
+        {/* Glow Effects */}
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-pink-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
         <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
       </div>
 
-      {/* Popup */}
+      {/* Success Popup */}
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
           <div className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col items-center">
             <Image
-              src="/images/MV-logo.png"
+              src="/images/finalLogo.png"
               alt="MV Logo"
               width={120}
               height={120}

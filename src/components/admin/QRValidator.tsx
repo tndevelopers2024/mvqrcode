@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useTransition, useEffect, useRef } from 'react';
@@ -6,7 +5,7 @@ import { CheckCircle, Loader2, XCircle, Camera, Pencil } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
-import { validateRegistration } from '@/app/actions';
+import { scanQRCode } from '@/lib/api';   // ✅ use api.ts
 import type { ValidationResult } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
 import { QrScanner } from './QrScanner';
@@ -16,8 +15,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-
+} from "@/components/ui/dialog";
 
 export function QRValidator() {
   const [qrData, setQrData] = useState('');
@@ -27,13 +25,14 @@ export function QRValidator() {
   const { toast } = useToast();
   const resultTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Clear result after 5 seconds
   const clearResult = () => {
     setValidationResult(null);
     if (resultTimeoutRef.current) {
       clearTimeout(resultTimeoutRef.current);
       resultTimeoutRef.current = null;
     }
-  }
+  };
 
   const handleValidate = () => {
     if (!qrData.trim()) {
@@ -44,11 +43,27 @@ export function QRValidator() {
       });
       return;
     }
-    
+
     startTransition(async () => {
       clearResult();
-      const result = await validateRegistration(qrData);
-      setValidationResult(result);
+      try {
+        const res = await scanQRCode(qrData); // 🔥 backend API call
+        const result: ValidationResult = res.isValid && res.user
+          ? {
+              isValid: true,
+              userDetails: {
+                name: res.user.name,
+                designation: res.user.designation,
+                city: res.user.city,
+                registrationDate: res.user.createdAt,
+              },
+            }
+          : { isValid: false };
+        setValidationResult(result);
+      } catch (err: any) {
+        console.error("Validation failed:", err);
+        setValidationResult({ isValid: false });
+      }
     });
   };
 
@@ -57,17 +72,34 @@ export function QRValidator() {
     startTransition(async () => {
       clearResult();
       setQrData(decodedQrData);
-      const result = await validateRegistration(decodedQrData);
-      setValidationResult(result);
+      try {
+        const res = await scanQRCode(decodedQrData); // 🔥 backend API call
+        const result: ValidationResult = res.isValid && res.user
+          ? {
+              isValid: true,
+              userDetails: {
+                name: res.user.name,
+                designation: res.user.designation,
+                city: res.user.city,
+                registrationDate: res.user.createdAt,
+              },
+            }
+          : { isValid: false };
+        setValidationResult(result);
+      } catch (err: any) {
+        console.error("Validation failed:", err);
+        setValidationResult({ isValid: false });
+      }
     });
   };
-  
+
+  // Auto-clear after showing result
   useEffect(() => {
     if (validationResult) {
       resultTimeoutRef.current = setTimeout(() => {
         setValidationResult(null);
         setQrData('');
-      }, 5000); // 5 seconds
+      }, 5000);
     }
     return () => {
       if (resultTimeoutRef.current) {
@@ -80,26 +112,33 @@ export function QRValidator() {
     <Card>
       <CardHeader>
         <CardTitle>QR Code Validation</CardTitle>
-        <CardDescription>Scan a QR code or paste the text from a scanned QR code below to validate a conference pass.</CardDescription>
+        <CardDescription>
+          Scan a QR code or paste the text from a scanned QR code below to validate a conference pass.
+        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
+        
+        {/* Scanner */}
         <div className="flex gap-2">
-            <Dialog open={isScannerOpen} onOpenChange={setScannerOpen}>
-              <DialogTrigger asChild>
-                <Button variant="outline" onClick={clearResult}><Camera className="mr-2" /> Scan QR Code</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Scan QR Code</DialogTitle>
-                </DialogHeader>
-                <QrScanner onScanSuccess={handleScanSuccess} />
-              </DialogContent>
-            </Dialog>
+          <Dialog open={isScannerOpen} onOpenChange={setScannerOpen}>
+            <DialogTrigger asChild>
+              <Button variant="outline" onClick={clearResult}>
+                <Camera className="mr-2" /> Scan QR Code
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Scan QR Code</DialogTitle>
+              </DialogHeader>
+              <QrScanner onScanSuccess={handleScanSuccess} />
+            </DialogContent>
+          </Dialog>
         </div>
 
+        {/* Manual input */}
         <div className="flex items-center gap-2">
-            <Pencil className="h-5 w-5 text-muted-foreground" />
-            <span className="text-sm text-muted-foreground">Or paste data manually</span>
+          <Pencil className="h-5 w-5 text-muted-foreground" />
+          <span className="text-sm text-muted-foreground">Or paste data manually</span>
         </div>
 
         <Textarea
@@ -109,11 +148,13 @@ export function QRValidator() {
           rows={4}
           onClick={clearResult}
         />
+
         <Button onClick={handleValidate} disabled={isPending || !qrData}>
           {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
           Validate
         </Button>
 
+        {/* Loading state */}
         {isPending && !validationResult && (
           <div className="flex items-center justify-center pt-4">
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -121,6 +162,7 @@ export function QRValidator() {
           </div>
         )}
 
+        {/* Result */}
         {validationResult && (
           <Card className={validationResult.isValid ? 'border-green-500' : 'border-red-500'}>
             <CardHeader>
@@ -143,7 +185,12 @@ export function QRValidator() {
                 <p><strong>Name:</strong> {validationResult.userDetails.name}</p>
                 <p><strong>Designation:</strong> {validationResult.userDetails.designation}</p>
                 <p><strong>City:</strong> {validationResult.userDetails.city}</p>
-                <p><strong>Registered On:</strong> {validationResult.userDetails.registrationDate ? new Date(validationResult.userDetails.registrationDate).toLocaleString() : 'N/A'}</p>
+                <p>
+                  <strong>Registered On:</strong>{" "}
+                  {validationResult.userDetails.registrationDate
+                    ? new Date(validationResult.userDetails.registrationDate).toLocaleString()
+                    : "N/A"}
+                </p>
               </CardContent>
             )}
           </Card>

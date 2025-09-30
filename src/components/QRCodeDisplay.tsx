@@ -24,6 +24,26 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
     window.print();
   };
 
+  const handleDownload = async () => {
+  try {
+    const response = await fetch(`http://localhost:5001${registration.qrCodeImage}`);
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `MV-Conference-Pass-${registration.name.replace(/\s/g, "_")}.png`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    window.URL.revokeObjectURL(url);
+  } catch (err) {
+    console.error("Download failed", err);
+  }
+};
+
+
   return (
     <div className="w-full">
         <div className="w-full max-w-md mx-auto">
@@ -39,18 +59,18 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
               <CardContent className="p-6 bg-card rounded-b-2xl">
                 <div className="flex flex-col items-center gap-6">
                     <div className="flex items-center gap-6">
+                      
                         <Avatar className="w-24 h-24 border-4 border-white shadow-lg">
-                            <AvatarImage src={registration.photoDataUri} />
+                            <AvatarImage src={`http://localhost:5001${registration.profileImage}`} />
                             <AvatarFallback>
                                 <UserIcon className="w-12 h-12 text-muted-foreground" />
                             </AvatarFallback>
                         </Avatar>
                         <div className="p-2 bg-white rounded-lg shadow-inner">
-                          <Image
-                            src={registration.qrCodeDataUri}
+                          <img
+                            src={`http://localhost:5001${registration.qrCodeImage}`}
                             alt="Registration QR Code"
-                            width={100}
-                            height={100}
+                            
                             className="rounded-md"
                             data-ai-hint="qr code"
                           />
@@ -69,13 +89,12 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
 
         <div className="flex justify-center gap-4 mt-6 print:hidden">
             <Button asChild>
-              <a
-                href={registration.qrCodeDataUri}
-                download={`MV-Conference-Pass-${registration.name.replace(/\s/g, '_')}.png`}
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download
-              </a>
+       <Button onClick={handleDownload}>
+  <Download className="mr-2 h-4 w-4" />
+  Download
+</Button>
+
+
             </Button>
             <Button variant="outline" onClick={handlePrint}>
               <Printer className="mr-2 h-4 w-4" />

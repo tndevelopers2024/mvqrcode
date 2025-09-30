@@ -1,13 +1,13 @@
 'use client';
 
-import type { Registration, ValidationLog } from '@/lib/types';
+import type { User, ScanLog } from '@/lib/api';
 import { StatCard } from './StatCard';
 import { Users, Scan, CheckCircle, XCircle } from 'lucide-react';
 import { RegistrationsChart } from './RegistrationsChart';
 
 interface AnalyticsDashboardProps {
-  registrations: Registration[];
-  validationLogs: ValidationLog[];
+  registrations: User[];
+  validationLogs: ScanLog[];
 }
 
 export function AnalyticsDashboard({ registrations, validationLogs }: AnalyticsDashboardProps) {

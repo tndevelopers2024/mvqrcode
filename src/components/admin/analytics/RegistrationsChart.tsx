@@ -2,18 +2,18 @@
 
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import type { Registration } from '@/lib/types';
+import type { User } from '@/lib/api';
 import { format, parseISO, startOfDay } from 'date-fns';
 
 interface RegistrationsChartProps {
-  registrations: Registration[];
+  registrations: User[];
 }
 
 export function RegistrationsChart({ registrations }: RegistrationsChartProps) {
   const data = registrations
     .map(reg => ({
       ...reg,
-      date: startOfDay(parseISO(reg.registrationDate)).toISOString(),
+      date: startOfDay(new Date(reg.createdAt || '')).toISOString(),
     }))
     .reduce((acc, reg) => {
       const existing = acc.find(item => item.date === reg.date);
@@ -26,8 +26,8 @@ export function RegistrationsChart({ registrations }: RegistrationsChartProps) {
     }, [] as { date: string; registrations: number }[])
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .map(item => ({
-        ...item,
-        name: format(parseISO(item.date), 'MMM d'),
+      ...item,
+      name: format(parseISO(item.date), 'MMM d'),
     }));
 
   return (
@@ -38,21 +38,21 @@ export function RegistrationsChart({ registrations }: RegistrationsChartProps) {
       </CardHeader>
       <CardContent>
         <div className="h-[350px] w-full">
-            <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false}/>
-                <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} allowDecimals={false} />
-                <Tooltip 
-                    contentStyle={{ 
-                        background: 'hsl(var(--background))', 
-                        border: '1px solid hsl(var(--border))',
-                        borderRadius: 'var(--radius)'
-                    }}
-                />
-                <Bar dataKey="registrations" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false}/>
+              <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} allowDecimals={false} />
+              <Tooltip 
+                contentStyle={{ 
+                  background: 'hsl(var(--background))', 
+                  border: '1px solid hsl(var(--border))',
+                  borderRadius: 'var(--radius)'
+                }}
+              />
+              <Bar dataKey="registrations" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
             </BarChart>
-            </ResponsiveContainer>
+          </ResponsiveContainer>
         </div>
       </CardContent>
     </Card>

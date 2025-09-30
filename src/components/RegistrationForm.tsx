@@ -7,29 +7,45 @@ import { useState, useTransition, useRef } from 'react';
 import { Loader2, User as UserIcon, Upload } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage
+} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
-import { registerUser } from '@/app/actions';
+import {
+  prepareRegistration,
+  createPaymentOrder,
+  verifyPaymentAndRegister
+} from '@/lib/api';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select';
 import type { Registration } from '@/lib/types';
 import { QRCodeDisplay } from './QRCodeDisplay';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
-  contact: z
+  phone: z.string().min(6, { message: 'Please enter a valid phone number.' }),
+  profession: z.enum(['PG', 'Delegates'], {
+    required_error: 'Please select your profession.'
+  }),
+  designation: z
     .string()
-    .min(10, { message: 'Contact number must be at least 10 digits.' })
-    .max(15, { message: 'Contact number is too long.' }),
-  designation: z.string().min(2, { message: 'Please enter your designation.' }),
+    .min(2, { message: 'Please enter your designation.' }),
   city: z.string().min(2, { message: 'Please enter your city.' }),
   state: z.string().min(2, { message: 'Please enter your state.' }),
-  category: z.enum(['PG', 'Delegates & State'], {
-    required_error: 'Please select a category.',
-  }),
-  photoDataUri: z.string().optional(),
+  profileImage: z.any().optional()
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -37,7 +53,8 @@ type FormData = z.infer<typeof formSchema>;
 export function RegistrationForm() {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
-  const [successfulRegistration, setSuccessfulRegistration] = useState<Registration | null>(null);
+  const [successfulRegistration, setSuccessfulRegistration] =
+    useState<Registration | null>(null);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -46,53 +63,101 @@ export function RegistrationForm() {
     defaultValues: {
       name: '',
       email: '',
-      contact: '',
+      phone: '',
+      profession: 'PG',
       designation: '',
       city: '',
       state: '',
-      category: undefined,
-      photoDataUri: '',
-    },
+      profileImage: undefined
+    }
   });
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const dataUri = reader.result as string;
-        setPhotoPreview(dataUri);
-        form.setValue('photoDataUri', dataUri);
-      };
-      reader.readAsDataURL(file);
+      form.setValue('profileImage', file);
+      setPhotoPreview(URL.createObjectURL(file));
     }
   };
 
-  function onSubmit(values: FormData) {
+  async function onSubmit(values: FormData) {
     setSuccessfulRegistration(null);
     startTransition(async () => {
-      const formData = new FormData();
-      Object.entries(values).forEach(([key, value]) => {
-        if (value) {
-          formData.append(key, value as string);
+      try {
+        // 1️⃣ Prepare registration data
+        const prepared = await prepareRegistration(values);
+        if (!prepared.success || !prepared.userData) {
+          throw new Error(
+            prepared.message || 'Failed to prepare registration'
+          );
         }
-      });
+        const userData = prepared.userData;
 
-      const result = await registerUser(formData);
+        // 2️⃣ Determine amount dynamically
+        const amount = values.profession === 'PG' ? 1 : 1;
 
-      if (result.success && result.registration) {
-        toast({
-          title: 'Registration Successful!',
-          description: 'Your QR code has been generated.',
-        });
-        setSuccessfulRegistration(result.registration);
-        form.reset();
-        setPhotoPreview(null);
-      } else {
+        // 3️⃣ Create Razorpay order
+        const { order } = await createPaymentOrder(amount, 'INR');
+
+        // 4️⃣ Open Razorpay Checkout
+        const options = {
+          key: 'rzp_live_RNJwQRpJiswM0W',
+          amount: order.amount,
+          currency: order.currency,
+          name: 'Conference Registration',
+          description: 'Registration Fee',
+          order_id: order.id,
+          handler: async (response: any) => {
+            try {
+              // 5️⃣ Verify & finalize registration
+              const result = await verifyPaymentAndRegister(
+                response.razorpay_order_id,
+                response.razorpay_payment_id,
+                response.razorpay_signature,
+                userData,
+                order.amount / 100
+              );
+
+              if (result.success && result.data) {
+                toast({
+                  title: 'Registration Successful!',
+                  description:
+                    'Your QR code and registration number have been generated.'
+                });
+                setSuccessfulRegistration(result.data);
+                form.reset();
+                setPhotoPreview(null);
+              } else {
+                toast({
+                  variant: 'destructive',
+                  title: 'Registration Failed',
+                  description:
+                    result.message || 'Payment verification failed.'
+                });
+              }
+            } catch (err: any) {
+              toast({
+                variant: 'destructive',
+                title: 'Payment Verification Failed',
+                description: err.message
+              });
+            }
+          },
+          prefill: {
+            name: userData.name,
+            email: userData.email,
+            contact: userData.phone
+          },
+          theme: { color: '#F97316' }
+        };
+
+        const razorpay = new (window as any).Razorpay(options);
+        razorpay.open();
+      } catch (err: any) {
         toast({
           variant: 'destructive',
           title: 'Registration Failed',
-          description: result.error || 'An unexpected error occurred.',
+          description: err.message
         });
       }
     });
@@ -102,7 +167,9 @@ export function RegistrationForm() {
     return (
       <div className="flex flex-col items-center gap-6">
         <QRCodeDisplay registration={successfulRegistration} />
-        <Button onClick={() => setSuccessfulRegistration(null)}>Register Another Person</Button>
+        <Button onClick={() => setSuccessfulRegistration(null)}>
+          Register Another Person
+        </Button>
       </div>
     );
   }
@@ -131,7 +198,7 @@ export function RegistrationForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email Address</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input type="email" {...field} />
               </FormControl>
@@ -140,15 +207,15 @@ export function RegistrationForm() {
           )}
         />
 
-        {/* Contact Number */}
+        {/* Phone */}
         <FormField
           control={form.control}
-          name="contact"
+          name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Contact Number</FormLabel>
+              <FormLabel>Phone</FormLabel>
               <FormControl>
-                <Input type="tel" placeholder="Enter your phone number" {...field} />
+                <Input type="tel" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -158,20 +225,24 @@ export function RegistrationForm() {
         {/* Profile Photo */}
         <FormField
           control={form.control}
-          name="photoDataUri"
+          name="profileImage"
           render={() => (
             <FormItem>
               <FormLabel>Profile Photo (Optional)</FormLabel>
               <FormControl>
                 <div className="flex items-center gap-4">
                   <Avatar className="w-20 h-20">
-                    <AvatarImage src={photoPreview || undefined} alt="User photo" />
+                    <AvatarImage src={photoPreview || undefined} />
                     <AvatarFallback>
                       <UserIcon className="w-10 h-10 text-muted-foreground" />
                     </AvatarFallback>
                   </Avatar>
-                  <Button type="button" className='hover:bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500' variant="outline" onClick={() => fileInputRef.current?.click()}>
-                    <Upload className="mr-2 h-4 w-4 " />
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    <Upload className="mr-2 h-4 w-4" />
                     {photoPreview ? 'Change Photo' : 'Upload Photo'}
                   </Button>
                   <Input
@@ -182,6 +253,29 @@ export function RegistrationForm() {
                     onChange={handleFileChange}
                   />
                 </div>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        {/* Profession */}
+        <FormField
+          control={form.control}
+          name="profession"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Profession</FormLabel>
+              <FormControl>
+                <Select value={field.value} onValueChange={field.onChange}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select profession" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="PG">PG </SelectItem>
+                    <SelectItem value="Delegates">Delegates </SelectItem>
+                  </SelectContent>
+                </Select>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -203,65 +297,45 @@ export function RegistrationForm() {
           )}
         />
 
-        <div className='grid grid-1 md:grid-cols-2 gap-6'>
-          {/* City */}
-        <FormField
-          control={form.control}
-          name="city"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>City</FormLabel>
-              <FormControl>
-                <Input {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        {/* City + State */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <FormField
+            control={form.control}
+            name="city"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>City</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        {/* State */}
-        <FormField
-          control={form.control}
-          name="state"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>State</FormLabel>
-              <FormControl>
-                <Input placeholder="Enter your state" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
+          <FormField
+            control={form.control}
+            name="state"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>State</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
-        {/* Category */}
-        <FormField
-          control={form.control}
-          name="category"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Category</FormLabel>
-              <FormControl>
-                <Select value={field.value} onValueChange={field.onChange}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a category" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="PG">PG</SelectItem>
-                    <SelectItem value="Delegates & State">Delegates &amp; State</SelectItem>
-                  </SelectContent>
-                </Select>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
 
         {/* Submit */}
-        <Button type="submit" className="w-full  bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500" disabled={isPending}>
+        <Button
+          type="submit"
+          className="w-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
+          disabled={isPending}
+        >
           {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          Register and Generate QR Code
+          Register and Pay
         </Button>
       </form>
     </Form>

@@ -17,8 +17,13 @@ export default function Home() {
             <img src="/images/finalLogo.png" className="w-72" alt="" />
           </div> */}
           <CardContent>
+<<<<<<< HEAD
             {/* <h2 className="text-center text-3xl font-bold">Registration opens on 30th September, 2025. Stay tuned for an exciting conference experience.</h2> */}
             <RegistrationForm />
+=======
+            {/* <h2 className="text-center text-3xl font-bold">Registration starts on September 25.</h2> */}
+             <RegistrationForm /> 
+>>>>>>> b294b50 (payment push)
           </CardContent>
         </Card>
       </main>
