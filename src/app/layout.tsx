@@ -24,7 +24,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/images/finalLogo.png" />
 
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 
       </head>

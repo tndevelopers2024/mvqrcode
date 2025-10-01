@@ -3,23 +3,30 @@
 import { motion, Variants } from "framer-motion";
 import { Clock } from "lucide-react";
 
+// -------- Schedule for Day 3 Hall A --------
 const schedule = [
   {
-    time: "09:30 – 10:00 AM",
-    topic: "GLP1 For Weight Loss (20 min talk + 10 min discussion)",
-    faculty: "Dr. Jayasree Gopal",
+    time: "09:30 – 09:50 AM",
+    topic: "GLP1 For Weight Loss",
+    faculty: "Dr.Jayashree Gopal",
     chair: "",
   },
   {
-    time: "10:00 – 10:30 AM",
-    topic: "Ambulatory BP or Pharma Topic (20 min talk + 10 min discussion)",
-    faculty: "Dr. S.S. Lakshmanan",
+    time: "09:50 – 10:20 AM",
+    topic: "TBD",
+    faculty: "Dr.Janaka",
     chair: "",
   },
   {
-    time: "10:10 – 11:00 AM",
+    time: "10:20 – 10:40 AM",
+    topic: "Ambulatory BP",
+    faculty: "Dr.S.S.Lakshmanan",
+    chair: "",
+  },
+  {
+    time: "10:40 – 11:00 AM",
     topic: "Management of Hypertension in Newly diagnosed cases of diabetes",
-    faculty: "Dr. Narasingan",
+    faculty: "Dr.S.N.Narasingan",
     chair: "",
   },
   {
@@ -31,18 +38,18 @@ const schedule = [
   {
     time: "11:30 – 12:00 PM",
     topic: "Monogenic diabetes",
-    faculty: "Dr. V. Mohan",
-    chair: "Dr. Vijay Viswanathan",
+    faculty: "Dr.V.Mohan",
+    chair: "Dr.Vijay Viswanathan",
   },
   {
     time: "12:00 – 12:30 PM",
     topic: "Prevention of Diabetes in India",
-    faculty: "Dr. A. Ramachandran",
-    chair: "Dr. Vijay Viswanathan",
+    faculty: "Dr.A.Ramachandran",
+    chair: "Dr.Vijay Viswanathan",
   },
   {
     time: "12:30 – 01:15 PM",
-    topic: "Prof. MV Gold Medal Oration 2026 & Launch (if any)",
+    topic: "Prof. MV Gold Medal Oration 2026 & Launch",
     faculty: "",
     chair: "",
   },
@@ -53,6 +60,7 @@ const schedule = [
     chair: "",
   },
 ];
+
 
 
 const letterVariants: Variants = {

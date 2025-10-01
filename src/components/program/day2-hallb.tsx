@@ -10,26 +10,26 @@ const schedule = [
     time: "09:30 – 10:00 AM",
     topic:
       "Saving the limb, Saving the life → Non Amputation Strategies in osteomyelitis",
-    faculty: "Dr. Suresh Anadhan",
-    chair: "Dr. Milind Ruke",
+    faculty: "Dr.D Suresh Anadhan",
+    chair: "Dr.Milind Ruke, Dr.Senthil G",
   },
   {
     time: "10:00 – 10:30 AM",
     topic: "Structural & Functional Triggers of DFU",
-    faculty: "Dr. Ashwanth",
-    chair: "",
+    faculty: "Dr.Ashwanth Narayanan B",
+    chair: "Dr.Milind Ruke, Dr.Senthil G",
   },
   {
     time: "10:30 – 10:50 AM",
-    topic: "Smart Dressing Solutions - The T.I.M.E. concept",
-    faculty: "Dr. Senthil",
-    chair: "",
+    topic: "Smart Dressing Solutions – The T.I.M.E. concept",
+    faculty: "Dr.Senthil G",
+    chair: "Dr.Harikrishnan Nair",
   },
   {
     time: "10:50 – 11:10 AM",
     topic: "Digital subtraction Angiography – Revascularization in Lower Limb",
-    faculty: "Dr. Vijay Viswanathan, Dr. Ravikumar",
-    chair: "",
+    faculty: "Dr.Vijay Viswanathan, Dr.R Ravikumar",
+    chair: "Dr.Harikrishnan Nair",
   },
   {
     time: "11:10 – 11:30 AM",
@@ -40,20 +40,20 @@ const schedule = [
   {
     time: "11:30 – 12:30 PM",
     topic: "Quiz",
-    faculty: "Dr. Abhijith",
+    faculty: "Dr.Abhijith",
     chair: "",
   },
   {
     time: "12:30 – 01:00 PM",
     topic: "Future of diabetes care: CGMS into routine practice",
-    faculty: "Dr. Prashanth Arun",
-    chair: "Dr. Kannan Natrajan, Dr. C Balaji",
+    faculty: "Dr.Prashanth Arun",
+    chair: "Dr.Kannan Natrajan, Dr.C Balaji",
   },
   {
     time: "01:00 – 01:30 PM",
     topic: "Manual to Automated: Insulin Pump Technology",
-    faculty: "Dr. Leela Baid",
-    chair: "Dr. Kannan Natrajan, Dr. C Balaji",
+    faculty: "Dr.Leela Baid",
+    chair: "Dr.Kannan Natrajan, Dr.C Balaji",
   },
   {
     time: "01:30 – 02:15 PM",
@@ -64,26 +64,26 @@ const schedule = [
   {
     time: "02:30 – 03:00 PM",
     topic: "Muscle, metabolism & glucose: Exercise in Diabetes",
-    faculty: "Dr. Vishnu Priya Reddy",
-    chair: "Dr. Sriram, Dr. K. Shanmugam",
+    faculty: "Dr.Vishnu Priya Reddy",
+    chair: "Dr.Sanjay B S, Dr.K.Shanmugam",
   },
   {
     time: "03:00 – 03:30 PM",
     topic: "When diabetes reaches the lungs: Diabetic Pneumopathy",
-    faculty: "Dr. Abhishek",
-    chair: "Dr. Sriram, Dr. K. Shanmugam",
+    faculty: "Dr.S R Abhishek",
+    chair: "Dr.V P Sriram, Dr.K.Shanmugam",
   },
   {
     time: "03:30 – 04:00 PM",
     topic: "THE GUT Wrenching Troubles: Managing Diabetic GastroParesis",
-    faculty: "Dr. Vishnu Priya Prashanth",
-    chair: "Dr. Bhavatharani, Dr. Uma Mahesh",
+    faculty: "Dr.Vishnu Priya Prashanth",
+    chair: "Dr.A Bhavatharani, Dr.K.Uma Mahesh",
   },
   {
     time: "04:00 – 04:30 PM",
     topic: "The Silent Struggle: Healing Beyond glycemic control",
-    faculty: "Ms. Vaishnavi Vijay",
-    chair: "Dr. Bhavatharani, Dr. Uma Mahesh",
+    faculty: "Ms.Vaishnavi Vijay",
+    chair: "Dr.A Bhavatharani, Dr.K.Uma Mahesh",
   },
   {
     time: "04:30 – 05:00 PM",
@@ -237,23 +237,23 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
-                    <div className="flex flex-col justify-between md:flex-row">
+                    <div className="flex flex-col justify-between mt-6 md:flex-row">
                       {item.faculty && (
-                      <p className="text-gray-600 text-md">
-                        Faculty:{" "}
-                        <span className="font-bold">
-                          {highlightText(item.faculty, searchQuery)}
-                        </span>
-                      </p>
-                    )}
-                    {item.chair && (
-                      <p className="text-gray-600 text-md">
-                        Chairpersons:{" "}
-                        <span className="font-bold">
-                          {highlightText(item.chair, searchQuery)}
-                        </span>
-                      </p>
-                    )}
+                        <p className="text-gray-600 text-md">
+                          Faculty:{" "}
+                          <span className="font-bold">
+                            {highlightText(item.faculty, searchQuery)}
+                          </span>
+                        </p>
+                      )}
+                      {item.chair && (
+                        <p className="text-gray-600 text-md">
+                          Chairpersons:{" "}
+                          <span className="font-bold">
+                            {highlightText(item.chair, searchQuery)}
+                          </span>
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -3,27 +3,30 @@
 import { motion, Variants } from "framer-motion";
 
 // -------- Schedule for Hall A --------
+// -------- Schedule for Hall A --------
 const schedule = [
-  { time: "09:30 – 10:00 AM", topic: "TBD", faculty: "Dr.Rakesh Sahay", chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf" },
-  { time: "10:00 – 10:30 AM", topic: "TBD", faculty: "Dr.Nihal Thomas", chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf" },
-  { time: "10:30 – 10:50 AM", topic: "TBD", faculty: "Dr.Balamurugan", chairpersons: "Dr.Anand Moses, Dr.Dharmarajan" },
-  { time: "10:50 – 11:10 AM", topic: "TBD", faculty: "Dr.Muruganathan", chairpersons: "Dr.Anand Moses, Dr.Dharmarajan" },
+  { time: "09:30 – 09:50 AM", topic: "TBD", faculty: "TBD", chairpersons: "Dr.Anand Moses, Dr.Dharmarajan" },
+  { time: "09:50 – 10:10 AM", topic: "TBD", faculty: "Dr.Sunil Gupta", chairpersons: "Dr.Anand Moses, Dr.Dharmarajan" },
+  { time: "10:10 – 10:30 AM", topic: "TBD", faculty: "Dr.R Balamurugan", chairpersons: "Dr.Anand Moses, Dr.Dharmarajan" },
+  { time: "10:30 – 10:50 AM", topic: "TBD", faculty: "Dr.A. Muruganathan", chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf" },
+  { time: "10:50 – 11:10 AM", topic: "TBD", faculty: "Dr.G.Vijayakumar", chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf" },
   { time: "11:10 – 11:30 AM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "11:30 – 12:30 PM", topic: "MV Life Time Achievement Award + Inauguration & Key Note lecture", faculty: "" },
-  { time: "12:30 – 1:00 PM", topic: "Recurrence of DFU - The Indian Strategy for prevention", faculty: "Dr.Senthil", chairpersons: "Dr.Muralidharan, Dr.Aarthy Kannan" },
-  { time: "1:00 – 1:30 PM", topic: "TBD", faculty: "Dr.Milind Ruke", chairpersons: "Dr.Muralidharan, Dr.Aarthy Kannan" },
+  { time: "11:30 – 12:30 PM", topic: "MV Life Time Achievement Award & Inauguration & Key Note lecture", faculty: "" },
+  { time: "12:30 – 1:00 PM", topic: "Recurrence of DFU - The Indian Strategy for prevention", faculty: "Dr.Senthil G", chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan" },
+  { time: "1:00 – 1:30 PM", topic: "TBD", faculty: "Dr.Milind Ruke", chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan" },
   { time: "1:30 – 2:30 PM", topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "2:30 – 3:00 PM", topic: "Demonstration of High Risk Feet", faculty: "Dr.Vijay Viswanathan / Ms.Seena & Ms.Bamilla" },
+  { time: "2:30 – 3:00 PM", topic: "Demonstration of High Risk Feet", faculty: "Dr.Vijay Viswanathan / Ms.Seena Rajsekar & Ms.Bamila Selvaraj" },
   { time: "3:00 – 3:30 PM", topic: "Mechanical offloading (Unburden the wound)", faculty: "Dr.Viswanathan Vishnu Vijay" },
-  { time: "3:30 – 4:00 PM", topic: "Surgical offloading", faculty: "Dr.Senthil" },
+  { time: "3:30 – 4:00 PM", topic: "Surgical offloading", faculty: "Dr.Senthil G" },
   { time: "4:00 – 4:30 PM", topic: "TBD", faculty: "Dr.Balaji K" },
   { time: "4:30 – 5:00 PM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "5:00 – 5:30 PM", topic: "Nutrition panel discussion", faculty: "Dr.Meenakshi Bajaj, Dr.V.Ravindranath, Dr.S.Chandrasekar", chairpersons: "Moderator: Dr.Mohan Krishnamoorthy" },
-  { time: "5:30 – 6:00 PM", topic: "TBD", faculty: "Dr.Anjana", chairpersons: "Dr.Panneer Selvam, Dr.Vijay Viswanathan" },
-  { time: "6:00 – 6:30 PM", topic: "SLEEP & OSA", faculty: "Dr.Ramakrishnan" },
-  { time: "6:30 – 7:00 PM", topic: "TBD", faculty: "Dr.Krishna Seshadri" },
+  { time: "5:00 – 5:30 PM", topic: "Managing Heart failure in People with Diabetes", faculty: "Dr.A.Shanmugam", chairpersons: "Dr.G.Prakash, Dr.A.Shunmugavelu" },
+  { time: "5:30 – 6:00 PM", topic: "TBD", faculty: "Dr.R M Anjana", chairpersons: "Dr.A.Panneer Selvam, Dr.Vijay Viswanathan" },
+  { time: "6:00 – 6:30 PM", topic: "SLEEP & OSA", faculty: "Dr.N Ramakrishnan" },
+  { time: "6:30 – 7:00 PM", topic: "TBD", faculty: "Dr.Krishna G Seshadri" },
   { time: "7:00 onwards", topic: "Networking Dinner", faculty: "" },
 ];
+
 
 // -------- Variants --------
 const letterVariants: Variants = {

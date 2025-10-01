@@ -1,19 +1,19 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Clock } from "lucide-react";
 
+// -------- Schedule for Day 3 Hall B --------
 const schedule = [
   {
     time: "09:30 – 09:45 AM",
     topic: "TBD",
-    faculty: "Dr. Muralidharan",
+    faculty: "",
     chair: "",
   },
   {
     time: "09:45 – 10:00 AM",
     topic: "TBD",
-    faculty: "Dr. Shunmugavelu",
+    faculty: "",
     chair: "",
   },
   {
@@ -31,19 +31,19 @@ const schedule = [
   {
     time: "11:30 – 12:00 PM",
     topic: "Monogenic diabetes in Hall A",
-    faculty: "Dr. V. Mohan",
-    chair: "Dr. Vijay Viswanathan",
+    faculty: "Dr.V.Mohan",
+    chair: "Dr.Vijay Viswanathan",
   },
   {
     time: "12:00 – 12:30 PM",
     topic: "Prevention of Diabetes in India in Hall A",
-    faculty: "Dr. A. Ramachandran",
-    chair: "Dr. Vijay Viswanathan",
+    faculty: "Dr.A.Ramachandran",
+    chair: "Dr.Vijay Viswanathan",
   },
   {
     time: "12:30 – 01:15 PM",
-    topic: "Prof. MV Gold Medal Oration 2026 & Launch (if any) in Hall A",
-    faculty: "",
+    topic: "Prof. MV Gold Medal Oration 2026 & Launch in Hall A",
+    faculty: "Dr.Harikrishnan Nair",
     chair: "",
   },
   {
@@ -54,6 +54,7 @@ const schedule = [
   },
 ];
 
+// -------- Variants --------
 const letterVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (custom: number) => ({
@@ -72,6 +73,7 @@ const itemVariants: Variants = {
   }),
 };
 
+// -------- Highlight function --------
 function highlightText(text: string, query: string) {
   if (!query) return text;
   const regex = new RegExp(`(${query})`, "gi");
@@ -91,7 +93,7 @@ export default function DaythreeHallB({
 }: {
   searchQuery: string;
 }) {
-  const heading = "MVCON – Day 3 (Dr. M. Madhavi Amma Hall)";
+  const heading = "MVCON – Day 3 (Hall B)";
 
   const filteredSchedule =
     searchQuery.trim() === ""
@@ -99,7 +101,10 @@ export default function DaythreeHallB({
       : schedule.filter(
           (item) =>
             item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.faculty.toLowerCase().includes(searchQuery.toLowerCase())
+            (item.faculty &&
+              item.faculty.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (item.chair &&
+              item.chair.toLowerCase().includes(searchQuery.toLowerCase()))
         );
 
   return (
@@ -177,7 +182,7 @@ export default function DaythreeHallB({
                       )}
                       {item.chair && (
                         <p className="text-gray-600 text-md">
-                          Faculty:{" "}
+                          Chairpersons:{" "}
                           <span className="font-bold">
                             {highlightText(item.chair, searchQuery)}
                           </span>

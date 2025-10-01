@@ -3,36 +3,37 @@
 import { motion, Variants } from "framer-motion";
 
 // -------- Schedule for Day 2 Hall A --------
+// -------- Schedule for Day 2 Hall A --------
 const schedule = [
   {
     time: "09:30 – 09:50 AM",
     topic: "TBD",
-    faculty: "Dr. Sunil Gupta",
-    chairpersons: "Dr. A. Shanmugam, Dr. Priya",
+    faculty: "TBD",
+    chairpersons: "Dr.A.Shanmugam, Dr.Priya",
   },
   {
     time: "09:50 – 10:10 AM",
     topic: "TBD",
-    faculty: "Dr. Chandrasekar",
-    chairpersons: "Dr. A. Shanmugam, Dr. Priya",
+    faculty: "Dr.Chandrasekar S",
+    chairpersons: "Dr.A.Shanmugam, Dr.Priya",
   },
   {
     time: "10:10 – 10:30 AM",
     topic: "TBD",
-    faculty: "Dr. Janaka",
-    chairpersons: "Dr. Vijay Viswanathan",
+    faculty: "Dr.Harikrishnan S",
+    chairpersons: "Dr.Vijay Viswanathan",
   },
   {
     time: "10:30 – 10:50 AM",
-    topic: "How to evaluate kidney function in diabetes?",
-    faculty: "Dr. Edwin Fernando",
-    chairpersons: "Dr. Vijay Viswanathan",
+    topic: "TBD",
+    faculty: "Dr.Janaka",
+    chairpersons: "Dr.Vijay Viswanathan",
   },
   {
     time: "10:50 – 11:10 AM",
-    topic: "TBD",
-    faculty: "Dr. G. Vijayakumar",
-    chairpersons: "Dr. Shunmugavelu",
+    topic: "How to evaluate kidney function in diabetes",
+    faculty: "Dr.Edwin Fernando",
+    chairpersons: "Dr.Vijay Viswanathan",
   },
   {
     time: "11:10 – 11:30 AM",
@@ -42,85 +43,86 @@ const schedule = [
   {
     time: "11:30 – 12:00 PM",
     topic: "TBD",
-    faculty: "Dr. Anuj Maheshwari",
-    chairpersons: "Dr. Dharmarajan",
+    faculty: "Dr.Anuj Maheshwari",
+    chairpersons: "Dr.P.Dharmarajan, Dr.K.Shanmugam",
   },
   {
     time: "12:00 – 12:30 PM",
     topic: "TBD",
-    faculty: "Dr. Bhavatharani",
-    chairpersons: "Dr. K. Shanmugam",
+    faculty: "Dr.A.Bhavatharani",
+    chairpersons: "Dr.P.Dharmarajan, Dr.K.Shanmugam",
   },
   {
-    time: "12:30 – 01:00 PM",
+    time: "12:30 – 1:00 PM",
     topic: "TBD",
-    faculty: "Dr. Usha Aiyyagari",
-    chairpersons: "Dr. Bhavatharani",
+    faculty: "Dr.Usha Aiyagari",
+    chairpersons: "Dr.A.Bhavatharani, Dr.A.Shunmugavelu",
   },
   {
-    time: "01:00 – 01:30 PM",
+    time: "1:00 – 1:30 PM",
     topic: "TBD",
-    faculty: "Dr. Paneer Selvam",
-    chairpersons: "Dr. Shunmugavelu",
+    faculty: "Dr.A.Panneer Selvam",
+    chairpersons: "Dr.A.Bhavatharani, Dr.A.Shunmugavelu",
   },
   {
-    time: "01:30 – 02:30 PM",
+    time: "1:30 – 2:30 PM",
     topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
   {
-    time: "02:30 – 03:00 PM",
+    time: "2:30 – 3:00 PM",
     topic: "The Golden Hour in Diabetic Foot Ulcer",
-    faculty: "Dr. Sasi Kumar",
-    chairpersons: "Dr. Senthil",
+    faculty: "Dr.T.Sasi Kumar",
+    chairpersons: "Dr.Senthil G",
   },
   {
-    time: "03:00 – 04:00 PM",
-    topic:
-      "Surgical Demonstration (VIDEO) – Debridement (sweet lime), VAC & TCC Application",
-    faculty: "Dr. Senthil / Dr. Milind Ruke",
+    time: "3:00 – 4:00 PM",
+    topic: "Surgical Demonstration (VIDEO)\n* Debridement – sweet lime\n* VAC & TCC Application",
+    faculty: "Dr.Senthil G, Dr.Milind Ruke",
+    chairpersons: "Dr.Harikrishnan Nair, Dr.Vijay Viswanathan",
   },
   {
-    time: "04:00 – 04:30 PM",
+    time: "4:00 – 4:30 PM",
     topic: "TBD",
-    faculty: "Dr. Nandita Arun",
-    chairpersons: "Dr. K. Shanmugam",
+    faculty: "Dr.Nandita Arun",
+    chairpersons: "Dr.A.Panneer Selvam, Dr.P.Paranthaman",
   },
   {
-    time: "04:30 – 05:00 PM",
+    time: "4:30 – 5:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
   {
-    time: "05:00 – 05:30 PM",
-    topic: "Managing Heart failure in People with Diabetes",
-    faculty: "Dr. A. Shanmugam",
-    chairpersons: "Dr. Prakash, Dr. Shunmugavelu",
+    time: "5:00 – 5:30 PM",
+    topic: "Nutrition panel discussion",
+    faculty: "Dr.Meenakshi Bajaj, Dr.V.Ravindranath, Dr.S.Chandrasekar",
+    chairpersons: "Moderator: Dr.Mohan Krishnamoorthy",
   },
   {
-    time: "05:30 – 06:00 PM",
+    time: "5:30 – 6:00 PM",
     topic: "TBD",
-    faculty: "Dr. Rajendran V",
-    chairpersons: "Dr. Prakash, Dr. Shunmugavelu",
+    faculty: "Dr.Rajendran V",
+    chairpersons: "Dr.G.Prakash, Dr.A.Shunmugavelu",
   },
   {
-    time: "06:00 – 06:30 PM",
+    time: "6:00 – 6:30 PM",
     topic: "Sexual dysfunction in people with diabetes",
-    faculty: "Dr. Mithun Bhartia",
-    chairpersons: "Dr. Muralidharan, Dr. Prashanth Arun",
+    faculty: "Dr.Mithun Bhartia",
+    chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun",
   },
   {
-    time: "06:30 – 07:00 PM",
+    time: "6:30 – 7:00 PM",
     topic: "How to prevent Medico legal problems",
-    faculty: "Dr. Viswanathan Vishnu Vijay",
-    chairpersons: "Dr. Muralidharan, Dr. Prashanth Arun",
+    faculty: "Dr.Viswanathan Vishnu Vijay",
+    chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun",
   },
   {
-    time: "07:00 onwards",
+    time: "7:00 onwards",
     topic: "Networking Dinner",
     faculty: "",
   },
 ];
+
 
 
 // -------- Variants --------
@@ -234,7 +236,7 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
-                    <div className="flex flex-col justify-between md:flex-row">
+                    <div className="flex flex-col justify-between mt-6 md:flex-row">
                       {item.faculty && (
                       <p className="text-gray-600 text-md">
                         Faculty:{" "}
