@@ -48,6 +48,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="text-blue-600" />
+                  
                   <a
                     href="mailto:mvcon@mvdiabetes.in"
                     className="hover:underline"
@@ -69,10 +70,10 @@ export default function ContactPage() {
                 <div className="flex items-center gap-3">
                   <Mail className="text-blue-600" />
                   <a
-                    href="mailto:mvcon@mvdiabetes.in"
+                    href="mailto:mvconabstracts@mvdiabetes.in"
                     className="hover:underline"
                   >
-                    mvcon@mvdiabetes.in
+                    mvconabstracts@mvdiabetes.in
                   </a>
                 </div>
               </div>

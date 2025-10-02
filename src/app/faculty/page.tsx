@@ -3,10 +3,14 @@
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer"
 import { motion } from "framer-motion";
-
+const InternationalFaculty= [
+  { name: "Dr.Harikrishna KR Nair", img: "/images/faculty/Dr-Harikrishna-KR-Nair.jpg" },
+  { name: "Dr.Janaka karalliedde", img: "/images/faculty/Dr-Janaka-karalliedde.jpg" },  
+]
 const faculty = [
-  { name: "DR.S.R. Abishek", img: "/images/faculty/DR. S.R. Abishek.jpg" },
+  
   { name: "DR.AARTHY KANNAN", img: "/images/faculty/Dr. Aarthi kannan.jpg" },
+  { name: "DR.S.R. Abishek", img: "/images/faculty/DR. S.R. Abishek.jpg" },
   { name: "DR.ABIJITH", img: "/images/faculty/abijith.jpg" },
   { name: "DR.ANAND MOSES", img: "/images/faculty/Dr. Anand Moses.png" },
   { name: "Dr.Anjana", img: "/images/faculty/Dr.R.M.Anjana.jpg" },
@@ -64,8 +68,6 @@ const faculty = [
   { name: "Dr.Vishnu Priya Prashanth", img: "/images/faculty/Dr.Vishnu Priya Prashanth.jpg" },
   { name: "Dr.Vishnupriya Reddy", img: "/images/faculty/Dr. Vishnupriya Reddy.jpg" },
   { name: "Dr.Viswanathan Vishnu Vijay", img: "/images/faculty/Dr. Viswanathan Vishnu Vijay.jpg" },
-  { name: "Dr.Janaka karalliedde", img: "/images/faculty/Dr-Janaka-karalliedde.jpg" },
-  { name: "Dr.Harikrishna KR Nair", img: "/images/faculty/Dr-Harikrishna-KR-Nair.jpg" },
 ];
 
 
@@ -92,8 +94,43 @@ export default function FacultySection() {
       </header>
       <section className="w-full bg-gradient-to-b from-gray-50 to-white py-20">
         <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-4 gap-16 w-fit mb-16">
+            <div></div>
+            {InternationalFaculty.map((member, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                className="flex flex-col items-center"
+              >
+                {/* Arched Card */}
+                {/* <div className="relative w-full max-w-xs  bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-t-[150px] rounded-b-2xl shadow-lg flex flex-col items-center"> */}
+                  <div className="relative w-full max-w-xs rounded-t-[150px] rounded-b-2xl shadow-lg flex flex-col items-center">
+                  {/* Image container with shine */}
+                  <div className="shine-card relative z-10 flex justify-center  rounded-t-[150px] overflow-hidden">
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className=" h-72 object-cover object-top rounded-b-lg transition-transform duration-500 group-hover:scale-110 border"
+                    />
+                  </div>
+                </div>
+
+                {/* Name */}
+                <div className="text-center mt-3">
+                  <h3 className="text-lg font-bold text-gray-900 uppercase">
+                    {member.name}
+                  </h3>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div></div>
 
           <div className="grid gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            
             {faculty.map((member, idx) => (
               <motion.div
                 key={idx}
@@ -104,9 +141,10 @@ export default function FacultySection() {
                 className="flex flex-col items-center"
               >
                 {/* Arched Card */}
-                <div className="relative w-full max-w-xs  bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-t-[150px] rounded-b-2xl shadow-lg flex flex-col items-center">
+                {/* <div className="relative w-full max-w-xs  bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-t-[150px] rounded-b-2xl shadow-lg flex flex-col items-center"> */}
+                  <div className="relative w-full max-w-xs rounded-t-[150px] rounded-b-2xl shadow-lg flex flex-col items-center">
                   {/* Image container with shine */}
-                  <div className="shine-card relative z-10 flex justify-center -translate-x-3 -translate-y-3 rounded-t-[150px] overflow-hidden">
+                  <div className="shine-card relative z-10 flex justify-center  rounded-t-[150px] overflow-hidden">
                     <img
                       src={member.img}
                       alt={member.name}
