@@ -24,15 +24,23 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
     window.print();
   };
 
-  const handleDownload = async () => {
+ const handleDownload = async () => {
   try {
+    if (!registration || !registration.qrCodeImage) {
+      console.error("Missing registration data");
+      return;
+    }
+
     const response = await fetch(`https://mvcon.space${registration.qrCodeImage}`);
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
 
+    const fileName =
+      `MV-Conference-Pass-${(registration.name || "your-qrcode").replace(/\s/g, "_")}.png`;
+
     const link = document.createElement("a");
     link.href = url;
-    link.download = `MV-Conference-Pass-${registration.name.replace(/\s/g, "_")}.png`;
+    link.download = fileName;
     document.body.appendChild(link);
     link.click();
     link.remove();
@@ -44,6 +52,7 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
 };
 
 
+
   return (
     <div className="w-full">
         <div className="w-full max-w-md mx-auto">
@@ -52,7 +61,7 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
                 <div className="flex items-center justify-between pb-4 border-b border-primary-foreground/20">
                     <div className="flex items-center gap-2">
                         <Logo />
-                        <span className="font-bold text-lg">MV International Conference</span>
+                        <span className="font-bold text-lg">MVcon International Conference</span>
                     </div>
                 </div>
               </div>

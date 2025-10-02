@@ -11,7 +11,8 @@ export default function Home() {
         <Card className="w-full max-w-3xl shadow-2xl">
           <CardHeader className="text-center">
             <CardTitle className="text-3xl font-bold tracking-tight">Welcome to MVCON 2026!</CardTitle>
-            <CardDescription className="text-lg pt-2">Register now to secure your spot!</CardDescription>
+            <CardDescription className="text-lg pt-2">Congratulations! Registration completed. Your spot is confirmed. Your QR code is displayed below and has also been emailed to you. Please download it and use it at the event check-in.
+</CardDescription>
           </CardHeader>
           {/* <div className="flex justify-center mb-6">
             <img src="/images/finalLogo.png" className="w-72" alt="" />

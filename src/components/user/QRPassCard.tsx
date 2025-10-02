@@ -12,25 +12,31 @@ interface QRPassCardProps {
 }
 
 export function QRPassCard({ user, logs = [] }: QRPassCardProps) {
-  const qrUrl = user.qrCodeImage
-    ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://mvcon.space'}${user.qrCodeImage}`
-    : null;
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://mvcon.space';
 
-  const pdfUrl = user.certificateFile
-    ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://mvcon.space'}${user.certificateFile}`
-    : null;
+  const qrUrl = user.qrCodeImage ? `${backendUrl}${user.qrCodeImage}` : null;
+  const pdfUrl = user.certificateFile ? `${backendUrl}${user.certificateFile}` : null;
+  const imgUrl = user.certificateImage ? `${backendUrl}${user.certificateImage}` : null;
 
-  const imgUrl = user.certificateImage
-    ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://mvcon.space'}${user.certificateImage}`
-    : null;
-
-
-  const handleDownload = (url: string | null, fileName: string) => {
+  const handleDownload = async (url: string | null, fileName: string) => {
     if (!url) return;
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = fileName;
-    link.click();
+    try {
+      const response = await fetch(url);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      // Cleanup
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error('Download failed', error);
+    }
   };
 
   return (
@@ -51,8 +57,15 @@ export function QRPassCard({ user, logs = [] }: QRPassCardProps) {
             <p className="text-sm text-muted-foreground text-center">
               Show this QR code at the event for verification.
             </p>
+
+            {/* Download Pass Button */}
             <Button
-              onClick={() => handleDownload(qrUrl, `MVCon-Pass-${user.name.replace(/\s+/g, '_')}.png`)}
+              onClick={() =>
+                handleDownload(
+                  qrUrl,
+                  `MVCon-Pass-${(user.name || 'Guest').replace(/\s+/g, '_')}.png`
+                )
+              }
               variant="outline"
               className="mt-2"
             >
@@ -64,13 +77,16 @@ export function QRPassCard({ user, logs = [] }: QRPassCardProps) {
               <div className="flex flex-col items-center gap-2 mt-4">
                 <p className="text-sm font-medium">
                   🎉 Certificate unlocked on{' '}
-                
+                  {logs.length > 0 ? new Date(logs[0].createdAt).toLocaleDateString() : 'completion'}
                 </p>
                 <div className="flex gap-2">
                   {pdfUrl && (
                     <Button
                       onClick={() =>
-                        handleDownload(pdfUrl, `MVCon-Certificate-${user.name.replace(/\s+/g, '_')}.pdf`)
+                        handleDownload(
+                          pdfUrl,
+                          `MVCon-Certificate-${(user.name || 'Guest').replace(/\s+/g, '_')}.pdf`
+                        )
                       }
                       variant="secondary"
                     >
@@ -80,7 +96,10 @@ export function QRPassCard({ user, logs = [] }: QRPassCardProps) {
                   {imgUrl && (
                     <Button
                       onClick={() =>
-                        handleDownload(imgUrl, `MVCon-Certificate-${user.name.replace(/\s+/g, '_')}.png`)
+                        handleDownload(
+                          imgUrl,
+                          `MVCon-Certificate-${(user.name || 'Guest').replace(/\s+/g, '_')}.png`
+                        )
                       }
                       variant="secondary"
                     >
