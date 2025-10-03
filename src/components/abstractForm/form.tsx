@@ -2,8 +2,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { submitAbstractForm } from "@/lib/api";
+import { useRouter } from "next/navigation"; // ✅ import router
 
 export default function AbstractForm() {
+  const router = useRouter(); // ✅ initialize router
+
   const [formData, setFormData] = useState({
     name: "",
     registerNo: "",
@@ -42,10 +45,13 @@ export default function AbstractForm() {
         file: null,
       });
 
-      setTimeout(() => setShowPopup(false), 3000);
+      // ✅ Wait 2.5s, hide popup, then redirect to home
+      setTimeout(() => {
+        setShowPopup(false);
+        router.push("/"); // ✅ navigate home
+      }, 2500);
     } catch (err: any) {
       console.error(err);
-      // ✅ Show error message from backend instead of alert
       setErrorMsg(err.message || "Form submission failed. Please try again.");
     } finally {
       setLoading(false);

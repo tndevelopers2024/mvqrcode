@@ -7,8 +7,13 @@ const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat
 
 export const metadata: Metadata = {
   title: 'MVCon 2026',
-  description: 'Welcome to MVCON 2026! Join leading experts, professionals, and innovators for an inspiring conference experience.',
+  description:
+    'Welcome to MVCON 2026! Join leading experts, professionals, and innovators for an inspiring conference experience.',
+  icons: {
+    icon: '/images/finalLogo.png',
+  },
 };
+
 
 export default function RootLayout({
   children,
@@ -21,7 +26,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-        <link rel="icon" type="image/png" href="/images/finalLogo.png" />
+        {/* <link rel="icon" type="image/png" href="/images/finalLogo.png" /> */}
 
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>

@@ -40,9 +40,7 @@ const formSchema = z.object({
   profession: z.enum(['PG', 'Delegates'], {
     required_error: 'Please select your profession.'
   }),
-  designation: z
-    .string()
-    .min(2, { message: 'Please enter your designation.' }),
+  designation: z.string().min(2, { message: 'Please enter your designation.' }),
   city: z.string().min(2, { message: 'Please enter your city.' }),
   state: z.string().min(2, { message: 'Please enter your state.' }),
   profileImage: z.any().optional()
@@ -50,11 +48,16 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export function RegistrationForm() {
+type Props = {
+  onSuccess?: (data: Registration) => void;
+};
+
+export function RegistrationForm({ onSuccess }: Props) {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
   const [successfulRegistration, setSuccessfulRegistration] =
     useState<Registration | null>(null);
+  const [loadingQR, setLoadingQR] = useState(false); // ⚡ Loader state
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -109,7 +112,7 @@ export function RegistrationForm() {
           order_id: order.id,
           handler: async (response: any) => {
             try {
-              // 5️⃣ Verify & finalize registration
+              setLoadingQR(true); // ⚡ show loader while verifying
               const result = await verifyPaymentAndRegister(
                 response.razorpay_order_id,
                 response.razorpay_payment_id,
@@ -125,6 +128,7 @@ export function RegistrationForm() {
                     'Your QR code and registration number have been generated.'
                 });
                 setSuccessfulRegistration(result.data);
+                onSuccess?.(result.data);
                 form.reset();
                 setPhotoPreview(null);
               } else {
@@ -141,6 +145,8 @@ export function RegistrationForm() {
                 title: 'Payment Verification Failed',
                 description: err.message
               });
+            } finally {
+              setLoadingQR(false); // ⚡ hide loader
             }
           },
           prefill: {
@@ -163,6 +169,17 @@ export function RegistrationForm() {
     });
   }
 
+  // ⚡ Loader screen while waiting for QR
+  if (loadingQR) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-4 py-12">
+        <Loader2 className="h-10 w-10 animate-spin text-blue-500" />
+        <p className="text-lg font-medium">Generating your QR Code...</p>
+      </div>
+    );
+  }
+
+  // ✅ Show QR Code after success
   if (successfulRegistration) {
     return (
       <div className="flex flex-col items-center gap-6">
@@ -170,11 +187,17 @@ export function RegistrationForm() {
         <Button onClick={() => setSuccessfulRegistration(null)}>
           Register Another Person
         </Button>
-        <a className='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2' href="/login">Login</a>
+        <a
+          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+          href="/login"
+        >
+          Login
+        </a>
       </div>
     );
   }
 
+  // 📝 Default form
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

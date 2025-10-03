@@ -13,11 +13,6 @@ interface QRCodeDisplayProps {
   registration: Registration;
 }
 
-const Logo = () => (
-    <div className="flex items-center justify-center text-white">
-      <MountainIcon className="h-8 w-8" />
-    </div>
-);
 
 export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
   const handlePrint = () => {
@@ -58,11 +53,8 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
         <div className="w-full max-w-md mx-auto">
             <Card className="w-full shadow-2xl print:shadow-none bg-gradient-to-br from-primary via-primary to-accent rounded-2xl">
               <div className="p-6 text-primary-foreground">
-                <div className="flex items-center justify-between pb-4 border-b border-primary-foreground/20">
-                    <div className="flex items-center gap-2">
-                        <Logo />
-                        <span className="font-bold text-lg">MVcon International Conference</span>
-                    </div>
+                <div className="flex items-center justify-center pb-4 border-b border-primary-foreground/20">                    
+                        <h4 className="font-bold text-lg text-center">MVCON 2026</h4>                    
                 </div>
               </div>
               <CardContent className="p-6 bg-card rounded-b-2xl">
