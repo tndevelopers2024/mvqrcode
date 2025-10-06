@@ -93,8 +93,8 @@ const schedule = [
   },
   {
     time: "05:00 – 05:30 PM",
-    topic: "TBD",
-    faculty: "",
+    topic: "The Untapped Potential of Imaging in Diabetic Foot Care",
+    faculty: "Dr.Srikar Nallan",
     chair: "",
   },
   {
