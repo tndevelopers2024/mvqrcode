@@ -30,7 +30,7 @@ export default function WelcomeSection() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
               Message From the Organising Chairman
             </h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed text-justify">
               It gives me immense pleasure to welcome you to the inaugural
               edition of MVCON, a new forum for a plethora of scientific
               sessions from MV Diabetes. With over 75 years of legacy in
@@ -44,7 +44,7 @@ export default function WelcomeSection() {
               innovations, and improve clinical outcomes for patients across the
               globe.
             </p>
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <p className="text-gray-700 leading-relaxed mt-4 text-justify">
               As the National President of RSSDI, India’s largest organization
               for healthcare professionals and researchers in diabetes, and the
               Honorary President of D-Foot International, I have dedicated my

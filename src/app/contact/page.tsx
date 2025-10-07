@@ -26,7 +26,7 @@ export default function ContactPage() {
             {/* Left: Address */}
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
-                Conference Secretariat Area
+                Conference Secretariat
               </h2>
               <div className="space-y-5 text-gray-700">
                 <div className="flex items-start gap-3">

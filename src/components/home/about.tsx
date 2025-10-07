@@ -120,7 +120,7 @@ export default function About() {
                 <span className="absolute left-0 -bottom-1 w-36 h-1 bg-yellow-300"></span>
               </h2>
 
-              <p className="text-gray-600 text-md mt-4 mb-4">
+              <p className="text-gray-600 text-md mt-4 mb-4 text-justify">
                 MVCON 2026 marks the first edition of MV's annual scientific
                 update bringing together leading diabetologists, surgeons, and
                 paramedical experts. Hosted by India's pioneers in diabetes and

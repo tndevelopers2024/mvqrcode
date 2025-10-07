@@ -30,10 +30,10 @@ const sections = [
     img: "/images/img3.jpg",
   },
   {
-    title: "Guidelines for Abstract Submittion",
+    title: "Guidelines for Abstract Submission",
     text: (
       <motion.ul
-        className="list-disc list-inside space-y-2"
+        className="list-disc space-y-2 text-justify"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
@@ -43,6 +43,7 @@ const sections = [
           "They should focus on diabetes and its complications: prevention, clinical treatment outcomes, innovative techniques, and therapies. Case reports are also accepted.",
         ].map((item, idx) => (
           <motion.li
+            className="text-justify ml-6"
             key={idx}
             variants={liVariants(idx % 2 === 0 ? "left" : "right", idx * 0.15)}
           >
@@ -53,7 +54,7 @@ const sections = [
         <p className="pt-4 font-bold">The abstract must be structured:</p>
 
         <motion.ul
-          className="list-disc ml-6 mt-2 space-y-1"
+          className="list-disc ml-6 mt-2 space-y-1 text-justify"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
@@ -62,7 +63,7 @@ const sections = [
             "Maximum length: 400 words (excluding title and author affiliations).",
             "Sub-headings in bold: Background and Aims, Materials and Methods, Results, Conclusions.",
             "Title should be short (10–15 words) with authors & affiliations.",
-            "One table or one figure (not exceeding 300 words) may be included.",
+            "One table or one figure not exceeding 300 words in the abstract may be included",
             "Presentations must avoid branding and use generic product names.",
           ].map((item, idx) => (
             <motion.li
