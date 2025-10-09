@@ -94,7 +94,7 @@ export default function FacultySection() {
       </header>
       <section className="w-full bg-gradient-to-b from-gray-50 to-white py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-4 gap-16 w-fit mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 place-content-center mb-16">
             <div></div>
             {InternationalFaculty.map((member, idx) => (
               <motion.div
@@ -103,7 +103,7 @@ export default function FacultySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center "
               >
                 {/* Arched Card */}
                 {/* <div className="relative w-full max-w-xs  bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-t-[150px] rounded-b-2xl shadow-lg flex flex-col items-center"> */}
@@ -113,7 +113,7 @@ export default function FacultySection() {
                     <img
                       src={member.img}
                       alt={member.name}
-                      className=" h-72 object-cover object-top rounded-b-lg transition-transform duration-500 group-hover:scale-110 border"
+                      className=" h-72 max-md:h-[400px] object-cover object-top rounded-b-lg transition-transform duration-500 group-hover:scale-110 border"
                     />
                   </div>
                 </div>
@@ -148,7 +148,7 @@ export default function FacultySection() {
                     <img
                       src={member.img}
                       alt={member.name}
-                      className=" h-72 object-cover object-top rounded-b-lg transition-transform duration-500 group-hover:scale-110 border"
+                      className=" h-72 max-md:h-[400px] object-cover object-top rounded-b-lg transition-transform duration-500 group-hover:scale-110 border"
                     />
                   </div>
                 </div>
