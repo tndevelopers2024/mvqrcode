@@ -20,13 +20,13 @@ const schedule = [
     time: "10:30 AM – 10:50 AM",
     topic: "Smart Dressing Solutions - The T.I.M.E. concept",
     faculty: "Dr. Senthil G",
-    chair: "Dr. Harikrishnan K R Nair",
+    chair: "Dr. Harikrishnan KR Nair",
   },
   {
     time: "10:50 AM – 11:10 AM",
     topic: "Digital subtraction Angiography - Revascularization in Lower Limb",
-    faculty: "Dr. Vijay Viswanathan, Dr. R. Ravikumar",
-    chair: "Dr. Harikrishnan K R Nair",
+    faculty: "Dr. Vijay Viswanathan, Dr. R Ravikumar",
+    chair: "Dr. Harikrishnan KR Nair",
   },
   {
     time: "11:10 AM – 11:30 AM",
@@ -44,13 +44,13 @@ const schedule = [
     time: "12:30 PM – 01:00 PM",
     topic: "Future of diabetes care: CGMS into routine practice",
     faculty: "Dr. Prashanth Arun",
-    chair: "Dr. Kannan Natarajan, Dr. C. Balaji",
+    chair: "Dr. Kannan Natarajan, Dr. C Balaji",
   },
   {
     time: "01:00 PM – 01:30 PM",
     topic: "Manual to Automated: Insulin Pump Technology",
     faculty: "Dr. Leela Baid",
-    chair: "Dr. Kannan Natarajan, Dr. C. Balaji",
+    chair: "Dr. Kannan Natarajan, Dr. C Balaji",
   },
   {
     time: "01:30 PM – 02:30 PM",
@@ -67,8 +67,8 @@ const schedule = [
   {
     time: "03:00 PM – 03:30 PM",
     topic: "When diabetes reaches the lungs: Diabetic Pneumopathy",
-    faculty: "Dr. S. R. Abhishek",
-    chair: "Dr. V. P. Sriram, Dr. K. Shanmugam",
+    faculty: "Dr. S R Abhishek",
+    chair: "Dr. V P Sriram, Dr. K. Shanmugam",
   },
   {
     time: "03:30 PM – 04:00 PM",

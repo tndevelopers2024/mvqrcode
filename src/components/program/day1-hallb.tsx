@@ -8,26 +8,26 @@ const schedule = [
     time: "09:30 – 10:00 AM",
     topic: "TBD",
     faculty: "Dr.Aarathy Kannan",
-    chairpersons: "Dr.Kannan Natarajan, Dr.C. Balaji",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
     time: "10:00 – 10:30 AM",
     topic: "TBD",
-    faculty: "Dr.P. Paranthaman",
-    chairpersons: "Dr.Kannan Natarajan, Dr.C. Balaji",
+    faculty: "Dr.P Paranthaman",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
     time: "10:30 – 10:50 AM",
     topic: "Unmasking Anemia in Diabetes",
     faculty: "Dr.V.P. Sriram",
-    chairpersons: "Dr.Kannan Natarajan, Dr.C. Balaji",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
     time: "10:50 – 11:10 AM",
     topic:
       "International Vs National – ADA Vs RSSDI guidelines (What's New / What’s Next / What’s the difference?)",
     faculty: "Dr.K. Uma Mahesh",
-    chairpersons: "Dr.Kannan Natarajan, Dr.C. Balaji",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
     time: "11:10 – 11:30 AM",
@@ -53,7 +53,7 @@ const schedule = [
   {
     time: "2:30 PM – 3:00 PM",
     topic: "Demonstration of High Risk Feet (Hall A)",
-    faculty: "Dr.Vijay Viswanathan, Ms.Seena Rajsekar & Ms.Bamila Selvaraj",
+    faculty: "Dr.Vijay Viswanathan / Ms.Seena Rajsekar & Ms.Bamila Selvaraj",
   },
   {
     time: "3:00 PM – 3:30 PM",

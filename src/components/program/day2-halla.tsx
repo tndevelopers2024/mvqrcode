@@ -2,130 +2,31 @@
 
 import { motion, Variants } from "framer-motion";
 
-// -------- Schedule for Day 2 Hall A --------
-// -------- Schedule for Day 2 Hall A --------
+// -------- Schedule for Day 2 Prof. M. Viswanathan Hall (Hall A) --------
 const schedule = [
-  {
-    time: "09:30 – 09:50 AM",
-    topic: "TBD",
-    faculty: "TBD",
-    chairpersons: "Dr.A.Shanmugam, Dr.Priya",
-  },
-  {
-    time: "09:50 – 10:10 AM",
-    topic: "TBD",
-    faculty: "Dr.Chandrasekar S",
-    chairpersons: "Dr.A.Shanmugam, Dr.Priya",
-  },
-  {
-    time: "10:10 – 10:30 AM",
-    topic: "TBD",
-    faculty: "Dr.Harikrishnan S",
-    chairpersons: "Dr.Vijay Viswanathan",
-  },
-  {
-    time: "10:30 – 10:50 AM",
-    topic: "TBD",
-    faculty: "Dr.Janaka",
-    chairpersons: "Dr.Vijay Viswanathan",
-  },
-  {
-    time: "10:50 – 11:10 AM",
-    topic: "How to evaluate kidney function in diabetes",
-    faculty: "Dr.Edwin Fernando",
-    chairpersons: "Dr.Vijay Viswanathan",
-  },
-  {
-    time: "11:10 – 11:30 AM",
-    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-  },
-  {
-    time: "11:30 – 12:00 PM",
-    topic: "TBD",
-    faculty: "Dr.Anuj Maheshwari",
-    chairpersons: "Dr.P.Dharmarajan, Dr.K.Shanmugam",
-  },
-  {
-    time: "12:00 – 12:30 PM",
-    topic: "TBD",
-    faculty: "Dr.A.Bhavatharani",
-    chairpersons: "Dr.P.Dharmarajan, Dr.K.Shanmugam",
-  },
-  {
-    time: "12:30 – 1:00 PM",
-    topic: "TBD",
-    faculty: "Dr.Usha Aiyagari",
-    chairpersons: "Dr.A.Bhavatharani, Dr.A.Shunmugavelu",
-  },
-  {
-    time: "1:00 – 1:30 PM",
-    topic: "TBD",
-    faculty: "Dr.A.Panneer Selvam",
-    chairpersons: "Dr.A.Bhavatharani, Dr.A.Shunmugavelu",
-  },
-  {
-    time: "1:30 – 2:30 PM",
-    topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-  },
-  {
-    time: "2:30 – 3:00 PM",
-    topic: "The Golden Hour in Diabetic Foot Ulcer",
-    faculty: "Dr.T.Sasi Kumar",
-    chairpersons: "Dr.Senthil G",
-  },
-  {
-    time: "3:00 – 4:00 PM",
-    topic: "Surgical Demonstration (VIDEO)\n* Debridement – sweet lime\n* VAC & TCC Application",
-    faculty: "Dr.Senthil G, Dr.Milind Ruke",
-    chairpersons: "Dr.Harikrishnan Nair, Dr.Vijay Viswanathan",
-  },
-  {
-    time: "4:00 – 4:30 PM",
-    topic: "TBD",
-    faculty: "Dr.Nandita Arun",
-    chairpersons: "Dr.A.Panneer Selvam, Dr.P.Paranthaman",
-  },
-  {
-    time: "4:30 – 5:00 PM",
-    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-  },
-  {
-    time: "5:00 – 5:30 PM",
-    topic: "Nutrition panel discussion",
-    faculty: "Dr.Meenakshi Bajaj, Dr.V.Ravindranath, Dr.S.Chandrasekar",
-    chairpersons: "Moderator: Dr.Mohan Krishnamoorthy",
-  },
-  {
-    time: "5:30 – 6:00 PM",
-    topic: "TBD",
-    faculty: "Dr.Rajendran V",
-    chairpersons: "Dr.G.Prakash, Dr.A.Shunmugavelu",
-  },
-  {
-    time: "6:00 – 6:30 PM",
-    topic: "Sexual dysfunction in people with diabetes",
-    faculty: "Dr.Mithun Bhartia",
-    chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun",
-  },
-  {
-    time: "6:30 – 7:00 PM",
-    topic: "How to prevent Medico legal problems",
-    faculty: "Dr.Viswanathan Vishnu Vijay",
-    chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun",
-  },
-  {
-    time: "7:00 onwards",
-    topic: "Networking Dinner",
-    faculty: "",
-  },
+  { time: "09:30 AM – 09:50 AM", topic: "TBD", faculty: "TBD", chairpersons: "Dr.A.Shanmugam, Dr.Priya" },
+  { time: "09:50 AM – 10:10 AM", topic: "TBD", faculty: "Dr.Chandrasekar S", chairpersons: "Dr.A.Shanmugam, Dr.Priya" },
+  { time: "10:10 AM – 10:30 AM", topic: "TBD", faculty: "Dr.Harikrishna KR Nair", chairpersons: "Dr.Vijay Viswanathan" },
+  { time: "10:30 AM – 10:50 AM", topic: "TBD", faculty: "Dr.Janaka Karalliedde", chairpersons: "Dr.Vijay Viswanathan" },
+  { time: "10:50 AM – 11:10 AM", topic: "How to evaluate kidney function in diabetes ?", faculty: "Dr.Edwin Fernando", chairpersons: "Dr.Vijay Viswanathan" },
+  { time: "11:10 AM – 11:30 AM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
+  { time: "11:30 AM – 12:00 PM", topic: "TBD", faculty: "Dr.Anuj Maheshwari", chairpersons: "Dr.P.Dharmarajan, Dr.K.Shanmugam" },
+  { time: "12:00 PM – 12:30 PM", topic: "TBD", faculty: "Dr.N.Bhavatharani", chairpersons: "Dr.P.Dharmarajan, Dr.K.Shanmugam" },
+  { time: "12:30 PM – 01:00 PM", topic: "TBD", faculty: "Dr.Usha Aiyyagari", chairpersons: "Dr.N.Bhavatharani, Dr.A.Shunmugavelu" },
+  { time: "01:00 PM – 01:30 PM", topic: "TBD", faculty: "Dr.A.Panneer Selvam", chairpersons: "Dr.N.Bhavatharani, Dr.A.Shunmugavelu" },
+  { time: "01:30 PM – 02:30 PM", topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
+  { time: "02:30 PM – 03:00 PM", topic: "The Golden Hour in Diabetic Foot Ulcer", faculty: "Dr.T.Sasi Kumar", chairpersons: "Dr.Senthil G" },
+  { time: "03:00 PM – 04:00 PM", topic: "Surgical Demonstration (VIDEO)\n• Debridement – sweet lime\n• VAC & TCC Application", faculty: "Dr.Senthil G / Dr.Milind Ruke", chairpersons: "Dr.Harikrishna KR Nair, Dr.Vijay Viswanathan" },
+  { time: "04:00 PM – 04:30 PM", topic: "TBD", faculty: "Dr.Nandita Arun", chairpersons: "Dr.A.Panneer Selvam, Dr.P.Paranthaman" },
+  { time: "04:30 PM – 05:00 PM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
+  { time: "05:00 PM – 05:30 PM", topic: "Nutrition panel discussion", faculty: "Dr.Meenakshi Bajaj, Dr.V.Ravindranath, Dr.S.Chandrasekar", chairpersons: "Dr.Mohan Krishnamoorthy (Moderator)" },
+  { time: "05:30 PM – 06:00 PM", topic: "TBD", faculty: "Dr.Rajendran V", chairpersons: "Dr.G.Prakash, Dr.A.Shunmugavelu" },
+  { time: "06:00 PM – 06:30 PM", topic: "Sexual dysfunction in people with diabetes", faculty: "Dr.Mithun Bhartia", chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun" },
+  { time: "06:30 PM – 07:00 PM", topic: "How to prevent Medico legal problems", faculty: "Dr.Viswanathan Vishnu Vijay", chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun" },
+  { time: "07:00 PM onwards", topic: "Networking Dinner", faculty: "" },
 ];
 
-
-
-// -------- Variants --------
+// -------- Animation Variants --------
 const letterVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (custom: number) => ({
@@ -144,7 +45,7 @@ const itemVariants: Variants = {
   }),
 };
 
-// -------- Highlight function --------
+// -------- Highlight Function --------
 function highlightText(text: string, query: string) {
   if (!query) return text;
   const regex = new RegExp(`(${query})`, "gi");
@@ -159,8 +60,9 @@ function highlightText(text: string, query: string) {
   );
 }
 
+// -------- Component --------
 export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
-  const heading = "MVCON 2026 – Day 2 (Prof. M. Viswanathan Hall)";
+  const heading = "Day 2 Prof. M. Viswanathan Hall (Hall A)";
 
   const filteredSchedule =
     searchQuery.trim() === ""
@@ -171,7 +73,9 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
             (item.faculty &&
               item.faculty.toLowerCase().includes(searchQuery.toLowerCase())) ||
             (item.chairpersons &&
-              item.chairpersons.toLowerCase().includes(searchQuery.toLowerCase()))
+              item.chairpersons
+                .toLowerCase()
+                .includes(searchQuery.toLowerCase()))
         );
 
   return (
@@ -198,10 +102,12 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
               </span>
             ))}
           </h2>
-          <p className="text-gray-600">A multidisciplinary update on diabetes & diabetic foot care</p>
+          <p className="text-gray-600">
+            A multidisciplinary update on diabetes & diabetic foot care
+          </p>
         </div>
 
-        {/* Cards */}
+        {/* Schedule Cards */}
         <div className="flex flex-col gap-8">
           {filteredSchedule.length === 0 ? (
             <div className="text-center py-10">
@@ -223,21 +129,21 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
                 viewport={{ once: true }}
                 className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
-                {/* Left column – TIME block */}
+                {/* Time */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
-                  <span className="text-lg md:text-lg font-bold text-indigo-600 text-center">
+                  <span className="text-lg font-bold text-indigo-600 text-center">
                     {item.time}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div className="p-6 flex-1 flex flex-col justify-center">
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      {highlightText(item.topic, searchQuery)}
-                    </h3>
-                    <div className="flex flex-col justify-between mt-6 md:flex-row">
-                      {item.faculty && (
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2 whitespace-pre-line">
+                    {highlightText(item.topic, searchQuery)}
+                  </h3>
+
+                  <div className="flex flex-col justify-between mt-4 md:flex-row">
+                    {item.faculty && (
                       <p className="text-gray-600 text-md">
                         Faculty:{" "}
                         <span className="font-bold">
@@ -247,13 +153,12 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
                     )}
                     {item.chairpersons && (
                       <p className="text-gray-600 text-md">
-                        Chairpersons:{" "}
+                        Chair Person:{" "}
                         <span className="font-bold">
                           {highlightText(item.chairpersons, searchQuery)}
                         </span>
                       </p>
                     )}
-                    </div>
                   </div>
                 </div>
               </motion.div>
