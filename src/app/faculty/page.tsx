@@ -33,7 +33,7 @@ const faculty = [
   { name: "DR.Leela Baid", img: "/images/faculty/Dr. Leela Baid.png" },
   { name: "DR.MEENAKSHI BAJAJ", img: "/images/faculty/meenakshi-bajaj.jpg" },
   { name: "DR.MILIND RUKE", img: "/images/faculty/MILIND.png" },
-  { name: "DR.MITHUN BHATIA", img: "/images/faculty/Dr.Mithun Bhartia.jpg" },
+  { name: "Dr Mithun Bhartia", img: "/images/faculty/Dr.Mithun Bhartia.jpg" },
   { name: "DR.V.MOHAN", img: "/images/faculty/Padmashri  Prof. DR.V.Mohan.jpg" },
   { name: "DR.MOHAN KRISHNAMOORTHY", img: "/images/faculty/Dr. MOHAN KRISHNAMOORTHY.png" },
   { name: "DR.C.MURALIDHARAN", img: "/images/faculty/Dr.C.Muralidharan.png" },
