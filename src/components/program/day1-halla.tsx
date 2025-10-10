@@ -31,7 +31,7 @@ const schedule = [
   {
     time: "10:50 – 11:10 AM",
     topic: "TBD",
-    faculty: "Dr.G. Vijayakumar",
+    faculty: "Dr.G.Vijayakumar",
     chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf",
   },
   {
@@ -86,7 +86,7 @@ const schedule = [
     time: "5:00 – 5:30 PM",
     topic: "Managing Heart failure in People with Diabetes",
     faculty: "Dr.A. Shanmugam",
-    chairpersons: "Dr.G.Prakash, Dr.A. Shunmugavelu",
+    chairpersons: "Dr.G.Prakash, Dr.A Shunmugavelu",
   },
   {
     time: "5:30 – 6:00 PM",

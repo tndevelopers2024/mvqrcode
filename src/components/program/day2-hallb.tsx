@@ -7,7 +7,7 @@ const schedule = [
   {
     time: "09:30 AM – 10:00 AM",
     topic: "Saving the limb, Saving the life - Non Amputation Strategies in osteomyelitis",
-    faculty: "Dr. Suresh Ananthan",
+    faculty: "Dr.D.Suresh Ananthan",
     chair: "Dr. Milind Ruke, Dr. Senthil G",
   },
   {
@@ -74,13 +74,13 @@ const schedule = [
     time: "03:30 PM – 04:00 PM",
     topic: "THE GUT Wrenching Troubles: Managing Diabetic GastroParesis",
     faculty: "Dr. Vishnu Priya Prashanth",
-    chair: "Dr. A. Bhavatharani, Dr. K. Uma Mahesh",
+    chair: "Dr. N. Bhavatharani, Dr. K. Uma Mahesh",
   },
   {
     time: "04:00 PM – 04:30 PM",
     topic: "The Silent Struggle: Healing Beyond glycemic control",
     faculty: "Ms. Vaishnavi Vijay",
-    chair: "Dr. A. Bhavatharani, Dr. K. Uma Mahesh",
+    chair: "Dr. N. Bhavatharani, Dr.K.Uma Mahesh",
   },
   {
     time: "04:30 PM – 05:00 PM",
