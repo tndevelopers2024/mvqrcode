@@ -104,17 +104,17 @@ function CountdownCircles() {
    ========================= */
 const images = [
   {
-    src: "/images/new-banner1.jpg",
-    mobile: "/images/mob1.png",
+    src: "/images/new-bg1.jpg",
+    mobile: "/images/mob-bg1.jpeg",
   },
   {
-    src: "/images/new-banner2.jpg",
-    mobile: "/images/mob2.png",
+    src: "/images/new-bg2.jpg",
+    mobile: "/images/mob-bg2.jpeg",
     left: "object-left",
   },
   {
-    src: "/images/new-banner3.jpg",
-    mobile: "/images/mob3.png",
+    src: "/images/new-bg3.jpg",
+    mobile: "/images/mob-bg3.jpeg",
   },
 ];
 
