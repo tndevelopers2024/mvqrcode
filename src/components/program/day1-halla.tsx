@@ -3,32 +3,30 @@
 import { motion, Variants } from "framer-motion";
 
 // -------- Schedule for Hall A --------
-// -------- Schedule for Hall A --------
 const schedule = [
-  { time: "09:30 – 09:50 AM", topic: "TBD", faculty: "TBD", chairpersons: "Dr.Anand Moses, Dr.Dharmarajan" },
-  { time: "09:50 – 10:10 AM", topic: "TBD", faculty: "Dr.Sunil Gupta", chairpersons: "Dr.Anand Moses, Dr.Dharmarajan" },
-  { time: "10:10 – 10:30 AM", topic: "TBD", faculty: "Dr.R Balamurugan", chairpersons: "Dr.Anand Moses, Dr.Dharmarajan" },
-  { time: "10:30 – 10:50 AM", topic: "TBD", faculty: "Dr.A. Muruganathan", chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf" },
-  { time: "10:50 – 11:10 AM", topic: "TBD", faculty: "Dr.G.Vijayakumar", chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf" },
+  { time: "09:30 – 09:50 AM", topic: "TBD", faculty: "TBD", chairpersons: "Dr.C.R.Anand Moses, Dr.D.P.Dharmarajan" },
+  { time: "09:50 – 10:10 AM", topic: "TBD", faculty: "Dr.Sunil Gupta", chairpersons: "Dr.C.R.Anand Moses, Dr.D.P.Dharmarajan" },
+  { time: "10:10 – 10:30 AM", topic: "TBD", faculty: "Dr.R. Balamurugan", chairpersons: "Dr.C.R.Anand Moses, Dr.D.P.Dharmarajan" },
+  { time: "10:30 – 10:50 AM", topic: "TBD", faculty: "Dr.A. Muruganathan", chairpersons: "Dr.K.Shanmugam, Dr.M.S. Ashraf" },
+  { time: "10:50 – 11:10 AM", topic: "TBD", faculty: "Dr.G. Vijayakumar", chairpersons: "Dr.K.Shanmugam, Dr.M.S. Ashraf" },
   { time: "11:10 – 11:30 AM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "11:30 – 12:30 PM", topic: "MV Life Time Achievement Award & Inauguration & Key Note lecture", faculty: "" },
-  { time: "12:30 – 1:00 PM", topic: "Recurrence of DFU - The Indian Strategy for prevention", faculty: "Dr.Senthil G", chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan" },
+  { time: "11:30 – 12:30 PM", topic: "MV Life Time Achievement Award Inauguration & Key Note Lecture", faculty: "" },
+  { time: "12:30 – 1:00 PM", topic: "Recurrence of DFU – The Indian Strategy for prevention", faculty: "Dr.Senthil G", chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan" },
   { time: "1:00 – 1:30 PM", topic: "TBD", faculty: "Dr.Milind Ruke", chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan" },
   { time: "1:30 – 2:30 PM", topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "2:30 – 3:00 PM", topic: "Demonstration of High Risk Feet", faculty: "Dr.Vijay Viswanathan / Ms.Seena Rajsekar & Ms.Bamila Selvaraj" },
+  { time: "2:30 – 3:00 PM", topic: "Demonstration of High Risk Feet", faculty: "Dr.Vijay Viswanathan, Ms.Seena Rajsekar & Ms.Bamila Selvaraj" },
   { time: "3:00 – 3:30 PM", topic: "Mechanical offloading (Unburden the wound)", faculty: "Dr.Viswanathan Vishnu Vijay" },
   { time: "3:30 – 4:00 PM", topic: "Surgical offloading", faculty: "Dr.Senthil G" },
   { time: "4:00 – 4:30 PM", topic: "TBD", faculty: "Dr.Balaji K" },
   { time: "4:30 – 5:00 PM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "5:00 – 5:30 PM", topic: "Managing Heart failure in People with Diabetes", faculty: "Dr.A.Shanmugam", chairpersons: "Dr.G.Prakash, Dr.A.Shunmugavelu" },
-  { time: "5:30 – 6:00 PM", topic: "TBD", faculty: "Dr.R M Anjana", chairpersons: "Dr.A.Panneer Selvam, Dr.Vijay Viswanathan" },
-  { time: "6:00 – 6:30 PM", topic: "SLEEP & OSA", faculty: "Dr.N Ramakrishnan" },
-  { time: "6:30 – 7:00 PM", topic: "TBD", faculty: "Dr.Krishna G Seshadri" },
+  { time: "5:00 – 5:30 PM", topic: "Managing Heart failure in People with Diabetes", faculty: "Dr.A. Shanmugam", chairpersons: "Dr.G.Prakash, Dr.A. Shunmugavelu" },
+  { time: "5:30 – 6:00 PM", topic: "TBD", faculty: "Dr.R.M. Anjana", chairpersons: "Dr.A.Panneer Selvam, Dr.Vijay Viswanathan" },
+  { time: "6:00 – 6:30 PM", topic: "SLEEP & OSA", faculty: "Dr.N. Ramakrishnan" },
+  { time: "6:30 – 7:00 PM", topic: "TBD", faculty: "Dr.Krishna G. Seshadri" },
   { time: "7:00 onwards", topic: "Networking Dinner", faculty: "" },
 ];
 
-
-// -------- Variants --------
+// -------- Animation Variants --------
 const letterVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (custom: number) => ({
@@ -47,7 +45,7 @@ const itemVariants: Variants = {
   }),
 };
 
-// -------- Highlight function --------
+// -------- Highlight Function --------
 function highlightText(text: string, query: string) {
   if (!query) return text;
   const regex = new RegExp(`(${query})`, "gi");
@@ -128,14 +126,14 @@ export default function DayoneHallA({ searchQuery }: { searchQuery: string }) {
                 viewport={{ once: true }}
                 className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
-                {/* Left column – TIME block */}
+                {/* Left column – TIME */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
                   <span className="text-lg md:text-lg font-bold text-indigo-600 text-center">
                     {item.time}
                   </span>
                 </div>
 
-                {/* Content */}
+                {/* Right column – DETAILS */}
                 <div className="p-6 flex-1 flex flex-col justify-center">
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">
@@ -143,21 +141,21 @@ export default function DayoneHallA({ searchQuery }: { searchQuery: string }) {
                     </h3>
                     <div className="flex flex-col md:flex-row justify-between">
                       {item.faculty && (
-                      <p className="text-gray-600 text-md">
-                        Faculty:{" "}
-                        <span className="font-bold">
-                          {highlightText(item.faculty, searchQuery)}
-                        </span>
-                      </p>
-                    )}
-                    {item.chairpersons && (
-                      <p className="text-gray-600 text-md">
-                        Chairpersons:{" "}
-                        <span className="font-bold">
-                          {highlightText(item.chairpersons, searchQuery)}
-                        </span>
-                      </p>
-                    )}
+                        <p className="text-gray-600 text-md">
+                          Faculty:{" "}
+                          <span className="font-bold">
+                            {highlightText(item.faculty, searchQuery)}
+                          </span>
+                        </p>
+                      )}
+                      {item.chairpersons && (
+                        <p className="text-gray-600 text-md">
+                          Chairpersons:{" "}
+                          <span className="font-bold">
+                            {highlightText(item.chairpersons, searchQuery)}
+                          </span>
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

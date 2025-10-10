@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 
-// -------- Schedule for Day 3 Hall B --------
+// -------- Schedule for Day 3 Dr. M. Madhavi Amma Hall (Hall B) --------
 const schedule = [
   {
     time: "09:30 – 09:45 AM",
@@ -30,24 +30,24 @@ const schedule = [
   },
   {
     time: "11:30 – 12:00 PM",
-    topic: "Monogenic diabetes in Hall A",
-    faculty: "Dr.V.Mohan",
-    chair: "Dr.Vijay Viswanathan",
+    topic: "Monogenic Diabetes in Hall A",
+    faculty: "Dr. V. Mohan",
+    chair: "Dr. Vijay Viswanathan",
   },
   {
     time: "12:00 – 12:30 PM",
     topic: "Prevention of Diabetes in India in Hall A",
-    faculty: "Dr.A.Ramachandran",
-    chair: "Dr.Vijay Viswanathan",
+    faculty: "Dr. A. Ramachandran",
+    chair: "Dr. Vijay Viswanathan",
   },
   {
     time: "12:30 – 01:15 PM",
-    topic: "Prof. MV Gold Medal Oration 2026 & Launch in Hall A",
-    faculty: "Dr.Harikrishnan Nair",
+    topic: "Prof. MV Gold Medal Oration 2026 & Launch (if any) in Hall A",
+    faculty: "Dr. Harikrishna KR Nair",
     chair: "",
   },
   {
-    time: "01:15 PM onwards",
+    time: "01:15 PM",
     topic: "Valedictory function followed by lunch",
     faculty: "",
     chair: "",
@@ -93,7 +93,7 @@ export default function DaythreeHallB({
 }: {
   searchQuery: string;
 }) {
-  const heading = "MVCON – Day 3 (Hall B)";
+  const heading = "Day 3 Dr. M. Madhavi Amma Hall (Hall B)";
 
   const filteredSchedule =
     searchQuery.trim() === ""
@@ -150,7 +150,7 @@ export default function DaythreeHallB({
           ) : (
             filteredSchedule.map((item, i) => (
               <motion.div
-                key={i}
+                key={`${item.time}-${item.topic}`}
                 custom={i}
                 variants={itemVariants}
                 initial="hidden"

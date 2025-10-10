@@ -1,32 +1,32 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Clock } from "lucide-react";
 
 // -------- Schedule for Day 3 Hall A --------
 const schedule = [
   {
     time: "09:30 – 09:50 AM",
     topic: "GLP1 For Weight Loss",
-    faculty: "Dr.Jayashree Gopal",
+    faculty: "Dr. Jayashree Gopal",
     chair: "",
   },
   {
     time: "09:50 – 10:20 AM",
     topic: "TBD",
-    faculty: "Dr.Janaka",
+    faculty: "Dr. Janaka Karalliedde",
     chair: "",
   },
   {
     time: "10:20 – 10:40 AM",
     topic: "Ambulatory BP",
-    faculty: "Dr.S.S.Lakshmanan",
+    faculty: "Dr. S. S. Lakshmanan",
     chair: "",
   },
   {
     time: "10:40 – 11:00 AM",
-    topic: "Management of Hypertension in Newly diagnosed cases of diabetes",
-    faculty: "Dr.S.N.Narasingan",
+    topic:
+      "Management of Hypertension in Newly Diagnosed Cases of Diabetes",
+    faculty: "Dr. S. N. Narasingan",
     chair: "",
   },
   {
@@ -36,32 +36,30 @@ const schedule = [
     chair: "",
   },
   {
-    time: "11:30 – 12:00 PM",
-    topic: "Monogenic diabetes",
-    faculty: "Dr.V.Mohan",
-    chair: "Dr.Vijay Viswanathan",
+    time: "11:30 AM – 12:00 PM",
+    topic: "Monogenic Diabetes",
+    faculty: "Dr. V. Mohan",
+    chair: "Dr. Vijay Viswanathan",
   },
   {
     time: "12:00 – 12:30 PM",
     topic: "Prevention of Diabetes in India",
-    faculty: "Dr.A.Ramachandran",
-    chair: "Dr.Vijay Viswanathan",
+    faculty: "Dr. A. Ramachandran",
+    chair: "Dr. Vijay Viswanathan",
   },
   {
     time: "12:30 – 01:15 PM",
     topic: "Prof. MV Gold Medal Oration 2026 & Launch",
-    faculty: "",
+    faculty: "Dr. Harikrishna KR Nair",
     chair: "",
   },
   {
-    time: "01:15 PM onwards",
+    time: "01:15 PM",
     topic: "Valedictory function followed by lunch",
     faculty: "",
     chair: "",
   },
 ];
-
-
 
 const letterVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -100,7 +98,7 @@ export default function DaythreeHallA({
 }: {
   searchQuery: string;
 }) {
-  const heading = "MVCON – Day 3 (Prof. M. Viswanathan Hall)";
+  const heading = "Day 3 Prof. M. Viswanathan Hall (Hall A)";
 
   const filteredSchedule =
     searchQuery.trim() === ""
@@ -154,7 +152,7 @@ export default function DaythreeHallA({
           ) : (
             filteredSchedule.map((item, i) => (
               <motion.div
-                key={i}
+                key={`${item.time}-${item.topic}`}
                 custom={i}
                 variants={itemVariants}
                 initial="hidden"
@@ -162,7 +160,7 @@ export default function DaythreeHallA({
                 viewport={{ once: true }}
                 className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
-                {/* Left column – TIME block */}
+                {/* Time Block */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
                   <span className="text-lg md:text-lg font-bold text-indigo-600 text-center">
                     {item.time}
@@ -177,21 +175,21 @@ export default function DaythreeHallA({
                     </h3>
                     <div className="flex flex-col justify-between md:flex-row mt-4">
                       {item.faculty && (
-                      <p className="text-gray-600 text-md">
-                        Faculty:{" "}
-                        <span className="font-bold">
-                          {highlightText(item.faculty, searchQuery)}
-                        </span>
-                      </p>
-                    )}
-                    {item.chair && (
-                      <p className="text-gray-600 text-md">
-                        Chairpersons:{" "}
-                        <span className="font-bold">
-                          {highlightText(item.chair, searchQuery)}
-                        </span>
-                      </p>
-                    )}
+                        <p className="text-gray-600 text-md">
+                          Faculty:{" "}
+                          <span className="font-bold">
+                            {highlightText(item.faculty, searchQuery)}
+                          </span>
+                        </p>
+                      )}
+                      {item.chair && (
+                        <p className="text-gray-600 text-md">
+                          Chairpersons:{" "}
+                          <span className="font-bold">
+                            {highlightText(item.chair, searchQuery)}
+                          </span>
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -8,25 +8,26 @@ const schedule = [
     time: "09:30 – 10:00 AM",
     topic: "TBD",
     faculty: "Dr.Aarathy Kannan",
-    chairpersons: "Dr.Kannan Natrajan, Dr.C Balaji",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C. Balaji",
   },
   {
     time: "10:00 – 10:30 AM",
     topic: "TBD",
-    faculty: "Dr.P Paranthaman",
-    chairpersons: "Dr.Kannan Natrajan, Dr.C Balaji",
+    faculty: "Dr.P. Paranthaman",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C. Balaji",
   },
   {
     time: "10:30 – 10:50 AM",
     topic: "Unmasking Anemia in Diabetes",
     faculty: "Dr.V.P. Sriram",
-    chairpersons: "Dr.Kannan Natrajan, Dr.C Balaji",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C. Balaji",
   },
   {
     time: "10:50 – 11:10 AM",
-    topic: "International Vs National – ADA Vs RSSDI guidelines (What's New / What Next / What's the Difference?)",
-    faculty: "Dr.K.Uma Mahesh",
-    chairpersons: "Dr.Kannan Natrajan, Dr.C Balaji",
+    topic:
+      "International Vs National – ADA Vs RSSDI guidelines (What's New / What’s Next / What’s the difference?)",
+    faculty: "Dr.K. Uma Mahesh",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C. Balaji",
   },
   {
     time: "11:10 – 11:30 AM",
@@ -34,63 +35,64 @@ const schedule = [
     faculty: "",
   },
   {
-    time: "11:30 – 12:30 PM",
-    topic: "MV Life Time Achievement Award (Hall A) & Inauguration + Key Note lecture",
+    time: "11:30 AM – 12:30 PM",
+    topic:
+      "MV Life Time Achievement Award (Hall A) & Inauguration + Key Note lecture",
     faculty: "",
   },
   {
-    time: "12:30 – 1:30 PM",
+    time: "12:30 PM – 1:30 PM",
     topic: "Oral presentations",
     faculty: "",
   },
   {
-    time: "1:30 – 2:30 PM",
+    time: "1:30 PM – 2:30 PM",
     topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
   {
-    time: "2:30 – 3:00 PM",
+    time: "2:30 PM – 3:00 PM",
     topic: "Demonstration of High Risk Feet (Hall A)",
-    faculty: "Dr.Vijay Viswanathan, Ms.Seena & Ms.Bamilla",
+    faculty: "Dr.Vijay Viswanathan, Ms.Seena Rajsekar & Ms.Bamila Selvaraj",
   },
   {
-    time: "3:00 – 3:30 PM",
+    time: "3:00 PM – 3:30 PM",
     topic: "Mechanical offloading (Unburden the wound) (Hall A)",
     faculty: "Dr.Viswanathan Vishnu Vijay",
   },
   {
-    time: "3:30 – 4:00 PM",
+    time: "3:30 PM – 4:00 PM",
     topic: "Surgical offloading – (VIDEO) in Hall A",
     faculty: "Dr.Senthil G",
     chairpersons: "Dr.Shanthi",
   },
   {
-    time: "4:00 – 4:30 PM",
+    time: "4:00 PM – 4:30 PM",
     topic: "Surrogate measures in routine clinical practice",
     faculty: "Dr.Satyavani K",
   },
   {
-    time: "4:30 – 5:00 PM",
+    time: "4:30 PM – 5:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
   {
-    time: "5:00 – 5:30 PM",
+    time: "5:00 PM – 5:30 PM",
     topic: "Diabetic Retinopathy",
     faculty: "Dr.Mohan Rajan / Dr.Manoj Khatri",
   },
   {
-    time: "5:30 – 6:00 PM",
+    time: "5:30 PM – 6:00 PM",
     topic: "TBD",
     faculty: "",
   },
   {
-    time: "6:00 – 6:30 PM",
+    time: "6:00 PM – 6:30 PM",
     topic: "TBD",
     faculty: "",
   },
   {
-    time: "6:30 – 7:00 PM",
+    time: "6:30 PM – 7:00 PM",
     topic: "TBD",
     faculty: "",
   },
@@ -197,7 +199,7 @@ export default function DayoneHallB({ searchQuery }: { searchQuery: string }) {
               >
                 {/* Left column – TIME block */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
-                  <span className="text-xl md:text-lg font-bold text-indigo-600 text-center">
+                  <span className="text-xl md:text-[16px] font-bold text-indigo-600 text-center">
                     {item.time}
                   </span>
                 </div>
