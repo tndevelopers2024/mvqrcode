@@ -10,10 +10,10 @@ const InternationalFaculty= [
 ]
 const faculty = [
   
-  { name: "DR.AARTHY KANNAN", img: "/images/faculty/Dr. Aarthi kannan.jpg" },  
+  { name: "Dr.Aarathy Kannan", img: "/images/faculty/Dr. Aarthi kannan.jpg" },  
   { name: "DR.ABIJITH", img: "/images/faculty/abijith.jpg" },
   { name: "DR.S.R. Abishek", img: "/images/faculty/DR. S.R. Abishek.jpg" },
-  { name: "DR.C.R. ANAND MOSES", img: "/images/faculty/Dr. Anand Moses.png" },
+  { name: "Dr.C.R.Anand Moses", img: "/images/faculty/Dr. Anand Moses.png" },
   { name: "DR.R.M.ANJANA", img: "/images/faculty/Dr.R.M.Anjana.jpg" },
   { name: "DR.ANUJ MAHESWARI", img: "/images/faculty/Dr Anuj Maheshwari.png" },
   { name: "DR.M.S.ASHRAF", img: "/images/faculty/ashraf.jpg" },
@@ -37,7 +37,7 @@ const faculty = [
   { name: "DR.V.MOHAN", img: "/images/faculty/Padmashri  Prof. DR.V.Mohan.jpg" },
   { name: "DR.MOHAN KRISHNAMOORTHY", img: "/images/faculty/Dr. MOHAN KRISHNAMOORTHY.png" },
   { name: "DR.C.MURALIDHARAN", img: "/images/faculty/Dr.C.Muralidharan.png" },
-  { name: "DR.Nanditha Ramachandran", img: "/images/faculty/Dr Nanditha Ramachandran.jpg" },
+  { name: "Dr.Nandita Arun", img: "/images/faculty/Dr Nanditha Ramachandran.jpg" },
   { name: "DR.S.N.NARASINGAN", img: "/images/faculty/Dr.S.N.Narasingan.jpg" },
   { name: "DR.A.PANNEER SELVAM", img: "/images/faculty/Dr.Paneer selvam.jpg" },
   { name: "DR.P.PARANTHAMAN", img: "/images/faculty/Dr.P.Paranthaman.png" },  

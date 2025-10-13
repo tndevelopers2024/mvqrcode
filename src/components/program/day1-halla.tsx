@@ -8,19 +8,19 @@ const schedule = [
     time: "09:30 – 09:50 AM",
     topic: "TBD",
     faculty: "TBD",
-    chairpersons: "Dr.CR.Anand Moses, Dr.P.Dharmarajan",
+    chairpersons: "Dr.C.R.Anand Moses, Dr.P.Dharmarajan",
   },
   {
     time: "09:50 – 10:10 AM",
     topic: "TBD",
     faculty: "Dr.Sunil Gupta",
-    chairpersons: "Dr.CR.Anand Moses, Dr.P.Dharmarajan",
+    chairpersons: "Dr.C.R.Anand Moses, Dr.P.Dharmarajan",
   },
   {
     time: "10:10 – 10:30 AM",
     topic: "TBD",
     faculty: "Dr.R. Balamurugan",
-    chairpersons: "Dr.CR.Anand Moses, Dr.P.Dharmarajan",
+    chairpersons: "Dr.C.R.Anand Moses, Dr.P.Dharmarajan",
   },
   {
     time: "10:30 – 10:50 AM",
