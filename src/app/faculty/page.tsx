@@ -57,6 +57,7 @@ const faculty = [
   { name: "Dr.A.Shanmugam", img: "/images/faculty/Dr A Shanmugam.jpg" }, 
   { name: "DR.K.SHANMUGAM", img: "/images/faculty/Dr. K. Shanmugam.jpg" },
   { name: "DR.A.SHANMUGAVELU", img: "/images/faculty/DR. A. SHANMUGAVELAN.jpg" },
+  { name: "DR.Shanthi", img: "/images/faculty/Dr.Shanthi.png" },
   { name: "DR.Sriram VP", img: "/images/faculty/Dr. Sriram VP.png" },   
   { name: "DR.D.Suresh Anandan", img: "/images/faculty/Dr D.Suresh Anandan.png" },
   { name: "DR.SUNIL GUPTA", img: "/images/faculty/DR.SUNIL GUPTA.jpg" },
