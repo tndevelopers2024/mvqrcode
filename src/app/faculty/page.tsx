@@ -52,7 +52,7 @@ const faculty = [
   { name: "DR.SANJAY B S", img: "/images/faculty/Dr Sanjay B S.png" },
   { name: "DR.T.SASI KUMAR", img: "/images/faculty/DR. SASI KUMAR.jpg" },
   { name: "DR.K.SATYAVANI", img: "/images/faculty/sathyavani.jpg" },
-  { name: "Mrs.Seena Rajsekar", img: "/images/faculty/Mrs.Seena Rajsekar.jpg" },
+  { name: "Ms.Seena Rajasekar", img: "/images/faculty/Mrs.Seena Rajsekar.jpg" },
   { name: "DR.G.Senthil", img: "/images/faculty/Dr. G. Senthil.jpg" },
   { name: "Dr.A.Shanmugam", img: "/images/faculty/Dr A Shanmugam.jpg" }, 
   { name: "DR.K.SHANMUGAM", img: "/images/faculty/Dr. K. Shanmugam.jpg" },
@@ -83,11 +83,11 @@ export default function FacultySection() {
   return (
     <main>
       <Navbar/>
-      <header className="relative w-full mt-16 text-white bg-[url('/images/program-bg1.jpg')] bg-cover bg-top">
+      <header className="relative w-full mt-16 text-white bg-[url('/images/coundown-bg.jpg')] bg-cover bg-center">
         {/* Overlay */}
         <div className="absolute inset-0 bg-blue-700/70"></div>
 
-        <div className="relative py-32 container mx-auto px-6 text-center">
+        <div className="relative py-36 container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Meet Our Faculties
           </h1>
