@@ -46,6 +46,7 @@ const faculty = [
   { name: "DR.G.PRAKASH", img: "/images/faculty/DR.G.PRAKASH.jpg" },
   { name: "DR.A.RAMACHANDRAN", img: "/images/faculty/Dr.A.RAMACHANDRAN.jpg" },
   { name: "DR.N.RAMAKRISHNAN", img: "/images/faculty/DR.RAMAKRISHNAN N.jpg" },
+  { name: "Dr.S.R.Ramakrishnan", img: "/images/faculty/Dr.S.R.Ramakrishnan.jpg"},
   { name: "DR.V.RAJENDRAN", img: "/images/faculty/Dr. V. Rajendran.jpg" },
   { name: "DR.R.Ravikumar", img: "/images/faculty/Dr R Ravikumar.jpg" },
   { name: "DR.V.RAVINDRANATH", img: "/images/faculty/ravindran.jpg" },
