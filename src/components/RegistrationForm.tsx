@@ -1,49 +1,49 @@
-'use client';
+"use client";
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { useState, useTransition, useRef } from 'react';
-import { Loader2, User as UserIcon, Upload } from 'lucide-react';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { useState, useTransition, useRef } from "react";
+import { Loader2, User as UserIcon, Upload } from "lucide-react";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { useToast } from '@/hooks/use-toast';
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
 import {
   prepareRegistration,
   createPaymentOrder,
-  verifyPaymentAndRegister
-} from '@/lib/api';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+  verifyPaymentAndRegister,
+} from "@/lib/api";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
-} from '@/components/ui/select';
-import type { Registration } from '@/lib/types';
-import { QRCodeDisplay } from './QRCodeDisplay';
+  SelectValue,
+} from "@/components/ui/select";
+import type { Registration } from "@/lib/types";
+import { QRCodeDisplay } from "./QRCodeDisplay";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
-  phone: z.string().min(6, { message: 'Please enter a valid phone number.' }),
-  profession: z.enum(['PG', 'Delegates'], {
-    required_error: 'Please select your profession.'
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  phone: z.string().min(6, { message: "Please enter a valid phone number." }),
+  profession: z.enum(["PG", "Delegates"], {
+    required_error: "Please select your profession.",
   }),
-  designation: z.string().min(2, { message: 'Please enter your designation.' }),
-  city: z.string().min(2, { message: 'Please enter your city.' }),
-  state: z.string().min(2, { message: 'Please enter your state.' }),
-  profileImage: z.any().optional()
+  designation: z.string().min(2, { message: "Please enter your designation." }),
+  city: z.string().min(2, { message: "Please enter your city." }),
+  state: z.string().min(2, { message: "Please enter your state." }),
+  profileImage: z.any().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -64,21 +64,21 @@ export function RegistrationForm({ onSuccess }: Props) {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      email: '',
-      phone: '',
-      profession: 'PG',
-      designation: '',
-      city: '',
-      state: '',
-      profileImage: undefined
-    }
+      name: "",
+      email: "",
+      phone: "",
+      profession: "PG",
+      designation: "",
+      city: "",
+      state: "",
+      profileImage: undefined,
+    },
   });
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      form.setValue('profileImage', file);
+      form.setValue("profileImage", file);
       setPhotoPreview(URL.createObjectURL(file));
     }
   };
@@ -90,25 +90,30 @@ export function RegistrationForm({ onSuccess }: Props) {
         // 1️⃣ Prepare registration data
         const prepared = await prepareRegistration(values);
         if (!prepared.success || !prepared.userData) {
-          throw new Error(
-            prepared.message || 'Failed to prepare registration'
-          );
+          throw new Error(prepared.message || "Failed to prepare registration");
         }
         const userData = prepared.userData;
 
         // 2️⃣ Determine amount dynamically
-        const amount = values.profession === 'PG' ? 1 : 1;
+        // 2️⃣ Determine amount dynamically
+        const fees = {
+          PG: 30,
+          Delegates: 40,
+        };
+
+        const amount = fees[values.profession];
+        const amountInPaise = amount * 100;
 
         // 3️⃣ Create Razorpay order
-        const { order } = await createPaymentOrder(amount, 'INR');
+        const { order } = await createPaymentOrder(amountInPaise, "INR");
 
         // 4️⃣ Open Razorpay Checkout
         const options = {
-          key: 'rzp_live_RNJwQRpJiswM0W',
+          key: "rzp_live_RNJwQRpJiswM0W",
           amount: order.amount,
           currency: order.currency,
-          name: 'Conference Registration',
-          description: 'Registration Fee',
+          name: "Conference Registration",
+          description: "Registration Fee",
           order_id: order.id,
           handler: async (response: any) => {
             try {
@@ -123,9 +128,9 @@ export function RegistrationForm({ onSuccess }: Props) {
 
               if (result.success && result.data) {
                 toast({
-                  title: 'Registration Successful!',
+                  title: "Registration Successful!",
                   description:
-                    'Your QR code and registration number have been generated.'
+                    "Your QR code and registration number have been generated.",
                 });
                 setSuccessfulRegistration(result.data);
                 onSuccess?.(result.data);
@@ -133,17 +138,16 @@ export function RegistrationForm({ onSuccess }: Props) {
                 setPhotoPreview(null);
               } else {
                 toast({
-                  variant: 'destructive',
-                  title: 'Registration Failed',
-                  description:
-                    result.message || 'Payment verification failed.'
+                  variant: "destructive",
+                  title: "Registration Failed",
+                  description: result.message || "Payment verification failed.",
                 });
               }
             } catch (err: any) {
               toast({
-                variant: 'destructive',
-                title: 'Payment Verification Failed',
-                description: err.message
+                variant: "destructive",
+                title: "Payment Verification Failed",
+                description: err.message,
               });
             } finally {
               setLoadingQR(false); // ⚡ hide loader
@@ -152,18 +156,18 @@ export function RegistrationForm({ onSuccess }: Props) {
           prefill: {
             name: userData.name,
             email: userData.email,
-            contact: userData.phone
+            contact: userData.phone,
           },
-          theme: { color: '#F97316' }
+          theme: { color: "#F97316" },
         };
 
         const razorpay = new (window as any).Razorpay(options);
         razorpay.open();
       } catch (err: any) {
         toast({
-          variant: 'destructive',
-          title: 'Registration Failed',
-          description: err.message
+          variant: "destructive",
+          title: "Registration Failed",
+          description: err.message,
         });
       }
     });
@@ -267,7 +271,7 @@ export function RegistrationForm({ onSuccess }: Props) {
                     onClick={() => fileInputRef.current?.click()}
                   >
                     <Upload className="mr-2 h-4 w-4" />
-                    {photoPreview ? 'Change Photo' : 'Upload Photo'}
+                    {photoPreview ? "Change Photo" : "Upload Photo"}
                   </Button>
                   <Input
                     type="file"
