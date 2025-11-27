@@ -16,6 +16,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { QRCodeDisplay } from '@/components/QRCodeDisplay';
 
 export function QRValidator() {
   const [qrData, setQrData] = useState('');
@@ -56,6 +57,8 @@ export function QRValidator() {
                 designation: res.user.designation,
                 city: res.user.city,
                 registrationDate: res.user.createdAt,
+                profileImage: res.user.profileImage,
+                qrCodeImage: res.user.qrCodeImage,
               },
             }
           : { isValid: false };
@@ -82,6 +85,8 @@ export function QRValidator() {
                 designation: res.user.designation,
                 city: res.user.city,
                 registrationDate: res.user.createdAt,
+                profileImage: res.user.profileImage,
+                qrCodeImage: res.user.qrCodeImage,
               },
             }
           : { isValid: false };
@@ -164,36 +169,39 @@ export function QRValidator() {
 
         {/* Result */}
         {validationResult && (
-          <Card className={validationResult.isValid ? 'border-green-500' : 'border-red-500'}>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                {validationResult.isValid ? (
-                  <>
-                    <CheckCircle className="h-6 w-6 text-green-500" />
-                    Pass is Valid
-                  </>
-                ) : (
-                  <>
-                    <XCircle className="h-6 w-6 text-red-500" />
+          <div className="mt-6">
+            {validationResult.isValid ? (
+              <div className="flex flex-col items-center gap-4">
+                 <div className="flex items-center gap-2 text-green-600 mb-2">
+                    <CheckCircle className="h-6 w-6" />
+                    <span className="font-bold text-lg">Pass is Valid</span>
+                 </div>
+                 
+                 {validationResult.userDetails && (
+                   // @ts-ignore - Constructing a partial registration object for display
+                   <QRCodeDisplay registration={{
+                     id: 'scanned-user',
+                     name: validationResult.userDetails.name || '',
+                     email: '', // Not needed for display
+                     designation: validationResult.userDetails.designation || '',
+                     city: validationResult.userDetails.city || '',
+                     registrationDate: validationResult.userDetails.registrationDate || '',
+                     profileImage: validationResult.userDetails.profileImage,
+                     qrCodeImage: validationResult.userDetails.qrCodeImage,
+                   }} />
+                 )}
+              </div>
+            ) : (
+              <Card className="border-red-500">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-red-500">
+                    <XCircle className="h-6 w-6" />
                     Pass is Invalid
-                  </>
-                )}
-              </CardTitle>
-            </CardHeader>
-            {validationResult.isValid && validationResult.userDetails && (
-              <CardContent>
-                <p><strong>Name:</strong> {validationResult.userDetails.name}</p>
-                <p><strong>Designation:</strong> {validationResult.userDetails.designation}</p>
-                <p><strong>City:</strong> {validationResult.userDetails.city}</p>
-                <p>
-                  <strong>Registered On:</strong>{" "}
-                  {validationResult.userDetails.registrationDate
-                    ? new Date(validationResult.userDetails.registrationDate).toLocaleString()
-                    : "N/A"}
-                </p>
-              </CardContent>
+                  </CardTitle>
+                </CardHeader>
+              </Card>
             )}
-          </Card>
+          </div>
         )}
       </CardContent>
     </Card>

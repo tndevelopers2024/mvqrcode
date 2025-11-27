@@ -49,8 +49,8 @@ export function RegistrationsList() {
   return (
     <Dialog onOpenChange={(isOpen) => !isOpen && setSelectedUser(null)}>
       {/* Search Bar */}
-      <div className="mb-4">
-        <div className="relative">
+      <div className="mb-4 flex flex-col md:flex-row gap-4 justify-between items-center">
+        <div className="relative w-full md:w-1/2">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder="Search by name or email..."
@@ -59,6 +59,16 @@ export function RegistrationsList() {
             className="pl-10"
           />
         </div>
+        <Button onClick={() => {
+          const dataToExport = filteredUsers.map(u => ({
+            ...u,
+            profileImage: u.profileImage ? `https://mvcon.space${u.profileImage}` : '',
+            qrCodeImage: u.qrCodeImage ? `https://mvcon.space${u.qrCodeImage}` : '',
+          }));
+          import('@/lib/utils').then(mod => mod.downloadAsExcel(dataToExport, 'registrations'));
+        }}>
+          Download Excel
+        </Button>
       </div>
 
       {/* Users Table */}

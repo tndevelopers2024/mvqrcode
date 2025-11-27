@@ -22,6 +22,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { CheckCircle, XCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function ValidationLogsList ({ userId }: { userId?: string }) {
   const [logs, setLogs] = useState<ValidationLog[]>([]);
@@ -138,6 +139,9 @@ export default function ValidationLogsList ({ userId }: { userId?: string }) {
             className="w-[250px]"
           />
         </div>
+        <Button onClick={() => import('@/lib/utils').then(mod => mod.downloadAsExcel(filteredLogs, 'logs'))}>
+          Download Excel
+        </Button>
       </div>
 
       {/* Logs Table */}

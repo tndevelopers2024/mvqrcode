@@ -60,8 +60,8 @@ export function AbstractsList() {
   return (
     <Dialog onOpenChange={(isOpen) => !isOpen && setSelectedAbstract(null)}>
       {/* Search Bar */}
-      <div className="mb-4">
-        <div className="relative">
+      <div className="mb-4 flex flex-col md:flex-row gap-4 justify-between items-center">
+        <div className="relative w-full md:w-1/2">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder="Search by name, email, or register no..."
@@ -70,6 +70,15 @@ export function AbstractsList() {
             className="pl-10"
           />
         </div>
+        <Button onClick={() => {
+          const dataToExport = filteredAbstracts.map(a => ({
+            ...a,
+            file: a.file ? `https://mvcon.space${a.file}` : '',
+          }));
+          import('@/lib/utils').then(mod => mod.downloadAsExcel(dataToExport, 'abstracts'));
+        }}>
+          Download Excel
+        </Button>
       </div>
 
       {/* Abstracts Table */}

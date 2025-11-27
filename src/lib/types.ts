@@ -19,6 +19,8 @@ export interface UserDetails {
   designation?: string;
   city?: string;
   registrationDate?: string;
+  profileImage?: string;
+  qrCodeImage?: string;
 }
 
 export interface ValidationResult {

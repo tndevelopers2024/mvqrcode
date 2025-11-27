@@ -94,7 +94,7 @@ export function RegistrationForm({ onSuccess }: Props) {
         }
         const userData = prepared.userData;
 
-        // 2️⃣ Determine amount dynamically
+
         // 2️⃣ Determine amount dynamically
         const fees = {
           PG: 30,
