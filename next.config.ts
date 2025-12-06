@@ -1,7 +1,6 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -9,7 +8,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['localhost','mvcon.space'],
+    domains: ['localhost', 'mvcon.space'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -18,9 +17,6 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  serverActions: {
-    bodySizeLimit: '2mb',
   },
 };
 
