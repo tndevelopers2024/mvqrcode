@@ -5,6 +5,10 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 3 Dr. M. Madhavi Amma Hall (Hall B) --------
 const schedule = [
   {
+    time: "08:00 AM",
+    topic: "Registration Start",
+  },
+  {
     time: "09:30 – 10:00 AM",
     topic:
       "Diabetes & Violence: Is there a pathophysiological connect ?",
