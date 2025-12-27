@@ -5,16 +5,11 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 3 Dr. M. Madhavi Amma Hall (Hall B) --------
 const schedule = [
   {
-    time: "09:30 – 09:45 AM",
-    topic: "TBD",
-    faculty: "",
-    chair: "",
-  },
-  {
-    time: "09:45 – 10:00 AM",
-    topic: "TBD",
-    faculty: "",
-    chair: "",
+    time: "09:30 – 10:00 AM",
+    topic:
+      "Diabetes & Violence: Is there a pathophysiological connect ?",
+    faculty: "Dr.R Balamurugan",
+    chair: "Dr.Milind Ruke, Dr.V.Ravindranath",
   },
   {
     time: "10:00 – 11:00 AM",
@@ -29,30 +24,31 @@ const schedule = [
     chair: "",
   },
   {
-    time: "11:30 – 12:00 PM",
-    topic: "Monogenic Diabetes in Hall A",
-    faculty: "Dr. V. Mohan",
-    chair: "Dr. Vijay Viswanathan",
+    time: "11:30 AM – 12:00 PM",
+    topic: "Monogenic diabetes in Hall A",
+    faculty: "Dr.V.Mohan",
+    chair: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
   },
   {
-    time: "12:00 – 12:30 PM",
+    time: "12:00 PM – 12:30 PM",
     topic: "Prevention of Diabetes in India in Hall A",
-    faculty: "Dr. A. Ramachandran",
-    chair: "Dr. Vijay Viswanathan",
+    faculty: "Dr.A.Ramachandran",
+    chair: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
   },
   {
-    time: "12:30 – 01:15 PM",
-    topic: "Prof. MV Gold Medal Oration 2026 & Launch (if any) in Hall A",
-    faculty: "Dr. Harikrishna KR Nair",
+    time: "12:30 PM – 01:15 PM",
+    topic: "Prof. MV Gold Medal Oration 2026 & launch in Hall A",
+    faculty: "Dr.Harikrishna KR Nair",
     chair: "",
   },
   {
-    time: "01:15 PM",
+    time: "01:15 PM onwards",
     topic: "Valedictory function followed by lunch",
     faculty: "",
     chair: "",
   },
 ];
+
 
 // -------- Variants --------
 const letterVariants: Variants = {

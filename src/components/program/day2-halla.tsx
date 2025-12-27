@@ -4,27 +4,133 @@ import { motion, Variants } from "framer-motion";
 
 // -------- Schedule for Day 2 Prof. M. Viswanathan Hall (Hall A) --------
 const schedule = [
-  { time: "09:30 AM – 09:50 AM", topic: "TBD", faculty: "TBD", chairpersons: "Dr.A.Shanmugam, Dr.Priya" },
-  { time: "09:50 AM – 10:10 AM", topic: "TBD", faculty: "Dr.Chandrasekar S", chairpersons: "Dr.A.Shanmugam, Dr.Priya" },
-  { time: "10:10 AM – 10:30 AM", topic: "TBD", faculty: "Dr.Harikrishna KR Nair", chairpersons: "Dr.Vijay Viswanathan" },
-  { time: "10:30 AM – 10:50 AM", topic: "TBD", faculty: "Dr.Janaka Karalliedde", chairpersons: "Dr.Vijay Viswanathan" },
-  { time: "10:50 AM – 11:10 AM", topic: "How to evaluate kidney function in diabetes ?", faculty: "Dr.Edwin Fernando", chairpersons: "Dr.Vijay Viswanathan" },
-  { time: "11:10 AM – 11:30 AM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "11:30 AM – 12:00 PM", topic: "TBD", faculty: "Dr.Anuj Maheshwari", chairpersons: "Dr.P.Dharmarajan, Dr.K.Shanmugam" },
-  { time: "12:00 PM – 12:30 PM", topic: "TBD", faculty: "Dr.N.Bhavatharani", chairpersons: "Dr.P.Dharmarajan, Dr.K.Shanmugam" },
-  { time: "12:30 PM – 01:00 PM", topic: "TBD", faculty: "Dr.Usha Aiyyagari", chairpersons: "Dr.N.Bhavatharani, Dr.A Shunmugavelu" },
-  { time: "01:00 PM – 01:30 PM", topic: "TBD", faculty: "Dr.A.Panneer Selvam", chairpersons: "Dr.N.Bhavatharani, Dr.A Shunmugavelu" },
-  { time: "01:30 PM – 02:30 PM", topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "02:30 PM – 03:00 PM", topic: "The Golden Hour in Diabetic Foot Ulcer", faculty: "Dr.T.Sasi Kumar", chairpersons: "Dr.Senthil G" },
-  { time: "03:00 PM – 04:00 PM", topic: "Surgical Demonstration (VIDEO)\n• Debridement – sweet lime\n• VAC & TCC Application", faculty: "Dr.Senthil G / Dr.Milind Ruke", chairpersons: "Dr.Harikrishna KR Nair, Dr.Vijay Viswanathan" },
-  { time: "04:00 PM – 04:30 PM", topic: "TBD", faculty: "Dr.Nandita Arun", chairpersons: "Dr.A.Panneer Selvam, Dr.P.Paranthaman" },
-  { time: "04:30 PM – 05:00 PM", topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA", faculty: "" },
-  { time: "05:00 PM – 05:30 PM", topic: "Nutrition panel discussion", faculty: "Dr.Meenakshi Bajaj, Dr.V.Ravindranath, Dr.S.Chandrasekar", chairpersons: "Dr.Mohan Krishnamoorthy (Moderator)" },
-  { time: "05:30 PM – 06:00 PM", topic: "TBD", faculty: "Dr.Rajendran V", chairpersons: "Dr.G.Prakash, Dr.A Shunmugavelu" },
-  { time: "06:00 PM – 06:30 PM", topic: "Sexual dysfunction in people with diabetes", faculty: "Dr.Mithun Bhartia", chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun" },
-  { time: "06:30 PM – 07:00 PM", topic: "How to prevent Medico legal problems", faculty: "Dr.Viswanathan Vishnu Vijay", chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun" },
-  { time: "07:00 PM onwards", topic: "Networking Dinner", faculty: "" },
+  {
+    time: "08:00 AM",
+    topic: "Registration Start"
+  },
+  {
+    time: "09:30 AM – 09:50 AM",
+    topic: "Double burden: Navigating diabetes and tuberculosis",
+    faculty: "Dr.Chandrasekar S",
+    chairpersons: "Dr.A.Shanmugam, Dr.Priya",
+  },
+  {
+    time: "09:50 AM – 10:10 AM",
+    topic:
+      "Accelerating wound healing: Evidence based strategies for Diabetic Foot",
+    faculty: "Dr.Harikrishna KR Nair",
+    chairpersons: "Dr.Vijay Viswanathan, Dr.Senthil",
+  },
+  {
+    time: "10:10 AM – 10:30 AM",
+    topic: "How to evaluate kidney function in diabetes ?",
+    faculty: "Dr.Edwin Fernando",
+    chairpersons: "Dr.Vijay Viswanathan, Dr.Janaka Karalliedde",
+  },
+  {
+    time: "10:30 AM – 11:00 AM",
+    topic:
+      "Management strategies for slowing CKD progression in people with diabetes",
+    faculty: "Dr.Janaka Karalliedde",
+    chairpersons: "Dr.Edwin Fernando, Dr.A.Shanmugam",
+  },
+  {
+    time: "11:00 AM – 11:30 AM",
+    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+  },
+  {
+    time: "11:30 AM – 12:00 PM",
+    topic:
+      "Cardiac energy metabolism in failing heart among people with diabetes",
+    faculty: "Dr.Anuj Maheshwari",
+    chairpersons: "Dr.P.Dharmarajan, Dr.R.Ramakrishnan",
+  },
+  {
+    time: "12:00 PM – 12:30 PM",
+    topic:
+      "Gestational diabetes in India: Translating evidence into practice",
+    faculty: "Dr.N.Bhavatharani",
+    chairpersons: "Dr.P.Dharmarajan, Dr.R.Ramakrishnan",
+  },
+  {
+    time: "12:30 PM – 01:00 PM",
+    topic:
+      "Type 1 diabetes: Clinical insights and emerging therapies",
+    faculty: "Dr.Usha Aiyyagari",
+    chairpersons: "Dr.Shriraam, Dr.M.Shunmugavelu",
+  },
+  {
+    time: "01:00 PM – 01:30 PM",
+    topic:
+      "Type 5 diabetes: India's Protein Deficiency DM (PDDM)",
+    faculty: "Dr.Sunil Gupta",
+    chairpersons: "Dr.Shriraam, Dr.M.Shunmugavelu",
+  },
+  {
+    time: "01:30 PM – 02:30 PM",
+    topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+  },
+  {
+    time: "02:30 PM – 03:00 PM",
+    topic: "The Golden Hour in Diabetic Foot Ulcer",
+    faculty: "Dr.T.Sasi Kumar",
+    chairpersons: "Dr.Senthil G, Dr.P.Kumar",
+  },
+  {
+    time: "03:00 PM – 04:00 PM",
+    topic:
+      "Surgical offloading (Video)\n• Debridement – sweet lime\n• VAC & TCC Application",
+    faculty: "Dr.Senthil G / Dr.Milind Ruke",
+    chairpersons:
+      "Dr.Harikrishna KR Nair, Dr.Vijay Viswanathan",
+  },
+  {
+    time: "04:00 PM – 04:30 PM",
+    topic:
+      "Manual to Automated: Insulin Pump Technology",
+    faculty: "Dr.Nandita Arun",
+    chairpersons: "Dr.A.Panneer Selvam, Dr.A.Shanmugam",
+  },
+  {
+    time: "04:30 PM – 05:00 PM",
+    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+    faculty: "",
+  },
+  {
+    time: "05:00 PM – 05:30 PM",
+    topic: "Nutrition panel discussion",
+    faculty:
+      "Dr.Meenakshi Bajaj, Dr.Hemamalini, Dr.S.Chandrasekar",
+    chairpersons: "Dr.Mohan Krishnamoorthy (Moderator)",
+  },
+  {
+    time: "05:30 PM – 06:00 PM",
+    topic:
+      "Air pollution and the burden of diabetes: The Hidden epidemic",
+    faculty: "Dr.Rajendran V",
+    chairpersons: "Dr.G.Prakash, Dr.P.Paranthaman",
+  },
+  {
+    time: "06:00 PM – 06:30 PM",
+    topic: "Unsaid truth about sugar monitoring",
+    faculty: "Dr.Mithun Bhartia",
+    chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun",
+  },
+  {
+    time: "06:30 PM – 07:00 PM",
+    topic: "How to prevent Medico legal problems",
+    faculty: "Dr.Viswanathan Vishnu Vijay",
+    chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun",
+  },
+  {
+    time: "07:00 PM onwards",
+    topic: "Networking Dinner",
+    faculty: "",
+  },
 ];
+
 
 // -------- Animation Variants --------
 const letterVariants: Variants = {
@@ -138,11 +244,11 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
 
                 {/* Content */}
                 <div className="p-6 flex-1 flex flex-col justify-center">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2 whitespace-pre-line">
+                  <h3 className="text-xl font-semibold text-gray-800  whitespace-pre-line">
                     {highlightText(item.topic, searchQuery)}
                   </h3>
 
-                  <div className="flex flex-col justify-between mt-4 md:flex-row">
+                  <div className="flex flex-col justify-between mt-4 md:flex-row mt-2">
                     {item.faculty && (
                       <p className="text-gray-600 text-md">
                         Faculty:{" "}

@@ -5,54 +5,54 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Hall A --------
 const schedule = [
   {
+    time: "08:00 AM",
+    topic: "Registration Start",
+  },
+  {
     time: "09:30 – 09:50 AM",
-    topic: "TBD",
-    faculty: "TBD",
+    topic:
+      "The silent erosion: Unveiling the double burden of diabetes and sarcopenia",
+    faculty: "Dr. Vishnu Priya Reddy",
     chairpersons: "Dr.C.R.Anand Moses, Dr.P.Dharmarajan",
   },
   {
     time: "09:50 – 10:10 AM",
-    topic: "TBD",
-    faculty: "Dr.Sunil Gupta",
+    topic: "MASLD: The silent saboteur",
+    faculty: "Dr.G.Vijayakumar",
     chairpersons: "Dr.C.R.Anand Moses, Dr.P.Dharmarajan",
   },
   {
     time: "10:10 – 10:30 AM",
-    topic: "TBD",
-    faculty: "Dr.R. Balamurugan",
-    chairpersons: "Dr.C.R.Anand Moses, Dr.P.Dharmarajan",
+    topic: "Managing Heart failure in People with Diabetes",
+    faculty: "Dr.A.Panneer Selvam",
+    chairpersons: "Dr.M.Shunmugavelu, Dr.C.Muralidharan",
   },
   {
-    time: "10:30 – 10:50 AM",
-    topic: "TBD",
+    time: "10:30 – 11:00 AM",
+    topic:
+      "The role of microbiota in the management of diabetes and hypertension",
     faculty: "Dr.A. Muruganathan",
-    chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf",
+    chairpersons: "Dr.M.Shunmugavelu, Dr.C.Muralidharan",
   },
   {
-    time: "10:50 – 11:10 AM",
-    topic: "TBD",
-    faculty: "Dr.G.Vijayakumar",
-    chairpersons: "Dr.K.Shanmugam, Dr.M S Ashraf",
-  },
-  {
-    time: "11:10 – 11:30 AM",
+    time: "11:00 – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
   },
   {
     time: "11:30 – 12:30 PM",
-    topic: "MV Life Time Achievement Award Inauguration & Key Note Lecture",
-    faculty: "",
+    topic: "MV Life Time Achievement Award – Inauguration & Key Note Lecture",
+    faculty: "TBD",
   },
   {
     time: "12:30 – 1:00 PM",
-    topic: "Recurrence of DFU – The Indian Strategy for prevention",
+    topic: "Recurrence of DFU - The Indian Strategy for prevention",
     faculty: "Dr.Senthil G",
     chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan",
   },
   {
     time: "1:00 – 1:30 PM",
-    topic: "TBD",
+    topic: "Redefining limb salvage: New frontiers in technology",
     faculty: "Dr.Milind Ruke",
     chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan",
   },
@@ -64,19 +64,28 @@ const schedule = [
   {
     time: "2:30 – 3:00 PM",
     topic: "Demonstration of High Risk Feet",
-    faculty: "Dr.Vijay Viswanathan, Ms.Seena Rajsekar & Ms.Bamila Selvaraj",
+    faculty:
+      "Dr.Vijay Viswanathan / Ms.Seena Rajsekar & Ms.Bamila Selvaraj",
   },
   {
     time: "3:00 – 3:30 PM",
     topic: "Mechanical offloading (Unburden the wound)",
     faculty: "Dr.Viswanathan Vishnu Vijay",
+    chairpersons: "Dr.Senthil, Dr.Milind Ruke",
   },
   {
     time: "3:30 – 4:00 PM",
-    topic: "Surgical offloading",
+    topic: "Surgical offloading (Video)",
     faculty: "Dr.Senthil G",
+    chairpersons: "Dr.Shanthi, Dr.Milind Ruke, Dr.Rajasenthil",
   },
-  { time: "4:00 – 4:30 PM", topic: "TBD", faculty: "Dr.Balaji K" },
+  {
+    time: "4:00 – 4:30 PM",
+    topic:
+      "Surgery planning in diabetic foot: Assessment, Optimisation and Outcomes",
+    faculty: "Dr.Balaji K",
+    chairpersons: "Dr.Shanthi, Dr.Milind Ruke, Dr.Rajasenthil",
+  },
   {
     time: "4:30 – 5:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
@@ -84,24 +93,35 @@ const schedule = [
   },
   {
     time: "5:00 – 5:30 PM",
-    topic: "Managing Heart failure in People with Diabetes",
-    faculty: "Dr.A. Shanmugam",
-    chairpersons: "Dr.G.Prakash, Dr.A Shunmugavelu",
+    topic: "Secondary diabetes: Unravelling the hidden causes",
+    faculty: "Dr.A.Shanmugam",
+    chairpersons: "Dr.G.Prakash, Dr.K.Shanmugam",
   },
   {
     time: "5:30 – 6:00 PM",
-    topic: "TBD",
+    topic: "Management of hyperglycemia during DFU",
     faculty: "Dr.R M Anjana",
-    chairpersons: "Dr.A.Panneer Selvam, Dr.Vijay Viswanathan",
+    chairpersons: "Dr.Vijay Viswanathan, Dr.K.Shanmugam",
   },
   {
     time: "6:00 – 6:30 PM",
-    topic: "SLEEP & OSA",
-    faculty: "Dr.N. Ramakrishnan",
+    topic: "Breathing while you sleep: Unmasking OSA",
+    faculty: "Dr.N Ramakrishnan",
+    chairpersons: "Dr.Leela Baid, Dr.V.P.Sriram",
   },
-  { time: "6:30 – 7:00 PM", topic: "TBD", faculty: "Dr.Krishna G. Seshadri" },
-  { time: "7:00 onwards", topic: "Networking Dinner", faculty: "" },
+  {
+    time: "6:30 – 7:00 PM",
+    topic: "Integrating lifestyle interventions into diabetes care",
+    faculty: "Dr.Krishna G Seshadri",
+    chairpersons: "Dr.C.Muralidharan, Dr.M.Shunmugavelu",
+  },
+  {
+    time: "7:00 PM onwards",
+    topic: "Networking Dinner",
+    faculty: "",
+  },
 ];
+
 
 // -------- Animation Variants --------
 const letterVariants: Variants = {
@@ -215,7 +235,7 @@ export default function DayoneHallA({ searchQuery }: { searchQuery: string }) {
                 {/* Right column – DETAILS */}
                 <div className="p-6 flex-1 flex flex-col justify-center">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-4">
                       {highlightText(item.topic, searchQuery)}
                     </h3>
                     <div className="flex flex-col md:flex-row justify-between">

@@ -5,29 +5,34 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 3 Hall A --------
 const schedule = [
   {
+    time: "08:00 AM",
+    topic: "Registration Start",
+  },
+  {
     time: "09:30 – 09:50 AM",
     topic: "GLP1 For Weight Loss",
-    faculty: "Dr. Jayashree Gopal",
-    chair: "",
+    faculty: "Dr.Jayashree Gopal",
+    chair: "Dr.A.Panneer Selvam, Dr.P.Paranthaman",
   },
   {
     time: "09:50 – 10:20 AM",
-    topic: "TBD",
-    faculty: "Dr. Janaka Karalliedde",
-    chair: "",
+    topic:
+      "Diabetes technology in people with diabetic kidney disease – an evolving field with clinical opportunities",
+    faculty: "Dr.Janaka Karalliedde",
+    chair: "Dr.Vijay Viswanathan, Dr.Edwin Fernando",
   },
   {
     time: "10:20 – 10:40 AM",
-    topic: "Ambulatory BP",
-    faculty: "Dr. S. S. Lakshmanan",
-    chair: "",
+    topic:
+      "BP unmasked: Ambulatory Blood Pressure monitoring can transform Hypertension Care",
+    faculty: "Dr.S.S.Lakshmanan",
+    chair: "Dr.M S Ashraf, Dr.K.Shanmugam",
   },
   {
     time: "10:40 – 11:00 AM",
-    topic:
-      "Management of Hypertension in Newly Diagnosed Cases of Diabetes",
-    faculty: "Dr. S. N. Narasingan",
-    chair: "",
+    topic: "Making sense of Targets in Hypertension control",
+    faculty: "Dr.S.N.Narasingan",
+    chair: "Dr.M S Ashraf, Dr.K.Shanmugam",
   },
   {
     time: "11:00 – 11:30 AM",
@@ -37,29 +42,30 @@ const schedule = [
   },
   {
     time: "11:30 AM – 12:00 PM",
-    topic: "Monogenic Diabetes",
-    faculty: "Dr. V. Mohan",
-    chair: "Dr. Vijay Viswanathan",
+    topic: "Monogenic diabetes",
+    faculty: "Dr.V.Mohan",
+    chair: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
   },
   {
-    time: "12:00 – 12:30 PM",
+    time: "12:00 PM – 12:30 PM",
     topic: "Prevention of Diabetes in India",
-    faculty: "Dr. A. Ramachandran",
-    chair: "Dr. Vijay Viswanathan",
+    faculty: "Dr.A.Ramachandran",
+    chair: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
   },
   {
-    time: "12:30 – 01:15 PM",
+    time: "12:30 PM – 01:15 PM",
     topic: "Prof. MV Gold Medal Oration 2026 & Launch",
-    faculty: "Dr. Harikrishna KR Nair",
+    faculty: "Dr.Harikrishna KR Nair",
     chair: "",
   },
   {
-    time: "01:15 PM",
+    time: "01:15 PM onwards",
     topic: "Valedictory function followed by lunch",
     faculty: "",
     chair: "",
   },
 ];
+
 
 const letterVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
