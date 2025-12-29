@@ -6,82 +6,79 @@ import { motion } from "framer-motion";
 const InternationalFaculty= [
   { name: "Dr.Harikrishna KR Nair", img: "/images/faculty/Dr-Harikrishna-KR-Nair.jpg" },
   { name: "Dr.Janaka karalliedde", img: "/images/faculty/Dr-Janaka-karalliedde.jpg" },  
-  { name: "DR.SRIKAR NALLAN", img: "/images/faculty/Srikar-nallan.jpg" }, 
+  { name: "DR.Srikar Nallan", img: "/images/faculty/Srikar-nallan.jpg" }, 
 ]
 const faculty = [
   
   { name: "Dr.Aarathy Kannan", img: "/images/faculty/Dr. Aarthi kannan.jpg" },  
-  { name: "DR.ABIJITH", img: "/images/faculty/abijith.jpg" },
+  { name: "DR.AbiJith", img: "/images/faculty/abijith.jpg" },
   { name: "DR.S.R. Abishek", img: "/images/faculty/DR. S.R. Abishek.jpg" },
   { name: "Dr.C.R.Anand Moses", img: "/images/faculty/Dr. Anand Moses.png" },
-  { name: "DR.R.M.ANJANA", img: "/images/faculty/Dr.R.M.Anjana.jpg" },
-  { name: "DR.ANUJ MAHESWARI", img: "/images/faculty/Dr Anuj Maheshwari.png" },
-  { name: "DR.M.S.ASHRAF", img: "/images/faculty/ashraf.jpg" },
-  { name: "DR. ASHWANTH NARAYANAN B", img: "/images/faculty/DR.ASHWANTH NARAYANAN.B.png" },
-  { name: "DR.C.BALAJI", img: "/images/faculty/Dr. C. Balaji.jpg" },
-  { name: "DR.K.BALAJI", img: "/images/faculty/Dr.K Balaji.jpg" },
-  { name: "DR.R.BALAMURUGAN", img: "/images/faculty/dummy.jpg" },
-  { name: "MRS.BAMILA SELVARAJ", img: "/images/faculty/Mrs.Bamila.S.jpg" },
-  { name: "DR.N.BHAVATHARANI", img: "/images/faculty/BHAVATHARANI.jpg" },
-  { name: "DR.S.CHANDRASEKAR", img: "/images/faculty/Dr S Chandrasekar.jpg" },
-  { name: "DR.P.DHARMARAJAN", img: "/images/faculty/Dr. Dharmarajan.jpg" },
-  { name: "DR.EDWIN FERNANDO", img: "/images/faculty/edwin.jpg" },
-  { name: "DR.Jayashree gopal", img: "/images/faculty/Dr. Jayashree gopal.jpg" },
-  { name: "DR.KANNAN NATARAJAN", img: "/images/faculty/DR Kannan Natrajan.png" },
-  { name: "DR.KRISHNA G SESHADRI", img: "/images/faculty/Prof. Krishna G Seshadri.jpg" },
-  { name: "DR.SS.LAKSHMANAN", img: "/images/faculty/s-s-lakshmanan.jpg" },
+  { name: "DR.R.M.Anjana", img: "/images/faculty/Dr.R.M.Anjana.jpg" },
+  { name: "DR.Anuj Maheshwari", img: "/images/faculty/Dr Anuj Maheshwari.png" },
+  { name: "DR.M.S.Ashraf", img: "/images/faculty/ashraf.jpg" },
+  { name: "DR.Ashwanth Narayan B", img: "/images/faculty/DR.ASHWANTH NARAYANAN.B.png" },
+  { name: "DR.C.Balaji", img: "/images/faculty/Dr. C. Balaji.jpg" },
+  { name: "DR.K.Balaji", img: "/images/faculty/Dr.K Balaji.jpg" },
+  { name: "DR.R.Balamurugan", img: "/images/faculty/dummy.jpg" },
+  { name: "Mrs.Bamila Selvaraj", img: "/images/faculty/Mrs.Bamila.S.jpg" },
+  { name: "DR.N.Bhavatharani", img: "/images/faculty/BHAVATHARANI.jpg" },
+  { name: "DR.S.Chandrasekar", img: "/images/faculty/Dr S Chandrasekar.jpg" },
+  { name: "DR.P.Dharmarajan", img: "/images/faculty/Dr. Dharmarajan.jpg" },
+  { name: "DR.Edwin Fernando", img: "/images/faculty/edwin.jpg" },
+  { name: "DR.Jayashree Gopal", img: "/images/faculty/Dr. Jayashree gopal.jpg" },
+  { name: "DR.Kannan Natarajan", img: "/images/faculty/DR Kannan Natrajan.png" },
+  { name: "DR.Krishna G Seshadri", img: "/images/faculty/Prof. Krishna G Seshadri.jpg" },
+  { name: "DR.SS.Lakshmanan", img: "/images/faculty/s-s-lakshmanan.jpg" },
   { name: "DR.Leela Baid", img: "/images/faculty/Dr. Leela Baid.png" },
   { name: "Dr.Manoj P", img: "/images/faculty/Dr.Manoj-P.jpeg" },
   { name: "DR.Manoj Khatri", img: "/images/faculty/Dr.Manoj-Khatri.jpeg" },
-  { name: "DR.MEENAKSHI BAJAJ", img: "/images/faculty/meenakshi-bajaj.jpg" },
-  { name: "DR.MILIND RUKE", img: "/images/faculty/MILIND.png" },
+  { name: "DR.Meenakshi Bajaj", img: "/images/faculty/meenakshi-bajaj.jpg" },
+  { name: "DR.Milind Ruke", img: "/images/faculty/MILIND.png" },
   { name: "Dr Mithun Bhartia", img: "/images/faculty/Dr.Mithun Bhartia.jpg" },
-  { name: "DR.V.MOHAN", img: "/images/faculty/Padmashri  Prof. DR.V.Mohan.jpg" },
-  { name: "DR.MOHAN KRISHNAMOORTHY", img: "/images/faculty/Dr. MOHAN KRISHNAMOORTHY.png" },
-  { name: "DR.C.MURALIDHARAN", img: "/images/faculty/Dr.C.Muralidharan.png" },
-  { name: "Dr.Nandita Arun", img: "/images/faculty/Dr Nanditha Ramachandran.jpg" },
-  { name: "DR.S.N.NARASINGAN", img: "/images/faculty/Dr.S.N.Narasingan.jpg" },
-  { name: "DR.A.PANNEER SELVAM", img: "/images/faculty/Dr.Paneer selvam.jpg" },
-  { name: "DR.P.PARANTHAMAN", img: "/images/faculty/Dr.P.Paranthaman.png" },  
-  { name: "DR.PRIYA", img: "/images/faculty/priya.jpg" },
+  { name: "DR.V.Mohan", img: "/images/faculty/Padmashri  Prof. DR.V.Mohan.jpg" },
+  { name: "DR.Mohan Krishna Moorthy", img: "/images/faculty/Dr. MOHAN KRISHNAMOORTHY.png" },
+  { name: "DR.C.Muralidharan", img: "/images/faculty/Dr.C.Muralidharan.png" },
+  { name: "Dr.Nandita Arun", img: "/images/faculty/Dr Nanditha Ramachandran.jpg" },
+  { name: "DR.S.Narasingan", img: "/images/faculty/Dr.S.N.Narasingan.jpg" },
+  { name: "DR.A.Panneer Selvam", img: "/images/faculty/Dr.Paneer selvam.jpg" },
+  { name: "DR.P.Paranthaman", img: "/images/faculty/Dr.P.Paranthaman.png" },  
+  { name: "DR.Priya", img: "/images/faculty/priya.jpg" },
   { name: "DR.Prashanth Arun", img: "/images/faculty/Dr. Prashanth Arun.jpg" },
-  { name: "DR.G.PRAKASH", img: "/images/faculty/DR.G.PRAKASH.jpg" },
-  { name: "DR.A.RAMACHANDRAN", img: "/images/faculty/Dr.A.RAMACHANDRAN.jpg" },
-  { name: "DR.N.RAMAKRISHNAN", img: "/images/faculty/DR.RAMAKRISHNAN N.jpg" },
+  { name: "DR.G.Praakash", img: "/images/faculty/DR.G.PRAKASH.jpg" },
+  { name: "DR.A.Ramachandran", img: "/images/faculty/Dr.A.RAMACHANDRAN.jpg" },
+  { name: "DR.N.Ramakrishnan", img: "/images/faculty/DR.RAMAKRISHNAN N.jpg" },
   { name: "Dr.S.R.Ramakrishnan", img: "/images/faculty/Dr.S.R.Ramakrishnan.jpg"},
-  { name: "DR.V.RAJENDRAN", img: "/images/faculty/Dr. V. Rajendran.jpg" },
+  { name: "DR.V.Rajendran", img: "/images/faculty/Dr. V. Rajendran.jpg" },
   { name: "DR.R.Ravikumar", img: "/images/faculty/Dr R Ravikumar.jpg" },
-  { name: "DR.V.RAVINDRANATH", img: "/images/faculty/ravindran.jpg" },
-  { name: "DR.SANJAY B S", img: "/images/faculty/Dr Sanjay B S.png" },
-  { name: "DR.T.SASI KUMAR", img: "/images/faculty/DR. SASI KUMAR.jpg" },
+  { name: "DR.V.Ravindranath", img: "/images/faculty/ravindran.jpg" },
+  { name: "DR.Sanjay B S", img: "/images/faculty/Dr Sanjay B S.png" },
+  { name: "DR.T.Sasi Kumar", img: "/images/faculty/DR. SASI KUMAR.jpg" },
   { name: "DR.K.SATYAVANI", img: "/images/faculty/sathyavani.jpg" },
   { name: "Ms.Seena Rajasekar", img: "/images/faculty/Mrs.Seena Rajsekar.jpg" },
   { name: "DR.G.Senthil", img: "/images/faculty/Dr. G. Senthil.jpg" },
   { name: "Dr.A.Shanmugam", img: "/images/faculty/Dr A Shanmugam.jpg" }, 
-  { name: "DR.K.SHANMUGAM", img: "/images/faculty/Dr. K. Shanmugam.jpg" },
-  { name: "DR.A.SHANMUGAVELU", img: "/images/faculty/DR. A. SHANMUGAVELAN.jpg" },
+  { name: "DR.K.Shanmugam", img: "/images/faculty/Dr. K. Shanmugam.jpg" },
+  { name: "DR.A.Shanmugavelu", img: "/images/faculty/DR. A. SHANMUGAVELAN.jpg" },
   { name: "DR.Shanthi", img: "/images/faculty/Dr.Shanthi.png" },
   { name: "Dr.Shriraam Mahadevan", img: "/images/faculty/Dr.Shriraam-Mahadevan.jpeg" },
   { name: "DR.Sriram VP", img: "/images/faculty/Dr. Sriram VP.png" },   
   { name: "DR.D.Suresh Anandan", img: "/images/faculty/Dr D.Suresh Anandan.png" },
-  { name: "DR.SUNIL GUPTA", img: "/images/faculty/DR.SUNIL GUPTA.jpg" },
+  { name: "DR.Sunil Gupta", img: "/images/faculty/DR.SUNIL GUPTA.jpg" },
   { name: "Dr.K.Uma Mahesh", img: "/images/faculty/Dr. Uma Mahesh.png" },
-  { name: "DR.USHA AIYYAGARI", img: "/images/faculty/Dr Usha Aiyyagari.png" },
+  { name: "DR.Usha Aiyyagari", img: "/images/faculty/Dr Usha Aiyyagari.png" },
   { name: "Ms.Vaishnavi Vijay", img: "/images/faculty/Ms.Vaishnavi Vijay.jpg" },
   { name: "Dr.Vijay Viswanathan", img: "/images/faculty/vijay-viswanathan.jpg" },
-  { name: "DR.G.VIJAYA KUMAR", img: "/images/faculty/DR. VIJAYA KUMAR.jpg" },
+  { name: "DR.G.Vijaya Kumar", img: "/images/faculty/DR. VIJAYA KUMAR.jpg" },
   { name: "Dr.Vishnu Priya Prashanth", img: "/images/faculty/Dr.Vishnu Priya Prashanth.jpg" },
   { name: "Dr.Vishnupriya Reddy", img: "/images/faculty/Dr. Vishnupriya Reddy.jpg" },
   { name: "Dr.Viswanathan Vishnu Vijay", img: "/images/faculty/Dr. Viswanathan Vishnu Vijay.jpg" },
 ];
-
-
-
-// { name: "KMC", img: "/images/about-bg.jpg" },
+  // { name: "KMC", img: "/images/about-bg.jpg" },
   // { name: "MMC", img: "/images/about-bg.jpg" },
   // { name: "RAMACHANDRAN", img: "/images/about-bg.jpg" },
   // { name: "STANTLEY", img: "/images/about-bg.jpg" },
-    // { name: "DR.JAYASREE", img: "/images/about-bg.jpg" },
+  // { name: "DR.JAYASREE", img: "/images/about-bg.jpg" },
 
 export default function FacultySection() {
   return (
@@ -125,7 +122,7 @@ export default function FacultySection() {
 
                 {/* Name */}
                 <div className="text-center mt-3">
-                  <h3 className="text-lg font-bold text-gray-900 uppercase">
+                  <h3 className="text-lg font-bold text-gray-900 capitalize">
                     {member.name}
                   </h3>
                 </div>
@@ -160,7 +157,7 @@ export default function FacultySection() {
 
                 {/* Name */}
                 <div className="text-center mt-3">
-                  <h3 className="text-lg font-bold text-gray-900 uppercase">
+                  <h3 className="text-lg font-bold text-gray-900 capitalize">
                     {member.name}
                   </h3>
                 </div>
