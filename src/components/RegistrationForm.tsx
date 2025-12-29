@@ -44,6 +44,7 @@ const formSchema = z.object({
   city: z.string().min(2, { message: "Please enter your city." }),
   state: z.string().min(2, { message: "Please enter your state." }),
   profileImage: z.any().optional(),
+  couponCode: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -72,6 +73,7 @@ export function RegistrationForm({ onSuccess }: Props) {
       city: "",
       state: "",
       profileImage: undefined,
+      couponCode: "",
     },
   });
 
@@ -88,26 +90,67 @@ export function RegistrationForm({ onSuccess }: Props) {
     startTransition(async () => {
       try {
         // 1️⃣ Prepare registration data
-        const prepared = await prepareRegistration(values);
+        const prepared = await prepareRegistration(values as any);
         if (!prepared.success || !prepared.userData) {
           throw new Error(prepared.message || "Failed to prepare registration");
         }
         const userData = prepared.userData;
 
-
         // 2️⃣ Determine amount dynamically
-        const fees = {
-          PG: 30,
-          Delegates: 40,
+        const baseFees = {
+          PG: 30, // Assuming real fees are higher for discounts to make sense
+          Delegates: 50,
         };
 
-        const amount = fees[values.profession];
+        let amount = baseFees[values.profession];
+        const coupon = values.couponCode?.trim().toUpperCase();
+
+        if (coupon) {
+          if (values.profession === "PG") {
+            if (coupon === "PGFREE") amount = 0;
+            else if (coupon === "PG1000") amount = Math.max(0, amount - 10);
+            else if (coupon === "PG2000") amount = Math.max(0, amount - 20);
+          } else if (values.profession === "Delegates") {
+            if (coupon === "DEL2000") amount = Math.max(0, amount - 20);
+          }
+        }
+
         const amountInPaise = amount * 100;
 
-        // 3️⃣ Create Razorpay order
+        // 3️⃣ If amount is 0, skip Razorpay
+        if (amount === 0) {
+          setLoadingQR(true);
+          try {
+            const result = await verifyPaymentAndRegister(
+              "FREE_REGISTRATION",
+              "FREE_PAYMENT_" + Date.now(),
+              "FREE_SIGNATURE",
+              userData,
+              0
+            );
+
+            if (result.success && result.data) {
+              toast({
+                title: "Registration Successful!",
+                description: "Your free registration has been processed.",
+              });
+              setSuccessfulRegistration(result.data);
+              onSuccess?.(result.data);
+              form.reset();
+              setPhotoPreview(null);
+            } else {
+              throw new Error(result.message || "Free registration failed.");
+            }
+          } finally {
+            setLoadingQR(false);
+          }
+          return;
+        }
+
+        // 4️⃣ Create Razorpay order
         const { order } = await createPaymentOrder(amountInPaise, "INR");
 
-        // 4️⃣ Open Razorpay Checkout
+        // 5️⃣ Open Razorpay Checkout
         const options = {
           key: "rzp_live_RNJwQRpJiswM0W",
           amount: order.amount,
@@ -325,6 +368,21 @@ export function RegistrationForm({ onSuccess }: Props) {
           )}
         />
 
+        {/* Coupon Code */}
+        <FormField
+          control={form.control}
+          name="couponCode"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Coupon Code (Optional)</FormLabel>
+              <FormControl>
+                <Input placeholder="Enter coupon code" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         {/* City + State */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
@@ -363,7 +421,10 @@ export function RegistrationForm({ onSuccess }: Props) {
           disabled={isPending}
         >
           {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          Register and Pay
+          {form.watch("profession") === "PG" &&
+          form.watch("couponCode")?.trim().toUpperCase() === "PGFREE"
+            ? "Register (Free)"
+            : "Register and Pay"}
         </Button>
       </form>
     </Form>

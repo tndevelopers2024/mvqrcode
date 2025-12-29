@@ -18,7 +18,7 @@ const sections = [
       <>
         <p>
           <strong>MVCON 2026 Scientific Abstract Submission</strong> is open and
-          will close on <strong>31st December 2025</strong>.
+          will close on <strong>10th February 2026</strong>.
         </p>
         <p className="mt-3">
           Registration for the conference is mandatory for abstract submission.

@@ -201,3 +201,27 @@ body {
   transform: rotateY(360deg);   /* <-- no quotes */
 }
 
+/* Mobile thin scrollbar */
+@media (max-width: 768px) {
+  .mobile-scrollbar {
+    scrollbar-width: thin;              /* Firefox */
+    scrollbar-color: #c7c7c7 transparent;
+  }
+
+  .mobile-scrollbar::-webkit-scrollbar {
+    height: 4px;                        /* Thin horizontal scrollbar */
+  }
+
+  .mobile-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .mobile-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #9ca3af, #6b7280);
+    border-radius: 10px;
+  }
+
+  .mobile-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #6b7280, #4b5563);
+  }
+}
