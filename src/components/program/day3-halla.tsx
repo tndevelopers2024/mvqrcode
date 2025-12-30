@@ -110,10 +110,10 @@ export default function DaythreeHallA({
     searchQuery.trim() === ""
       ? schedule
       : schedule.filter(
-          (item) =>
-            item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.faculty.toLowerCase().includes(searchQuery.toLowerCase())
-        );
+        (item) =>
+          item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          (item.faculty && item.faculty.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
 
   return (
     <section className="py-10 bg-gray-50 w-full">

@@ -20,7 +20,7 @@ const faculty = [
   { name: "DR.Ashwanth Narayan B", img: "/images/faculty/DR.ASHWANTH NARAYANAN.B.png" },
   { name: "DR.C.Balaji", img: "/images/faculty/Dr. C. Balaji.jpg" },
   { name: "DR.K.Balaji", img: "/images/faculty/Dr.K Balaji.jpg" },
-  { name: "DR.R.Balamurugan", img: "/images/faculty/dummy.jpg" },
+  { name: "DR.R.Balamurugan", img: "/images/faculty/DR.R.Balamurugan.jpeg" },
   { name: "Mrs.Bamila Selvaraj", img: "/images/faculty/Mrs.Bamila.S.jpg" },
   { name: "DR.N.Bhavatharani", img: "/images/faculty/BHAVATHARANI.jpg" },
   { name: "DR.S.Chandrasekar", img: "/images/faculty/Dr S Chandrasekar.jpg" },

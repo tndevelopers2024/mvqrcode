@@ -152,9 +152,8 @@ function highlightText(text: string, query: string, bold = false) {
     regex.test(part) ? (
       <span
         key={i}
-        className={`bg-yellow-200 text-black px-1 rounded ${
-          bold ? "font-bold" : ""
-        }`}
+        className={`bg-yellow-200 text-black px-1 rounded ${bold ? "font-bold" : ""
+          }`}
       >
         {part}
       </span>
@@ -175,11 +174,11 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
     searchQuery.trim() === ""
       ? schedule
       : schedule.filter(
-          (item) =>
-            item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.faculty.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.chair.toLowerCase().includes(searchQuery.toLowerCase())
-        );
+        (item) =>
+          item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          (item.faculty && item.faculty.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (item.chair && item.chair.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
 
   return (
     <section className="py-10 bg-gray-50 w-full">

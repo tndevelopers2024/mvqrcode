@@ -151,10 +151,10 @@ export default function DayoneHallB({ searchQuery }: { searchQuery: string }) {
     searchQuery.trim() === ""
       ? schedule
       : schedule.filter(
-          (item) =>
-            item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.faculty.toLowerCase().includes(searchQuery.toLowerCase())
-        );
+        (item) =>
+          item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          (item.faculty && item.faculty.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
 
   return (
     <section className="py-10 bg-gray-50 w-full">
@@ -222,9 +222,9 @@ export default function DayoneHallB({ searchQuery }: { searchQuery: string }) {
                     </h3>
                     <div className="flex flex-col justify-between md:flex-row">
                       {item.faculty && (
-                      <p className="text-gray-600 text-md">
-                        Faculty: <span className="font-bold">{highlightText(item.faculty, searchQuery)}</span>
-                      </p>
+                        <p className="text-gray-600 text-md">
+                          Faculty: <span className="font-bold">{highlightText(item.faculty, searchQuery)}</span>
+                        </p>
                       )}
                       {item.chairpersons && (
                         <p className="text-gray-600 text-md">
