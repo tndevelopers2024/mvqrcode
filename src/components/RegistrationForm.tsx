@@ -112,6 +112,7 @@ export function RegistrationForm({ onSuccess }: Props) {
             else if (coupon === "PG2000") amount = Math.max(0, amount - 20);
           } else if (values.profession === "Delegates") {
             if (coupon === "DEL2000") amount = Math.max(0, amount - 20);
+            else if (coupon === "DELFREE") amount = 0;
           }
         }
 
@@ -421,8 +422,10 @@ export function RegistrationForm({ onSuccess }: Props) {
           disabled={isPending}
         >
           {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          {form.watch("profession") === "PG" &&
-          form.watch("couponCode")?.trim().toUpperCase() === "PGFREE"
+          {(form.watch("profession") === "PG" &&
+            form.watch("couponCode")?.trim().toUpperCase() === "PGFREE") ||
+            (form.watch("profession") === "Delegates" &&
+              form.watch("couponCode")?.trim().toUpperCase() === "DELFREE")
             ? "Register (Free)"
             : "Register and Pay"}
         </Button>
