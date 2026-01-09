@@ -33,7 +33,7 @@ export default function Home() {
                   <p className="mb-2">Congratulations!</p>
                   <p className="mb-2">Registration completed. Your spot is confirmed.</p>
                   <p>Your QR code is displayed below and has also been emailed to
-                  you.<br/> Please download it and use it at the event check-in.</p>
+                    you.<br /> Please download it and use it at the event check-in.</p>
                 </>
               ) : (
                 "Register now to secure your spot!"
@@ -45,6 +45,13 @@ export default function Home() {
             <RegistrationForm
               onSuccess={(reg: Registration) => setSuccessfulRegistration(reg)}
             />
+            {successfulRegistration && (
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `fbq('track', 'CompleteRegistration');`,
+                }}
+              />
+            )}
           </CardContent>
         </Card>
       </main>
