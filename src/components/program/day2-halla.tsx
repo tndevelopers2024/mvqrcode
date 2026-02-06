@@ -18,7 +18,7 @@ const schedule = [
   {
     time: "09:50 AM – 10:10 AM",
     topic: "Manual to Automated: Insulin Pump Technology",
-    faculty: "Dr.Nandita Arun",
+    faculty: "Dr.Nandita",
     chairpersons: "Dr.A.Shanmugam, Dr.Priya",
   },
   {

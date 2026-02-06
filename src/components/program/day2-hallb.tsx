@@ -44,7 +44,7 @@ const schedule = [
   {
     time: "11:30 AM – 12:30 PM",
     topic: "Quiz",
-    faculty: "Dr.Abhijith",
+    faculty: "Dr.Abhideep",
     chairpersons: "",
   },
   {
