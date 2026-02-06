@@ -5,6 +5,10 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Hall A --------
 const schedule = [
   {
+    time: "08:00 AM",
+    topic: "Registration Start",
+  },
+  {
     time: "09:30 AM – 09:50 AM",
     topic: "Double burden: Navigating diabetes and tuberculosis",
     faculty: "Dr.Chandrasekar S",

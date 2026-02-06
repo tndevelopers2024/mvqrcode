@@ -5,6 +5,10 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 2 Prof. M. Viswanathan Hall (Hall A) --------
 const schedule = [
   {
+    time:"08:00 AM",
+    topic:"Registration Start",
+  },
+  {
     time: "09:30 AM – 09:50 AM",
     topic:
       "The silent erosion: Unveiling the double burden of diabetes and sarcopenia",
