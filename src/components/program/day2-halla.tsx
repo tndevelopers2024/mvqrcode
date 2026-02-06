@@ -5,21 +5,17 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 2 Prof. M. Viswanathan Hall (Hall A) --------
 const schedule = [
   {
-    time: "08:00 AM",
-    topic: "Registration Start"
-  },
-  {
     time: "09:30 AM – 09:50 AM",
-    topic: "Double burden: Navigating diabetes and tuberculosis",
-    faculty: "Dr.Chandrasekar S",
+    topic:
+      "The silent erosion: Unveiling the double burden of diabetes and sarcopenia",
+    faculty: "Dr.Vishnu Priya Reddy",
     chairpersons: "Dr.A.Shanmugam, Dr.Priya",
   },
   {
     time: "09:50 AM – 10:10 AM",
-    topic:
-      "Accelerating wound healing: Evidence based strategies for Diabetic Foot",
-    faculty: "Dr.Harikrishna KR Nair",
-    chairpersons: "Dr.Vijay Viswanathan, Dr.Senthil",
+    topic: "Manual to Automated: Insulin Pump Technology",
+    faculty: "Dr.Nandita Arun",
+    chairpersons: "Dr.A.Shanmugam, Dr.Priya",
   },
   {
     time: "10:10 AM – 10:30 AM",
@@ -32,12 +28,13 @@ const schedule = [
     topic:
       "Management strategies for slowing CKD progression in people with diabetes",
     faculty: "Dr.Janaka Karalliedde",
-    chairpersons: "Dr.Edwin Fernando, Dr.A.Shanmugam",
+    chairpersons: "Dr.Edwin Fernando, Dr.C.Muralidharan",
   },
   {
     time: "11:00 AM – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
+    chairpersons: "",
   },
   {
     time: "11:30 AM – 12:00 PM",
@@ -58,19 +55,20 @@ const schedule = [
     topic:
       "Type 1 diabetes: Clinical insights and emerging therapies",
     faculty: "Dr.Usha Aiyyagari",
-    chairpersons: "Dr.Shriraam, Dr.M.Shunmugavelu",
+    chairpersons: "Dr.Sunil Gupta, Dr.Shriraam Mahadevan",
   },
   {
     time: "01:00 PM – 01:30 PM",
     topic:
       "Type 5 diabetes: India's Protein Deficiency DM (PDDM)",
     faculty: "Dr.Sunil Gupta",
-    chairpersons: "Dr.Shriraam, Dr.M.Shunmugavelu",
+    chairpersons: "Dr.Anuj Maheshwari, Dr.Shriraam Mahadevan",
   },
   {
     time: "01:30 PM – 02:30 PM",
     topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
+    chairpersons: "",
   },
   {
     time: "02:30 PM – 03:00 PM",
@@ -81,28 +79,28 @@ const schedule = [
   {
     time: "03:00 PM – 04:00 PM",
     topic:
-      "Surgical offloading (Video)\n• Debridement – sweet lime\n• VAC & TCC Application",
+      "Live hands-on workshop\n* Debridement - sweet lime\n* VAC & TCC Application",
     faculty: "Dr.Senthil G / Dr.Milind Ruke",
-    chairpersons:
-      "Dr.Harikrishna KR Nair, Dr.Vijay Viswanathan",
+    chairpersons: "Dr.Harikrishna KR Nair, Dr.Vijay Viswanathan",
   },
   {
     time: "04:00 PM – 04:30 PM",
     topic:
-      "Manual to Automated: Insulin Pump Technology",
-    faculty: "Dr.Nandita Arun",
-    chairpersons: "Dr.A.Panneer Selvam, Dr.A.Shanmugam",
+      "Accelerating wound healing: Evidence based strategies for Diabetic Foot",
+    faculty: "Dr.Harikrishna KR Nair",
+    chairpersons: "Dr.Vijay Viswanathan, Dr.Senthil G",
   },
   {
     time: "04:30 PM – 05:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
+    chairpersons: "",
   },
   {
     time: "05:00 PM – 05:30 PM",
     topic: "Nutrition panel discussion",
     faculty:
-      "Dr.Meenakshi Bajaj, Dr.Hemamalini, Dr.S.Chandrasekar",
+      "Dr.Meenakshi Bajaj, Dr.Hemamalini, Dr.Patricia Trueman",
     chairpersons: "Dr.Mohan Krishnamoorthy (Moderator)",
   },
   {
@@ -116,18 +114,25 @@ const schedule = [
     time: "06:00 PM – 06:30 PM",
     topic: "Unsaid truth about sugar monitoring",
     faculty: "Dr.Mithun Bhartia",
-    chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun",
+    chairpersons: "Dr.Srikanth Medumpudi, Dr.Prashanth Arun",
   },
   {
     time: "06:30 PM – 07:00 PM",
     topic: "How to prevent Medico legal problems",
     faculty: "Dr.Viswanathan Vishnu Vijay",
-    chairpersons: "Dr.C.Muralidharan, Dr.Prashanth Arun",
+    chairpersons: "Dr.Hemang Barman, Dr.Prashanth Arun",
   },
   {
-    time: "07:00 PM onwards",
+    time: "07:00 PM – 07:30 PM",
+    topic: "TBD",
+    faculty: "",
+    chairpersons: "",
+  },
+  {
+    time: "7:30 PM onwards",
     topic: "Networking Dinner",
     faculty: "",
+    chairpersons: "",
   },
 ];
 

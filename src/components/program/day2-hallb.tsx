@@ -5,125 +5,136 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 2 Hall B --------
 const schedule = [
   {
-    time: "08:00 AM",
-    topic: "Registration Start",
-  },
-  {
-    time: "09:30 – 09:50 AM",
+    time: "09:30 AM – 09:50 AM",
     topic:
       "Saving limbs, changing lives: Case based insights in diabetic foot care",
-    faculty: "Dr.Senthil, Dr.Kumar P",
-    chair: "Dr.Milind Ruke, Dr.P Manoj",
+    faculty: "Dr.Senthil G, Dr.Kumar P",
+    chairpersons: "Dr.Milind Ruke, Dr.P Manoj",
   },
   {
-    time: "09:50 – 10:10 AM",
+    time: "09:50 AM – 10:10 AM",
     topic:
       "Limb salvage in Osteomyelitis: Evolving strategies beyond amputation",
     faculty: "Dr.D Suresh Anandan",
-    chair: "Dr.Milind Ruke, Dr.P Manoj",
+    chairpersons: "Dr.Milind Ruke, Dr.P Manoj",
   },
   {
-    time: "10:10 – 10:30 AM",
+    time: "10:10 AM – 10:30 AM",
     topic: "Smart Dressing Solutions - The T.I.M.E. concept",
     faculty: "Dr.Senthil G",
-    chair: "Dr.Harikrishnan Nair, Dr.Thangavelu Eshwaran",
+    chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Eswaran",
   },
   {
-    time: "10:30 – 11:00 AM",
+    time: "10:30 AM – 11:00 AM",
     topic:
       "Innovative advances in DSA imaging to optimise calcium removal and revascularisation outcomes",
     faculty: "Dr.Vijay Viswanathan, Dr.R Ravikumar",
-    chair: "Dr.Harikrishnan Nair, Dr.Thangavelu Eshwaran",
+    chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Eswaran",
   },
   {
-    time: "11:00 – 11:30 AM",
+    time: "11:00 AM – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
-    chair: "",
+    chairpersons: "",
   },
   {
     time: "11:30 AM – 12:30 PM",
     topic: "Quiz",
     faculty: "Dr.Abhijith",
-    chair: "",
+    chairpersons: "",
   },
   {
     time: "12:30 PM – 01:00 PM",
     topic: "Future of diabetes care: CGMS into routine practice",
     faculty: "Dr.Prashanth Arun",
-    chair: "Dr.Kannan Natarajan, Dr.C Balaji",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
     time: "01:00 PM – 01:30 PM",
-    topic: "TBD",
+    topic: "Beyond the needle: The science of inhaled insulin",
     faculty: "Dr.Leela Baid",
-    chair: "Dr.Kannan Natarajan, Dr.C Balaji",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
     time: "01:30 PM – 02:15 PM",
     topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
-    chair: "",
+    chairpersons: "",
   },
   {
     time: "02:30 PM – 03:00 PM",
     topic:
       "Insulin in the Era of SGLT2 Inhibitors and GLP-1 RAs: Is Its Role Changing or Evolving?",
     faculty: "Dr.V.Ravindranath",
-    chair: "Dr.Leela Baid, Dr.V.P.Sriram",
+    chairpersons: "Dr.Leela Baid, Dr.Vishnu Priya Reddy",
   },
   {
     time: "03:00 PM – 03:30 PM",
     topic:
       "When diabetes reaches the lungs: Diabetic Pneumopathy",
     faculty: "Dr.S R Abishek",
-    chair: "Dr.Leela Baid, Dr.V.P.Sriram",
+    chairpersons: "Dr.Leela Baid, Dr.V.P.Sriram",
   },
   {
     time: "03:30 PM – 04:00 PM",
     topic:
       "THE GUT Wrenching Troubles: Managing Diabetic GastroParesis",
     faculty: "Dr.Vishnu Priya Prashanth",
-    chair: "Dr.N Bhavatharani, Dr.K.Uma Mahesh",
+    chairpersons: "Dr.N.Bhavatharani, Dr.K.Uma Mahesh",
   },
   {
     time: "04:00 PM – 04:30 PM",
     topic:
       "Sweet troubles: Marriage, Divorce and Intimacy challenges among couples with diabetes",
     faculty: "Ms.Vaishnavi Vijay",
-    chair: "Dr.N.Bhavatharani, Dr.K.Uma Mahesh",
+    chairpersons: "Dr.N.Bhavatharani, Dr.P.Paranathaman",
   },
   {
     time: "04:30 PM – 05:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
-    chair: "",
+    chairpersons: "",
   },
   {
     time: "05:00 PM – 05:30 PM",
-    topic: "Periarthritis of shoulder and its Management",
-    faculty: "Dr.Ashwanth Narayanan B",
-    chair: "Dr.Kannan Natarajan, Dr.C Balaji",
+    topic:
+      "Frozen shoulder in Diabetes: An Orthopaedic - Endocrine Interface",
+    faculty: "Dr.Ashwanth Narayan B",
+    chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
     time: "05:30 PM – 06:00 PM",
     topic: "Debate (MV ALUMNI)",
     faculty: "",
-    chair: "Dr.Krishna Seshadri, Dr.Mitalee H Barman",
+    chairpersons:
+      "Dr.Hemang Barman, Dr.Mitalee H Barman, Dr.V.P.Sriram",
   },
   {
     time: "06:00 PM – 06:30 PM",
     topic: "TBD",
     faculty: "",
-    chair: "",
+    chairpersons: "",
   },
   {
     time: "06:30 PM – 07:00 PM",
     topic: "TBD",
     faculty: "",
-    chair: "",
+    chairpersons: "",
+  },
+  {
+    time: "07:00 PM – 07:30 PM",
+    topic: "TBD",
+    faculty: "",
+    chairpersons: "",
+  },
+  {
+    time: "7:30 PM onwards",
+    topic: "Networking Dinner",
+    faculty: "",
+    chairpersons: "",
   },
 ];
+
 
 // -------- Variants --------
 const letterVariants: Variants = {
@@ -177,7 +188,7 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
         (item) =>
           item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
           (item.faculty && item.faculty.toLowerCase().includes(searchQuery.toLowerCase())) ||
-          (item.chair && item.chair.toLowerCase().includes(searchQuery.toLowerCase()))
+          (item.chairpersons && item.chairpersons.toLowerCase().includes(searchQuery.toLowerCase()))
       );
 
   return (
@@ -253,11 +264,11 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
                           </span>
                         </p>
                       )}
-                      {item.chair && (
+                      {item.chairpersons && (
                         <p className="text-gray-600 text-md">
                           Chairpersons:{" "}
                           <span className="font-bold">
-                            {highlightText(item.chair, searchQuery)}
+                            {highlightText(item.chairpersons, searchQuery)}
                           </span>
                         </p>
                       )}

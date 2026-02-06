@@ -5,108 +5,129 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Hall B --------
 const schedule = [
   {
-    time: "08:00 AM",
-    topic: "Registration Start",
-  },
-  {
-    time: "09:30 – 09:50 AM",
+    time: "09:30 AM – 09:50 AM",
     topic: "Unmasking Anemia in Diabetes",
     faculty: "Dr.V.P. Sriram",
     chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
-    time: "09:50 – 10:10 AM",
+    time: "09:50 AM – 10:10 AM",
     topic:
-      "International Vs National – ADA Vs RSSDI guidelines (What's New / What Next / What's the difference?)",
-    faculty: "Dr.K. Uma Mahesh",
+      "International Vs National - ADA Vs RSSDI guidelines: What's New / What Next / What's the difference?",
+    faculty: "Dr.K.Uma Mahesh",
     chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
-    time: "10:10 – 10:30 AM",
+    time: "10:10 AM – 10:30 AM",
     topic:
       "The invisible threat: Identifying asymptomatic diabetes in clinical practice",
     faculty: "Dr.Aarathy Kannan",
     chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
-    time: "10:30 – 11:00 AM",
+    time: "10:30 AM – 11:00 AM",
     topic: "Silent complications: Sexual dysfunction in diabetes",
     faculty: "Dr.P Paranthaman",
     chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
-    time: "11:00 – 11:30 AM",
+    time: "11:00 AM – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
+    chairpersons: "",
   },
   {
     time: "11:30 AM – 12:30 PM",
-    topic: "MV Life Time Achievement Award (Hall A) – Inauguration & Key Note lecture",
+    topic:
+      "MV Life Time Achievement Award in Hall A & Inauguration & Key Note lecture in Hall A",
     faculty: "",
+    chairpersons: "",
   },
   {
-    time: "12:30 PM – 1:30 PM",
-    topic: "Oral presentations",
-    faculty: "",
+    time: "12:30 PM – 1:00 PM",
+    topic:
+      "Recurrence of DFU - The Indian Strategy for prevention in Hall A",
+    faculty: "Dr.Senthil G",
+    chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan",
+  },
+  {
+    time: "1:00 PM – 1:30 PM",
+    topic: "Demonstration of High Risk Feet in Hall A",
+    faculty:
+      "Dr.Vijay Viswanathan / Ms.Seena Rajsekar & Ms.Bamila Selvaraj",
+    chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan",
   },
   {
     time: "1:30 PM – 2:30 PM",
     topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
+    chairpersons: "",
   },
   {
-    time: "2:30 PM – 3:00 PM",
-    topic: "Demonstration of High Risk Feet in Hall A",
-    faculty: "Dr.Vijay Viswanathan, Ms.Seena, Ms.Bamila",
-  },
-  {
-    time: "3:00 PM – 3:30 PM",
-    topic: "Mechanical offloading (Unburden the wound) in Hall A",
-    faculty: "Dr.Viswanathan Vishnu Vijay",
-    chairpersons: "Dr.Senthil, Dr.Milind Ruke, Dr.Rajasenthil",
+    time: "2:30 PM – 3:30 PM",
+    topic: "Oral presentations",
+    faculty: "",
+    chairpersons: "",
   },
   {
     time: "3:30 PM – 4:00 PM",
-    topic: "Surgical offloading – (VIDEO) in Hall A",
-    faculty: "Dr.Senthil G",
-    chairpersons: "Dr.Shanthi, Dr.Milind Ruke, Dr.Rajasenthil",
+    topic:
+      "Periodontitis as the sixth complication of Diabetes: Integrating Oral health into Primary Diabetes Care",
+    faculty: "Dr.Vinitha Ramachanadran",
+    chairpersons: "Dr.N.Bhavatharani, Dr.G.Prakash",
   },
   {
     time: "4:00 PM – 4:30 PM",
     topic: "Surrogate measures in routine clinical practice",
     faculty: "Dr.Satyavani K",
-    chairpersons: "Dr.Leela Baid, Dr.G.Prakash",
+    chairpersons: "Dr.N.Bhavatharani, Dr.G.Prakash",
   },
   {
     time: "4:30 PM – 5:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
+    chairpersons: "",
   },
   {
     time: "5:00 PM – 5:30 PM",
     topic:
       "Retina reimagined: Technology transforming Diabetic Retinopathy screening",
     faculty: "Dr.Manoj Khatri",
-    chairpersons: "Dr.P.Paranthaman, Dr.Uma Mahesh",
+    chairpersons: "Dr.P.Paranthaman, Dr.K.Uma Mahesh",
   },
   {
     time: "5:30 PM – 6:00 PM",
     topic:
       "The Untapped potential of Imaging in Diabetic Foot Care",
     faculty: "Dr.Srikar Nallan",
-    chairpersons: "Dr.P.Paranthaman, Dr.Uma Mahesh",
+    chairpersons: "Dr.P.Paranthaman, Dr.K.Uma Mahesh",
   },
   {
     time: "6:00 PM – 6:30 PM",
     topic: "TBD",
     faculty: "",
+    chairpersons: "",
   },
   {
     time: "6:30 PM – 7:00 PM",
     topic: "TBD",
     faculty: "",
+    chairpersons: "",
+  },
+  {
+    time: "7:00 PM – 7:30 PM",
+    topic: "TBD",
+    faculty: "",
+    chairpersons: "",
+  },
+  {
+    time: "7:30 PM onwards",
+    topic: "Networking Dinner",
+    faculty: "",
+    chairpersons: "",
   },
 ];
+
 
 
 

@@ -5,66 +5,63 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 3 Hall A --------
 const schedule = [
   {
-    time: "08:00 AM",
-    topic: "Registration Start",
-  },
-  {
-    time: "09:30 – 09:50 AM",
+    time: "09:30 AM – 09:50 AM",
     topic: "GLP1 For Weight Loss",
     faculty: "Dr.Jayashree Gopal",
-    chair: "Dr.A.Panneer Selvam, Dr.P.Paranthaman",
+    chairpersons: "Dr.A.Panneer Selvam, Dr.P.Paranthaman",
   },
   {
-    time: "09:50 – 10:20 AM",
+    time: "09:50 AM – 10:20 AM",
     topic:
-      "Diabetes technology in people with diabetic kidney disease – an evolving field with clinical opportunities",
+      "Diabetes technology in people with diabetic kidney disease - an evolving field with clinical opportunities",
     faculty: "Dr.Janaka Karalliedde",
-    chair: "Dr.Vijay Viswanathan, Dr.Edwin Fernando",
+    chairpersons: "Dr.Vijay Viswanathan, Dr.Edwin Fernando",
   },
   {
-    time: "10:20 – 10:40 AM",
+    time: "10:20 AM – 10:40 AM",
     topic:
       "BP unmasked: Ambulatory Blood Pressure monitoring can transform Hypertension Care",
     faculty: "Dr.S.S.Lakshmanan",
-    chair: "Dr.M S Ashraf, Dr.K.Shanmugam",
+    chairpersons: "Dr.M S Ashraf, Dr.K.Shanmugam",
   },
   {
-    time: "10:40 – 11:00 AM",
+    time: "10:40 AM – 11:00 AM",
     topic: "Making sense of Targets in Hypertension control",
     faculty: "Dr.S.N.Narasingan",
-    chair: "Dr.M S Ashraf, Dr.K.Shanmugam",
+    chairpersons: "Dr.M S Ashraf, Dr.K.Shanmugam",
   },
   {
-    time: "11:00 – 11:30 AM",
+    time: "11:00 AM – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
-    chair: "",
+    chairpersons: "",
   },
   {
     time: "11:30 AM – 12:00 PM",
     topic: "Monogenic diabetes",
     faculty: "Dr.V.Mohan",
-    chair: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
+    chairpersons: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
   },
   {
     time: "12:00 PM – 12:30 PM",
     topic: "Prevention of Diabetes in India",
     faculty: "Dr.A.Ramachandran",
-    chair: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
+    chairpersons: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
   },
   {
     time: "12:30 PM – 01:15 PM",
     topic: "Prof. MV Gold Medal Oration 2026 & Launch",
     faculty: "Dr.Harikrishna KR Nair",
-    chair: "",
+    chairpersons: "",
   },
   {
     time: "01:15 PM onwards",
     topic: "Valedictory function followed by lunch",
     faculty: "",
-    chair: "",
+    chairpersons: "",
   },
 ];
+
 
 
 const letterVariants: Variants = {
@@ -188,11 +185,11 @@ export default function DaythreeHallA({
                           </span>
                         </p>
                       )}
-                      {item.chair && (
+                      {item.chairpersons && (
                         <p className="text-gray-600 text-md">
                           Chairpersons:{" "}
                           <span className="font-bold">
-                            {highlightText(item.chair, searchQuery)}
+                            {highlightText(item.chairpersons, searchQuery)}
                           </span>
                         </p>
                       )}

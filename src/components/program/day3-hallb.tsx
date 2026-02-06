@@ -5,53 +5,49 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 3 Dr. M. Madhavi Amma Hall (Hall B) --------
 const schedule = [
   {
-    time: "08:00 AM",
-    topic: "Registration Start",
-  },
-  {
-    time: "09:30 – 10:00 AM",
-    topic:
-      "Diabetes & Violence: Is there a pathophysiological connect ?",
+    time: "09:30 AM – 10:00 AM",
+    topic: "Diabetes & Violence: Is there a pathophysiological connect ?",
     faculty: "Dr.R Balamurugan",
-    chair: "Dr.Milind Ruke, Dr.V.Ravindranath",
+    chairpersons: "Dr.Milind Ruke, Dr.V.Ravindranath",
   },
   {
-    time: "10:00 – 11:00 AM",
-    topic: "Quiz – Finals",
+    time: "10:00 AM – 11:00 AM",
+    topic: "Quiz - Finals",
     faculty: "",
-    chair: "",
+    chairpersons: "",
   },
   {
-    time: "11:00 – 11:30 AM",
+    time: "11:00 AM – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
     faculty: "",
-    chair: "",
+    chairpersons: "",
   },
   {
     time: "11:30 AM – 12:00 PM",
     topic: "Monogenic diabetes in Hall A",
     faculty: "Dr.V.Mohan",
-    chair: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
+    chairpersons: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
   },
   {
     time: "12:00 PM – 12:30 PM",
     topic: "Prevention of Diabetes in India in Hall A",
     faculty: "Dr.A.Ramachandran",
-    chair: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
+    chairpersons: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
   },
   {
     time: "12:30 PM – 01:15 PM",
     topic: "Prof. MV Gold Medal Oration 2026 & launch in Hall A",
     faculty: "Dr.Harikrishna KR Nair",
-    chair: "",
+    chairpersons: "",
   },
   {
     time: "01:15 PM onwards",
     topic: "Valedictory function followed by lunch",
     faculty: "",
-    chair: "",
+    chairpersons: "",
   },
 ];
+
 
 
 // -------- Variants --------
@@ -99,13 +95,13 @@ export default function DaythreeHallB({
     searchQuery.trim() === ""
       ? schedule
       : schedule.filter(
-          (item) =>
-            item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            (item.faculty &&
-              item.faculty.toLowerCase().includes(searchQuery.toLowerCase())) ||
-            (item.chair &&
-              item.chair.toLowerCase().includes(searchQuery.toLowerCase()))
-        );
+        (item) =>
+          item.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          (item.faculty &&
+            item.faculty.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (item.chairpersons &&
+            item.chairpersons.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
 
   return (
     <section className="py-10 bg-gray-50 w-full">
@@ -180,11 +176,11 @@ export default function DaythreeHallB({
                           </span>
                         </p>
                       )}
-                      {item.chair && (
+                      {item.chairpersons && (
                         <p className="text-gray-600 text-md">
                           Chairpersons:{" "}
                           <span className="font-bold">
-                            {highlightText(item.chair, searchQuery)}
+                            {highlightText(item.chairpersons, searchQuery)}
                           </span>
                         </p>
                       )}
