@@ -6,7 +6,7 @@ import { motion, Variants } from "framer-motion";
 const schedule = [
   {
     time: "08:00 AM",
-    topic: "Registration Start",
+    topic: "Registration from 8 am onwards",
   },
   {
     time: "09:30 AM – 09:50 AM",
