@@ -1,9 +1,11 @@
 const API_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "https://mvcon.space/api/v1";
+console.log("Current API URL:", API_URL);
 
 // ---------- Types ----------
 export interface User {
-  id?: string;
+  _id?: string;
+  id?: string; // fallback in case of mapping
   name: string;
   email: string;
   phone: string;
@@ -247,6 +249,13 @@ export async function updateUser(id: string, userData: Partial<User>) {
 export async function deleteUser(id: string) {
   return request<{ success: boolean; data: {} }>(`/users/${id}`, {
     method: "DELETE",
+  });
+}
+
+// Resend registration email (admin only)
+export async function resendRegistrationEmail(id: string) {
+  return request<{ success: boolean; message: string }>(`/users/${id}/resend-email`, {
+    method: "POST",
   });
 }
 

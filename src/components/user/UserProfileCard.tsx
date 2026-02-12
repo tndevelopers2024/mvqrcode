@@ -13,7 +13,7 @@ export function UserProfileCard({ user }: { user: User }) {
       </CardHeader>
       <CardContent className="flex items-center gap-4">
         <Avatar className="w-16 h-16 ring-2 ring-primary/30">
-          <AvatarImage src={`https://mvcon.space${user.profileImage}`} />
+          <AvatarImage src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL || 'https://mvcon.space'}${user.profileImage}`} />
           <AvatarFallback>
             <UserIcon className="w-8 h-8" />
           </AvatarFallback>

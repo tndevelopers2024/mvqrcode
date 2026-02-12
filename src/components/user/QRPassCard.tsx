@@ -12,7 +12,7 @@ interface QRPassCardProps {
 }
 
 export function QRPassCard({ user, logs = [] }: QRPassCardProps) {
-  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://mvcon.space';
+  const backendUrl = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || 'https://mvcon.space';
 
   const qrUrl = user.qrCodeImage ? `${backendUrl}${user.qrCodeImage}` : null;
   const pdfUrl = user.certificateFile ? `${backendUrl}${user.certificateFile}` : null;

@@ -71,9 +71,10 @@ export function AbstractsList() {
           />
         </div>
         <Button onClick={() => {
+          const imageBase = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || 'https://mvcon.space';
           const dataToExport = filteredAbstracts.map(a => ({
             ...a,
-            file: a.file ? `https://mvcon.space${a.file}` : '',
+            file: a.file ? `${imageBase}${a.file}` : '',
           }));
           import('@/lib/utils').then(mod => mod.downloadAsExcel(dataToExport, 'abstracts'));
         }}>
@@ -163,7 +164,7 @@ export function AbstractsList() {
               {new Date(selectedAbstract.createdAt).toLocaleString()}
             </p>
             <a
-              href={`https://mvcon.space${selectedAbstract.file}`}
+              href={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL || 'https://mvcon.space'}${selectedAbstract.file}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-blue-600 hover:underline mt-2"
