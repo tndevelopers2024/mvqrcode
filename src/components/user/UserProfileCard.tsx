@@ -3,13 +3,44 @@
 import type { User } from '@/lib/api';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { User as UserIcon, Mail, Phone, MapPin, Briefcase } from 'lucide-react';
+import { User as UserIcon, Mail, Phone, MapPin, Briefcase, LogOut } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { logoutUser } from "@/lib/api";
+import { useRouter } from "next/navigation";
+import { useToast } from "@/hooks/use-toast";
 
 export function UserProfileCard({ user }: { user: User }) {
+  const router = useRouter();
+  const { toast } = useToast();
+
+  const handleLogout = async () => {
+    try {
+      await logoutUser();
+    } catch (error) {
+      console.error("Logout API failed:", error);
+    } finally {
+      localStorage.removeItem("token");
+      toast({
+        title: "Logged out",
+        description: "You have been successfully logged out.",
+      });
+      router.push("/login");
+    }
+  };
+
   return (
     <Card className="shadow-lg hover:shadow-xl transition-shadow">
-      <CardHeader>
+      <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="text-lg font-semibold">Your Profile</CardTitle>
+        <Button
+          variant="outline"
+          size="sm"
+          className="text-muted-foreground hover:text-destructive hover:text-white transition-colors"
+          onClick={handleLogout}
+        >
+          <LogOut className="mr-2 h-4 w-4" />
+          Logout
+        </Button>
       </CardHeader>
       <CardContent className="flex items-center gap-4">
         <Avatar className="w-16 h-16 ring-2 ring-primary/30">

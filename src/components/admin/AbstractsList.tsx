@@ -11,7 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Eye, Search, FileText } from "lucide-react";
+import { Eye, Search, FileText, Trash2, Download, Loader2 } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -20,11 +20,27 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { deleteAbstract, downloadAllAbstracts as apiDownloadAll } from "@/lib/api";
+import { useToast } from "@/hooks/use-toast";
 
 export function AbstractsList() {
+  const { toast } = useToast();
   const [abstracts, setAbstracts] = useState<Abstract[]>([]);
   const [selectedAbstract, setSelectedAbstract] = useState<Abstract | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [abstractToDelete, setAbstractToDelete] = useState<Abstract | null>(null);
+  const [isDownloadingAll, setIsDownloadingAll] = useState(false);
 
   // Fetch abstracts on mount
   useEffect(() => {
@@ -49,6 +65,49 @@ export function AbstractsList() {
     );
   }, [searchTerm, abstracts]);
 
+  const handleDelete = async () => {
+    if (!abstractToDelete) return;
+    setIsDeleting(true);
+    try {
+      await deleteAbstract(abstractToDelete._id);
+      setAbstracts((prev) => prev.filter((a) => a._id !== abstractToDelete._id));
+      setAbstractToDelete(null);
+      toast({
+        title: "Successfully deleted",
+        description: "The abstract submission has been removed.",
+      });
+    } catch (err: any) {
+      console.error("Failed to delete abstract:", err.message);
+      toast({
+        variant: "destructive",
+        title: "Deletion failed",
+        description: err.message,
+      });
+    } finally {
+      setIsDeleting(false);
+    }
+  };
+
+  const handleDownloadAll = async () => {
+    setIsDownloadingAll(true);
+    try {
+      await apiDownloadAll();
+      toast({
+        title: "Download started",
+        description: "All abstract files are being downloaded.",
+      });
+    } catch (err: any) {
+      console.error("Failed to download all abstracts:", err.message);
+      toast({
+        variant: "destructive",
+        title: "Download failed",
+        description: err.message,
+      });
+    } finally {
+      setIsDownloadingAll(false);
+    }
+  };
+
   if (abstracts.length === 0) {
     return (
       <p className="text-center text-muted-foreground mt-8">
@@ -70,16 +129,27 @@ export function AbstractsList() {
             className="pl-10"
           />
         </div>
-        <Button onClick={() => {
-          const imageBase = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || 'https://mvcon.space';
-          const dataToExport = filteredAbstracts.map(a => ({
-            ...a,
-            file: a.file ? `${imageBase}${a.file}` : '',
-          }));
-          import('@/lib/utils').then(mod => mod.downloadAsExcel(dataToExport, 'abstracts'));
-        }}>
-          Download Excel
-        </Button>
+        <div className="flex gap-2 w-full md:w-auto">
+          <Button
+            variant="outline"
+            disabled={isDownloadingAll}
+            onClick={handleDownloadAll}
+            className="flex gap-2"
+          >
+            {isDownloadingAll ? <Loader2 className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
+            Download All Files
+          </Button>
+          <Button onClick={() => {
+            const imageBase = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || 'https://mvcon.space';
+            const dataToExport = filteredAbstracts.map(a => ({
+              ...a,
+              file: a.file ? `${imageBase}${a.file}` : '',
+            }));
+            import('@/lib/utils').then(mod => mod.downloadAsExcel(dataToExport, 'abstracts'));
+          }}>
+            Download Excel
+          </Button>
+        </div>
       </div>
 
       {/* Abstracts Table */}
@@ -109,16 +179,27 @@ export function AbstractsList() {
                     {a.status}
                   </TableCell>
                   <TableCell className="text-right">
-                    <DialogTrigger asChild>
+                    <div className="flex justify-end gap-1">
+                      <DialogTrigger asChild>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          onClick={() => setSelectedAbstract(a)}
+                        >
+                          <Eye className="h-4 w-4" />
+                          <span className="sr-only">View Abstract</span>
+                        </Button>
+                      </DialogTrigger>
                       <Button
                         variant="ghost"
                         size="icon"
-                        onClick={() => setSelectedAbstract(a)}
+                        className="text-destructive hover:text-destructive hover:bg-destructive/10"
+                        onClick={() => setAbstractToDelete(a)}
                       >
-                        <Eye className="h-4 w-4" />
-                        <span className="sr-only">View Abstract</span>
+                        <Trash2 className="h-4 w-4" />
+                        <span className="sr-only">Delete Abstract</span>
                       </Button>
-                    </DialogTrigger>
+                    </div>
                   </TableCell>
                 </TableRow>
               ))
@@ -175,6 +256,31 @@ export function AbstractsList() {
           </div>
         </DialogContent>
       )}
+
+      {/* Delete Confirmation */}
+      <AlertDialog open={!!abstractToDelete} onOpenChange={() => setAbstractToDelete(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This will permanently delete the abstract submission from <strong>{abstractToDelete?.name}</strong> and remove the attached file from our servers.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={isDeleting}>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              onClick={(e) => {
+                e.preventDefault();
+                handleDelete();
+              }}
+              disabled={isDeleting}
+            >
+              {isDeleting ? "Deleting..." : "Delete"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </Dialog>
   );
 }

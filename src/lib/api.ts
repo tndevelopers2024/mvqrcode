@@ -313,3 +313,33 @@ export async function getAllAbstracts() {
     method: "GET",
   }).then((res) => res.data);
 }
+
+export async function deleteAbstract(id: string) {
+  return request<{ success: boolean; data: any }>(`/abstracts/${id}`, {
+    method: "DELETE",
+  });
+}
+
+export async function downloadAllAbstracts() {
+  const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+  const res = await fetch(`${API_URL}/abstracts/download-all`, {
+    headers: {
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    },
+  });
+
+  if (!res.ok) {
+    const data = await res.json();
+    throw new Error(data.error || data.message || "Failed to download zip");
+  }
+
+  const blob = await res.blob();
+  const url = window.URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.setAttribute("download", "all_abstracts.zip");
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  window.URL.revokeObjectURL(url);
+}

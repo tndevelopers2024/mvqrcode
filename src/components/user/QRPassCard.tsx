@@ -110,7 +110,7 @@ export function QRPassCard({ user, logs = [] }: QRPassCardProps) {
               </div>
             ) : (
               <p className="text-sm text-muted-foreground mt-4">
-                ✅ You must scan your pass at least once to unlock your certificate.
+                ✅ You must scan this QR code at least once to mark your attendance. Only then will you receive your certificate.
               </p>
             )}
           </>
