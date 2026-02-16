@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const InternationalFaculty= [
   { name: "Dr.Harikrishna KR Nair", img: "/images/faculty/Dr-Harikrishna-KR-Nair.jpg" },
   { name: "Dr.Janaka karalliedde", img: "/images/faculty/Dr-Janaka-karalliedde.jpg" },  
-  { name: "DR.Srikar Nallan", img: "/images/faculty/Srikar-nallan.jpg" }, 
+  { name: "Mr.Srikar Nallan", img: "/images/faculty/Srikar-nallan.jpg" }, 
 ]
 const faculty = [
   

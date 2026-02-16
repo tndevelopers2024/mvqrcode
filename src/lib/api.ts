@@ -21,6 +21,7 @@ export interface User {
   isVerified?: boolean;
     certificateImage?: string;
   certificateFile?: string;
+  medicalCouncilNumber?: string;
 }
 
 export interface AuthResponse {

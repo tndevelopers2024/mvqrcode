@@ -45,6 +45,7 @@ const formSchema = z.object({
   state: z.string().min(2, { message: "Please enter your state." }),
   profileImage: z.any().optional(),
   couponCode: z.string().optional(),
+  medicalCouncilNumber: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -74,6 +75,7 @@ export function RegistrationForm({ onSuccess }: Props) {
       state: "",
       profileImage: undefined,
       couponCode: "",
+      medicalCouncilNumber: "",
     },
   });
 
@@ -363,6 +365,21 @@ export function RegistrationForm({ onSuccess }: Props) {
               <FormLabel>Designation</FormLabel>
               <FormControl>
                 <Input {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        {/* State Medical Council Number */}
+        <FormField
+          control={form.control}
+          name="medicalCouncilNumber"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>State Medical Council Number (Optional)</FormLabel>
+              <FormControl>
+                <Input placeholder="Enter medical council number" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

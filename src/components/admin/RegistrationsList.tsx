@@ -102,6 +102,7 @@ export function RegistrationsList() {
             const imageBase = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || 'https://mvcon.space';
             const dataToExport = filteredUsers.map(u => ({
               ...u,
+              medicalCouncilNumber: u.medicalCouncilNumber || '',
               profileImage: u.profileImage ? `${imageBase}${u.profileImage}` : '',
               qrCodeImage: u.qrCodeImage ? `${imageBase}${u.qrCodeImage}` : '',
             }));
@@ -120,6 +121,7 @@ export function RegistrationsList() {
                 <TableHead>Email</TableHead>
                 <TableHead className="hidden md:table-cell">Designation</TableHead>
                 <TableHead className="hidden md:table-cell">City</TableHead>
+                <TableHead className="hidden lg:table-cell">Medical Council No.</TableHead>
                 <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
@@ -142,6 +144,7 @@ export function RegistrationsList() {
                     <TableCell>{u.email}</TableCell>
                     <TableCell className="hidden md:table-cell">{u.designation}</TableCell>
                     <TableCell className="hidden md:table-cell">{u.city}</TableCell>
+                    <TableCell className="hidden lg:table-cell">{u.medicalCouncilNumber || "N/A"}</TableCell>
                     <TableCell className="text-right flex justify-end gap-2">
                       <Button
                         variant="ghost"

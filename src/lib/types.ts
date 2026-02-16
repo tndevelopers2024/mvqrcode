@@ -12,6 +12,7 @@ export interface Registration {
   photoDataUri?: string;
   certificateImage?: string;
   certificateFile?: string;
+  medicalCouncilNumber?: string;
 }
 
 export interface UserDetails {

@@ -71,10 +71,10 @@ export default function AbstractForm() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/coundown-bg.jpg')" }}
       ></div>
-      
+
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-700/80 to-blue-600/70"></div>
 
-    
+
       <div className="relative max-w-2xl w-full p-8 rounded-3xl backdrop-blur-xl bg-white/20 shadow-2xl z-10">
         <h2 className="text-center text-3xl font-extrabold text-white drop-shadow-md mb-10">
           Submit Your Abstract
@@ -236,10 +236,9 @@ export default function AbstractForm() {
               type="submit"
               disabled={loading}
               className={`w-full py-3 rounded-xl font-semibold shadow-lg transition-all duration-300 
-                ${
-                  loading
-                    ? "bg-white/30 text-gray-200 cursor-not-allowed"
-                    : "bg-white/20 text-white hover:bg-white/30 hover:shadow-white/40"
+                ${loading
+                  ? "bg-white/30 text-gray-200 cursor-not-allowed"
+                  : "bg-white/20 text-white hover:bg-white/30 hover:shadow-white/40"
                 }`}
             >
               {loading ? (
@@ -264,7 +263,7 @@ export default function AbstractForm() {
                       d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
                     ></path>
                   </svg>
-                  Loading...
+                  Submitting...
                 </div>
               ) : (
                 "Submit"
