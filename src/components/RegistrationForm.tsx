@@ -446,6 +446,8 @@ export function RegistrationForm({ onSuccess }: Props) {
             ? "Register (Free)"
             : "Register and Pay"}
         </Button>
+
+        <p><b>Note</b>: If you experience any issues during registration, please try using a different browser and attempt the process again.</p>
       </form>
     </Form>
   );
