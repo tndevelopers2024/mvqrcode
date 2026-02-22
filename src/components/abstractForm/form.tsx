@@ -59,7 +59,7 @@ export default function AbstractForm() {
   };
 
   return (
-    <section className="relative w-full flex flex-col items-center justify-center py-16">
+    <section className="relative w-full flex flex-col items-center justify-center py-0 bg-[#F1F1F1]">
 
       {/* Background */}
       {/* <div className="relative max-w-2xl w-full p-8 rounded-3xl backdrop-blur-xl bg-white/20 shadow-2xl z-10">
@@ -67,21 +67,22 @@ export default function AbstractForm() {
           Abstract submission for MVCON 2026 will open on 30th September, 2025
         </h2>
         </div> */}
-      <div
+      {/* <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/coundown-bg.jpg')" }}
-      ></div>
+      ></div> */}
+      <img src="/images/closed.jpeg" alt="closed" />
 
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-700/80 to-blue-600/70"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-indigo-700/80 to-blue-600/70"></div> */}
 
 
-      <div className="relative max-w-2xl w-full p-8 rounded-3xl backdrop-blur-xl bg-white/20 shadow-2xl z-10">
+      {/* <div className="relative max-w-2xl w-full p-8 rounded-3xl backdrop-blur-xl bg-white/20 shadow-2xl z-10">
         <h2 className="text-center text-3xl font-extrabold text-white drop-shadow-md mb-10">
           Submit Your Abstract
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-8">
-          {/* Name */}
+          
           <div className="relative">
             <input
               type="text"
@@ -104,7 +105,7 @@ export default function AbstractForm() {
             </label>
           </div>
 
-          {/* Register Number */}
+          
           <div className="relative">
             <input
               type="text"
@@ -127,7 +128,7 @@ export default function AbstractForm() {
             </label>
           </div>
 
-          {/* Institute */}
+          
           <div className="relative">
             <input
               type="text"
@@ -150,7 +151,7 @@ export default function AbstractForm() {
             </label>
           </div>
 
-          {/* Contact */}
+          
           <div className="relative">
             <input
               type="text"
@@ -180,7 +181,7 @@ export default function AbstractForm() {
             </label>
           </div>
 
-          {/* Email */}
+          
           <div className="relative">
             <input
               type="email"
@@ -203,7 +204,7 @@ export default function AbstractForm() {
             </label>
           </div>
 
-          {/* File Upload */}
+          
           <div className="relative">
             <label
               htmlFor="file"
@@ -225,12 +226,12 @@ export default function AbstractForm() {
             />
           </div>
 
-          {/* Error Message */}
+          
           {errorMsg && (
             <p className="text-red-300 text-sm font-medium">{errorMsg}</p>
           )}
 
-          {/* Submit Button */}
+          
           <div className="pt-4">
             <button
               type="submit"
@@ -272,12 +273,11 @@ export default function AbstractForm() {
           </div>
         </form>
 
-        {/* Glow Effects */}
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-pink-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
         <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-      </div>
+      </div> */}
 
-      {/* Success Popup */}
+      
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
           <div className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col items-center">
