@@ -101,7 +101,7 @@ export function RegistrationForm({ onSuccess }: Props) {
         // 2️⃣ Determine amount dynamically
         const baseFees = {
           PG: 30, // Assuming real fees are higher for discounts to make sense
-          Delegates: 50,
+          Delegates: 40,
         };
 
         let amount = baseFees[values.profession];
