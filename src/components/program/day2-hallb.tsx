@@ -5,35 +5,34 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 2 Hall B --------
 const schedule = [
   {
-    time: "08:00 AM",
-    topic: "Registration from 8 am onwards",
+    time: "08:00 AM onwards",
+    topic: "Registration from 8:00 AM onwards",
   },
   {
-    time: "09:30 AM – 09:50 AM",
+    time: "09:30 AM – 10:00 AM",
     topic:
       "Saving limbs, changing lives: Case based insights in diabetic foot care",
-    faculty: "Dr.Senthil G, Dr.Kumar P",
+    faculty: "Dr. Kumar P, Dr.Senthil G",
     chairpersons: "Dr.Milind Ruke, Dr.P Manoj",
   },
   {
-    time: "09:50 AM – 10:10 AM",
+    time: "10:00 AM – 10:20 AM",
     topic:
       "Limb salvage in Osteomyelitis: Evolving strategies beyond amputation",
     faculty: "Dr.D Suresh Anandan",
     chairpersons: "Dr.Milind Ruke, Dr.P Manoj",
   },
   {
-    time: "10:10 AM – 10:30 AM",
+    time: "10:20 AM – 10:40 AM",
     topic: "Smart Dressing Solutions - The T.I.M.E. concept",
     faculty: "Dr.Senthil G",
-    chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Eswaran",
+    chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Easwaran",
   },
   {
-    time: "10:30 AM – 11:00 AM",
-    topic:
-      "Innovative advances in DSA imaging to optimise calcium removal and revascularisation outcomes",
-    faculty: "Dr.Vijay Viswanathan, Dr.R Ravikumar",
-    chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Eswaran",
+    time: "10:40 AM – 11:00 AM",
+    topic: "The Golden Hour in Diabetic Foot Ulcer",
+    faculty: "Dr.T.Sasi Kumar",
+    chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Easwaran",
   },
   {
     time: "11:00 AM – 11:30 AM",
@@ -57,7 +56,7 @@ const schedule = [
     time: "01:00 PM – 01:30 PM",
     topic: "Beyond the needle: The science of inhaled insulin",
     faculty: "Dr.Leela Baid",
-    chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
+    chairpersons: "Dr.N.Bhavatharani, Dr.C Balaji",
   },
   {
     time: "01:30 PM – 02:15 PM",
@@ -67,31 +66,22 @@ const schedule = [
   },
   {
     time: "02:30 PM – 03:00 PM",
-    topic:
-      "Insulin in the Era of SGLT2 Inhibitors and GLP-1 RAs: Is Its Role Changing or Evolving?",
-    faculty: "Dr.V.Ravindranath",
-    chairpersons: "Dr.Leela Baid, Dr.Vishnu Priya Reddy",
+    topic: "Sweet but Brittle: The Hidden Impact of Diabetes on Bone",
+    faculty: "Dr.Shriraam Mahadevan",
+    chairpersons: "Dr.C Balaji, Dr.V.P.Sriram",
   },
   {
     time: "03:00 PM – 03:30 PM",
     topic:
-      "When diabetes reaches the lungs: Diabetic Pneumopathy",
-    faculty: "Dr.S R Abishek",
-    chairpersons: "Dr.Leela Baid, Dr.V.P.Sriram",
+      "Insulin in the Era of SGLT2 Inhibitors and GLP-1 RAs: Is Its Role Changing or Evolving?",
+    faculty: "Dr.V.Ravindranath",
+    chairpersons: "Dr.Leela Baid, Dr.Kannan Natarajan",
   },
   {
-    time: "03:30 PM – 04:00 PM",
-    topic:
-      "THE GUT Wrenching Troubles: Managing Diabetic GastroParesis",
-    faculty: "Dr.Vishnu Priya Prashanth",
-    chairpersons: "Dr.N.Bhavatharani, Dr.K.Uma Mahesh",
-  },
-  {
-    time: "04:00 PM – 04:30 PM",
-    topic:
-      "Sweet troubles: Marriage, Divorce and Intimacy challenges among couples with diabetes",
-    faculty: "Ms.Vaishnavi Vijay",
-    chairpersons: "Dr.N.Bhavatharani, Dr.P.Paranathaman",
+    time: "03:30 PM – 04:30 PM",
+    topic: "Oral presentations",
+    faculty: "",
+    chairpersons: "Dr.V.P.Sriram, Dr.Satyavani K",
   },
   {
     time: "04:30 PM – 05:00 PM",
@@ -102,40 +92,47 @@ const schedule = [
   {
     time: "05:00 PM – 05:30 PM",
     topic:
-      "Frozen shoulder in Diabetes: An Orthopaedic - Endocrine Interface",
+      "Adhesive capsulitis in Diabetes - An orthopaedic - endocrine interface",
     faculty: "Dr.Ashwanth Narayan B",
-    chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
+    chairpersons: "Dr.Kannan Natarajan, Dr.R Varun",
   },
   {
     time: "05:30 PM – 06:00 PM",
-    topic: "Debate (MV ALUMNI)",
+    topic: "Nutrition panel discussion",
+    faculty:
+      "Dr.Meenakshi Bajaj, Dr.Hemamalini, Dr.Patricia Trueman",
+    chairpersons: "Dr.Mohan Krishnamoorthy (Moderator)",
+  },
+  {
+    time: "06:00 PM – 06:30 PM",
+    topic:
+      "THE GUT Wrenching Troubles: Managing Diabetic GastroParesis",
+    faculty: "Dr.Vishnu Priya Prashanth",
+    chairpersons: "Dr.K.Uma Mahesh, Dr.K.Shanmugam",
+  },
+  {
+    time: "06:30 PM – 07:00 PM",
+    topic:
+      "Sweet troubles: Marriage, Divorce and Intimacy challenges among couples with diabetes",
+    faculty: "Ms.Vaishnavi Vijay",
+    chairpersons: "Dr.Vishnu Priya Reddy, Dr.K.Shanmugam",
+  },
+  {
+    time: "07:00 PM – 07:30 PM",
+    topic: "When diabetes reaches the lungs: Diabetic Pneumopathy",
+    faculty: "Dr.S R Abishek",
+    chairpersons: "Dr.Kannan Natarajan, Dr.Hemanga Barman",
+  },
+  {
+    time: "07:30 PM – 08:00 PM",
+    topic: "Debate (MV ALUMNI) (Finerenone vs No Finerenone)",
     faculty: "",
     chairpersons:
       "Dr.Hemang Barman, Dr.Mitalee H Barman, Dr.V.P.Sriram",
   },
   {
-    time: "06:00 PM – 06:30 PM",
-    topic: "TBD",
-    faculty: "",
-    chairpersons: "",
-  },
-  {
-    time: "06:30 PM – 07:00 PM",
-    topic: "TBD",
-    faculty: "",
-    chairpersons: "",
-  },
-  {
-    time: "07:00 PM – 07:30 PM",
-    topic: "TBD",
-    faculty: "",
-    chairpersons: "",
-  },
-  {
-    time: "7:30 PM onwards",
+    time: "08:00 PM onwards",
     topic: "Networking Dinner",
-    faculty: "",
-    chairpersons: "",
   },
 ];
 

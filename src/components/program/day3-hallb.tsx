@@ -5,11 +5,29 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 3 Dr. M. Madhavi Amma Hall (Hall B) --------
 const schedule = [
   {
-    time: "08:00 AM",
-    topic: "Registration from 8 am onwards",
+    time: "08:00 AM onwards",
+    topic: "Registration from 8:00 AM onwards",
   },
   {
-    time: "09:30 AM – 10:00 AM",
+    time: "08:00 AM – 09:00 AM",
+    topic: "Oral presentations",
+    faculty: "",
+    chairpersons: "Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "09:00 AM – 09:20 AM",
+    topic: "Sweet trouble - How Diabetes can affect your smile",
+    faculty: "Dr.Rimo C Mathews",
+    chairpersons: "Dr.Vinitha Ramachandran, Dr.Siva Shankari S",
+  },
+  {
+    time: "09:20 AM – 09:40 AM",
+    topic: "Silent complications: Sexual dysfunction in diabetes",
+    faculty: "Dr.P Paranthaman",
+    chairpersons: "Dr.R Balamurugan, Dr.V.Ravindranath",
+  },
+  {
+    time: "09:40 AM – 10:00 AM",
     topic: "Diabetes & Violence: Is there a pathophysiological connect ?",
     faculty: "Dr.R Balamurugan",
     chairpersons: "Dr.Milind Ruke, Dr.V.Ravindranath",
@@ -30,25 +48,23 @@ const schedule = [
     time: "11:30 AM – 12:00 PM",
     topic: "Monogenic diabetes in Hall A",
     faculty: "Dr.V.Mohan",
-    chairpersons: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
+    chairpersons: "",
   },
   {
     time: "12:00 PM – 12:30 PM",
-    topic: "Prevention of Diabetes in India in Hall A",
-    faculty: "Dr.A.Ramachandran",
-    chairpersons: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
+    topic: "Type 5 diabetes: India's Protein Deficiency DM (PDDM) in Hall A",
+    faculty: "Dr.Sunil Gupta",
+    chairpersons: "",
   },
   {
     time: "12:30 PM – 01:15 PM",
-    topic: "Prof. MV Gold Medal Oration 2026 & launch in Hall A",
-    faculty: "Dr.Harikrishna KR Nair",
+    topic: "Prof. MV Gold Medal Oration 2026 & Launch in Hall A / MV Life Time Achievement Award in Hall A",
+    faculty: "Dr.Harikrishna KR Nair, Dr.A V Anoop",
     chairpersons: "",
   },
   {
     time: "01:15 PM onwards",
     topic: "Valedictory function followed by lunch",
-    faculty: "",
-    chairpersons: "",
   },
 ];
 

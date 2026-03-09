@@ -5,34 +5,41 @@ import { motion, Variants } from "framer-motion";
 // -------- Schedule for Day 3 Hall A --------
 const schedule = [
   {
-    time: "08:00 AM",
-    topic: "Registration from 8 am onwards",
+    time: "08:00 AM onwards",
+    topic: "Registration from 8:00 AM onwards",
+  },
+  {
+    time: "09:00 AM – 09:30 AM",
+    topic: "Integrated management of Diabetes and Obesity",
+    faculty: "Dr.Jayashree Gopal",
+    chairpersons: "Dr.A.Panneer Selvam, Dr.K.Shanmugam",
   },
   {
     time: "09:30 AM – 09:50 AM",
-    topic: "GLP1 For Weight Loss",
-    faculty: "Dr.Jayashree Gopal",
-    chairpersons: "Dr.A.Panneer Selvam, Dr.P.Paranthaman",
-  },
-  {
-    time: "09:50 AM – 10:20 AM",
     topic:
       "Diabetes technology in people with diabetic kidney disease - an evolving field with clinical opportunities",
     faculty: "Dr.Janaka Karalliedde",
     chairpersons: "Dr.Vijay Viswanathan, Dr.Edwin Fernando",
   },
   {
-    time: "10:20 AM – 10:40 AM",
+    time: "09:50 AM – 10:10 AM",
+    topic: "Alpha cell as the guardian of Beta cell",
+    faculty: "Dr.Vinod Mittal",
+    chairpersons: "Dr.M S Ashraf, Dr.A.Panneer Selvam",
+  },
+  {
+    time: "10:10 AM – 10:30 AM",
     topic:
       "BP unmasked: Ambulatory Blood Pressure monitoring can transform Hypertension Care",
     faculty: "Dr.S.S.Lakshmanan",
     chairpersons: "Dr.M S Ashraf, Dr.K.Shanmugam",
   },
   {
-    time: "10:40 AM – 11:00 AM",
-    topic: "Making sense of Targets in Hypertension control",
-    faculty: "Dr.S.N.Narasingan",
-    chairpersons: "Dr.M S Ashraf, Dr.K.Shanmugam",
+    time: "10:30 AM – 11:00 AM",
+    topic:
+      "Changes in the profile of Diabetes and CV risk in a decade in the population",
+    faculty: "Dr.A.Ramachandran",
+    chairpersons: "Dr.S.S.Lakshmanan, Dr.P.Paranthaman",
   },
   {
     time: "11:00 AM – 11:30 AM",
@@ -44,25 +51,23 @@ const schedule = [
     time: "11:30 AM – 12:00 PM",
     topic: "Monogenic diabetes",
     faculty: "Dr.V.Mohan",
-    chairpersons: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
+    chairpersons: "Dr.S.S.Lakshmanan, Dr.P.Paranthaman",
   },
   {
     time: "12:00 PM – 12:30 PM",
-    topic: "Prevention of Diabetes in India",
-    faculty: "Dr.A.Ramachandran",
-    chairpersons: "Dr.S.N.Narasingan, Dr.S.S.Lakshmanan",
+    topic: "Type 5 diabetes: India's Protein Deficiency DM (PDDM)",
+    faculty: "Dr.Sunil Gupta",
+    chairpersons: "Dr.S.S.Lakshmanan, Dr.Vijay Viswanathan",
   },
   {
     time: "12:30 PM – 01:15 PM",
-    topic: "Prof. MV Gold Medal Oration 2026 & Launch",
-    faculty: "Dr.Harikrishna KR Nair",
+    topic: "Prof. MV Gold Medal Oration 2026 & Launch / MV Life Time Achievement Award",
+    faculty: "Dr.Harikrishna KR Nair, Dr.A V Anoop",
     chairpersons: "",
   },
   {
     time: "01:15 PM onwards",
     topic: "Valedictory function followed by lunch",
-    faculty: "",
-    chairpersons: "",
   },
 ];
 
