@@ -10,7 +10,7 @@ const schedule = [
   },
   {
     time: "09:00 AM – 09:20 AM",
-    topic: "Imeglimin- A powerhouse approach to Type 2 Diabetes (Sponsored talk - Zydus)",
+    topic: "Imeglimin- A powerhouse approach to Type 2 Diabetes",
     faculty: "Dr.Selva Pandian",
     chairpersons: "Dr.C.R.Anand Moses, Dr.P.Dharmarajan",
   },
@@ -22,7 +22,7 @@ const schedule = [
   },
   {
     time: "09:40 AM – 10:00 AM",
-    topic: "Fatty Liver (MASLD) - Role of Saroglitazar: Dual PPAR Agonist (Sponsored talk - Zydus)",
+    topic: "Fatty Liver (MASLD) - Role of Saroglitazar: Dual PPAR Agonist",
     faculty: "Dr.G.Vijayakumar",
     chairpersons: "Dr.M.Shunmugavelu, Dr.C.Muralidharan",
   },
@@ -33,113 +33,109 @@ const schedule = [
     chairpersons: "Dr.M.Shunmugavelu, Dr.C.Muralidharan",
   },
   {
-    time: "10:30 AM – 11:00 AM",
-    topic: "Sponsored talk - Eris",
+    time: "10:30 AM -11:00 AM",
+    topic: "What should be the target for FBS - best practices for basalog Insulin",
     faculty: "Dr.M.Shunmugavelu",
     chairpersons: "Dr.Selva Pandian, Dr.C.Balaji",
   },
   {
-    time: "11:00 AM – 11:30 AM",
-    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-    chairpersons: "",
+    time: "11:00 AM - 11:30 AM",
+    topic: "TEA BREAK & VISIT TO THE STALLS /POSTER AREA",
   },
   {
-    time: "11:30 AM – 12:00 PM",
+    time: "11:30 AM -12:00 PM",
     topic: "Demonstration of High Risk Feet",
-    faculty: "Dr.Vijay Viswanathan / Ms.Seena Rajsekar & Ms.Bamila Selvaraj",
+    faculty: "Dr. Vijay Viswanathan / Ms.Seena Rajsekar & Ms.Bamila Sel",
     chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan",
   },
   {
-    time: "12:00 PM – 12:30 PM",
+    time: "12:00 PM -12:30 PM",
     topic: "Recurrence of DFU - The Indian Strategy for prevention",
     faculty: "Dr.Senthil G",
     chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan",
   },
   {
-    time: "12:30 PM – 01:00 PM",
+    time: "12:30 PM -1:00 PM",
     topic: "Mechanical offloading (Unburden the wound)",
-    faculty: "Dr.Viswanathan Vishnu Vijay",
+    faculty: "Dr. Viswanathan Vishnu Vijay",
     chairpersons: "Dr.Senthil G, Dr.Shanthi",
   },
   {
-    time: "01:00 PM – 01:30 PM",
+    time: "1:00 PM–1:30 PM",
     topic: "Surgical offloading (Video)",
     faculty: "Dr.Senthil G",
     chairpersons: "Dr.Milind Ruke, Dr.Rajasenthil",
   },
   {
-    time: "01:30 PM – 02:30 PM",
-    topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-    chairpersons: "",
+    time: "1:30 PM - 2:30PM",
+    topic: "LUNCH & VISIT TO THE STALLS /POSTER AREA",
   },
   {
-    time: "02:30 PM – 03:00 PM",
+    time: "2:30 PM- 3:00PM",
     topic: "Redefining limb salvage: New frontiers in technology",
     faculty: "Dr.Milind Ruke",
     chairpersons: "Dr.Senthil G, Dr.Rajasenthil",
   },
   {
-    time: "03:00 PM – 03:30 PM",
+    time: "3:00 PM- 3: 30 PM",
     topic: "Making sense of Targets in Hypertension control",
     faculty: "Dr.S.N.Narasingan",
     chairpersons: "Dr.M.Shunmugavelu, Dr.C.Muralidharan",
   },
   {
-    time: "03:30 PM – 04:30 PM",
-    topic: "MV Life Time Achievement Award / Inauguration & Key Note Lecture",
+    time: "3:30 PM - 4:30 PM",
+    topic: "MV Life Time Achievement Award",
     faculty: "Dr.Jitendra Singh",
-    chairpersons: "",
   },
   {
-    time: "04:30 PM – 05:00 PM",
-    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-    chairpersons: "",
+    time: "",
+    topic: "Inauguration & Key Note lecture",
   },
   {
-    time: "05:00 PM – 05:30 PM",
+    time: "4:30 PM - 5:00PM",
+    topic: "TEA BREAK & VISIT TO THE STALLS /POSTER AREA",
+  },
+  {
+    time: "5:00PM -5:30 PM",
     topic: "The role of microbiota in the management of diabetes and hypertension",
     faculty: "Dr.A.Muruganathan",
     chairpersons: "Dr.G.Prakash, Dr.A.Shanmugam",
   },
   {
-    time: "05:30 PM – 06:00 PM",
+    time: "5:30 PM - 6:00PM",
     topic: "Management of hyperglycemia during DFU",
     faculty: "Dr.R M Anjana",
     chairpersons: "Dr.Vijay Viswanathan, Dr.Krishna G Seshadri",
   },
   {
-    time: "06:00 PM – 06:30 PM",
+    time: "6:00 PM - 6:30 PM",
     topic: "Charcot foot: Timely diagnosis and treatment to prevent amputation",
     faculty: "Dr.Johny J Kannampilly",
     chairpersons: "Dr.Vijay Viswanathan, Dr.Thangavelu Easwaran",
   },
   {
-    time: "06:30 PM – 07:00 PM",
+    time: "6:30 PM – 7:00 PM",
     topic: "Gut dysbiosis, NUSH and metabolic disparities",
     faculty: "Dr.Krishna G Seshadri",
     chairpersons: "Dr.Vishnu Priya Prashanth, Dr.Srikanth Medumpudi",
   },
   {
-    time: "07:00 PM – 07:30 PM",
+    time: "07:00 PM - 07:30 PM",
     topic: "Secondary diabetes: Unravelling the hidden causes",
     faculty: "Dr.A.Shanmugam",
     chairpersons: "Dr.C.Muralidharan, Dr.K.Shanmugam",
   },
   {
-    time: "07:30 PM – 08:00 PM",
-    topic: "Sponsored talk - Eris",
-    faculty: "",
+    time: "07:30 PM -08:00 PM",
+    topic: "Disease modifying outcome from glucose control to metabolic protection",
+    faculty: "Dr.G.Vijayakumar",
     chairpersons: "Dr.C.Balaji, Dr.A.Shanmugam",
   },
   {
-    time: "08:00 PM onwards",
-    topic: "Networking Dinner",
+    time: "Networking Dinner 8 pm onwards",
+    topic: "Networking Dinner 8 pm onwards",
   },
 ];
-
 
 // -------- Animation Variants --------
 const letterVariants: Variants = {
@@ -241,7 +237,7 @@ export default function DayoneHallA({ searchQuery }: { searchQuery: string }) {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
+                className={`shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row`}
               >
                 {/* Left column – TIME */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">

@@ -28,16 +28,14 @@ const schedule = [
     chairpersons: "Dr.M S Ashraf, Dr.A.Panneer Selvam",
   },
   {
-    time: "10:10 AM – 10:30 AM",
-    topic:
-      "BP unmasked: Ambulatory Blood Pressure monitoring can transform Hypertension Care",
+    time: "10:10 AM - 10:30 AM",
+    topic: "BP unmasked: Ambulatory Blood Pressure monitoring can tranform Hyper",
     faculty: "Dr.S.S.Lakshmanan",
-    chairpersons: "Dr.M S Ashraf, Dr.K.Shanmugam",
+    chairpersons: "Dr.M S Ashraf,Dr.K.Shanmugam",
   },
   {
-    time: "10:30 AM – 11:00 AM",
-    topic:
-      "Changes in the profile of Diabetes and CV risk in a decade in the population",
+    time: "10:30 AM - 11:00 AM",
+    topic: "Changes in the profile of Diabetes and CV risk in a decade in the population",
     faculty: "Dr.A.Ramachandran",
     chairpersons: "Dr.S.S.Lakshmanan, Dr.P.Paranthaman",
   },
@@ -60,10 +58,14 @@ const schedule = [
     chairpersons: "Dr.S.S.Lakshmanan, Dr.Vijay Viswanathan",
   },
   {
-    time: "12:30 PM – 01:15 PM",
-    topic: "Prof. MV Gold Medal Oration 2026 & Launch / MV Life Time Achievement Award",
-    faculty: "Dr.Harikrishna KR Nair, Dr.A V Anoop",
-    chairpersons: "",
+    time: "12:30 PM -01:15 PM",
+    topic: "Prof. MV Gold Medal Oration 2026 & launch",
+    faculty: "Dr.Harikrishna KR Nair",
+  },
+  {
+    time: "",
+    topic: "MV Life Time Achievement Award",
+    faculty: "Dr.A V Anoop",
   },
   {
     time: "01:15 PM onwards",
@@ -170,7 +172,7 @@ export default function DaythreeHallA({
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
+                className="shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
                 {/* Time Block */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">

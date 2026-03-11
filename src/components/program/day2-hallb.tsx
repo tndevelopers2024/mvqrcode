@@ -10,129 +10,149 @@ const schedule = [
   },
   {
     time: "09:30 AM – 10:00 AM",
-    topic:
-      "Saving limbs, changing lives: Case based insights in diabetic foot care",
+    topic: "Saving limbs, changing lives: Case based insights in diabetic foot care",
     faculty: "Dr. Kumar P, Dr.Senthil G",
     chairpersons: "Dr.Milind Ruke, Dr.P Manoj",
   },
   {
-    time: "10:00 AM – 10:20 AM",
-    topic:
-      "Limb salvage in Osteomyelitis: Evolving strategies beyond amputation",
-    faculty: "Dr.D Suresh Anandan",
-    chairpersons: "Dr.Milind Ruke, Dr.P Manoj",
+    time: "10:00 AM – 10:20AM",
+    topic: "Limb salvage in Osteomyelitis: Evolving strategies beyond amputation",
+    faculty: "Dr. D Suresh Anandan",
+    chairpersons: "Dr.Milind Ruke, Dr.P.Manoj",
   },
   {
-    time: "10:20 AM – 10:40 AM",
+    time: "10:20 AM -10:40 AM",
     topic: "Smart Dressing Solutions - The T.I.M.E. concept",
     faculty: "Dr.Senthil G",
     chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Easwaran",
   },
   {
-    time: "10:40 AM – 11:00 AM",
+    time: "10:40 AM- 11:00 AM",
     topic: "The Golden Hour in Diabetic Foot Ulcer",
     faculty: "Dr.T.Sasi Kumar",
     chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Easwaran",
   },
   {
-    time: "11:00 AM – 11:30 AM",
-    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-    chairpersons: "",
+    time: "11:00 AM- 11:30 AM",
+    topic: "TEA BREAK & VISIT TO THE STALLS /POSTER AREA",
   },
   {
-    time: "11:30 AM – 12:30 PM",
+    time: "11:30 AM– 12:30 PM",
     topic: "Quiz",
     faculty: "Dr.Abhideep",
-    chairpersons: "",
   },
   {
-    time: "12:30 PM – 01:00 PM",
+    time: "12:30 PM-01:00 PM",
     topic: "Future of diabetes care: CGMS into routine practice",
     faculty: "Dr.Prashanth Arun",
     chairpersons: "Dr.Kannan Natarajan, Dr.C Balaji",
   },
   {
-    time: "01:00 PM – 01:30 PM",
+    time: "1:00 PM-01:30 PM",
     topic: "Beyond the needle: The science of inhaled insulin",
     faculty: "Dr.Leela Baid",
     chairpersons: "Dr.N.Bhavatharani, Dr.C Balaji",
   },
   {
-    time: "01:30 PM – 02:15 PM",
-    topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-    chairpersons: "",
+    time: "1:30 PM - 2:15PM",
+    topic: "LUNCH & VISIT TO THE STALLS /POSTER AREA",
   },
   {
-    time: "02:30 PM – 03:00 PM",
+    time: "2:30 PM- 3:00PM",
     topic: "Sweet but Brittle: The Hidden Impact of Diabetes on Bone",
     faculty: "Dr.Shriraam Mahadevan",
     chairpersons: "Dr.C Balaji, Dr.V.P.Sriram",
   },
   {
-    time: "03:00 PM – 03:30 PM",
-    topic:
-      "Insulin in the Era of SGLT2 Inhibitors and GLP-1 RAs: Is Its Role Changing or Evolving?",
+    time: "3:00 PM- 3: 30 PM",
+    topic: "Insulin in the Era of SGLT2 Inhibitors and GLP-1 RAs: Is Its Role Changing or Evolving?",
     faculty: "Dr.V.Ravindranath",
     chairpersons: "Dr.Leela Baid, Dr.Kannan Natarajan",
   },
   {
-    time: "03:30 PM – 04:30 PM",
-    topic: "Oral presentations",
-    faculty: "",
-    chairpersons: "Dr.V.P.Sriram, Dr.Satyavani K",
+    time: "3:30 PM - 4:30 PM",
+    topic: "MVOP24-Therapeutic potential of anti-miRNA to counter oxidative stress, Inflammation and impaired angiogenesis",
+    faculty: "Milan KL",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
   },
   {
-    time: "04:30 PM – 05:00 PM",
-    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-    chairpersons: "",
+    time: "",
+    topic: "MVOP25-A Visual Dietary Tool to Enhance Dietary and Diabetes Self-Management and Education and Improve Glycemic Control",
+    faculty: "Ashwin Karuppan V",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
   },
   {
-    time: "05:00 PM – 05:30 PM",
-    topic:
-      "Adhesive capsulitis in Diabetes - An orthopaedic - endocrine interface",
+    time: "",
+    topic: "MVOP26-From Divided Ducts to Diabetes: A Rare Case of Type 3c Diabetes Mellitus due to Incomplete Pancreatic D",
+    faculty: "Shreenath R",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "",
+    topic: "MVOP27-Synergistic Amelioration of Oxidative Stress in GDM by Clitoria ternatea Anthocyanins and Beta vulgaris Betanin:An In",
+    faculty: "Damini M",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "",
+    topic: "MVOP28-Role of Allyl Isothiocyanate on alleviating Endothelial Dysfunction: An In Vitro and In Vivo study",
+    faculty: "Mounish Katneni",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "",
+    topic: "MVOP29-Nrf2-Mediated Cytoprotective Effects of Luteolin on Keratinocytes under Hyperglycemic Conditions",
+    faculty: "Samyuktha T",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "",
+    topic: "MVOP30-Dysregulation of SLIT2–ROBO1 Signaling Impairs Angiogenesis in Diabetic Foot Ulcers: Clinical and Experimental",
+    faculty: "Nithya Devaprakash",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "4:30 PM - 5:00PM",
+    topic: "TEA BREAK & VISIT TO THE STALLS /POSTER AREA",
+  },
+  {
+    time: "5:00 PM - 5:30 PM",
+    topic: "Adhesive capsulitis in Diabetes - An orthopaedic - endocrine interface",
     faculty: "Dr.Ashwanth Narayan B",
     chairpersons: "Dr.Kannan Natarajan, Dr.R Varun",
   },
   {
-    time: "05:30 PM – 06:00 PM",
+    time: "5:30 PM -6:00 PM",
     topic: "Nutrition panel discussion",
-    faculty:
-      "Dr.Meenakshi Bajaj, Dr.Hemamalini, Dr.Patricia Trueman",
+    faculty: "Dr.Meenakshi Bajaj, Dr.Hemamalini, Dr.Patricia Trueman",
     chairpersons: "Dr.Mohan Krishnamoorthy (Moderator)",
   },
   {
-    time: "06:00 PM – 06:30 PM",
-    topic:
-      "THE GUT Wrenching Troubles: Managing Diabetic GastroParesis",
-    faculty: "Dr.Vishnu Priya Prashanth",
+    time: "6:00PM -6:30 PM",
+    topic: "THE GUT Wrenching Troubles: Managing Diabetic GastroParesis",
+    faculty: "Dr. Vishnu Priya Prashanth",
     chairpersons: "Dr.K.Uma Mahesh, Dr.K.Shanmugam",
   },
   {
-    time: "06:30 PM – 07:00 PM",
-    topic:
-      "Sweet troubles: Marriage, Divorce and Intimacy challenges among couples with diabetes",
+    time: "6:30 PM -07:00 PM",
+    topic: "Sweet troubles: Marriage, Divorce and Intimacy challenges among couples with diabetes",
     faculty: "Ms.Vaishnavi Vijay",
-    chairpersons: "Dr.Vishnu Priya Reddy, Dr.K.Shanmugam",
+    chairpersons: "Dr. Vishnu Priya Reddy, Dr.K.Shanmugam",
   },
   {
-    time: "07:00 PM – 07:30 PM",
+    time: "07:00 PM - 07:30 PM",
     topic: "When diabetes reaches the lungs: Diabetic Pneumopathy",
     faculty: "Dr.S R Abishek",
     chairpersons: "Dr.Kannan Natarajan, Dr.Hemanga Barman",
   },
   {
-    time: "07:30 PM – 08:00 PM",
+    time: "07:30 PM -08:00 PM",
     topic: "Debate (MV ALUMNI) (Finerenone vs No Finerenone)",
-    faculty: "",
-    chairpersons:
-      "Dr.Hemang Barman, Dr.Mitalee H Barman, Dr.V.P.Sriram",
+    chairpersons: "Dr.Hemang Barman, Dr.Mitalee H Barman, Dr.V.P.Sriram",
   },
   {
-    time: "08:00 PM onwards",
-    topic: "Networking Dinner",
+    time: "Networking Dinner 8:00 pm onwards",
+    topic: "Networking Dinner 8:00 pm onwards",
   },
 ];
 
@@ -241,7 +261,7 @@ export default function DayTwoHallB({ searchQuery }: { searchQuery: string }) {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
+                className="shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
                 {/* Left column – TIME block */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">

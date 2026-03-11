@@ -29,43 +29,37 @@ const schedule = [
   },
   {
     time: "10:00 AM – 10:30 AM",
+    topic: "Cardiac energy metabolism in failing heart among people with diabetes",
+    faculty: "Dr.Anuj Maheshwari",
+    chairpersons: "Dr.N.Bhavatharani, Dr.R.Ramakrishnan",
+  },
+  {
+    time: "10:30 AM – 11:00 AM",
     topic: "How to evaluate kidney function in diabetes ?",
     faculty: "Dr.Edwin Fernando",
     chairpersons: "Dr.Vijay Viswanathan, Dr.Janaka Karalliedde",
   },
   {
-    time: "10:30 AM – 11:00 AM",
-    topic:
-      "Management strategies for slowing CKD progression in people with diabetes",
+    time: "11:00 AM – 11:30 AM",
+    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+  },
+  {
+    time: "11:30 AM to 12:00 PM",
+    topic: "Management strategies for slowing CKD progression in people with diabetes",
     faculty: "Dr.Janaka Karalliedde",
     chairpersons: "Dr.Edwin Fernando, Dr.Vijay Viswanathan",
   },
   {
-    time: "11:00 AM – 11:30 AM",
-    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-    chairpersons: "",
-  },
-  {
-    time: "11:30 AM – 12:00 PM",
-    topic:
-      "Cardiac energy metabolism in failing heart among people with diabetes",
-    faculty: "Dr.Anuj Maheshwari",
-    chairpersons: "Dr.P.Dharmarajan, Dr.R.Ramakrishnan",
-  },
-  {
     time: "12:00 PM – 12:30 PM",
-    topic:
-      "Gestational diabetes in India: Translating evidence into practice",
+    topic: "Gestational diabetes in India: Translating evidence into practice",
     faculty: "Dr.N.Bhavatharani",
     chairpersons: "Dr.P.Dharmarajan, Dr.R.Ramakrishnan",
   },
   {
-    time: "12:30 PM – 01:00 PM",
-    topic:
-      "Type 1 diabetes: Clinical insights and emerging therapies",
+    time: "12:30 PM-01:00 PM",
+    topic: "Type 1 diabetes: Clinical Insights and emerging therapies",
     faculty: "Dr.Usha Aiyyagari",
-    chairpersons: "Dr.Anuj Maheshwari, Dr.Shriraam Mahadevan",
+    chairpersons: "Dr.P.Dharmarajan, Dr.Shriraam Mahadevan",
   },
   {
     time: "01:00 PM – 01:30 PM",
@@ -76,8 +70,6 @@ const schedule = [
   {
     time: "01:30 PM – 02:30 PM",
     topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-    chairpersons: "",
   },
   {
     time: "02:30 PM – 03:00 PM",
@@ -88,8 +80,9 @@ const schedule = [
   },
   {
     time: "03:00 PM – 04:00 PM",
-    topic:
-      "Live hands-on workshop\n* Debridement - sweet lime\n* VAC & TCC Application",
+    topic: `Live hands-on workshop
+• Debridement - sweet lime
+• VAC & TCC Application`,
     faculty: "Dr.Senthil G / Dr.Milind Ruke",
     chairpersons: "Dr.Harikrishna KR Nair, Dr.Vijay Viswanathan",
   },
@@ -103,8 +96,6 @@ const schedule = [
   {
     time: "04:30 PM – 05:00 PM",
     topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-    chairpersons: "",
   },
   {
     time: "05:00 PM – 05:30 PM",
@@ -123,41 +114,37 @@ const schedule = [
     time: "06:00 PM – 06:30 PM",
     topic: "Evolving role of GLP-1 RAs in Diabesity",
     faculty: "Dr.Prashanth Arun",
-    chairpersons: "",
+    chairpersons: "Dr.G.Prakash, Dr.K.Uma Mahesh",
   },
   {
-    time: "06:30 PM – 06:50 PM",
-    topic:
-      "New Generation Insulins: The promising solution to glycaemic havoc in India",
+    time: "06:30 PM – 6:50 PM",
+    topic: "New Generation Insulins: The promising solution to glycaemic havoc in India",
     faculty: "Dr Usha Ayyagari",
+    chairpersons: "Dr.G.Prakash, Dr.K.Uma Mahesh",
+  },
+  {
+    time: "6:50 PM – 7:10 PM",
+    topic: "Initiate with Impact: Semaglutide Redefining First line Diabetes Care",
+    faculty: "Dr Ashwin Karuppan",
+    chairpersons: "Dr.G.Prakash, Dr.K.Uma Mahesh",
+  },
+  {
+    time: "07:10 PM -07:30 PM",
+    topic: "The Gold Standard: Semaglutide leads the way in Weight loss and Beyond",
+    faculty: "Dr S S Lakshmanan",
     chairpersons: "Dr.P.Paranthaman, Dr.Hemanga Barman",
   },
   {
-    time: "06:50 PM – 07:10 PM",
-    topic:
-      "Initiate with Impact: Semaglutide Redefining First line Diabetes Care",
-    faculty: "Dr Ashwin Karuppan",
-    chairpersons: "",
-  },
-  {
-    time: "07:10 PM – 07:30 PM",
-    topic:
-      "The Gold Standard: Semaglutide leads the way in Weight loss and Beyond",
-    faculty: "Dr S S Lakshmanan",
-    chairpersons: "",
-  },
-  {
-    time: "07:30 PM – 08:00 PM",
+    time: "07:30 PM -08:00 PM",
     topic: "Empagliflozin in Cardio Renal Metabolic protection",
     faculty: "Dr.Leela Baid",
     chairpersons: "Dr.G.Prakash, Dr.Rajendran V",
   },
   {
-    time: "08:00 PM onwards",
-    topic: "Networking Dinner",
+    time: "Networking Dinner 8:00 pm onwards",
+    topic: "Networking Dinner 8:00 pm onwards",
   },
 ];
-
 
 // -------- Animation Variants --------
 const letterVariants: Variants = {
@@ -260,7 +247,7 @@ export default function DaytwoHallA({ searchQuery }: { searchQuery: string }) {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
+                className={`shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row`}
               >
                 {/* Time */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">

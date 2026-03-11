@@ -10,60 +10,94 @@ const schedule = [
   },
   {
     time: "08:00 AM – 09:00 AM",
-    topic: "Oral presentations",
-    faculty: "",
-    chairpersons: "Dr.V.P.Sriram, Dr.Satyavani K",
+    topic: "MVOP31-Novel approaches to Target Post-Translational Modifica",
+    faculty: "M Tanmay",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
   },
   {
-    time: "09:00 AM – 09:20 AM",
-    topic: "Sweet trouble - How Diabetes can affect your smile",
+    time: "",
+    topic: "MVOP32-BCSI-T2D- A Novel β-Cell Stress Index to Guide Tim",
+    faculty: "Ashwin Karuppan V",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "",
+    topic: "MVOP33-otes wound repair in diabetic mice by modulating Nrf2 signaling",
+    faculty: "Yukta S",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "",
+    topic: "MVOP34-When Sugar Meets Spores: Fungal infections in post tra",
+    faculty: "R. Deepika",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "",
+    topic: "MVOP35-rroptosis with Sulforaphane to enhance Diabetic Wound Healing",
+    faculty: "Nivedhitha Baskaran",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "",
+    topic: "MVOP36-Improving Cardiovascular Health in Women Diagnosed with Diabetes: Field Challenges in Developing an mHealth App",
+    faculty: "Sonia R.B D’Souza",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "",
+    topic: "MVOP37-Placental Inflammatory Responses Through Inflammasome Activa",
+    faculty: "S Madhu sri",
+    chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
+  },
+  {
+    time: "09:00 AM \u2013 09:20 AM",
+    topic: "Sweet trouble -How Diabetes can affect your smile",
     faculty: "Dr.Rimo C Mathews",
-    chairpersons: "Dr.Vinitha Ramachandran, Dr.Siva Shankari S",
+    chairpersons: "Dr.Vinitha Ramachandran, Dr.Siva shankari S",
   },
   {
-    time: "09:20 AM – 09:40 AM",
+    time: "09:20 AM \u2013 09:40 AM",
     topic: "Silent complications: Sexual dysfunction in diabetes",
     faculty: "Dr.P Paranthaman",
     chairpersons: "Dr.R Balamurugan, Dr.V.Ravindranath",
   },
   {
-    time: "09:40 AM – 10:00 AM",
+    time: "09:40 AM \u2013 10:00 AM",
     topic: "Diabetes & Violence: Is there a pathophysiological connect ?",
     faculty: "Dr.R Balamurugan",
     chairpersons: "Dr.Milind Ruke, Dr.V.Ravindranath",
   },
   {
-    time: "10:00 AM – 11:00 AM",
+    time: "10:00 AM - 11:00 AM",
     topic: "Quiz - Finals",
-    faculty: "",
-    chairpersons: "",
   },
   {
-    time: "11:00 AM – 11:30 AM",
-    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
-    faculty: "",
-    chairpersons: "",
+    time: "11:00 - 11:30 AM",
+    topic: "TEA BREAK & VISIT TO THE STALLS /POSTER AREA",
   },
   {
-    time: "11:30 AM – 12:00 PM",
+    time: "11:30 AM\u2013 12:00 PM",
     topic: "Monogenic diabetes in Hall A",
     faculty: "Dr.V.Mohan",
-    chairpersons: "",
   },
   {
-    time: "12:00 PM – 12:30 PM",
+    time: "12:00 PM -12:30 PM",
     topic: "Type 5 diabetes: India's Protein Deficiency DM (PDDM) in Hall A",
     faculty: "Dr.Sunil Gupta",
-    chairpersons: "",
   },
   {
-    time: "12:30 PM – 01:15 PM",
-    topic: "Prof. MV Gold Medal Oration 2026 & Launch in Hall A / MV Life Time Achievement Award in Hall A",
-    faculty: "Dr.Harikrishna KR Nair, Dr.A V Anoop",
-    chairpersons: "",
+    time: "12:30 PM -01:15 PM",
+    topic: "Prof. MV Gold Medal Oration 2026 & launch in Hall A",
+    faculty: "Dr.Harikrishna KR Nair",
   },
   {
-    time: "01:15 PM onwards",
+    time: "",
+    topic: "MV Life Time Achievement Award in Hall A",
+    faculty: "Dr.A V Anoop",
+  },
+  {
+    time: "1:15 PM",
     topic: "Valedictory function followed by lunch",
   },
 ];
@@ -172,7 +206,7 @@ export default function DaythreeHallB({
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
+                className="shadow-lg rounded-2xl overflow-hidden flex flex-col min-h-32 md:flex-row"
               >
                 {/* Left column – TIME block */}
                 <div className="w-full md:w-[200px] bg-indigo-50 flex items-center justify-center p-4">
