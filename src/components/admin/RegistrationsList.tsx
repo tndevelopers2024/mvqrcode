@@ -6,7 +6,10 @@ import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
-import { Eye, Search, User as UserIcon, Mail, Loader2 } from 'lucide-react';
+import { Eye, Search, User as UserIcon, Mail, Loader2, X } from 'lucide-react';
+import { DatePickerWithRange } from '../ui/date-range-picker';
+import { DateRange } from 'react-day-picker';
+import { isWithinInterval, startOfDay, endOfDay } from 'date-fns';
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger,
   DialogFooter, DialogDescription,
@@ -34,16 +37,21 @@ export function RegistrationsList() {
   const [resendingId, setResendingId] = useState<string | null>(null);
   const [userToResend, setUserToResend] = useState<User | null>(null);
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+  const [dateRange, setDateRange] = useState<DateRange | undefined>();
+  const [isLoading, setIsLoading] = useState(true);
   const { toast } = useToast();
 
   // Fetch users on mount
   useEffect(() => {
     (async () => {
       try {
+        setIsLoading(true);
         const roleUsers = await getAllUserRoleUsers();
         setUsers(roleUsers);
       } catch (err: any) {
         console.error('Failed to load users:', err.message);
+      } finally {
+        setIsLoading(false);
       }
     })();
   }, []);
@@ -70,20 +78,44 @@ export function RegistrationsList() {
     }
   };
 
-  // Filter search
+  // Filter search and date
   const filteredUsers = useMemo(() => {
-    if (!searchTerm) return users;
-    return users.filter(
-      (u) =>
-        u.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        u.email.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }, [searchTerm, users]);
+    let results = users;
 
-  if (users.length === 0) {
-    return <p className="text-center text-muted-foreground mt-8">No users found.</p>;
+    // Search filter
+    if (searchTerm) {
+      results = results.filter(
+        (u) =>
+          u.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          u.email.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Date range filter
+    if (dateRange?.from) {
+      const from = startOfDay(dateRange.from);
+      const to = dateRange.to ? endOfDay(dateRange.to) : endOfDay(dateRange.from);
+      
+      results = results.filter((u) => {
+        if (!u.createdAt && !u.registrationDate) return false;
+        const regDate = new Date(u.registrationDate || u.createdAt!);
+        return isWithinInterval(regDate, { start: from, end: to });
+      });
+    }
+
+    return results;
+  }, [searchTerm, dateRange, users]);
+
+
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center py-12 gap-2">
+        <Loader2 className="h-8 w-8 animate-spin text-[#5d01f2]" />
+        <p className="text-sm text-muted-foreground">Loading attendees...</p>
+      </div>
+    );
   }
-  console.log('Filtered Users:', filteredUsers);
+
   return (
     <>
       <Dialog onOpenChange={(isOpen) => !isOpen && setSelectedUser(null)}>
@@ -98,6 +130,25 @@ export function RegistrationsList() {
               className="pl-10"
             />
           </div>
+
+          {/* Date Range Filter */}
+          <div className="w-full md:w-auto flex items-center gap-2">
+            <DatePickerWithRange 
+              date={dateRange} 
+              setDate={setDateRange} 
+            />
+            {dateRange && (
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={() => setDateRange(undefined)}
+                className="h-9 w-9"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
+
           <Button onClick={() => {
             const imageBase = process.env.NEXT_PUBLIC_IMAGE_BASE_URL || 'https://mvcon.space';
             const dataToExport = filteredUsers.map(u => ({
@@ -122,6 +173,7 @@ export function RegistrationsList() {
                 <TableHead className="hidden md:table-cell">Designation</TableHead>
                 <TableHead className="hidden md:table-cell">City</TableHead>
                 <TableHead className="hidden lg:table-cell">Medical Council No.</TableHead>
+                <TableHead>Reg. Date</TableHead>
                 <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
@@ -145,6 +197,16 @@ export function RegistrationsList() {
                     <TableCell className="hidden md:table-cell">{u.designation}</TableCell>
                     <TableCell className="hidden md:table-cell">{u.city}</TableCell>
                     <TableCell className="hidden lg:table-cell">{u.medicalCouncilNumber || "N/A"}</TableCell>
+                    <TableCell>
+                      {u.registrationDate || u.createdAt 
+                        ? new Date(u.registrationDate || u.createdAt!).toLocaleDateString('en-IN', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: 'numeric'
+                          })
+                        : 'N/A'
+                      }
+                    </TableCell>
                     <TableCell className="text-right flex justify-end gap-2">
                       <Button
                         variant="ghost"
@@ -182,9 +244,9 @@ export function RegistrationsList() {
                   </TableCell>
                 </TableRow>
               )}
-            </TableBody>
-          </Table>
-        </div>
+          </TableBody>
+        </Table>
+      </div>
 
         {/* QR Dialog */}
         {selectedUser && (
@@ -199,12 +261,14 @@ export function RegistrationsList() {
                   id: (selectedUser._id || selectedUser.id)!,
                   name: selectedUser.name,
                   email: selectedUser.email,
+                  profession: selectedUser.profession,
                   designation: selectedUser.designation,
                   city: selectedUser.city,
                   registrationDate: new Date().toISOString(),
                   qrCodeImage: selectedUser.qrCodeImage ?? undefined,
                   qrCodeContent: selectedUser._id || selectedUser.id || '',
                   profileImage: selectedUser.profileImage ?? undefined,
+                  registeredByAdmin: selectedUser.registeredByAdmin,
                 }}
               />
             </div>

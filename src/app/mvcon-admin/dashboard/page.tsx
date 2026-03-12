@@ -5,6 +5,7 @@ import { AdminDashboard } from '@/components/admin/AdminDashboard';
 import { AnalyticsDashboard } from '@/components/admin/analytics/AnalyticsDashboard';
 import { getUsers, getScanLogs } from '@/lib/api';
 import type { User, ScanLog } from '@/lib/api';
+import { Loader2 } from 'lucide-react';
 
 export default function DashboardPage() {
   const [registrations, setRegistrations] = useState<User[]>([]);
@@ -33,7 +34,10 @@ export default function DashboardPage() {
   if (loading) {
     return (
       <AdminDashboard activeTab="dashboard">
-        <p className="text-center text-muted-foreground mt-8">Loading dashboard...</p>
+        <div className="flex flex-col items-center justify-center py-12 gap-2">
+          <Loader2 className="h-8 w-8 animate-spin text-[#5d01f2]" />
+          <p className="text-sm text-muted-foreground">Loading dashboard...</p>
+        </div>
       </AdminDashboard>
     );
   }

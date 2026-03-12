@@ -60,6 +60,7 @@ export function QRValidator() {
                 profileImage: res.user.profileImage,
                 qrCodeImage: res.user.qrCodeImage,
               },
+              scanCount: res.scanCount,
             }
           : { isValid: false };
         setValidationResult(result);
@@ -88,6 +89,7 @@ export function QRValidator() {
                 profileImage: res.user.profileImage,
                 qrCodeImage: res.user.qrCodeImage,
               },
+              scanCount: res.scanCount,
             }
           : { isValid: false };
         setValidationResult(result);
@@ -98,20 +100,7 @@ export function QRValidator() {
     });
   };
 
-  // Auto-clear after showing result
-  useEffect(() => {
-    if (validationResult) {
-      resultTimeoutRef.current = setTimeout(() => {
-        setValidationResult(null);
-        setQrData('');
-      }, 5000);
-    }
-    return () => {
-      if (resultTimeoutRef.current) {
-        clearTimeout(resultTimeoutRef.current);
-      }
-    };
-  }, [validationResult]);
+  // Removed auto-clear useEffect to keep popup visible until closed manually.
 
   return (
     <Card>
@@ -176,6 +165,12 @@ export function QRValidator() {
                     <CheckCircle className="h-6 w-6" />
                     <span className="font-bold text-lg">Pass is Valid</span>
                  </div>
+
+                 {validationResult.scanCount !== undefined && (
+                   <div className="bg-[#5d01f2] text-white px-6 py-2 rounded-full font-black text-2xl shadow-lg border-4 border-white animate-bounce">
+                     Entry No: {validationResult.scanCount}
+                   </div>
+                 )}
                  
                  {validationResult.userDetails && (
                    // @ts-ignore - Constructing a partial registration object for display
@@ -190,14 +185,35 @@ export function QRValidator() {
                      qrCodeImage: validationResult.userDetails.qrCodeImage,
                    }} />
                  )}
+
+                 <Button 
+                    variant="outline" 
+                    className="mt-4 w-full border-[#5d01f2] text-[#5d01f2] hover:bg-[#5d01f2] hover:text-white font-bold"
+                    onClick={() => {
+                      setValidationResult(null);
+                      setQrData('');
+                    }}
+                  >
+                    Clear & Close Result
+                  </Button>
               </div>
             ) : (
               <Card className="border-red-500">
-                <CardHeader>
+                <CardHeader className="space-y-4">
                   <CardTitle className="flex items-center gap-2 text-red-500">
                     <XCircle className="h-6 w-6" />
                     Pass is Invalid
                   </CardTitle>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold"
+                    onClick={() => {
+                      setValidationResult(null);
+                      setQrData('');
+                    }}
+                  >
+                    Close
+                  </Button>
                 </CardHeader>
               </Card>
             )}

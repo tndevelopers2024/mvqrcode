@@ -20,7 +20,7 @@ export function AdminDashboard({ children, activeTab }: AdminDashboardProps) {
 
   return (
     <CardContent>
-      <Tabs defaultValue={activeTab} onValueChange={handleTabChange} className="w-full">
+      <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
         <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
           <TabsTrigger value="validate">Validate QR</TabsTrigger>

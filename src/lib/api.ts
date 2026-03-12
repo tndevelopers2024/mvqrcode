@@ -22,6 +22,8 @@ export interface User {
     certificateImage?: string;
   certificateFile?: string;
   medicalCouncilNumber?: string;
+  registrationDate?: string;
+  registeredByAdmin?: boolean;
 }
 
 export interface AuthResponse {
@@ -128,6 +130,16 @@ export async function prepareRegistration(
     {
       method: "POST",
       body: formData,
+    }
+  );
+}
+
+export async function adminRegisterUser(userData: any) {
+  return request<{ success: boolean; message: string; data: any }>(
+    "/admin-registration",
+    {
+      method: "POST",
+      body: JSON.stringify(userData),
     }
   );
 }
@@ -270,7 +282,7 @@ export async function getAllUserRoleUsers() {
 
 // Scan a QR code
 export async function scanQRCode(qrData: string) {
-  return request<{ success: boolean; isValid: boolean; user?: User; message: string }>(
+  return request<{ success: boolean; isValid: boolean; user?: User; scanCount?: number; message: string }>(
     "/scan",
     {
       method: "POST",

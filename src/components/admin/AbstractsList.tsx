@@ -41,15 +41,19 @@ export function AbstractsList() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [abstractToDelete, setAbstractToDelete] = useState<Abstract | null>(null);
   const [isDownloadingAll, setIsDownloadingAll] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Fetch abstracts on mount
   useEffect(() => {
     (async () => {
       try {
+        setIsLoading(true);
         const res = await getAllAbstracts();
         setAbstracts(res);
       } catch (err: any) {
         console.error("Failed to load abstracts:", err.message);
+      } finally {
+        setIsLoading(false);
       }
     })();
   }, []);
@@ -108,11 +112,12 @@ export function AbstractsList() {
     }
   };
 
-  if (abstracts.length === 0) {
+  if (isLoading) {
     return (
-      <p className="text-center text-muted-foreground mt-8">
-        No abstracts found.
-      </p>
+      <div className="flex flex-col items-center justify-center py-12 gap-2">
+        <Loader2 className="h-8 w-8 animate-spin text-[#5d01f2]" />
+        <p className="text-sm text-muted-foreground">Loading abstracts...</p>
+      </div>
     );
   }
 

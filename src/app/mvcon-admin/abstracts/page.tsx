@@ -3,7 +3,7 @@ import { AbstractsList } from '@/components/admin/AbstractsList';
 
 export default function AdminAbstractsPage() {
     return (
-        <AdminDashboard activeTab="registrations">
+        <AdminDashboard activeTab="abstracts">
             <div className="mt-6">
                 <AbstractsList />
             </div>

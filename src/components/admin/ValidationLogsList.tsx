@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function ValidationLogsList ({ userId }: { userId?: string }) {
@@ -106,7 +106,12 @@ export default function ValidationLogsList ({ userId }: { userId?: string }) {
   }, [logs, filter, searchTerm]);
 
   if (loading) {
-    return <p className="text-center text-muted-foreground mt-8">Loading logs...</p>;
+    return (
+      <div className="flex flex-col items-center justify-center py-12 gap-2">
+        <Loader2 className="h-8 w-8 animate-spin text-[#5d01f2]" />
+        <p className="text-sm text-muted-foreground">Loading logs...</p>
+      </div>
+    );
   }
 
   if (filteredLogs.length === 0) {

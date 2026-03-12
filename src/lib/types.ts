@@ -2,6 +2,7 @@ export interface Registration {
   id: string;
   name: string;
   email: string;
+  profession: string;
   designation: string;
   city: string;
   registrationDate: string;
@@ -13,6 +14,7 @@ export interface Registration {
   certificateImage?: string;
   certificateFile?: string;
   medicalCouncilNumber?: string;
+  registeredByAdmin?: boolean;
 }
 
 export interface UserDetails {
@@ -22,11 +24,14 @@ export interface UserDetails {
   registrationDate?: string;
   profileImage?: string;
   qrCodeImage?: string;
+  scanCount?: number;
+  registeredByAdmin?: boolean;
 }
 
 export interface ValidationResult {
   isValid: boolean;
   userDetails?: UserDetails;
+  scanCount?: number;
 }
 
 export interface ValidationLog {
