@@ -250,7 +250,7 @@ export function RegistrationsList() {
 
         {/* QR Dialog */}
         {selectedUser && (
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="sm:max-w-md" onCloseAutoFocus={(e) => e.preventDefault()}>
             <DialogHeader>
               <DialogTitle>QR Pass for {selectedUser.name}</DialogTitle>
             </DialogHeader>

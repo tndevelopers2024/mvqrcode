@@ -74,7 +74,7 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
                     <img
                       src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL || 'https://mvcon.space'}${registration.qrCodeImage}`}
                       alt="QR Code"
-                      className="w-[50mm] h-[50mm] object-contain"
+                      className="w-[40mm] h-[40mm] object-contain"
                     />
                   </div>
                 ) : (
@@ -102,6 +102,14 @@ export function QRCodeDisplay({ registration }: QRCodeDisplayProps) {
                 </div>
 
                 <div className="mt-auto flex flex-col items-center gap-2 w-full relative z-10 pb-2">
+                  <div className="text-center mb-1">
+                    <p className="text-[10px] font-bold text-[#1e293b] leading-tight">
+                      Venue : GReaT Ceremonies by GRT Hotels
+                    </p>
+                    <p className="text-[10px] font-bold text-[#3b4d99] mt-0.5">
+                      Dates : 20,21,22 March 2026
+                    </p>
+                  </div>
                   <img src="/images/chennai.png" alt="Chennai Skyline" className="w-full h-[25mm] object-contain" />
                   <div className="text-[10px] text-slate-400 font-bold tracking-widest text-center uppercase">
                     Valid for Main Conference & Workshops
