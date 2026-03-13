@@ -128,6 +128,7 @@ export function AdminRegistrationForm() {
               qrCodeContent: successData.qrCodeImage ? `USER_ID:${successData.id}` : '',
               registeredByAdmin: successData.registeredByAdmin,
             }}
+            forceBadge={true}
           />
         </div>
 

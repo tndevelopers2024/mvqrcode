@@ -183,7 +183,7 @@ export function QRValidator() {
                      registrationDate: validationResult.userDetails.registrationDate || '',
                      profileImage: validationResult.userDetails.profileImage,
                      qrCodeImage: validationResult.userDetails.qrCodeImage,
-                   }} />
+                   }} forceBadge={true} />
                  )}
 
                  <Button 

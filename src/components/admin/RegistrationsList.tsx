@@ -270,6 +270,7 @@ export function RegistrationsList() {
                   profileImage: selectedUser.profileImage ?? undefined,
                   registeredByAdmin: selectedUser.registeredByAdmin,
                 }}
+                forceBadge={true}
               />
             </div>
           </DialogContent>
