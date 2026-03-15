@@ -59,6 +59,7 @@ export function QRValidator() {
                 registrationDate: res.user.createdAt,
                 profileImage: res.user.profileImage,
                 qrCodeImage: res.user.qrCodeImage,
+                profession: res.user.profession,
               },
               scanCount: res.scanCount,
               lastScanTime: res.lastScanTime,
@@ -89,6 +90,7 @@ export function QRValidator() {
                 registrationDate: res.user.createdAt,
                 profileImage: res.user.profileImage,
                 qrCodeImage: res.user.qrCodeImage,
+                profession: res.user.profession,
               },
               scanCount: res.scanCount,
               lastScanTime: res.lastScanTime,
@@ -196,6 +198,7 @@ export function QRValidator() {
                      designation: validationResult.userDetails.designation || '',
                      city: validationResult.userDetails.city || '',
                      registrationDate: validationResult.userDetails.registrationDate || '',
+                     profession: validationResult.userDetails.profession || '',
                      profileImage: validationResult.userDetails.profileImage,
                      qrCodeImage: validationResult.userDetails.qrCodeImage,
                    }} forceBadge={true} />

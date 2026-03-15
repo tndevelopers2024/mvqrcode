@@ -52,7 +52,7 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
 
   const nameToDisplay = (() => {
     const rawName = (registration.name || '').trim();
-    const profession = (registration.profession || '').trim().toUpperCase();
+    const profession = (registration.profession || '').trim().replace(/^DELEGATES$/i, 'DELEGATE').toUpperCase();
     
     // Check if profession matches PG, Delegate(s), or Faculty
     const isDoctorOrStudent = /^(PG|DELEGATE|FACULTY)/i.test(profession);
@@ -110,21 +110,18 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
 
                   <div className="pt-2 border-t border-slate-100 mt-1 flex flex-col gap-0.5">
                     <p className="text-[#64748b] text-[10px] font-bold uppercase tracking-widest leading-tight">
-                      {registration.profession}
-                    </p>
-                    <p className="text-[#94a3b8] text-[10px] font-medium italic">
-                      {registration.city}
+                      {registration.profession?.trim().replace(/^DELEGATES$/i, 'DELEGATE')}
                     </p>
                   </div>
                 </div>
 
                 <div className="mt-auto flex flex-col items-center gap-1.5 w-full relative z-10 pb-1.5">
                   <div className="text-center">
-                    <p className="text-[9px] font-bold text-[#1e293b] leading-tight">
-                      Venue : GReaT Ceremonies by GRT Hotels
-                    </p>
-                    <p className="text-[9px] font-bold text-[#3b4d99] mt-0.5">
+                    <p className="text-[9px] font-bold text-[#3b4d99]">
                       Dates : 20,21,22 March 2026
+                    </p>
+                    <p className="text-[9px] font-bold text-[#1e293b] mt-0.5 leading-tight">
+                      Venue : GReaT Ceremonies by GRT Hotels, Chennai
                     </p>
                   </div>
                   <img src="/images/chennai.png" alt="Chennai Skyline" className="w-full h-[18mm] object-contain" />
@@ -178,7 +175,7 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
                     {nameToDisplay}
                   </h3>
                   <p className="text-[#3b4d99] font-bold text-sm uppercase tracking-wide">
-                    {registration.profession}
+                    {registration.profession?.trim().replace(/^DELEGATES$/i, 'DELEGATE')}
                   </p>
                   <p className="text-slate-400 font-medium text-xs italic">
                     {registration.city}

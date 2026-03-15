@@ -24,6 +24,7 @@ export interface UserDetails {
   registrationDate?: string;
   profileImage?: string;
   qrCodeImage?: string;
+  profession?: string;
   scanCount?: number;
   registeredByAdmin?: boolean;
   lastScanTime?: string;
