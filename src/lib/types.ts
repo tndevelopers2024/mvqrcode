@@ -26,12 +26,14 @@ export interface UserDetails {
   qrCodeImage?: string;
   scanCount?: number;
   registeredByAdmin?: boolean;
+  lastScanTime?: string;
 }
 
 export interface ValidationResult {
   isValid: boolean;
   userDetails?: UserDetails;
   scanCount?: number;
+  lastScanTime?: string;
 }
 
 export interface ValidationLog {

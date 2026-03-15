@@ -61,6 +61,7 @@ export function QRValidator() {
                 qrCodeImage: res.user.qrCodeImage,
               },
               scanCount: res.scanCount,
+              lastScanTime: res.lastScanTime,
             }
           : { isValid: false };
         setValidationResult(result);
@@ -90,6 +91,7 @@ export function QRValidator() {
                 qrCodeImage: res.user.qrCodeImage,
               },
               scanCount: res.scanCount,
+              lastScanTime: res.lastScanTime,
             }
           : { isValid: false };
         setValidationResult(result);
@@ -169,6 +171,19 @@ export function QRValidator() {
                  {validationResult.scanCount !== undefined && (
                    <div className="bg-[#5d01f2] text-white px-6 py-2 rounded-full font-black text-2xl shadow-lg border-4 border-white animate-bounce">
                      Entry No: {validationResult.scanCount}
+                   </div>
+                 )}
+
+                 {validationResult.lastScanTime && (
+                   <div className="text-md font-bold text-[#5d01f2] mt-2 bg-purple-50 px-4 py-1 rounded-md border border-purple-200">
+                     Last Entry: {new Date(validationResult.lastScanTime).toLocaleString('en-IN', {
+                       day: '2-digit',
+                       month: 'short',
+                       year: 'numeric',
+                       hour: '2-digit',
+                       minute: '2-digit',
+                       hour12: true
+                     })}
                    </div>
                  )}
                  

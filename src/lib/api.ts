@@ -282,7 +282,7 @@ export async function getAllUserRoleUsers() {
 
 // Scan a QR code
 export async function scanQRCode(qrData: string) {
-  return request<{ success: boolean; isValid: boolean; user?: User; scanCount?: number; message: string }>(
+  return request<{ success: boolean; isValid: boolean; user?: User; scanCount?: number; lastScanTime?: string; message: string }>(
     "/scan",
     {
       method: "POST",

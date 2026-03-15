@@ -104,13 +104,13 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
                       {nameToDisplay}
                     </h2>
                     <p className="text-[#3b4d99] font-black text-[14px] uppercase tracking-wider">
-                      {registration.profession}
+                      {registration.designation}
                     </p>
                   </div>
 
                   <div className="pt-2 border-t border-slate-100 mt-1 flex flex-col gap-0.5">
                     <p className="text-[#64748b] text-[10px] font-bold uppercase tracking-widest leading-tight">
-                      {registration.designation}
+                      {registration.profession}
                     </p>
                     <p className="text-[#94a3b8] text-[10px] font-medium italic">
                       {registration.city}
