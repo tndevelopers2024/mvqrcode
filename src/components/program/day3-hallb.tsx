@@ -51,19 +51,19 @@ const schedule = [
     chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
   },
   {
-    time: "09:00 AM \u2013 09:20 AM",
+    time: "09:00 AM – 09:20 AM",
     topic: "Sweet trouble -How Diabetes can affect your smile",
     faculty: "Dr.Rimo C Mathews",
     chairpersons: "Dr.Vinitha Ramachandran, Dr.Siva shankari S",
   },
   {
-    time: "09:20 AM \u2013 09:40 AM",
+    time: "09:20 AM – 09:40 AM",
     topic: "Silent complications: Sexual dysfunction in diabetes",
     faculty: "Dr.P Paranthaman",
     chairpersons: "Dr.R Balamurugan, Dr.V.Ravindranath",
   },
   {
-    time: "09:40 AM \u2013 10:00 AM",
+    time: "09:40 AM – 10:00 AM",
     topic: "Diabetes & Violence: Is there a pathophysiological connect ?",
     faculty: "Dr.R Balamurugan",
     chairpersons: "Dr.Milind Ruke, Dr.V.Ravindranath",
@@ -77,7 +77,7 @@ const schedule = [
     topic: "TEA BREAK & VISIT TO THE STALLS /POSTER AREA",
   },
   {
-    time: "11:30 AM\u2013 12:00 PM",
+    time: "11:30 AM– 12:00 PM",
     topic: "Monogenic diabetes in Hall A",
     faculty: "Dr.V.Mohan",
   },
@@ -88,8 +88,8 @@ const schedule = [
   },
   {
     time: "12:30 PM -01:15 PM",
-    topic: "Prof. MV Gold Medal Oration 2026 & launch in Hall A",
-    faculty: "Dr.Harikrishna KR Nair",
+    topic: "Prof. MV Gold Medal Oration 2026 in Hall A",
+    faculty: "Dr.Ashok Kumar Das",
   },
   {
     time: "",

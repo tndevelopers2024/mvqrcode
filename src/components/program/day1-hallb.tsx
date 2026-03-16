@@ -28,7 +28,7 @@ const schedule = [
   },
   {
     time: "",
-    topic: "MVOP04-DNA Methylation-Induced Nrf2 Dysfunction in Diabetic Foot Ulcers: Implications for Epigenetic Therapy",
+    topic: "MVOP04-DNA Methylation-Induced Nrf2 Dysfunction In Diabetic Foot Ulcers: Implications for Epigenetic Therapy",
     faculty: "Kannan Harithpriya",
     chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
   },
@@ -52,7 +52,7 @@ const schedule = [
   },
   {
     time: "10:20 AM -10:40 AM",
-    topic: "The Invisible threat: Identifying asymptomatic diabetes In clinical practice",
+    topic: "The invisible threat: Identifying asymptomatic diabetes in clinical practice",
     faculty: "Dr.Aarathy Kannan",
     chairpersons: "Dr.Suresh Kanna S ,Dr.B.Kannan",
   },
@@ -69,7 +69,7 @@ const schedule = [
   {
     time: "11:30 AM – 12:00 PM",
     topic: "Demonstration of High Risk Feet in Hall A",
-    faculty: "Dr. Vijay Viswanathan / Ms.Seena Rajsekar & Ms.Bamila Sel",
+    faculty: "Dr. Vijay Viswanathan / Ms.Seena",
     chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan",
   },
   {
@@ -98,13 +98,13 @@ const schedule = [
   },
   {
     time: "",
-    topic: "MVOP08 - Efficacy of Topical Timolol Vs Normal Saline In The Healing Of Chronic Diabetic Foot Ulcers",
+    topic: "MVOP08- Efficacy of Topical Timolol Vs Normal Saline In The Healing Of Chronic Diabetic Foot Ulcers",
     faculty: "Divya Padmakumar",
     chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
   },
   {
     time: "",
-    topic: "MVOP09 - Prolonged QTc in Type 2 Diabetes: An Under-Recognized Cardiovascular Risk Signal",
+    topic: "MVOP09- Prolonged QTc in Type 2 Diabetes: An Under-Recognized Cardiovascular Risk Signal",
     faculty: "Vraj rajesh kumar shah",
     chairpersons: "Judges: Dr.V.P.Sriram, Dr.Satyavani K",
   },
@@ -171,13 +171,13 @@ const schedule = [
     time: "5:00 PM - 5:30 PM",
     topic: "Retina reimagined: Technology transforming Diabetic Retinopathy screening",
     faculty: "Dr.Manoj Khatri",
-    chairpersons: "Dr.K.Uma Mahesh, Dr.Mitalee H Barman",
+    chairpersons: "Dr.Kannan Natarajan, Dr.Mitalee H Barman",
   },
   {
     time: "5:30 PM - 6:00 PM",
-    topic: "The Untapped potential of Imaging in Diabetic Foot Care",
-    faculty: "Mr.Srikar Nallan",
-    chairpersons: "Dr.Satyavani K, Dr.Senthil G",
+    topic: "Work place bullying and violence as risk factors for type 2 diabetes",
+    faculty: "Dr.Keerthi Prabhu",
+    chairpersons: "Dr.Kannan Natarajan, Dr.K.Shanmugam",
   },
   {
     time: "6:00PM -6:30 PM",

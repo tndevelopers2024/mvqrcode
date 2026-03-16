@@ -98,24 +98,24 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
                   <div className="mb-8" />
                 )}
 
-                <div className="relative z-10 text-center w-full mt-1">
+                <div className="relative z-10 text-center w-full mt-2">
                   <div className="space-y-1">
                     <h2 className="text-[16px] font-black text-[#1e293b] leading-tight tracking-tight break-words px-1">
                       {nameToDisplay}
                     </h2>
                     <p className="text-[#3b4d99] font-black text-[14px] uppercase tracking-wider">
-                      {registration.designation}
-                    </p>
-                  </div>
-
-                  <div className="pt-2 border-t border-slate-100 mt-1 flex flex-col gap-0.5">
-                    <p className="text-[#64748b] text-[10px] font-bold uppercase tracking-widest leading-tight">
                       {registration.profession?.trim().replace(/^DELEGATES$/i, 'DELEGATE')}
                     </p>
                   </div>
+
+                  {/* <div className="pt-2 border-t border-slate-100 mt-1 flex flex-col gap-0.5">
+                    <p className="text-[#64748b] text-[10px] font-bold uppercase tracking-widest leading-tight">
+                      {registration.designation}
+                    </p>
+                  </div> */}
                 </div>
 
-                <div className="mt-auto flex flex-col items-center gap-1.5 w-full relative z-10 pb-1.5">
+                <div className="mt-auto flex flex-col items-center gap-1.5 w-full relative z-10 pt-3 pb-1.5">
                   <div className="text-center">
                     <p className="text-[9px] font-bold text-[#3b4d99]">
                       Dates : 20,21,22 March 2026
@@ -125,9 +125,6 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
                     </p>
                   </div>
                   <img src="/images/chennai.png" alt="Chennai Skyline" className="w-full h-[18mm] object-contain" />
-                  <div className="text-[9px] text-slate-400 font-bold tracking-widest text-center uppercase">
-                    Valid for Main Conference & Workshops
-                  </div>
                 </div>
               </div>
             </div>

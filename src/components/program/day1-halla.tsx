@@ -45,7 +45,7 @@ const schedule = [
   {
     time: "11:30 AM -12:00 PM",
     topic: "Demonstration of High Risk Feet",
-    faculty: "Dr. Vijay Viswanathan / Ms.Seena Rajsekar & Ms.Bamila Sel",
+    faculty: "Dr. Vijay Viswanathan / Ms.Seena",
     chairpersons: "Dr.C.Muralidharan, Dr.Aarathy Kannan",
   },
   {
@@ -58,13 +58,13 @@ const schedule = [
     time: "12:30 PM -1:00 PM",
     topic: "Mechanical offloading (Unburden the wound)",
     faculty: "Dr. Viswanathan Vishnu Vijay",
-    chairpersons: "Dr.Senthil G, Dr.Shanthi",
+    chairpersons: "Dr.Prashanth Arun, Dr.Shanthi",
   },
   {
     time: "1:00 PM–1:30 PM",
-    topic: "Surgical offloading (Video)",
+    topic: "Surgical offloading",
     faculty: "Dr.Senthil G",
-    chairpersons: "Dr.Milind Ruke, Dr.Rajasenthil",
+    chairpersons: "Dr.Shanthi, Dr.Rajasenthil",
   },
   {
     time: "1:30 PM - 2:30PM",
@@ -105,7 +105,7 @@ const schedule = [
     time: "5:30 PM - 6:00PM",
     topic: "Management of hyperglycemia during DFU",
     faculty: "Dr.R M Anjana",
-    chairpersons: "Dr.Vijay Viswanathan, Dr.Krishna G Seshadri",
+    chairpersons: "Dr.Vijay Viswanathan, Dr.Prashanth Arun",
   },
   {
     time: "6:00 PM - 6:30 PM",
@@ -115,9 +115,9 @@ const schedule = [
   },
   {
     time: "6:30 PM – 7:00 PM",
-    topic: "Gut dysbiosis, NUSH and metabolic disparities",
-    faculty: "Dr.Krishna G Seshadri",
-    chairpersons: "Dr.Vishnu Priya Prashanth, Dr.Srikanth Medumpudi",
+    topic: "Disease modifying outcome from glucose control to metabolic protection",
+    faculty: "Dr.G.Vijayakumar",
+    chairpersons: "Dr.C.Balaji, Dr.A.Shanmugam",
   },
   {
     time: "07:00 PM - 07:30 PM",
@@ -127,9 +127,9 @@ const schedule = [
   },
   {
     time: "07:30 PM -08:00 PM",
-    topic: "Disease modifying outcome from glucose control to metabolic protection",
-    faculty: "Dr.G.Vijayakumar",
-    chairpersons: "Dr.C.Balaji, Dr.A.Shanmugam",
+    topic: "Gut dysbiosis, NUSH and metabolic disparities",
+    faculty: "Dr.Krishna G Seshadri",
+    chairpersons: "Dr.A.Shanmugam, Dr.G.Vijayakumar",
   },
   {
     time: "Networking Dinner 8 pm onwards",

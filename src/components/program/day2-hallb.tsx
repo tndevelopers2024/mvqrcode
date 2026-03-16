@@ -9,31 +9,36 @@ const schedule = [
     topic: "Registration from 8:00 AM onwards",
   },
   {
+    time: "08:30 AM – 09:30 AM",
+    topic: "Live Hands-on Diabetic Foot Workshop",
+    faculty: "Dr.Milind Ruke, Dr.Senthil G",
+  },
+  {
     time: "09:30 AM – 10:00 AM",
     topic: "Saving limbs, changing lives: Case based insights in diabetic foot care",
     faculty: "Dr. Kumar P, Dr.Senthil G",
     chairpersons: "Dr.Milind Ruke, Dr.P Manoj",
   },
   {
-    time: "10:00 AM – 10:20AM",
+    time: "10:00 AM – 10:20 AM",
     topic: "Limb salvage in Osteomyelitis: Evolving strategies beyond amputation",
     faculty: "Dr. D Suresh Anandan",
     chairpersons: "Dr.Milind Ruke, Dr.P.Manoj",
   },
   {
-    time: "10:20 AM -10:40 AM",
+    time: "10:20 AM – 10:40 AM",
     topic: "Smart Dressing Solutions - The T.I.M.E. concept",
     faculty: "Dr.Senthil G",
-    chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Easwaran",
+    chairpersons: "Dr.C.Muralidharan, Dr.Thangavelu Easwaran",
   },
   {
-    time: "10:40 AM- 11:00 AM",
+    time: "10:40 AM – 11:00 AM",
     topic: "The Golden Hour in Diabetic Foot Ulcer",
     faculty: "Dr.T.Sasi Kumar",
-    chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Easwaran",
+    chairpersons: "Dr.C.Muralidharan, Dr.Thangavelu Easwaran",
   },
   {
-    time: "11:00 AM- 11:30 AM",
+    time: "11:00 AM – 11:30 AM",
     topic: "TEA BREAK & VISIT TO THE STALLS /POSTER AREA",
   },
   {
@@ -49,7 +54,7 @@ const schedule = [
   },
   {
     time: "1:00 PM-01:30 PM",
-    topic: "Beyond the needle: The science of inhaled insulin",
+    topic: "Inhaled insulin: A new breathe in Diabetes Care (AFREZZA)",
     faculty: "Dr.Leela Baid",
     chairpersons: "Dr.N.Bhavatharani, Dr.C Balaji",
   },
@@ -67,7 +72,7 @@ const schedule = [
     time: "3:00 PM- 3: 30 PM",
     topic: "Insulin in the Era of SGLT2 Inhibitors and GLP-1 RAs: Is Its Role Changing or Evolving?",
     faculty: "Dr.V.Ravindranath",
-    chairpersons: "Dr.Leela Baid, Dr.Kannan Natarajan",
+    chairpersons: "Dr.Leela Baid, Dr.K.Uma Mahesh",
   },
   {
     time: "3:30 PM - 4:30 PM",
@@ -117,21 +122,21 @@ const schedule = [
   },
   {
     time: "5:00 PM - 5:30 PM",
-    topic: "Adhesive capsulitis in Diabetes - An orthopaedic - endocrine interface",
-    faculty: "Dr.Ashwanth Narayan B",
-    chairpersons: "Dr.Kannan Natarajan, Dr.R Varun",
+    topic: "Management of Diabetic Foot Infections",
+    faculty: "Dr.Prashanth Arun",
+    chairpersons: "Dr.K.Uma Mahesh, Dr.R Varun",
   },
   {
     time: "5:30 PM -6:00 PM",
-    topic: "Nutrition panel discussion",
-    faculty: "Dr.Meenakshi Bajaj, Dr.Hemamalini, Dr.Patricia Trueman",
-    chairpersons: "Dr.Mohan Krishnamoorthy (Moderator)",
+    topic: "Adhesive capsulitis in Diabetes - An orthopaedic - endocrine interface",
+    faculty: "Dr.Ashwanth Narayan B",
+    chairpersons: "Dr. Vishnu Priya Reddy, Dr.R Varun",
   },
   {
     time: "6:00PM -6:30 PM",
     topic: "THE GUT Wrenching Troubles: Managing Diabetic GastroParesis",
     faculty: "Dr. Vishnu Priya Prashanth",
-    chairpersons: "Dr.K.Uma Mahesh, Dr.K.Shanmugam",
+    chairpersons: "Dr.Leela Baid, Dr.K.Shanmugam",
   },
   {
     time: "6:30 PM -07:00 PM",
@@ -143,7 +148,7 @@ const schedule = [
     time: "07:00 PM - 07:30 PM",
     topic: "When diabetes reaches the lungs: Diabetic Pneumopathy",
     faculty: "Dr.S R Abishek",
-    chairpersons: "Dr.Kannan Natarajan, Dr.Hemanga Barman",
+    chairpersons: "Dr.Mohan Krishnamoorthy, Dr.Hemanga Barman",
   },
   {
     time: "07:30 PM -08:00 PM",

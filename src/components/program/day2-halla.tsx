@@ -22,8 +22,7 @@ const schedule = [
   },
   {
     time: "09:40 AM – 10:00 AM",
-    topic:
-      "Making good things even better: Expanding Applicability of Automated Insulin Delivery",
+    topic: "Making good things even better: Expanding Applicability of Automated Insulin Delivery",
     faculty: "Dr.Nandita",
     chairpersons: "Dr.Priya, Dr.C.Muralidharan",
   },
@@ -40,8 +39,8 @@ const schedule = [
     chairpersons: "Dr.Vijay Viswanathan, Dr.Janaka Karalliedde",
   },
   {
-    time: "11:00 AM – 11:30 AM",
-    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+    time: "11:00 AM - 11:30 AM",
+    topic: "TEA BREAK & VISIT TO THE STALLS /POSTER AREA",
   },
   {
     time: "11:30 AM to 12:00 PM",
@@ -50,83 +49,77 @@ const schedule = [
     chairpersons: "Dr.Edwin Fernando, Dr.Vijay Viswanathan",
   },
   {
-    time: "12:00 PM – 12:30 PM",
+    time: "12:00 PM– 12:30 PM",
     topic: "Gestational diabetes in India: Translating evidence into practice",
     faculty: "Dr.N.Bhavatharani",
     chairpersons: "Dr.P.Dharmarajan, Dr.R.Ramakrishnan",
   },
   {
     time: "12:30 PM-01:00 PM",
-    topic: "Type 1 diabetes: Clinical Insights and emerging therapies",
+    topic: "Type 1 diabetes: Clinical insights and emerging therapies",
     faculty: "Dr.Usha Aiyyagari",
     chairpersons: "Dr.P.Dharmarajan, Dr.Shriraam Mahadevan",
   },
   {
-    time: "01:00 PM – 01:30 PM",
+    time: "1:00 PM-01:30 PM",
     topic: "How to prevent Medico legal problems",
     faculty: "Dr.Viswanathan Vishnu Vijay",
-    chairpersons: "Dr.Hemanga Barman, Dr.Prashanth Arun",
+    chairpersons: "Dr.P Manoj, Dr.Prashanth Arun",
   },
   {
-    time: "01:30 PM – 02:30 PM",
-    topic: "LUNCH & VISIT TO THE STALLS / POSTER AREA",
+    time: "1:30 PM - 2:30PM",
+    topic: "LUNCH & VISIT TO THE STALLS /POSTER AREA",
   },
   {
-    time: "02:30 PM – 03:00 PM",
-    topic:
-      "Innovative advances in DSA imaging to optimise calcium removal and revascularisation outcomes",
+    time: "2:30 PM– 3:00 PM",
+    topic: "Innovative advances in DSA imaging to optimise calcium removal and revascularisation outcomes",
     faculty: "Dr.Vijay Viswanathan, Dr.R Ravikumar",
-    chairpersons: "Dr.Harikrishna K R Nair, Dr.Thangavelu Eswaran",
+    chairpersons: "Dr.Milind Ruke, Dr.Thangavelu Easwaran",
   },
   {
-    time: "03:00 PM – 04:00 PM",
+    time: "3:00 PM – 4:00 PM",
     topic: `Live hands-on workshop
-• Debridement - sweet lime
-• VAC & TCC Application`,
-    faculty: "Dr.Senthil G / Dr.Milind Ruke",
-    chairpersons: "Dr.Harikrishna KR Nair, Dr.Vijay Viswanathan",
+* Debridement - sweet lime
+* VAC & TCC Application`,
+    faculty: "Dr. Senthil G/ Dr.Milind Ruke",
   },
   {
-    time: "04:00 PM – 04:30 PM",
-    topic:
-      "Accelerating wound healing: Evidence based strategies for Diabetic Foot",
-    faculty: "Dr.Harikrishna KR Nair",
-    chairpersons: "Dr.Vijay Viswanathan, Dr.Senthil G",
+    time: "4:00 PM – 4:30 PM",
+    topic: "The Untapped potential of Imaging in Diabetic Foot Care",
+    faculty: "Mr.Srikar Nallan",
+    chairpersons: "Dr.Senthil G, Dr.P.Manoj",
   },
   {
-    time: "04:30 PM – 05:00 PM",
-    topic: "TEA BREAK & VISIT TO THE STALLS / POSTER AREA",
+    time: "4:30 PM - 5:00PM",
+    topic: "TEA BREAK & VISIT TO THE STALLS /POSTER AREA",
   },
   {
-    time: "05:00 PM – 05:30 PM",
+    time: "5:00PM -5:30 PM",
     topic: "Unsaid truth about sugar monitoring",
     faculty: "Dr.Mithun Bhartia",
-    chairpersons: "Dr.Srikanth Medumpudi, Dr.Prashanth Arun",
+    chairpersons: "Dr.Mohan Krishnamoorthy, Dr.Prashanth Arun",
   },
   {
-    time: "05:30 PM – 06:00 PM",
-    topic:
-      "Air pollution and the burden of diabetes: The Hidden epidemic",
-    faculty: "Dr.Rajendran V",
-    chairpersons: "Dr.G.Prakash, Dr.K.Uma Mahesh",
+    time: "5:30 PM- 6:00 PM",
+    topic: "Nutrition panel discussion",
+    faculty: "Dr.Meenakshi Bajaj, Dr.Hemamalini, Dr.Patricia Trueman",
+    chairpersons: "Dr.Mohan Krishnamoorthy (Moderator)",
   },
   {
-    time: "06:00 PM – 06:30 PM",
+    time: "6:00 PM – 6:30 PM",
     topic: "Evolving role of GLP-1 RAs in Diabesity",
     faculty: "Dr.Prashanth Arun",
     chairpersons: "Dr.G.Prakash, Dr.K.Uma Mahesh",
   },
   {
-    time: "06:30 PM – 6:50 PM",
+    time: "6:30 PM – 6:50 PM",
     topic: "New Generation Insulins: The promising solution to glycaemic havoc in India",
     faculty: "Dr Usha Ayyagari",
-    chairpersons: "Dr.G.Prakash, Dr.K.Uma Mahesh",
   },
   {
     time: "6:50 PM – 7:10 PM",
     topic: "Initiate with Impact: Semaglutide Redefining First line Diabetes Care",
     faculty: "Dr Ashwin Karuppan",
-    chairpersons: "Dr.G.Prakash, Dr.K.Uma Mahesh",
   },
   {
     time: "07:10 PM -07:30 PM",
@@ -138,7 +131,7 @@ const schedule = [
     time: "07:30 PM -08:00 PM",
     topic: "Empagliflozin in Cardio Renal Metabolic protection",
     faculty: "Dr.Leela Baid",
-    chairpersons: "Dr.G.Prakash, Dr.Rajendran V",
+    chairpersons: "Dr.G.Prakash, Dr.Vishnu Priya Reddy",
   },
   {
     time: "Networking Dinner 8:00 pm onwards",
