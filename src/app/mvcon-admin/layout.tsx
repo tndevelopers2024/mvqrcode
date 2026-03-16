@@ -36,7 +36,7 @@ export default function AdminLayout({
   return (
     <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow container mt-20 mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <main className="flex-grow w-full max-w-8xl mt-20 mx-auto px-4 py-8 sm:px-6 lg:px-8">
             <Card className="w-full shadow-2xl">
                 <CardHeader className="flex flex-row items-center justify-between">
                     <div>

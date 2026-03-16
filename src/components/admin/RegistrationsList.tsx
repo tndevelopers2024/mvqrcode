@@ -6,7 +6,7 @@ import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
-import { Eye, Search, User as UserIcon, Mail, Loader2, X } from 'lucide-react';
+import { Eye, Search, User as UserIcon, Mail, Loader2, X, Trash2 } from 'lucide-react';
 import { DatePickerWithRange } from '../ui/date-range-picker';
 import { DateRange } from 'react-day-picker';
 import { isWithinInterval, startOfDay, endOfDay } from 'date-fns';
@@ -27,7 +27,7 @@ import {
 import { QRCodeDisplay } from '../QRCodeDisplay';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { resendRegistrationEmail, getAllUserRoleUsers } from '@/lib/api';
+import { resendRegistrationEmail, getAllUserRoleUsers, deleteUser } from '@/lib/api';
 import { useToast } from '@/hooks/use-toast';
 
 export function RegistrationsList() {
@@ -36,24 +36,29 @@ export function RegistrationsList() {
   const [searchTerm, setSearchTerm] = useState('');
   const [resendingId, setResendingId] = useState<string | null>(null);
   const [userToResend, setUserToResend] = useState<User | null>(null);
+  const [userToDelete, setUserToDelete] = useState<User | null>(null);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+  const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
   const [isLoading, setIsLoading] = useState(true);
   const { toast } = useToast();
 
   // Fetch users on mount
+  const fetchUsers = async () => {
+    try {
+      setIsLoading(true);
+      const roleUsers = await getAllUserRoleUsers();
+      setUsers(roleUsers);
+    } catch (err: any) {
+      console.error('Failed to load users:', err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
-    (async () => {
-      try {
-        setIsLoading(true);
-        const roleUsers = await getAllUserRoleUsers();
-        setUsers(roleUsers);
-      } catch (err: any) {
-        console.error('Failed to load users:', err.message);
-      } finally {
-        setIsLoading(false);
-      }
-    })();
+    fetchUsers();
   }, []);
 
   const handleResendEmail = async (user: User) => {
@@ -75,6 +80,32 @@ export function RegistrationsList() {
     } finally {
       setResendingId(null);
       setUserToResend(null);
+    }
+  };
+
+  const handleDeleteUser = async () => {
+    if (!userToDelete?._id) return;
+
+    setIsDeleting(true);
+    try {
+      await deleteUser(userToDelete._id);
+      
+      setUsers(prev => prev.filter(u => u._id !== userToDelete._id));
+      
+      toast({
+        title: "User Deleted",
+        description: `Registration for ${userToDelete.name} has been removed.`,
+      });
+    } catch (err: any) {
+      toast({
+        title: "Failed to Delete User",
+        description: err.message || "Something went wrong",
+        variant: "destructive",
+      });
+    } finally {
+      setIsDeleting(false);
+      setUserToDelete(null);
+      setIsDeleteConfirmOpen(false);
     }
   };
 
@@ -208,6 +239,18 @@ export function RegistrationsList() {
                       }
                     </TableCell>
                     <TableCell className="text-right flex justify-end gap-2">
+                       <Button
+                        variant="ghost"
+                        size="icon"
+                        className="text-destructive hover:text-destructive hover:bg-destructive/10"
+                        title="Delete Registration"
+                        onClick={() => {
+                          setUserToDelete(u);
+                          setIsDeleteConfirmOpen(true);
+                        }}
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
                       <Button
                         variant="ghost"
                         size="icon"
@@ -292,6 +335,29 @@ export function RegistrationsList() {
               onClick={() => userToResend && handleResendEmail(userToResend)}
             >
               Confirm & Resend
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+      <AlertDialog open={isDeleteConfirmOpen} onOpenChange={setIsDeleteConfirmOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This will permanently delete the registration record for <strong>{userToDelete?.name}</strong>. This action cannot be undone.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={isDeleting} onClick={() => setUserToDelete(null)}>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              onClick={(e) => {
+                e.preventDefault();
+                handleDeleteUser();
+              }}
+              disabled={isDeleting}
+            >
+              {isDeleting ? "Deleting..." : "Delete Permanently"}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
