@@ -42,12 +42,13 @@ function CountdownCircles() {
   ];
 
   return (
-    <div className="absolute bottom-8 mt-8 flex flex-wrap justify-center items-center gap-5">
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="absolute md:bottom-10 bottom-4 left-0 right-0 flex flex-col items-center justify-center gap-6 px-4">
+      {/* Background Heartbeat (SVG) */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
         <svg
           viewBox="0 0 1200 200"
           preserveAspectRatio="none"
-          className="w-[0%] h-48 opacity-1"
+          className="w-full h-48 opacity-10"
         >
           <path
             d="
@@ -73,25 +74,28 @@ function CountdownCircles() {
         </svg>
       </div>
 
-      {parts.map((p) => (
-        <div
-          key={p.label}
-          className="relative group w-20 h-20 md:w-28 md:h-28 bg-gradient-to-b from-blue-700 to-indigo-800 rounded-lg shadow-md flex flex-col items-center justify-center overflow-hidden"
-        >
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-30 bg-white/10 transition duration-500" />
-          <span className="text-2xl md:text-3xl font-extrabold text-white drop-shadow animate-pulse">
-            {p.value.toString().padStart(2, "0")}
-          </span>
-          <span className="text-[11px] md:text-sm uppercase tracking-wide text-blue-100 mt-1">
-            {p.label}
-          </span>
-          <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-lime-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-        </div>
-      ))}
+      {/* Countdown Row */}
+      <div className="flex flex-row gap-2 md:gap-5 w-full justify-center pt-20">
+        {parts.map((p) => (
+          <div
+            key={p.label}
+            className="relative group w-[22%] max-w-[80px] h-[60px] md:h-[80px] md:w-28  bg-gradient-to-b from-blue-700 to-indigo-800 rounded-xl shadow-lg flex flex-col items-center justify-center overflow-hidden border border-white/10 shrink-0"
+          >
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-30 bg-white/10 transition duration-500" />
+            <span className="text-xl md:text-3xl font-extrabold text-white drop-shadow-md">
+              {p.value.toString().padStart(2, "0")}
+            </span>
+            <span className="text-[9px] md:text-xs uppercase tracking-wider text-blue-100 mt-1 text-center px-1">
+              {p.label}
+            </span>
+            <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-lime-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+          </div>
+        ))}
+      </div>
 
       <Link
         href="/registration"
-        className="px-6 py-3 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-lg text-white font-semibold hover:from-yellow-500 hover:via-orange-600 hover:to-red-600 transition inline-block"
+        className="px-8 py-3.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-lg text-white font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
       >
         Register Now
       </Link>
