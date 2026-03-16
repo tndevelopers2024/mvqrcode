@@ -54,8 +54,8 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
     const rawName = (registration.name || '').trim();
     const profession = (registration.profession || '').trim().replace(/^DELEGATES$/i, 'DELEGATE').toUpperCase();
     
-    // Check if profession matches PG, Delegate(s), or Faculty
-    const isDoctorOrStudent = /^(PG|DELEGATE|FACULTY)/i.test(profession);
+    // Check if profession matches PG, Delegate(s), Faculty, or Committee
+    const isDoctorOrStudent = /^(PG|DELEGATE|FACULTY|ORGANISING COMMITTEE|COMMITTEE)/i.test(profession);
     
     // Check if name already has Dr. or Dr (case-insensitive)
     const alreadyHasPrefix = /^Dr\.?\s+/i.test(rawName);
@@ -100,10 +100,10 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
 
                 <div className="relative z-10 text-center w-full mt-2">
                   <div className="space-y-1">
-                    <h2 className="text-[16px] font-black text-[#1e293b] leading-tight tracking-tight break-words px-1">
+                    <h2 className="text-[16px] font-black text-[#f99511] leading-tight tracking-tight break-words px-1">
                       {nameToDisplay}
                     </h2>
-                    <p className="text-[#3b4d99] font-black text-[14px] uppercase tracking-wider">
+                    <p className="text-[#3b4d99] font-black text-[12px] uppercase tracking-wider">
                       {registration.profession?.trim().replace(/^DELEGATES$/i, 'DELEGATE')}
                     </p>
                   </div>
@@ -115,7 +115,7 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
                   </div> */}
                 </div>
 
-                <div className="mt-auto flex flex-col items-center gap-1.5 w-full relative z-10 pt-3 pb-1.5">
+                <div className="mt-2 flex flex-col items-center gap-1.5 w-full relative z-10 pt-3 pb-1.5">
                   <div className="text-center">
                     <p className="text-[9px] font-bold text-[#3b4d99]">
                       Dates : 20,21,22 March 2026
