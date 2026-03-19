@@ -116,8 +116,9 @@ export default function HomePage() {
               <div className="relative z-10 bg-white/90">
 
                 <div className="flex justify-between items-center flex-wrap gap-4 max-md:justify-center px-10 pt-5">
-                  <img src="images/mvdiabetes.webp" width={150} alt="" />
-                  <img src="images/finallogo.png" width={200} alt="" />
+                  <img src="images/mvdiabetes.webp" width={150} alt="MV Diabetes" />
+                  <img src="images/finallogo.png" width={200} alt="MVCON" />
+                  <img src="images/drc.jpeg" width={200} alt="DRC Logo" />
                 </div>
 
                 {/* Header */}
