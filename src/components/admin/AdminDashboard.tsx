@@ -21,12 +21,12 @@ export function AdminDashboard({ children, activeTab }: AdminDashboardProps) {
   return (
     <CardContent>
       <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
-        <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
-          <TabsTrigger value="validate">Validate QR</TabsTrigger>
-          <TabsTrigger value="registrations">Registrations</TabsTrigger>
-          <TabsTrigger value="abstracts">Abstracts</TabsTrigger>
-          <TabsTrigger value="logs">Logs</TabsTrigger>
+        <TabsList className="w-full h-auto flex flex-nowrap overflow-x-auto justify-start md:grid md:grid-cols-5 md:h-10 md:justify-center p-1 mobile-scrollbar">
+          <TabsTrigger value="dashboard" className="flex-shrink-0">Dashboard</TabsTrigger>
+          <TabsTrigger value="validate" className="flex-shrink-0">Validate QR</TabsTrigger>
+          <TabsTrigger value="registrations" className="flex-shrink-0">Registrations</TabsTrigger>
+          <TabsTrigger value="abstracts" className="flex-shrink-0">Abstracts</TabsTrigger>
+          <TabsTrigger value="logs" className="flex-shrink-0">Logs</TabsTrigger>
         </TabsList>
         {children}
       </Tabs>

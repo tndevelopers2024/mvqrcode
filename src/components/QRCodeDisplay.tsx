@@ -69,10 +69,10 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
   return (
     <div className="w-full">
       <div className="w-full max-w-sm mx-auto">
-        <div ref={componentRef} className="p-4 flex justify-center bg-gray-50 print:p-0 print:bg-white">
+        <div ref={componentRef} className="p-4 flex justify-center bg-gray-50 print:p-0 print:m-0 print:bg-white">
           {forceBadge || registration.registeredByAdmin ? (
-            /* Badge-style Card adjusted for A7 size (74mm x 105mm) */
-            <div className="w-[74mm] h-[105mm] border shadow-2xl rounded-2xl overflow-hidden bg-white flex flex-col items-center p-0 print:shadow-none print:border print:rounded-none">
+            /* Badge-style Card adjusted for custom size (95mm x 120mm) */
+            <div className="w-[95mm] h-[120mm] border shadow-2xl rounded-2xl overflow-hidden bg-white flex flex-col items-center p-0 print:shadow-none print:border-none print:rounded-none print:m-0">
               {/* Top Section with Logo */}
               <div className="w-full h-[24mm] bg-[#3b4d99] flex flex-col items-center justify-center p-3 relative">
                 <div className="bg-white p-1.5 px-3 rounded-xl shadow-sm flex flex-col items-center gap-0.5">
@@ -91,7 +91,7 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
                     <img
                       src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL || 'https://mvcon.space'}${registration.qrCodeImage}`}
                       alt="QR Code"
-                      className="w-[32mm] h-[32mm] object-contain"
+                      className="w-[36mm] h-[36mm] object-contain"
                     />
                   </div>
                 ) : (
@@ -100,10 +100,10 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
 
                 <div className="relative z-10 text-center w-full mt-2">
                   <div className="space-y-1">
-                    <h2 className="text-[16px] font-black text-[#f99511] leading-tight tracking-tight break-words px-1">
+                    <h2 className="text-[28px] font-black text-[#f99511] leading-tight tracking-tight break-words pt-2 px-1">
                       {nameToDisplay}
                     </h2>
-                    <p className="text-[#3b4d99] font-black text-[12px] uppercase tracking-wider">
+                    <p className="text-[#3b4d99] font-black pt-2 text-[22px] uppercase tracking-wider">
                       {registration.profession?.trim().replace(/^DELEGATES$/i, 'DELEGATE')}
                     </p>
                   </div>
@@ -115,12 +115,12 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
                   </div> */}
                 </div>
 
-                <div className="mt-2 flex flex-col items-center gap-1.5 w-full relative z-10 pt-3 pb-1.5">
+                <div className="mt-2 flex flex-col items-center gap-1.5 w-full relative z-10 pt-4 pb-1.5">
                   <div className="text-center">
-                    <p className="text-[9px] font-bold text-[#3b4d99]">
+                    <p className="text-[12px] font-bold text-[#3b4d99]">
                       Dates : 20,21,22 March 2026
                     </p>
-                    <p className="text-[9px] font-bold text-[#1e293b] mt-0.5 leading-tight">
+                    <p className="text-[12px] font-bold text-[#1e293b] mt-0.5 leading-tight">
                       Venue : GReaT Ceremonies by GRT Hotels, Chennai
                     </p>
                   </div>
