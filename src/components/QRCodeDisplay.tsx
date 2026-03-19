@@ -68,11 +68,31 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
 
   return (
     <div className="w-full">
+      <style>{`
+        @media print {
+          @page {
+            size: 95mm 120mm;
+            margin: 0;
+          }
+          body {
+            margin: 0;
+            padding: 0;
+          }
+          .print-container {
+            padding: 0 !important;
+            margin: 0 !important;
+            background: white !important;
+          }
+        }
+      `}</style>
       <div className="w-full max-w-sm mx-auto">
-        <div ref={componentRef} className="p-4 flex justify-center bg-gray-50 print:p-0 print:m-0 print:bg-white">
+        <div className="p-4 flex justify-center bg-gray-50 print-container print:p-0 print:m-0 print:bg-white">
           {forceBadge || registration.registeredByAdmin ? (
             /* Badge-style Card adjusted for custom size (95mm x 120mm) */
-            <div className="w-[95mm] h-[120mm] border shadow-2xl rounded-2xl overflow-hidden bg-white flex flex-col items-center p-0 print:shadow-none print:border-none print:rounded-none print:m-0">
+            <div 
+              ref={componentRef}
+              className="w-[95mm] h-[120mm] border shadow-2xl rounded-2xl overflow-hidden bg-white flex flex-col items-center p-0 print:shadow-none print:border-none print:rounded-none print:m-0"
+            >
               {/* Top Section with Logo */}
               <div className="w-full h-[24mm] bg-[#3b4d99] flex flex-col items-center justify-center p-3 relative">
                 <div className="bg-white p-1.5 px-3 rounded-xl shadow-sm flex flex-col items-center gap-0.5">
@@ -107,12 +127,6 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
                       {registration.profession?.trim().replace(/^DELEGATES$/i, 'DELEGATE')}
                     </p>
                   </div>
-
-                  {/* <div className="pt-2 border-t border-slate-100 mt-1 flex flex-col gap-0.5">
-                    <p className="text-[#64748b] text-[10px] font-bold uppercase tracking-widest leading-tight">
-                      {registration.designation}
-                    </p>
-                  </div> */}
                 </div>
 
                 <div className="mt-2 flex flex-col items-center gap-1.5 w-full relative z-10 pt-4 pb-1.5">
@@ -130,7 +144,7 @@ export function QRCodeDisplay({ registration, forceBadge }: QRCodeDisplayProps) 
             </div>
           ) : (
             /* Classic QR Pass View - Horizontal minimal design */
-            <div className="w-full max-w-[400px] border shadow-xl rounded-2xl overflow-hidden bg-white print:shadow-none print:border">
+            <div ref={componentRef} className="w-full max-w-[400px] border shadow-xl rounded-2xl overflow-hidden bg-white print:shadow-none print:border">
               {/* Header Bar */}
               <div className="bg-[#3b4d99] py-3 flex justify-center items-center">
                 <span className="text-white font-black text-sm tracking-[0.2em] uppercase">MVCON 2026</span>
